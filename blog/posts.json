@@ -1,0 +1,129 @@
+{
+ "posts": [
+  {
+   "title": "How to Use Previous-Year Questions the Smart Way (Class 10)",
+   "url": "https://quadacademy.org/blog/previous-year-questions-smart-way/",
+   "date": "2026-11-06",
+   "description": "A seven-step method for using CBSE Class 10 previous-year questions properly: sort by type, pause and try, mark mistakes in three colours, keep an error list and practise under time."
+  },
+  {
+   "title": "Chemical Reactions and Equations: 3 Board Question Types, Solved (CBSE Class 10 Science)",
+   "url": "https://quadacademy.org/blog/chemical-reactions-equations-board-questions/",
+   "date": "2026-11-06",
+   "description": "CBSE Class 10 Science Chapter 1 board questions solved step by step: heating lead nitrate, the barium chloride precipitation reaction, and the oxidising-agent trap, with marking tips."
+  }
+ ],
+ "pages": [
+  {
+   "path": "blog/index.html",
+   "priority": 0.7,
+   "jsonld": [
+    {
+     "@type": "Blog",
+     "name": "QUAD Academy Blog",
+     "url": "https://quadacademy.org/blog/",
+     "inLanguage": "en-IN",
+     "publisher": {
+      "@id": "https://quadacademy.org/#org"
+     },
+     "blogPost": [
+      {
+       "@type": "BlogPosting",
+       "headline": "How to Use Previous-Year Questions the Smart Way (Class 10)",
+       "url": "https://quadacademy.org/blog/previous-year-questions-smart-way/",
+       "datePublished": "2026-11-06"
+      },
+      {
+       "@type": "BlogPosting",
+       "headline": "Chemical Reactions and Equations: 3 Board Question Types, Solved (CBSE Class 10 Science)",
+       "url": "https://quadacademy.org/blog/chemical-reactions-equations-board-questions/",
+       "datePublished": "2026-11-06"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "path": "blog/previous-year-questions-smart-way/index.html",
+   "priority": 0.6,
+   "jsonld": [
+    {
+     "@type": "BlogPosting",
+     "headline": "How to Use Previous-Year Questions the Smart Way (Class 10)",
+     "description": "A seven-step method for using CBSE Class 10 previous-year questions properly: sort by type, pause and try, mark mistakes in three colours, keep an error list and practise under time.",
+     "url": "https://quadacademy.org/blog/previous-year-questions-smart-way/",
+     "mainEntityOfPage": "https://quadacademy.org/blog/previous-year-questions-smart-way/",
+     "datePublished": "2026-11-06",
+     "dateModified": "2026-11-06",
+     "inLanguage": "en-IN",
+     "wordCount": 593,
+     "author": {
+      "@type": "Organization",
+      "name": "Team QUAD",
+      "@id": "https://quadacademy.org/#org"
+     },
+     "publisher": {
+      "@id": "https://quadacademy.org/#org"
+     },
+     "educationalLevel": "Class 10",
+     "keywords": "PYQ, board exam, revision, study plan",
+     "image": "https://i.ytimg.com/vi/aBNZhkaaPWM/hqdefault.jpg",
+     "isPartOf": {
+      "@type": "Blog",
+      "url": "https://quadacademy.org/blog/"
+     },
+     "video": {
+      "@type": "VideoObject",
+      "name": "See the method in action: Real Numbers, 8 must-do questions",
+      "description": "A seven-step method for using CBSE Class 10 previous-year questions properly: sort by type, pause and try, mark mistakes in three colours, keep an error list and practise under time.",
+      "thumbnailUrl": "https://i.ytimg.com/vi/aBNZhkaaPWM/hqdefault.jpg",
+      "uploadDate": "2026-11-06",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/aBNZhkaaPWM",
+      "contentUrl": "https://www.youtube.com/watch?v=aBNZhkaaPWM"
+     }
+    }
+   ]
+  },
+  {
+   "path": "blog/chemical-reactions-equations-board-questions/index.html",
+   "priority": 0.6,
+   "jsonld": [
+    {
+     "@type": "BlogPosting",
+     "headline": "Chemical Reactions and Equations: 3 Board Question Types, Solved (CBSE Class 10 Science)",
+     "description": "CBSE Class 10 Science Chapter 1 board questions solved step by step: heating lead nitrate, the barium chloride precipitation reaction, and the oxidising-agent trap, with marking tips.",
+     "url": "https://quadacademy.org/blog/chemical-reactions-equations-board-questions/",
+     "mainEntityOfPage": "https://quadacademy.org/blog/chemical-reactions-equations-board-questions/",
+     "datePublished": "2026-11-06",
+     "dateModified": "2026-11-06",
+     "inLanguage": "en-IN",
+     "wordCount": 606,
+     "author": {
+      "@type": "Organization",
+      "name": "Team QUAD",
+      "@id": "https://quadacademy.org/#org"
+     },
+     "publisher": {
+      "@id": "https://quadacademy.org/#org"
+     },
+     "educationalLevel": "Class 10",
+     "keywords": "Science, Chapter 1, chemical reactions, CBSE board questions",
+     "image": "https://i.ytimg.com/vi/NFgXgUhtMDI/hqdefault.jpg",
+     "isPartOf": {
+      "@type": "Blog",
+      "url": "https://quadacademy.org/blog/"
+     },
+     "video": {
+      "@type": "VideoObject",
+      "name": "Chemical Reactions and Equations: 10 must-do questions + MCQ tricks",
+      "description": "CBSE Class 10 Science Chapter 1 board questions solved step by step: heating lead nitrate, the barium chloride precipitation reaction, and the oxidising-agent trap, with marking tips.",
+      "thumbnailUrl": "https://i.ytimg.com/vi/NFgXgUhtMDI/hqdefault.jpg",
+      "uploadDate": "2026-11-06",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/NFgXgUhtMDI",
+      "contentUrl": "https://www.youtube.com/watch?v=NFgXgUhtMDI"
+     }
+    }
+   ]
+  }
+ ]
+}

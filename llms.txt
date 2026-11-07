@@ -4,29 +4,36 @@
 
 ## Board Boost · Batch 1 (CBSE Class 10, Board 2027)
 - Dates: Mon 7 Dec 2026 to Sat 16 Jan 2027 (6 weeks), live online, 25–40 students per batch
-- Maths Board Boost (Maths Standard 041): Mon, Wed, Fri, 6:30–7:30 pm IST, teacher Mihir R Shreshti
+- Maths Board Boost (Maths Standard 041): Mon, Wed, Fri, 6:30–7:30 pm IST, teacher Shwetha J
 - Science Board Boost (086): Tue, Thu, Sat, 6:30–7:30 pm IST, teacher Mihir R Shreshti
 - Each batch: 18 live classes, 6 weekly board-pattern mocks (Sunday, 90 min), 6 parent score reports on WhatsApp, 24×7 doubt group, answer books and notes, a free last-week doubt clinic
 - Fees: one subject ₹1,499 (early bird to 25 Nov 2026; ₹1,999 after); both subjects ₹2,499 (₹2,999 after). Bring a friend: both get ₹500 off. Full refund if the child leaves after the first class.
 - Every class is recorded; live classes and long-answer marking are done by a real teacher, not AI.
 
 ## Try first
-- ₹49 Board Masterclass (2 hours live): Maths Sun 22 Nov 2026, Science Sun 29 Nov 2026, 10:30 am–12:30 pm IST. The ₹49 is adjusted if you join a batch.
+- [₹49 Board Masterclass](https://quadacademy.org/masterclass/) (2 hours live; Maths: Shwetha J, Science: Mihir R Shreshti): the 20 questions that come almost every year, solved live, with a PDF to keep and a doubt session. Maths Sun 22 Nov 2026, Science Sun 29 Nov 2026, 10:30 am–12:30 pm IST. Book on WhatsApp; the ₹49 is adjusted if you join a batch.
 - Free Sunday Board Booster: 45-minute class on the QUAD YouTube channel, Sundays 6:00–6:45 pm IST.
 - Winter Break Intensive: Sat 26 Dec 2026 to Sun 3 Jan 2027, Maths 10–11 am, Science 11:15 am–12:15 pm, ₹499 per subject, ₹899 both, free for Batch 1 students.
 - One-to-one tuition is available on request.
 
 ## Teachers
-- Mihir R Shreshti: co-founder, IIT Madras alumnus, homeschooled and cleared Class 10 and 12 through NIOS; teaches both batches.
+- Shwetha J: co-founder of QUAD Academy, MA, MEd, 15+ years teaching Class 8–10 Maths and Science across CBSE, ICSE, State Board and NIOS; founder of Learn with Shwetha (one-to-one board-exam tuition, Bangalore); teaches the Maths batch.
+- Mihir R Shreshti: co-founder, IIT Madras alumnus, homeschooled and cleared Class 10 and 12 through NIOS; teaches the Science batch.
 - Shubha M: co-founder of OurSchoolHouse and QUAD Academy, 25+ years of teaching and content creation; plans courses, sets and marks mocks, writes parent reports, handles admissions.
 
 ## Free revision
 - [QUAD Academy home](https://quadacademy.org/): free important-question videos for every Class 10 Maths and Science chapter, chapter notes and PDFs, board paper walkthroughs
 - [QUAD Quest](https://quadacademy.org/quest.html): free chapter-by-chapter practice game with real board questions, points and streaks
+- [QUAD Blog](https://quadacademy.org/blog/): free articles with real CBSE Class 10 board questions solved step by step, common mistakes and study plans
 
 ## Links
 - [Board Boost page](https://quadacademy.org/board-boost/): batches, timetable, fees, FAQ
+- [₹49 Masterclass page](https://quadacademy.org/masterclass/): dates, what you get, how to book
 - [Reserve a seat on WhatsApp](https://wa.me/918088443156): +91 80884 43156
 - [QUAD Academy on YouTube](https://www.youtube.com/channel/UCHbt889LZLim6aD4bz8XrLA): chapter-wise important questions and past-paper walkthroughs, Class 10 Maths and Science
 - [QUAD WhatsApp channel](https://whatsapp.com/channel/0029Vb9DNhtADTOEAMwyH723)
 - [OurSchoolHouse](https://ourschoolhouse.in/): sister concern for homeschooling and NIOS, Classes 1–12
+
+## Blog posts (newest first)
+- [How to Use Previous-Year Questions the Smart Way (Class 10)](https://quadacademy.org/blog/previous-year-questions-smart-way/) (2026-11-06): A seven-step method for using CBSE Class 10 previous-year questions properly: sort by type, pause and try, mark mistakes in three colours, keep an error list and practise under time.
+- [Chemical Reactions and Equations: 3 Board Question Types, Solved (CBSE Class 10 Science)](https://quadacademy.org/blog/chemical-reactions-equations-board-questions/) (2026-11-06): CBSE Class 10 Science Chapter 1 board questions solved step by step: heating lead nitrate, the barium chloride precipitation reaction, and the oxidising-agent trap, with marking tips.
