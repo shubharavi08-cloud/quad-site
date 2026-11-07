@@ -1,0 +1,467 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>QUAD Quest</title>
+<meta name="description" content="QUAD Quest: learn each CBSE Class 10 chapter in four stages (Learn, Grow, Prepare, Build) with real board questions, points, streaks and spaced revision.">
+<link rel="icon" href="quad_logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700;800;900&family=Gochi+Hand&display=swap">
+<style>
+:root{
+  --wall:#f7f2e7; --wall-2:#efe7d6; --stripe:rgba(80,60,20,.025);
+  --ink:#0f3b40; --ink-2:#4d6466; --deep:#0f2a2d; --osh:#0f5258;
+  --yellow:#ffd21f; --teal:#139fb3; --coral:#e5534b; --green:#2f9b5c; --green-bg:#e6f5ec; --red-bg:#fdecea;
+  --board:#14231d; --wood:#8a5a2e; --chalk:#f4efe2; --chalk-y:#ffcf5a;
+  --card:#fff; --line:#e3d9c4; --mute:#8a8270;
+  --display:"Rubik","Arial Black",system-ui,sans-serif; --body:"Rubik","Segoe UI",system-ui,sans-serif; --chalkf:"Gochi Hand","Comic Sans MS",cursive;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+body{margin:0;color:var(--ink);font:400 1.02rem/1.6 var(--body);background-color:var(--wall);
+  background:repeating-linear-gradient(0deg,var(--stripe) 0 2px,transparent 2px 6px),linear-gradient(180deg,var(--wall),var(--wall-2));min-height:100vh}
+.wrap{max-width:980px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+a{color:var(--osh)} :focus-visible{outline:3px solid var(--teal);outline-offset:3px}
+button{font:inherit;cursor:pointer}
+.bar{position:sticky;top:0;z-index:5;background:rgba(247,242,231,.95);backdrop-filter:blur(6px);border-bottom:2px solid var(--line)}
+.bar .wrap{display:flex;align-items:center;gap:12px;padding-block:9px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink)}
+.brand img{width:42px;height:42px;border-radius:10px;border:1px solid var(--line);background:#fff}
+.brand b{font:900 1.1rem/1 var(--display)} .brand small{display:block;font:500 .72rem/1.3 var(--body);color:var(--ink-2)}
+.beta{font:800 .7rem/1 var(--display);letter-spacing:.06em;background:var(--yellow);color:var(--deep);padding:.35rem .5rem;border-radius:6px;margin-left:6px;vertical-align:middle}
+.stats{display:flex;gap:8px;margin-left:auto;flex-wrap:wrap}
+.stat{font:800 .85rem/1 var(--display);background:#fff;border:2px solid var(--line);border-radius:10px;padding:.5rem .65rem;white-space:nowrap}
+.stat span{color:var(--ink-2);font-weight:500}
+h1{font:900 clamp(1.8rem,5vw,2.8rem)/1.05 var(--display);text-transform:uppercase;margin:22px 0 6px;text-wrap:balance}
+h1 .t{color:var(--teal)}
+h2{font:900 1.35rem/1.15 var(--display);text-transform:uppercase;margin:0 0 4px}
+.sub{color:var(--ink-2);margin:0 0 16px;max-width:64ch}
+.pill{display:inline-block;font:800 .78rem/1 var(--display);letter-spacing:.03em;text-transform:uppercase;padding:.45rem .7rem;border-radius:8px;background:var(--osh);color:#fff}
+.pill.y{background:var(--yellow);color:var(--deep)}
+.btn{display:inline-flex;align-items:center;gap:8px;font:800 .92rem/1 var(--display);text-transform:uppercase;letter-spacing:.02em;padding:.85rem 1.1rem;border-radius:12px;text-decoration:none;border:3px solid var(--osh);box-shadow:0 4px 0 var(--osh);color:var(--deep);background:#fff;transition:transform .1s,box-shadow .1s}
+.btn.y{background:var(--yellow)} .btn.g{background:var(--osh);color:#fff;border-color:var(--deep);box-shadow:0 4px 0 var(--deep)}
+.btn:hover{transform:translateY(2px);box-shadow:0 2px 0 var(--osh)} .btn:disabled{opacity:.45;cursor:default;transform:none}
+@media (prefers-reduced-motion:reduce){.btn{transition:none}.btn:hover{transform:none}}
+.card{background:var(--card);border:2px solid var(--line);border-radius:16px;padding:18px}
+section{margin-block:22px}
+
+/* stage tracker */
+.stages{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:14px 0 4px}
+@media (max-width:620px){.stages{grid-template-columns:repeat(2,1fr)}}
+.stg{background:#fff;border:2px solid var(--line);border-radius:12px;padding:10px 12px;text-decoration:none;color:var(--ink);display:block}
+.stg b{display:block;font:900 .95rem/1.1 var(--display);letter-spacing:.04em}
+.stg small{display:block;color:var(--ink-2);font-size:.8rem;line-height:1.3;margin-top:3px}
+.stg.done{border-color:var(--green);background:var(--green-bg)} .stg.done b::after{content:" ✓";color:var(--green)}
+.stg.soon{opacity:.7;border-style:dashed}
+.meter{height:8px;background:var(--wall-2);border-radius:99px;overflow:hidden;margin-top:6px}
+.meter i{display:block;height:100%;background:var(--teal);border-radius:99px;width:0}
+
+/* video */
+.vid{position:relative;aspect-ratio:16/9;border-radius:14px;overflow:hidden;background:var(--board);border:8px solid var(--wood)}
+.vid iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.vid .ph{position:absolute;inset:0;display:grid;place-items:center;text-align:center;color:var(--chalk);font-family:var(--chalkf);font-size:1.5rem;padding:16px;text-decoration:none}
+.vid .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.55}
+.vid .ph span{position:relative;background:rgba(20,35,29,.82);padding:.4rem .9rem;border-radius:10px}
+
+/* game */
+.qnav{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
+.qnav button{width:36px;height:36px;border-radius:10px;border:2px solid var(--line);background:#fff;font:800 .85rem/1 var(--display);color:var(--ink)}
+.qnav button.cur{border-color:var(--osh);background:var(--yellow)}
+.qnav button.full{background:var(--green);border-color:var(--green);color:#fff}
+.qnav button.part{background:#f6c443;border-color:#d9a21f}
+.qnav button.miss{background:var(--red-bg);border-color:var(--coral)}
+.qtag{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
+.qtag span{font:700 .75rem/1 var(--display);text-transform:uppercase;letter-spacing:.04em;background:var(--wall-2);padding:.4rem .55rem;border-radius:6px;color:var(--ink-2)}
+.qtext{font-size:1.08rem;line-height:1.6;white-space:pre-line;margin:0 0 14px}
+.opts{display:grid;gap:8px}
+.opt{display:flex;gap:10px;align-items:flex-start;text-align:left;padding:.75rem .9rem;border:2px solid var(--line);border-radius:12px;background:#fff;color:var(--ink);font-size:1rem;line-height:1.45}
+.opt b{font:900 .95rem/1.45 var(--display);min-width:1.4em}
+.opt:hover:not(:disabled){border-color:var(--teal)}
+.opt.right{border-color:var(--green);background:var(--green-bg)} .opt.wrong{border-color:var(--coral);background:var(--red-bg)}
+.opt:disabled{cursor:default}
+.fb{margin-top:14px;border-radius:12px;padding:12px 14px}
+.fb.ok{background:var(--green-bg);border:2px solid var(--green)} .fb.no{background:var(--red-bg);border:2px solid var(--coral)} .fb.info{background:#fff8dc;border:2px solid #e8c54a}
+.fb h4{margin:0 0 4px;font:900 1rem/1.2 var(--display);text-transform:uppercase}
+.fb p{margin:4px 0}
+.board{background:var(--board);border:10px solid var(--wood);border-radius:6px;padding:14px 18px;color:var(--chalk);font-family:var(--chalkf);margin-top:12px}
+.board div{font-size:1.25rem;line-height:1.5;padding-block:2px;border-bottom:1px dashed rgba(244,239,226,.14)}
+.board div:last-child{border-bottom:0;color:var(--chalk-y)}
+.row{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px;align-items:center}
+.pts{font:900 1.1rem/1 var(--display);color:var(--green)}
+.pop{animation:pop .5s ease-out}
+@keyframes pop{0%{transform:scale(.6);opacity:0}60%{transform:scale(1.15);opacity:1}100%{transform:scale(1)}}
+@media (prefers-reduced-motion:reduce){.pop{animation:none}}
+
+/* hub */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px}
+.chc{display:flex;gap:12px;align-items:center;text-decoration:none;color:var(--ink);background:#fff;border:2px solid var(--line);border-radius:14px;padding:12px}
+.chc:hover{border-color:var(--teal)}
+.chc .no{flex:none;width:42px;height:42px;border-radius:10px;display:grid;place-items:center;font:900 1rem/1 var(--display);background:var(--yellow);color:var(--deep)}
+.chc.s .no{background:#bfe9ef}
+.chc b{display:block;font:800 .95rem/1.25 var(--display)} .chc small{color:var(--ink-2);font-size:.8rem}
+.chc .due{color:var(--coral);font-weight:700}
+.tabs{display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap}
+.tabs button{font:800 .82rem/1 var(--display);text-transform:uppercase;letter-spacing:.04em;padding:.6rem .9rem;border-radius:10px;border:2px solid var(--osh);background:#fff;color:var(--deep)}
+.tabs button[aria-pressed="true"]{background:var(--osh);color:#fff}
+.links{display:flex;flex-wrap:wrap;gap:8px}
+form.ea{display:grid;gap:10px;max-width:520px}
+form.ea label{display:grid;gap:4px;font:700 .85rem/1.2 var(--display)}
+form.ea input,form.ea select{font:inherit;padding:.65rem .75rem;border:2px solid var(--line);border-radius:10px;background:#fff;color:var(--ink)}
+.fine{font-size:.82rem;color:var(--ink-2)}
+footer{margin-top:40px;padding:20px 0 30px;border-top:2px solid var(--line);color:var(--ink-2);font-size:.88rem}
+/* video chooser + topics */
+.vtypes{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px}
+.vtypes button{font:800 .8rem/1 var(--display);text-transform:uppercase;letter-spacing:.03em;padding:.6rem .8rem;border-radius:10px;border:2px solid var(--osh);background:#fff;color:var(--deep)}
+.vtypes button[aria-pressed="true"]{background:var(--osh);color:#fff}
+.vtypes button.off{border-style:dashed;opacity:.65}
+.topics{display:grid;gap:8px;margin-top:14px}
+.tp{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;background:#fff;border:2px solid var(--line);border-radius:12px;padding:10px 12px}
+.tp .nm{flex:1 1 220px;min-width:0;font:700 .95rem/1.3 var(--display)}
+.tp .nm small{display:block;font:500 .78rem/1.3 var(--body);color:var(--ink-2)}
+.tp.done{border-color:var(--green);background:var(--green-bg)}
+.mini{font:800 .75rem/1 var(--display);text-transform:uppercase;letter-spacing:.03em;padding:.5rem .65rem;border-radius:8px;border:2px solid var(--osh);background:#fff;color:var(--deep);text-decoration:none}
+.mini.y{background:var(--yellow)} .mini.off{border-style:dashed;opacity:.6;cursor:default}
+.tgroup{margin-bottom:10px} .tgroup h3{font:800 .82rem/1.25 var(--display);text-transform:uppercase;letter-spacing:.03em;margin:0 0 6px;color:var(--ink-2)}
+.tgroup .soonq{font-size:.82rem;color:var(--mute);font-style:italic}
+.qnav{display:block} .qrow{display:flex;flex-wrap:wrap;gap:6px}
+[hidden]{display:none!important}
+</style>
+<!-- geo:start (generated by geo_build.py; edit geo_sites.py, not here) -->
+<link rel="canonical" href="https://quadacademy.org/quest.html">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"QUAD Quest","url":"https://quadacademy.org/quest.html","description":"Learn each CBSE Class 10 Maths and Science chapter in four stages (Learn, Grow, Prepare, Build) with real board questions, points, streaks and spaced revision.","learningResourceType":"Game","educationalLevel":"Class 10","isAccessibleForFree":true,"inLanguage":"en-IN","publisher":{"@id":"https://quadacademy.org/#org"}}</script>
+<!-- geo:end -->
+</head>
+<body>
+<header class="bar"><div class="wrap">
+  <a class="brand" href="index.html"><img src="quad_logo.jpg" alt=""><div><b>QUAD Quest <span class="beta">BETA</span></b><small>by QUAD Academy · OurSchoolHouse</small></div></a>
+  <div class="stats" aria-label="Your progress">
+    <div class="stat" title="Points from correct answers">⭐ <b id="s-xp">0</b> <span>pts</span></div>
+    <div class="stat" title="Days in a row with at least one question">🔥 <b id="s-streak">0</b> <span>day streak</span></div>
+  </div>
+</div></header>
+
+<main class="wrap">
+<!-- HUB -->
+<div id="v-hub" hidden>
+  <h1>QUAD <span class="t">Quest</span></h1>
+  <p class="sub">Every chapter is a quest in four stages: <b>Learn</b> the idea, <b>Grow</b> it hands-on, <b>Prepare</b> with real board questions, <b>Build</b> it into memory. 15 to 20 minutes a chapter. Your progress is saved on this device.</p>
+  <div id="hub-due"></div>
+  <div class="tabs" role="group" aria-label="Subject"><button data-f="Maths" aria-pressed="true">Maths</button><button data-f="Science" aria-pressed="false">Science</button></div>
+  <div class="grid" id="hub"></div>
+</div>
+
+<!-- CHAPTER -->
+<div id="v-ch" hidden>
+  <p style="margin:16px 0 0"><a href="quest.html">← All quests</a></p>
+  <h1 id="c-title"></h1>
+  <p class="sub" id="c-sub"></p>
+  <nav class="stages" aria-label="Quest stages">
+    <a class="stg" href="#learn" id="st-learn"><b>1 · LEARN</b><small>Watch the video</small></a>
+    <a class="stg soon" href="#grow" id="st-grow"><b>2 · GROW</b><small>Hands-on interactive</small></a>
+    <a class="stg" href="#prepare" id="st-prepare"><b>3 · PREPARE</b><small id="st-prep-t">Board questions</small><div class="meter"><i id="st-prep-m"></i></div></a>
+    <a class="stg" href="#build" id="st-build"><b>4 · BUILD</b><small id="st-build-t">Notes + revision</small></a>
+  </nav>
+
+  <section id="learn">
+    <h2>1 · Learn</h2>
+    <p class="sub" id="learn-sub">Pick the video that suits you today. Pause and try each question first.</p>
+    <div class="vtypes" id="vtypes" role="group" aria-label="Choose a video"></div>
+    <div class="vid" id="vid"></div>
+    <div class="row"><button class="btn" id="learn-done">I've watched it ✓</button><span class="fine" id="learn-note"></span></div>
+    <h3 style="font:900 1rem/1.2 var(--display);text-transform:uppercase;margin:22px 0 0">Topics in this chapter (NCERT)</h3>
+    <div class="topics" id="topics"></div>
+  </section>
+
+  <section id="grow">
+    <h2>2 · Grow</h2>
+    <div class="card" id="grow-box"><p style="margin:0">A hands-on interactive for this chapter is on its way. <b>Surface Areas and Volumes</b> gets the first one on 15 Nov; more chapters follow.</p></div>
+  </section>
+
+  <section id="prepare">
+    <h2>3 · Prepare</h2>
+    <p class="sub">Real CBSE board questions. Choose an answer, or solve on paper and check the working. Points only for what you get right.</p>
+    <div class="card">
+      <div class="qnav" id="qnav" aria-label="Questions"></div>
+      <div id="qbox"></div>
+    </div>
+  </section>
+
+  <section id="build">
+    <h2>4 · Build</h2>
+    <p class="sub">Lock it in, then come back. Questions return in short revision rounds after 3, 7 and 21 days, when they are about to fade.</p>
+    <div class="card">
+      <div id="rev"></div>
+      <div class="links" id="docs" style="margin-top:12px"></div>
+    </div>
+  </section>
+</div>
+
+<section id="early">
+  <div class="card">
+    <h2>Get early access</h2>
+    <p class="sub" style="margin-bottom:12px">Join the first QUAD Quest students. We'll send a short weekly progress note to your parent and tell you when new chapters and interactives open. No sales calls, ever.</p>
+    <form class="ea" name="quest-early" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="ea">
+      <input type="hidden" name="form-name" value="quest-early">
+      <p hidden><label>Leave empty <input name="bot-field"></label></p>
+      <label>Student's name <input name="name" required autocomplete="name"></label>
+      <label>Board and class <select name="class"><option>CBSE Class 10</option><option>ICSE Class 10</option><option>State board Class 10</option><option>Other</option></select></label>
+      <label>Parent's WhatsApp number <input name="parent_whatsapp" required inputmode="tel" pattern="[0-9+ ]{10,15}" placeholder="+91 98xxxxxxxx"></label>
+      <label>Parent's email (optional) <input name="parent_email" type="email" autocomplete="email"></label>
+      <input type="hidden" name="chapter" id="ea-ch">
+      <p class="fine" style="margin:0">Please ask your parent before sharing their number. We use it only for QUAD Quest updates.</p>
+      <div><button class="btn y" type="submit">Join QUAD Quest</button></div>
+      <p class="fine" id="ea-msg" role="status"></p>
+    </form>
+  </div>
+</section>
+</main>
+<footer><div class="wrap">QUAD Academy · Your Student Navigator · by OurSchoolHouse · <a href="https://ourschoolhouse.in">ourschoolhouse.in</a> · <a href="index.html">quadacademy.org</a></div></footer>
+
+<script src="catalog.js"></script>
+<script>
+/* ---------- storage (per device; safe when blocked) ---------- */
+const KEY = "quad-quest-v1";
+let S = {xp:0, days:[], freeze:"", ch:{}};
+try { const r = localStorage.getItem(KEY); if (r) S = Object.assign(S, JSON.parse(r)); } catch (e) {}
+const save = () => { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} };
+const today = () => new Date(Date.now() + 5.5 * 36e5).toISOString().slice(0, 10);   // IST date
+const dayN = d => Math.round(Date.parse(d) / 864e5);
+const addDays = (d, n) => new Date(Date.parse(d) + n * 864e5).toISOString().slice(0, 10);
+function streak() {
+  const ds = [...new Set(S.days)].sort(); if (!ds.length) return 0;
+  let n = 1, last = dayN(ds[ds.length - 1]);
+  if (dayN(today()) - last > 2) return 0;
+  for (let i = ds.length - 2; i >= 0; i--) { const g = last - dayN(ds[i]); if (g === 1 || g === 2) { n++; last = dayN(ds[i]); } else break; }  // one missed day forgiven
+  return n;
+}
+function touchDay() { const t = today(); if (!S.days.includes(t)) { S.days.push(t); S.days = S.days.slice(-60); } }
+function paintStats() { document.getElementById("s-xp").textContent = S.xp; document.getElementById("s-streak").textContent = streak(); }
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const CHS = [...CH.Maths.map((c, i) => ({key: "m" + (i + 1), s: "Maths", n: i + 1, name: c[0], notes: c[1], mm: c[3]})),
+             ...CH.Science.map((c, i) => ({key: "s" + (i + 1), s: "Science", n: i + 1, name: c[0], notes: c[1], mm: c[3]}))];
+const vidOf = c => IQ.find(v => v.s === c.s && v.c === c.n);
+const isLive = v => v && !v.hold && (!v.at || Date.parse(v.at) <= Date.now());
+const EMBED = /(^|\.)quadacademy\.org$|netlify\.app$|^localhost$|^127\./.test(location.hostname);
+const LEVELS = [[0, "Starter"], [40, "Foundation"], [60, "Board-ready"], [85, "Topper"]];
+const level = pct => LEVELS.filter(l => pct >= l[0]).pop()[1];
+function chStats(key, qn) {
+  const c = S.ch[key] || {}; const a = c.a || {};
+  const got = Object.values(a).reduce((s, x) => s + x.s, 0), done = Object.keys(a).length;
+  const due = (c.rev || []).filter(r => r.due <= today()).length;
+  return {got, done, max: qn * 10, due, learn: !!c.learn};
+}
+
+/* ---------- hub ---------- */
+async function hub() {
+  document.getElementById("v-hub").hidden = false;
+  const box = document.getElementById("hub"), dueBox = document.getElementById("hub-due");
+  const counts = {}; await Promise.all(CHS.map(async c => { try { counts[c.key] = (await (await fetch(`quest/data/${c.key}.json`)).json()).questions.length; } catch (e) { counts[c.key] = 0; } }));
+  const render = f => { box.innerHTML = "";
+    CHS.filter(c => c.s === f).forEach(c => { const st = chStats(c.key, counts[c.key]), v = vidOf(c), live = isLive(v);
+      const pct = st.max ? Math.round(st.got / st.max * 100) : 0;
+      const a = document.createElement("a"); a.className = "chc" + (c.s === "Science" ? " s" : ""); a.href = `quest.html?c=${c.key}`;
+      a.innerHTML = `<span class="no">${c.n}</span><div style="min-width:0;flex:1"><b>${esc(c.name)}</b><small>${st.done ? `${st.done}/${counts[c.key]} questions · ${level(pct)}` : live ? `${counts[c.key]} board questions` : v && v.at ? `Video premieres ${new Date(v.at).toLocaleDateString("en-IN", {day: "numeric", month: "short", timeZone: "Asia/Kolkata"})}` : "Video coming soon"}</small>${st.due ? `<small class="due"> · ${st.due} to revise</small>` : ""}<div class="meter"><i style="width:${pct}%"></i></div></div>`;
+      box.appendChild(a); }); };
+  const due = CHS.map(c => [c, chStats(c.key, counts[c.key]).due]).filter(x => x[1]);
+  dueBox.innerHTML = due.length ? `<div class="fb info" style="margin:0 0 14px"><h4>Revision due</h4><p>${due.map(([c, n]) => `<a href="quest.html?c=${c.key}#build">${esc(c.name)} (${n})</a>`).join(" · ")}</p></div>` : "";
+  let f0 = "Maths"; try { f0 = localStorage.getItem("quest-f") || "Maths"; } catch (e) {}
+  document.querySelectorAll(".tabs button").forEach(b => { b.setAttribute("aria-pressed", b.dataset.f === f0); b.onclick = () => {
+    document.querySelectorAll(".tabs button").forEach(x => x.setAttribute("aria-pressed", x === b)); render(b.dataset.f); try { localStorage.setItem("quest-f", b.dataset.f); } catch (e) {} }; });
+  render(f0);
+}
+
+/* ---------- chapter ---------- */
+let C, Q, cur = 0, V, LIVE, VS = [], TP = [];
+const tpName = id => (TP.find(t => t.id === id) || {}).name || "";
+function pickVideo(v, t) { V = v; LIVE = isLive(V); paintTypes(); setVideo(t || 0); }
+function paintTypes() {
+  const box = document.getElementById("vtypes"); box.hidden = VS.length < 2; box.innerHTML = "";
+  VS.forEach(v => { const b = document.createElement("button"); b.textContent = v.label + (isLive(v) ? "" : " · soon"); if (!isLive(v)) b.className = "off";
+    b.setAttribute("aria-pressed", v === V); b.onclick = () => pickVideo(v); box.appendChild(b); });
+}
+function setVideo(t) {
+  const box = document.getElementById("vid");
+  if (!LIVE) { box.innerHTML = `<div class="ph">${V && V.th ? `<img src="thumbs/${V.th}.jpg" alt="">` : ""}<span>${V && V.at ? "Video premieres " + new Date(V.at).toLocaleString("en-IN", {weekday: "short", day: "numeric", month: "short", hour: "numeric", minute: "2-digit", timeZone: "Asia/Kolkata"}) : "Video coming soon"}</span></div>`; return; }
+  if (EMBED) box.innerHTML = `<iframe title="${esc(C.chapter)} video" src="https://www.youtube.com/embed/${V.id}?rel=0&modestbranding=1${t ? `&start=${t}&autoplay=1` : ""}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
+  else box.innerHTML = `<a class="ph" href="${YT(V.id)}${t ? "&t=" + t + "s" : ""}" target="_blank" rel="noopener"><img src="thumbs/${V.th}.jpg" alt=""><span>▶ Watch on YouTube</span></a>`;
+}
+const mmss = t => `${Math.floor(t / 60)}:${String(t % 60).padStart(2, "0")}`;
+const KIND = {mcq: "MCQ", ar: "Assertion–Reason", sa: "Short answer", la: "Long answer", case: "Case study", proof: "Proof", concept: "Concept"};
+const st = () => (S.ch[C.key] = S.ch[C.key] || {a: {}, rev: []});
+function award(q, score, mode) {
+  const c = st(), prev = c.a[q.n]; const gain = Math.max(0, score - (prev ? prev.s : 0));
+  c.a[q.n] = {s: Math.max(score, prev ? prev.s : 0), at: today()};
+  S.xp += gain; touchDay();
+  // spaced revision: weaker answers come back sooner
+  c.rev = (c.rev || []).filter(r => r.n !== q.n);
+  const plan = score >= 10 ? [7, 21] : [3, 7, 21];
+  c.rev.push({n: q.n, due: addDays(today(), plan[0]), steps: plan.slice(1)});
+  save(); paintStats(); paintStages(); paintNav();
+  return gain;
+}
+function paintStages() {
+  const s = chStats(C.key, Q.length), pct = Math.round(s.got / s.max * 100);
+  document.getElementById("st-learn").classList.toggle("done", s.learn);
+  document.getElementById("st-prepare").classList.toggle("done", s.done === Q.length);
+  document.getElementById("st-prep-t").textContent = s.done ? `${s.done}/${Q.length} · ${level(pct)}` : `${Q.length} board questions`;
+  document.getElementById("st-prep-m").style.width = pct + "%";
+  document.getElementById("st-build-t").textContent = s.due ? `${s.due} to revise now` : (st().rev || []).length ? "Next round scheduled" : "Notes + revision";
+  document.getElementById("st-build").classList.toggle("done", s.done === Q.length && !s.due && (st().rev || []).every(r => !r.steps.length));
+}
+function paintNav() {   // questions grouped by NCERT topic, numbered in play order
+  const a = st().a, nav = document.getElementById("qnav"); nav.innerHTML = "";
+  (TP.length ? TP : [{id: "", name: ""}]).forEach(t => {
+    const g = document.createElement("div"); g.className = "tgroup";
+    const qs = Q.map((q, i) => [q, i]).filter(([q]) => !t.id || q.tp === t.id);
+    const done = qs.filter(([q]) => a[q.n]).length;
+    if (t.name) g.innerHTML = `<h3>${esc(t.name)}${qs.length ? ` · ${done}/${qs.length}` : ""}</h3>`;
+    const row = document.createElement("div"); row.className = "qrow";
+    if (!qs.length) row.innerHTML = `<span class="soonq">Practice coming soon</span>`;
+    qs.forEach(([q, i]) => { const b = document.createElement("button"); const x = a[q.n];
+      b.textContent = i + 1; b.title = q.title; b.setAttribute("aria-label", `Question ${i + 1}${x ? `, scored ${x.s} of 10` : ""}`);
+      b.className = (i === cur ? "cur " : "") + (x ? (x.s >= 10 ? "full" : x.s > 0 ? "part" : "miss") : "");
+      b.onclick = () => { cur = i; showQ(); }; row.appendChild(b); });
+    g.appendChild(row); nav.appendChild(g); });
+  paintTopics();
+}
+function paintTopics() {
+  const box = document.getElementById("topics"); if (!box) return; box.innerHTML = "";
+  const a = st().a, full = VS.find(v => v.type === "full" && isLive(v) && v.ts);
+  TP.forEach(t => {
+    const qs = Q.map((q, i) => [q, i]).filter(([q]) => q.tp === t.id), done = qs.filter(([q]) => a[q.n]).length;
+    const d = document.createElement("div"); d.className = "tp" + (qs.length && done === qs.length ? " done" : "");
+    const w = full && full.ts[t.id] != null ? `<button class="mini" data-w="${full.ts[t.id]}">▶ Watch</button>` : "";
+    const p = qs.length ? `<button class="mini y" data-p="${qs.find(([q]) => !a[q.n])?.[1] ?? qs[0][1]}">${done === qs.length ? "Practise again" : "Practise"}</button>` : `<span class="mini off">Practice coming soon</span>`;
+    d.innerHTML = `<div class="nm">${esc(t.name)}<small>${qs.length ? `${done}/${qs.length} board question${qs.length > 1 ? "s" : ""} done` : "No board question yet"}</small></div>${w}${p}`;
+    box.appendChild(d); });
+  box.querySelectorAll("[data-w]").forEach(b => b.onclick = () => { pickVideo(full, +b.dataset.w); document.getElementById("vid").scrollIntoView({behavior: "smooth", block: "center"}); });
+  box.querySelectorAll("[data-p]").forEach(b => b.onclick = () => { cur = +b.dataset.p; showQ(); document.getElementById("prepare").scrollIntoView({behavior: "smooth"}); });
+}
+function working(q) { return q.steps.length ? `<div class="board" aria-label="Working">${q.steps.map(s => `<div>${esc(s)}</div>`).join("")}</div>` : ""; }
+const iqV = () => VS.find(v => v.type === "iq");
+function watchBtn(q) { return isLive(iqV()) && q.t != null ? `<button class="btn" data-t="${q.t}">▶ Watch this question (${mmss(q.t)})</button>` : ""; }
+function nextBtn(i) { return i < Q.length - 1 ? `<button class="btn g" data-next>Next question →</button>` : `<button class="btn g" data-finish>See my result →</button>`; }
+function tryIt(q) { return q.tryit ? `<div class="fb info"><h4>Try it · bonus</h4><p>${esc(q.tryit)}</p><div class="row" style="margin-top:6px"><button class="btn" data-tryshow>Show answer</button></div><div data-tryans hidden><p><b>Answer:</b> ${esc(q.tryans)}</p><div class="row" style="margin-top:6px"><button class="btn" data-tryok>I got it (+3)</button><button class="btn" data-tryno>Not yet</button></div></div></div>` : ""; }
+function cards(q, ok) {
+  return (ok ? "" : q.trap ? `<div class="fb no"><h4>Common trap</h4><p>${esc(q.trap)}</p></div>` : "") +
+         (q.remember ? `<div class="fb info"><h4>Remember this</h4><p style="white-space:pre-line">${esc(q.remember)}</p>${q.ncert ? `<p class="fine">${esc(q.ncert)}</p>` : ""}</div>` : "");
+}
+function showQ() {
+  const q = Q[cur], box = document.getElementById("qbox"), prev = st().a[q.n];
+  paintNav();
+  const tags = `<div class="qtag"><span>Q${cur + 1} of ${Q.length}</span>${q.tp ? `<span>${esc(tpName(q.tp))}</span>` : ""}<span>${KIND[q.kind] || q.kind}</span><span>${q.marks} mark${q.marks > 1 ? "s" : ""}</span>${q.src ? `<span>${esc(q.src)}</span>` : ""}${prev ? `<span>Best: ${prev.s}/10</span>` : ""}</div>`;
+  if (q.opts.length) {
+    box.innerHTML = tags + `<p class="qtext">${esc(q.text)}</p><div class="opts">${q.opts.map((o, i) => `<button class="opt" data-i="${i}"><b>(${"abcd"[i]})</b><span>${esc(o)}</span></button>`).join("")}</div><div id="after"></div>`;
+    let tries = 0;
+    box.querySelectorAll(".opt").forEach(b => b.onclick = () => {
+      const i = +b.dataset.i, ok = i === q.ok; tries++;
+      if (ok) {
+        box.querySelectorAll(".opt").forEach(x => x.disabled = true); b.classList.add("right");
+        const gain = award(q, tries === 1 ? 10 : 4);
+        document.getElementById("after").innerHTML = `<div class="fb ok"><h4>${tries === 1 ? "Correct!" : "Got it on a retry"}</h4><p class="pts pop">+${gain} pts</p><p><b>Answer:</b> ${esc(q.ans)}</p></div>${working(q)}${cards(q, true)}${tryIt(q)}<div class="row">${nextBtn(cur)}</div>`;
+      } else {
+        b.classList.add("wrong"); b.disabled = true;
+        if (tries === 1) award(q, 0);
+        document.getElementById("after").innerHTML = `<div class="fb no"><h4>Not quite. Try once more</h4>${q.trap ? `<p>${esc(q.trap)}</p>` : ""}</div><div class="row">${watchBtn(q)}<button class="btn" data-reveal>Show the working</button></div>`;
+      }
+      wire(box, q);
+    });
+  } else {
+    box.innerHTML = tags + `<p class="qtext">${esc(q.text)}</p><div class="fb info" style="margin-top:0"><h4>Solve it on paper first</h4><p>This is a ${q.marks}-mark written question. Write your full answer, then check it step by step against the board working.</p></div><div class="row"><button class="btn y" data-step>Check the first step</button>${watchBtn(q)}</div><div id="steps"></div><div id="after"></div>`;
+    let k = 0;
+    const stepBtn = box.querySelector("[data-step]");
+    stepBtn.onclick = () => {
+      k++; const s = q.steps.slice(0, k);
+      document.getElementById("steps").innerHTML = `<div class="board">${s.map(x => `<div>${esc(x)}</div>`).join("")}</div>`;
+      if (k >= q.steps.length) { stepBtn.hidden = true;
+        document.getElementById("after").innerHTML = `<div class="fb info"><h4>How did you do?</h4><p>Mark yourself honestly. That's how the revision rounds know what to bring back.</p><div class="row" style="margin-top:6px"><button class="btn" data-self="10">All correct</button><button class="btn" data-self="5">Partly</button><button class="btn" data-self="0">Missed it</button></div></div>`;
+        box.querySelectorAll("[data-self]").forEach(b => b.onclick = () => { const v = +b.dataset.self, gain = award(q, v);
+          document.getElementById("after").innerHTML = `<div class="fb ${v ? "ok" : "no"}"><h4>${v === 10 ? "Excellent!" : v ? "Good effort" : "It'll come back in 3 days"}</h4>${gain ? `<p class="pts pop">+${gain} pts</p>` : ""}<p><b>Answer:</b> ${esc(q.ans)}</p></div>${cards(q, v === 10)}${tryIt(q)}<div class="row">${watchBtn(q)}${nextBtn(cur)}</div>`; wire(box, q); });
+      } else stepBtn.textContent = `Next step (${k + 1} of ${q.steps.length})`;
+    };
+  }
+  wire(box, q);
+}
+function wire(box, q) {
+  box.querySelectorAll("[data-t]").forEach(b => b.onclick = () => { pickVideo(iqV(), +b.dataset.t); document.getElementById("learn").scrollIntoView({behavior: "smooth"}); });
+  box.querySelectorAll("[data-next]").forEach(b => b.onclick = () => { cur++; showQ(); document.getElementById("prepare").scrollIntoView({behavior: "smooth"}); });
+  box.querySelectorAll("[data-finish]").forEach(b => b.onclick = finish);
+  box.querySelectorAll("[data-reveal]").forEach(b => b.onclick = () => { b.insertAdjacentHTML("afterend", ""); b.parentElement.insertAdjacentHTML("afterend", working(q)); b.remove(); });
+  box.querySelectorAll("[data-tryshow]").forEach(b => b.onclick = () => { b.closest(".fb").querySelector("[data-tryans]").hidden = false; b.remove(); });
+  box.querySelectorAll("[data-tryok]").forEach(b => b.onclick = () => { const c = st(); c.t = c.t || {};
+    if (!c.t[q.n]) { c.t[q.n] = 1; S.xp += 3; touchDay(); save(); paintStats(); } b.parentElement.innerHTML = `<span class="pts pop">+3 bonus</span>`; });
+  box.querySelectorAll("[data-tryno]").forEach(b => b.onclick = () => { b.parentElement.innerHTML = `<span class="fine">No problem. Try it again after the revision round.</span>`; });
+}
+function finish() {
+  const s = chStats(C.key, Q.length), pct = Math.round(s.got / s.max * 100);
+  document.getElementById("qbox").innerHTML = `<div class="fb ok"><h4>Prepare stage: ${s.done}/${Q.length} questions</h4><p class="pts pop">${s.got} / ${s.max} points · ${level(pct)}</p><p>${s.done < Q.length ? "Some questions are still open. Tap a number above to finish them." : "Chapter quest complete! Your revision rounds are scheduled; we'll bring the tricky ones back first."}</p></div><div class="row"><a class="btn y" href="#build">Go to Build →</a><a class="btn" href="quest.html">All quests</a></div>`;
+  paintNav(); paintBuild();
+}
+let revQ = [];
+function paintBuild() {
+  const c = st(), due = (c.rev || []).filter(r => r.due <= today()), next = (c.rev || []).filter(r => r.due > today()).sort((a, b) => a.due < b.due ? -1 : 1)[0];
+  const box = document.getElementById("rev");
+  if (due.length) {
+    box.innerHTML = `<div class="fb info" style="margin-top:0"><h4>Revision round · ${Math.min(3, due.length)} questions</h4><p>These are about to fade. Two minutes now saves an hour before the exam.</p><div class="row"><button class="btn y" id="rev-go">Start revision</button></div></div>`;
+    document.getElementById("rev-go").onclick = () => { revQ = due.slice(0, 3).map(r => r.n); runRev(0); };
+  } else if (next) box.innerHTML = `<p style="margin:0">✓ Nothing to revise today. Next round: <b>${new Date(next.due).toLocaleDateString("en-IN", {weekday: "short", day: "numeric", month: "short"})}</b>.</p>`;
+  else box.innerHTML = `<p style="margin:0">Finish questions in Prepare and your revision rounds appear here.</p>`;
+  const docs = document.getElementById("docs");
+  docs.innerHTML = (GUIDE[CHX.key] ? `<a class="btn y" href="${D(GUIDE[CHX.key])}" target="_blank" rel="noopener">📘 Complete chapter guide</a>` : "") + (CHX.notes ? `<a class="btn" href="${D(CHX.notes)}" target="_blank" rel="noopener">📄 Revision notes</a>` : "") +
+    (isLive(iqV()) ? `<a class="btn" href="${YT(iqV().id)}" target="_blank" rel="noopener" title="The Solutions Book link is in the video description">📘 Solutions Book (in the video description)</a>` : "") +
+    (CHX.mm ? `<a class="btn" href="${D(CHX.mm)}" target="_blank" rel="noopener">🧠 Mind map</a>` : "");
+}
+function runRev(i) {
+  const box = document.getElementById("rev");
+  if (i >= revQ.length) { box.innerHTML = `<div class="fb ok" style="margin-top:0"><h4>Revision round done</h4><p>Each question now waits longer before it comes back.</p></div>`; setTimeout(paintBuild, 2500); paintStages(); return; }
+  const q = Q.find(x => x.n === revQ[i]);
+  box.innerHTML = `<div class="qtag"><span>Revision ${i + 1} of ${revQ.length}</span><span>${KIND[q.kind] || q.kind}</span></div><p class="qtext">${esc(q.text)}</p>` +
+    (q.opts.length ? `<div class="opts">${q.opts.map((o, k) => `<button class="opt" data-k="${k}"><b>(${"abcd"[k]})</b><span>${esc(o)}</span></button>`).join("")}</div>` : `<div class="row"><button class="btn y" data-show>I've answered. Show the answer</button></div>`) + `<div id="rv-after"></div>`;
+  const done = ok => { const c = st(), r = c.rev.find(x => x.n === q.n);
+    if (ok && r && r.steps.length) { r.due = addDays(today(), r.steps[0] - (r.prev || 0)); r.prev = r.steps[0]; r.steps = r.steps.slice(1); }
+    else if (ok && r) c.rev = c.rev.filter(x => x !== r);
+    else if (r) { r.due = addDays(today(), 3); r.steps = [7, 21]; r.prev = 0; }
+    if (ok) { S.xp += 5; } touchDay(); save(); paintStats();
+    document.getElementById("rv-after").innerHTML = `<div class="fb ${ok ? "ok" : "no"}"><h4>${ok ? "+5 · remembered" : "Comes back in 3 days"}</h4><p><b>Answer:</b> ${esc(q.ans)}</p></div><div class="row"><button class="btn g" id="rv-next">Next →</button></div>`;
+    document.getElementById("rv-next").onclick = () => runRev(i + 1); };
+  box.querySelectorAll(".opt").forEach(b => b.onclick = () => { box.querySelectorAll(".opt").forEach(x => x.disabled = true); const ok = +b.dataset.k === q.ok; b.classList.add(ok ? "right" : "wrong"); done(ok); });
+  const sh = box.querySelector("[data-show]"); if (sh) sh.onclick = () => { sh.parentElement.innerHTML = `<button class="btn" data-y>I had it</button><button class="btn" data-n>I missed it</button>`;
+    box.querySelector("[data-y]").onclick = () => done(true); box.querySelector("[data-n]").onclick = () => done(false); };
+}
+let CHX;
+async function chapter(key) {
+  CHX = CHS.find(c => c.key === key); if (!CHX) { location.href = "quest.html"; return; }
+  C = await (await fetch(`quest/data/${key}.json`)).json(); Q = C.questions;
+  TP = C.topics || []; VS = vidsFor(CHX.s, CHX.n);
+  const ti = id => { const k = TP.findIndex(t => t.id === id); return k < 0 ? 99 : k; };
+  Q = Q.map((q, i) => [q, i]).sort((x, y) => ti(x[0].tp) - ti(y[0].tp) || x[1] - y[1]).map(x => x[0]);   // play in textbook topic order
+  V = VS.find(isLive) || VS[0]; LIVE = isLive(V);
+  document.title = `${C.chapter} · QUAD Quest`;
+  document.getElementById("v-ch").hidden = false;
+  document.getElementById("c-title").innerHTML = `${C.subject} Ch ${C.n} · <span class="t">${esc(C.chapter)}</span>`;
+  document.getElementById("c-sub").textContent = `${Q.length} real board questions · about 20 minutes · progress saved on this device`;
+  document.getElementById("ea-ch").value = key;
+  paintTypes(); setVideo(0);
+  document.getElementById("learn-sub").textContent = VS.length > 1 ? "Pick the video that suits you today: must-do questions, a quick revision or the full chapter. Pause and try each question first." : "Watch the chapter's important questions explained step by step. Pause and try each one first.";
+  document.getElementById("learn-note").textContent = VS.some(isLive) ? "" : "The video isn't public yet. You can still start the questions.";
+  document.getElementById("learn-done").onclick = () => { st().learn = 1; touchDay(); save(); paintStats(); paintStages(); document.getElementById("prepare").scrollIntoView({behavior: "smooth"}); };
+  const a = st().a; cur = Math.max(0, Q.findIndex(q => !a[q.n])); if (cur < 0) cur = 0;
+  paintStages(); showQ(); paintBuild();
+}
+
+/* ---------- early access (Netlify Forms on the live site) ---------- */
+document.getElementById("ea").addEventListener("submit", async e => {
+  e.preventDefault(); const f = e.target, msg = document.getElementById("ea-msg");
+  if (!EMBED || location.hostname === "localhost") { msg.textContent = "Preview only: on quadacademy.org this sends your details to QUAD."; return; }
+  try { const r = await fetch("/", {method: "POST", headers: {"Content-Type": "application/x-www-form-urlencoded"}, body: new URLSearchParams(new FormData(f)).toString()});
+    if (!r.ok) throw 0; f.reset(); msg.textContent = "You're in! We'll message your parent with your first progress note."; }
+  catch (err) { msg.textContent = "Couldn't send just now. Please try again in a minute."; }
+});
+
+paintStats();
+const key = new URLSearchParams(location.search).get("c");
+key ? chapter(key) : hub();
+</script>
+</body>
+</html>
