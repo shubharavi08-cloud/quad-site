@@ -1,6 +1,12 @@
 {
  "posts": [
   {
+   "title": "Heights and Distances: 4 Board Question Types, Solved (CBSE Class 10 Maths Chapter 9)",
+   "url": "https://quadacademy.org/blog/heights-and-distances-board-questions/",
+   "date": "2026-11-07",
+   "description": "CBSE Class 10 Maths Chapter 9 Some Applications of Trigonometry solved: kite string, walking towards a tower, two ships from a lighthouse, building and tower."
+  },
+  {
    "title": "How to Use Previous-Year Questions the Smart Way (Class 10)",
    "url": "https://quadacademy.org/blog/previous-year-questions-smart-way/",
    "date": "2026-11-06",
@@ -29,6 +35,12 @@
      "blogPost": [
       {
        "@type": "BlogPosting",
+       "headline": "Heights and Distances: 4 Board Question Types, Solved (CBSE Class 10 Maths Chapter 9)",
+       "url": "https://quadacademy.org/blog/heights-and-distances-board-questions/",
+       "datePublished": "2026-11-07"
+      },
+      {
+       "@type": "BlogPosting",
        "headline": "How to Use Previous-Year Questions the Smart Way (Class 10)",
        "url": "https://quadacademy.org/blog/previous-year-questions-smart-way/",
        "datePublished": "2026-11-06"
@@ -40,6 +52,47 @@
        "datePublished": "2026-11-06"
       }
      ]
+    }
+   ]
+  },
+  {
+   "path": "blog/heights-and-distances-board-questions/index.html",
+   "priority": 0.6,
+   "jsonld": [
+    {
+     "@type": "BlogPosting",
+     "headline": "Heights and Distances: 4 Board Question Types, Solved (CBSE Class 10 Maths Chapter 9)",
+     "description": "CBSE Class 10 Maths Chapter 9 Some Applications of Trigonometry solved: kite string, walking towards a tower, two ships from a lighthouse, building and tower.",
+     "url": "https://quadacademy.org/blog/heights-and-distances-board-questions/",
+     "mainEntityOfPage": "https://quadacademy.org/blog/heights-and-distances-board-questions/",
+     "datePublished": "2026-11-07",
+     "dateModified": "2026-11-07",
+     "inLanguage": "en-IN",
+     "wordCount": 1032,
+     "author": {
+      "@type": "Organization",
+      "name": "Team QUAD",
+      "@id": "https://quadacademy.org/#org"
+     },
+     "publisher": {
+      "@id": "https://quadacademy.org/#org"
+     },
+     "educationalLevel": "Class 10",
+     "keywords": "Maths, Chapter 9, heights and distances, trigonometry, CBSE board questions",
+     "image": "https://i.ytimg.com/vi/SeTmHlYHsNs/hqdefault.jpg",
+     "isPartOf": {
+      "@type": "Blog",
+      "url": "https://quadacademy.org/blog/"
+     },
+     "video": {
+      "@type": "VideoObject",
+      "name": "Heights and Distances Class 10: 6 must-do questions",
+      "description": "CBSE Class 10 Maths Chapter 9 Some Applications of Trigonometry solved: kite string, walking towards a tower, two ships from a lighthouse, building and tower.",
+      "thumbnailUrl": "https://i.ytimg.com/vi/SeTmHlYHsNs/hqdefault.jpg",
+      "uploadDate": "2026-11-07",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/SeTmHlYHsNs",
+      "contentUrl": "https://www.youtube.com/watch?v=SeTmHlYHsNs"
+     }
     }
    ]
   },

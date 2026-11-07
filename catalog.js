@@ -11,7 +11,7 @@ var IQ = [
  {s:"Maths",c:6,n:"Triangles",id:"IKxXfup-GYI",th:"m6",q:"8 must-do questions + MCQ tricks"},
  {s:"Maths",c:7,n:"Coordinate Geometry",id:"MYfxqBicem0",th:"m7",q:"8 must-do questions + MCQ tricks"},
  {s:"Maths",c:8,n:"Introduction to Trigonometry",id:"c7cVAsI5Huk",th:"m8",q:"8 must-do questions",at:"2026-11-05T17:00:00+05:30"},
- {s:"Maths",c:9,n:"Some Applications of Trigonometry",id:"SeTmHlYHsNs",th:"m9",q:"6 must-do questions",hold:1},
+ {s:"Maths",c:9,n:"Some Applications of Trigonometry",id:"SeTmHlYHsNs",th:"m9",q:"6 must-do questions"},
  {s:"Science",c:1,n:"Chemical Reactions and Equations",id:"NFgXgUhtMDI",th:"s1",q:"10 must-do questions + MCQ tricks"},
  {s:"Science",c:2,n:"Acids, Bases and Salts",id:"Rf4k6uxFFOM",th:"s2",q:"7 must-do questions + MCQ tricks",hold:1},
 ];
