@@ -380,8 +380,8 @@ def masterclass_page():
 WA_CHANNEL = "https://whatsapp.com/channel/0029Vb9DNhtADTOEAMwyH723"
 NOTES_FOLDER = "https://drive.google.com/drive/folders/1sH6j0V007OiKelAPtwDDKZ8uiFEL01KP"
 MOCKS_FOLDER = "https://drive.google.com/drive/folders/1zxDgrAMtbNd7ea0uz4YqgChRjUkxx2yK"
-# Complete chapter guides stay off /free/ until their Drive PDFs are shared "anyone with the link" (7 Nov: still private).
-GUIDES_PUBLIC = False
+# Complete chapter guides: all 27 Drive PDFs shared "anyone with the link" on 7 Nov 2026 (Shubha: "share QUAD guides").
+GUIDES_PUBLIC = True
 
 
 def read_catalog(root):
@@ -447,7 +447,7 @@ def free_page(root):
   <div>
     <div class="kicker"><span class="pill y">100% free</span><span class="pill">CBSE Class 10 · Boards 2027</span></div>
     <h1>Free <span class="hl">revision</span> <span class="t">PDFs</span></h1>
-    <p class="lede">Crisp revision notes, mind maps, solutions books and board-pattern mock tests for CBSE Class 10 Maths and Science. No sign-up, no payment. Open a PDF in Google Drive and tap the download arrow to keep it.</p>
+    <p class="lede">Complete chapter guides, crisp revision notes, mind maps, solutions books and board-pattern mock tests for CBSE Class 10 Maths and Science. No sign-up, no payment. Open a PDF in Google Drive and tap the download arrow to keep it.</p>
     <div class="cta"><a class="btn y" href="#maths">Maths PDFs</a><a class="btn y" href="#science">Science PDFs</a><a class="btn g" href="{WA_CHANNEL}">Join our WhatsApp Channel</a></div>
   </div>
   <div class="board tilt" aria-label="What is free here">
@@ -480,7 +480,7 @@ def free_page(root):
   <div class="cta" style="margin-top:0"><a class="btn y" href="/masterclass/">₹49 Masterclass</a><a class="btn o" href="/board-boost/">Board Boost · live batches</a></div>
 </section>"""
     return page("Free CBSE Class 10 Maths & Science Revision PDFs · Notes, Mind Maps, Mock Tests · QUAD Academy",
-                "Free CBSE Class 10 Maths and Science PDFs for Boards 2027: revision notes, mind maps, "
+                "Free CBSE Class 10 Maths and Science PDFs for Boards 2027: complete chapter guides, revision notes, mind maps, "
                 "solutions books and board-pattern mock tests with answer keys. No sign-up.",
                 body, active="/free/", og_url=BASE + "free/", og_image=BASE + "quad_logo.jpg", extra_head=style)
 
