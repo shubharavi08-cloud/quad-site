@@ -376,6 +376,115 @@ def masterclass_page():
                 body, active="/masterclass/", og_url=BASE + "masterclass/", og_image=BASE + "quad_logo.jpg", script=script)
 
 
+# ------------------------------------------------------------------ free PDFs page (/free/)
+WA_CHANNEL = "https://whatsapp.com/channel/0029Vb9DNhtADTOEAMwyH723"
+NOTES_FOLDER = "https://drive.google.com/drive/folders/1sH6j0V007OiKelAPtwDDKZ8uiFEL01KP"
+MOCKS_FOLDER = "https://drive.google.com/drive/folders/1zxDgrAMtbNd7ea0uz4YqgChRjUkxx2yK"
+# Complete chapter guides stay off /free/ until their Drive PDFs are shared "anyone with the link" (7 Nov: still private).
+GUIDES_PUBLIC = False
+
+
+def read_catalog(root):
+    """Chapter list, guides and videos from catalog.js (the single source the home page uses)."""
+    js = (root / "catalog.js").read_text(encoding="utf-8")
+    guide = dict(re.findall(r'([ms]\d+):"([\w-]+)"', re.search(r"var GUIDE = \{(.*?)\};", js, re.S).group(1)))
+    ch_src = re.search(r"var CH = \{(.*?)\n\};", js, re.S).group(1)
+    ch = {}
+    for subj in ("Maths", "Science"):
+        block = re.search(subj + r":\[(.*?)\]\](?:,|\s*$)", ch_src, re.S).group(1) + "]"
+        rows = []
+        for row in re.findall(r"\[([^\[\]]*)\]", block):
+            vals = [v.strip() for v in row.split(",")]
+            vals = [None if v == "null" else v.strip('"') for v in vals]
+            vals += [None] * (4 - len(vals))
+            rows.append(vals[:4])
+        ch[subj] = rows
+    iq = {}
+    for m in re.finditer(r'\{s:"(\w+)",c:(\d+),n:"[^"]*",id:"([\w-]+)"[^}]*\}', js):
+        obj = m.group(0)
+        at = re.search(r'at:"([^"]+)"', obj)
+        iq[(m.group(1), int(m.group(2)))] = {"id": m.group(3), "hold": "hold:1" in obj, "at": at.group(1) if at else ""}
+    return ch, guide, iq
+
+
+def free_page(root):
+    ch, guide, iq = read_catalog(root)
+    now = dt.datetime.now(dt.timezone(dt.timedelta(hours=5, minutes=30)))
+    D = lambda i: f"https://drive.google.com/file/d/{i}/view"
+    counts = {"guide": 0, "notes": 0, "mm": 0, "sol": 0}
+    lists = ""
+    for subj in ("Maths", "Science"):
+        rows = ""
+        for i, (name, notes, _ab, mm) in enumerate(ch[subj], 1):
+            key = ("m" if subj == "Maths" else "s") + str(i)
+            links = ""
+            if GUIDES_PUBLIC and guide.get(key):
+                links += f'<a class="lk g" href="{D(guide[key])}">📘 Complete guide</a>'; counts["guide"] += 1
+            if notes:
+                links += f'<a class="lk n" href="{D(notes)}">Revision notes</a>'; counts["notes"] += 1
+            if mm:
+                links += f'<a class="lk mm" href="{D(mm)}">Mind map</a>'; counts["mm"] += 1
+            v = iq.get((subj, i))
+            live = v and not v["hold"] and (not v["at"] or dt.datetime.fromisoformat(v["at"]) <= now)
+            if live:
+                links += (f'<a class="lk a" href="https://www.youtube.com/watch?v={v["id"]}" '
+                          f'title="The solutions book link is in the video description">Solutions book · in video description</a>')
+                counts["sol"] += 1
+            rows += (f'<div class="ch"><span class="no">{i}</span><div><div class="nm">{html.escape(name)}</div>'
+                     f'<div class="links">{links}</div></div></div>\n')
+        lists += f'<section id="{subj.lower()}"><h2>{subj} · <span class="t">chapter by chapter</span></h2>\n<div class="chs">{rows}</div></section>\n'
+    style = """<style>
+.chs{display:grid;gap:10px}.ch{display:grid;grid-template-columns:44px 1fr;gap:12px;align-items:start;background:var(--card);border:2px solid var(--line);border-radius:14px;padding:12px 14px}
+.ch .no{font:900 1.1rem/44px var(--display);text-align:center;background:var(--yellow);color:var(--deep);border-radius:10px;height:44px}
+.ch .nm{font:800 1.05rem/1.3 var(--display);margin-bottom:6px}.links{display:flex;flex-wrap:wrap;gap:6px}
+.lk{display:inline-block;font:700 .8rem/1 var(--display);padding:.5rem .65rem;border-radius:9px;text-decoration:none;border:2px solid var(--line);color:var(--ink);background:#fff}
+.lk.g{background:var(--osh);color:#fff;border-color:var(--osh)}.lk.n{border-color:var(--teal)}.lk.mm{border-color:var(--coral)}.lk.a{border-color:var(--yellow)}
+.lk:hover{background:var(--yellow);color:var(--deep)}
+.wa{background:#e8f7ee;border:3px solid #1f9d55;border-radius:18px;padding:20px;display:grid;gap:10px;margin-top:26px}.wa h2{margin:0}.wa p{margin:0;max-width:62ch}
+.btn.g{background:#1f9d55;color:#fff;border-color:#14703c}
+</style>"""
+    body = f"""<div class="hero">
+  <div>
+    <div class="kicker"><span class="pill y">100% free</span><span class="pill">CBSE Class 10 · Boards 2027</span></div>
+    <h1>Free <span class="hl">revision</span> <span class="t">PDFs</span></h1>
+    <p class="lede">Crisp revision notes, mind maps, solutions books and board-pattern mock tests for CBSE Class 10 Maths and Science. No sign-up, no payment. Open a PDF in Google Drive and tap the download arrow to keep it.</p>
+    <div class="cta"><a class="btn y" href="#maths">Maths PDFs</a><a class="btn y" href="#science">Science PDFs</a><a class="btn g" href="{WA_CHANNEL}">Join our WhatsApp Channel</a></div>
+  </div>
+  <div class="board tilt" aria-label="What is free here">
+    <h3>Free on this page</h3>
+    {f'<div class="row"><span>Complete chapter guides</span><span class="y">{counts["guide"]}</span></div>' if counts['guide'] else ''}
+    <div class="row"><span>Revision notes</span><span class="y">{counts['notes']}</span></div>
+    <div class="row"><span>Mind maps</span><span class="y">{counts['mm']}</span></div>
+    <div class="row"><span>Solutions books (via video)</span><span class="y">{counts['sol']}</span></div>
+    <div class="row"><span>Mock tests with answer keys</span><span class="y">folder</span></div>
+  </div>
+</div>
+
+<section id="mocks">
+  <h2>Mock tests &amp; <span class="t">full libraries</span></h2>
+  <p class="sub">Board-pattern papers with answer keys: sit them in 3 hours, then mark yourself. Or open a whole library at once.</p>
+  <div class="cta" style="margin-top:0"><a class="btn o" href="{MOCKS_FOLDER}">Mock tests (with answer keys)</a><a class="btn y" href="{NOTES_FOLDER}">All revision notes</a></div>
+  <p class="small">Each solutions book is linked in its chapter video's description: watch, try every question yourself, then check your working.</p>
+</section>
+
+{lists}
+<div class="wa">
+  <h2>Join our WhatsApp Channel for daily updates</h2>
+  <p>One board-exam trick a day, new chapter PDFs and videos the moment they are out. Free, and you can leave any time.</p>
+  <div class="cta" style="margin-top:4px"><a class="btn g" href="{WA_CHANNEL}">Join the QUAD WhatsApp Channel</a></div>
+</div>
+
+<section>
+  <h2>Want a <span class="t">real teacher</span> too?</h2>
+  <p class="sub">See the most-asked board questions solved live in our two-hour ₹49 Masterclass, or join the six-week Board Boost live batch from Mon 7 Dec 2026.</p>
+  <div class="cta" style="margin-top:0"><a class="btn y" href="/masterclass/">₹49 Masterclass</a><a class="btn o" href="/board-boost/">Board Boost · live batches</a></div>
+</section>"""
+    return page("Free CBSE Class 10 Maths & Science Revision PDFs · Notes, Mind Maps, Mock Tests · QUAD Academy",
+                "Free CBSE Class 10 Maths and Science PDFs for Boards 2027: revision notes, mind maps, "
+                "solutions books and board-pattern mock tests with answer keys. No sign-up.",
+                body, active="/free/", og_url=BASE + "free/", og_image=BASE + "quad_logo.jpg", extra_head=style)
+
+
 # ------------------------------------------------------------------ main
 def main():
     root = pathlib.Path(sys.argv[1] if len(sys.argv) > 1 else pathlib.Path(__file__).resolve().parent.parent)
@@ -403,7 +512,9 @@ def main():
     (blog / "posts.json").write_text(json.dumps(manifest(posts), ensure_ascii=False, indent=1), encoding="utf-8")
     (root / "masterclass").mkdir(exist_ok=True)
     (root / "masterclass/index.html").write_text(masterclass_page(), encoding="utf-8")
-    print(f"built {len(posts)} posts, blog index, feed, posts.json, masterclass page")
+    (root / "free").mkdir(exist_ok=True)
+    (root / "free/index.html").write_text(free_page(root), encoding="utf-8")
+    print(f"built {len(posts)} posts, blog index, feed, posts.json, masterclass page, free PDFs page")
 
 
 if __name__ == "__main__":
