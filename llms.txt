@@ -36,6 +36,7 @@
 - [OurSchoolHouse](https://ourschoolhouse.in/): sister concern for homeschooling and NIOS, Classes 1–12
 
 ## Blog posts (newest first)
+- [Introduction to Trigonometry: 5 Board Question Types, Solved (CBSE Class 10 Maths Chapter 8)](https://quadacademy.org/blog/introduction-to-trigonometry-board-questions/) (2026-11-08): CBSE Class 10 Maths Chapter 8 solved: one ratio to all six, standard-angle values, finding A and B, and identity proofs, with marking tips and common traps.
 - [Heights and Distances: 4 Board Question Types, Solved (CBSE Class 10 Maths Chapter 9)](https://quadacademy.org/blog/heights-and-distances-board-questions/) (2026-11-07): CBSE Class 10 Maths Chapter 9 Some Applications of Trigonometry solved: kite string, walking towards a tower, two ships from a lighthouse, building and tower.
 - [How to Use Previous-Year Questions the Smart Way (Class 10)](https://quadacademy.org/blog/previous-year-questions-smart-way/) (2026-11-06): A seven-step method for using CBSE Class 10 previous-year questions properly: sort by type, pause and try, mark mistakes in three colours, keep an error list and practise under time.
 - [Chemical Reactions and Equations: 3 Board Question Types, Solved (CBSE Class 10 Science)](https://quadacademy.org/blog/chemical-reactions-equations-board-questions/) (2026-11-06): CBSE Class 10 Science Chapter 1 board questions solved step by step: heating lead nitrate, the barium chloride precipitation reaction, and the oxidising-agent trap, with marking tips.
