@@ -88,7 +88,12 @@ def md(text):
             if not lst: lst = (tag, [])
             lst[1].append(m.group(3)); continue
         if line.lstrip().startswith("<"):
-            flush(); out.append(line.strip()); continue
+            h = line.strip()
+            if h.startswith("<table"):
+                h = '<div style="overflow-x:auto;max-width:100%">' + h + ('</div>' if h.endswith('</table>') else '')
+            elif h == "</table>":
+                h = "</table></div>"
+            flush(); out.append(h); continue
         if lst and raw.startswith("  "):
             lst[1][-1] += " " + line.strip(); continue
         if lst or quote: flush()
@@ -139,8 +144,8 @@ SIDE = f"""<aside class="side">
     <a class="btn" href="/board-boost/">Batches &amp; fees</a>
   </div>
   <div class="sbox">
-    <h3>Free every day</h3>
-    <p>New revision videos on the QUAD YouTube channel, and updates on our WhatsApp channel.</p>
+    <h3>Join our WhatsApp Channel for daily updates</h3>
+    <p>One board-exam trick a day, new revision videos and free PDFs: <a href="https://whatsapp.com/channel/0029Vb9DNhtADTOEAMwyH723" target="_blank" rel="noopener">follow QUAD Academy on WhatsApp</a></p>
     <a class="btn" href="https://www.youtube.com/@QuadAcademyOSH?sub_confirmation=1" target="_blank" rel="noopener">Subscribe</a>
     <a class="btn" href="https://whatsapp.com/channel/0029Vb9DNhtADTOEAMwyH723" target="_blank" rel="noopener">WhatsApp channel</a>
   </div>
@@ -394,8 +399,8 @@ def read_catalog(root):
         block = re.search(subj + r":\[(.*?)\]\](?:,|\s*$)", ch_src, re.S).group(1) + "]"
         rows = []
         for row in re.findall(r"\[([^\[\]]*)\]", block):
-            vals = [v.strip() for v in row.split(",")]
-            vals = [None if v == "null" else v.strip('"') for v in vals]
+            vals = re.findall(r'"([^"]*)"|(null)', row)
+            vals = [None if n else v for v, n in vals]
             vals += [None] * (4 - len(vals))
             rows.append(vals[:4])
         ch[subj] = rows
