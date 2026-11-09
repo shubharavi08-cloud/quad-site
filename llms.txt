@@ -36,6 +36,7 @@
 - [OurSchoolHouse](https://ourschoolhouse.in/): sister concern for homeschooling and NIOS, Classes 1–12
 
 ## Blog posts (newest first)
+- [Coordinate Geometry: 6 Board Question Types, Solved (CBSE Class 10 Maths Chapter 7)](https://quadacademy.org/blog/coordinate-geometry-board-questions/) (2026-11-09): CBSE Class 10 Maths Chapter 7 solved: distance formula, equidistant points, proving a square, section formula, ratio from an axis and the parallelogram trick, with marking tips.
 - [Introduction to Trigonometry: 5 Board Question Types, Solved (CBSE Class 10 Maths Chapter 8)](https://quadacademy.org/blog/introduction-to-trigonometry-board-questions/) (2026-11-08): CBSE Class 10 Maths Chapter 8 solved: one ratio to all six, standard-angle values, finding A and B, and identity proofs, with marking tips and common traps.
 - [Heights and Distances: 4 Board Question Types, Solved (CBSE Class 10 Maths Chapter 9)](https://quadacademy.org/blog/heights-and-distances-board-questions/) (2026-11-07): CBSE Class 10 Maths Chapter 9 Some Applications of Trigonometry solved: kite string, walking towards a tower, two ships from a lighthouse, building and tower.
 - [How to Use Previous-Year Questions the Smart Way (Class 10)](https://quadacademy.org/blog/previous-year-questions-smart-way/) (2026-11-06): A seven-step method for using CBSE Class 10 previous-year questions properly: sort by type, pause and try, mark mistakes in three colours, keep an error list and practise under time.

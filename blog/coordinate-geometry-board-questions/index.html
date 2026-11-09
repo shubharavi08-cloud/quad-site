@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Coordinate Geometry: 6 Board Question Types, Solved (CBSE Class 10 Maths Chapter 7) · QUAD Academy Blog</title>
+<meta name="description" content="CBSE Class 10 Maths Chapter 7 solved: distance formula, equidistant points, proving a square, section formula, ratio from an axis and the parallelogram trick, with marking tips.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Coordinate Geometry: 6 Board Question Types, Solved (CBSE Class 10 Maths Chapter 7) · QUAD Academy Blog">
+<meta property="og:description" content="CBSE Class 10 Maths Chapter 7 solved: distance formula, equidistant points, proving a square, section formula, ratio from an axis and the parallelogram trick, with marking tips.">
+<meta property="og:url" content="https://quadacademy.org/blog/coordinate-geometry-board-questions/">
+<meta property="og:image" content="https://i.ytimg.com/vi/MYfxqBicem0/hqdefault.jpg">
+<link rel="icon" href="/quad_logo.jpg">
+<link rel="alternate" type="application/rss+xml" title="QUAD Academy Blog" href="/blog/feed.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700;800;900&family=Gochi+Hand&display=swap">
+<style>
+:root{--wall:#f7f2e7;--wall-2:#efe7d6;--stripe:rgba(80,60,20,.025);--ink:#0f3b40;--ink-2:#4d6466;--deep:#0f2a2d;--osh:#0f5258;--gold:#9a6f00;
+--yellow:#ffd21f;--teal:#139fb3;--coral:#ff6b4f;--board:#14231d;--wood:#8a5a2e;--chalk:#f4efe2;--chalk-y:#ffcf5a;--card:#fff;--line:#e3d9c4;--mute:#8a8270;
+--display:"Rubik","Arial Black",system-ui,sans-serif;--body:"Rubik","Segoe UI",system-ui,sans-serif;--chalkf:"Gochi Hand","Comic Sans MS",cursive;color-scheme:light}
+*{box-sizing:border-box}[hidden]{display:none!important}html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;color:var(--ink);font:400 1.02rem/1.6 var(--body);background:repeating-linear-gradient(0deg,var(--stripe) 0 2px,transparent 2px 6px),linear-gradient(180deg,var(--wall),var(--wall-2));background-color:var(--wall)}
+img{max-width:100%}
+.wrap{max-width:1120px;margin:0 auto;padding-inline:max(16px,env(safe-area-inset-left,0px)) max(16px,env(safe-area-inset-right,0px))}
+a{color:var(--osh)}:focus-visible{outline:3px solid var(--teal);outline-offset:3px}
+.bar{position:sticky;top:0;z-index:5;background:rgba(247,242,231,.94);backdrop-filter:blur(6px);border-bottom:2px solid var(--line)}
+.bar .wrap{display:flex;align-items:center;gap:14px;padding-block:10px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink)}
+.brand img{width:46px;height:46px;border-radius:10px;border:1px solid var(--line);background:#fff}
+.brand b{font:900 1.15rem/1 var(--display)}.brand small{display:block;font:500 .72rem/1.3 var(--body);color:var(--ink-2)}
+nav{display:flex;flex-wrap:wrap;gap:4px;margin-left:auto}
+nav a{font:700 .85rem/1 var(--display);text-transform:uppercase;letter-spacing:.04em;text-decoration:none;color:var(--ink);padding:.6rem .7rem;border-radius:10px}
+nav a:hover{background:var(--yellow)}nav a.qlink{background:var(--yellow);color:var(--deep)}
+nav a.boostlink{background:var(--osh);color:#fff}nav a.boostlink:hover{background:var(--deep)}
+@media (max-width:680px){nav{flex-wrap:nowrap;overflow-x:auto;width:100%;margin-left:0;scrollbar-width:none;padding-bottom:2px}nav a{white-space:nowrap}}
+nav a[aria-current="page"]{background:var(--yellow);color:var(--deep);box-shadow:inset 0 -3px 0 var(--osh)}
+.pill{display:inline-block;font:800 .82rem/1 var(--display);letter-spacing:.03em;text-transform:uppercase;padding:.55rem .85rem;border-radius:10px;background:var(--osh);color:#fff;text-decoration:none}
+.pill.y{background:var(--yellow);color:var(--deep)}.pill.t{background:var(--teal)}.pill.c{background:var(--coral)}
+.kicker{display:flex;flex-wrap:wrap;gap:8px}
+h1{font:900 clamp(2.1rem,6vw,3.8rem)/1.02 var(--display);text-transform:uppercase;margin:14px 0 0;letter-spacing:-.01em;text-wrap:balance}
+h1 .hl{display:inline-block;background:var(--yellow);color:var(--deep);padding:.02em .18em .06em;border-radius:12px;margin-block:.06em}
+h1 .t{color:var(--teal)}
+.lede{max-width:60ch;color:var(--ink-2);font-size:1.08rem;margin:16px 0 0}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+.btn{display:inline-flex;align-items:center;gap:8px;font:800 .95rem/1 var(--display);text-transform:uppercase;letter-spacing:.02em;padding:.95rem 1.2rem;border-radius:14px;text-decoration:none;border:3px solid var(--osh);box-shadow:0 5px 0 var(--osh);transition:transform .12s,box-shadow .12s;color:var(--deep);background:#fff}
+.btn.y{background:var(--yellow)}.btn.o{background:var(--osh);color:#fff;box-shadow:0 5px 0 var(--deep);border-color:var(--deep)}
+.btn:hover{transform:translateY(2px);box-shadow:0 3px 0 var(--osh)}
+@media (prefers-reduced-motion:reduce){.btn{transition:none}.btn:hover{transform:none}}
+.board{background:var(--board);border:12px solid var(--wood);border-radius:6px;padding:20px 22px;color:var(--chalk);font-family:var(--chalkf);box-shadow:0 0 0 2px #5e3b1b inset,0 3px 0 #6b4320,0 16px 26px rgba(60,40,10,.28);min-width:0}
+.board.tilt{transform:rotate(-1.2deg)}@media (prefers-reduced-motion:reduce){.board.tilt{transform:none}}
+.board h3{font:400 1.6rem/1.2 var(--chalkf);margin:0 0 6px;color:var(--chalk-y)}
+.board .row{display:flex;justify-content:space-between;gap:14px;font-size:1.3rem;line-height:1.5;border-bottom:1px dashed rgba(244,239,226,.18);padding-block:4px}
+.board .row:last-child{border-bottom:0}.board .y{color:var(--chalk-y);font-variant-numeric:tabular-nums;text-align:right}
+section{padding-block:44px;border-top:2px solid var(--line);scroll-margin-top:80px}
+h2{font:900 clamp(1.5rem,3.6vw,2.2rem)/1.08 var(--display);text-transform:uppercase;margin:0 0 8px;text-wrap:balance}
+h2 .t{color:var(--teal)}.sub{color:var(--ink-2);margin:0 0 22px;max-width:64ch}
+.hero{display:grid;grid-template-columns:1.2fr .8fr;gap:30px;align-items:center;padding-block:34px 44px}
+@media (max-width:860px){.hero{grid-template-columns:1fr}}
+.batches{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));gap:18px}
+.batch{border-radius:18px;padding:22px;background:var(--card);border:3px solid var(--line);display:grid;gap:12px;align-content:start;min-width:0}
+.batch.m{border-color:var(--yellow)}.batch.s{border-color:var(--teal)}
+.batch h3{font:900 1.5rem/1.1 var(--display);text-transform:uppercase;margin:0}.batch.m h3{color:var(--gold)}.batch.s h3{color:#0d7383}
+.batch p{margin:0}.batch dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:8px 14px}
+.batch dt{font:700 .74rem/1.9 var(--display);text-transform:uppercase;letter-spacing:.08em;color:var(--ink-2)}.batch dd{margin:0;font-weight:500}
+.gets{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:14px}
+.item{background:var(--card);border:2px solid var(--line);border-radius:16px;padding:18px;min-width:0}
+.item .n{display:inline-block;font:900 1.4rem/1 var(--display);color:var(--deep);background:var(--yellow);padding:.35rem .6rem;border-radius:10px;margin-bottom:10px;font-variant-numeric:tabular-nums}
+.item:nth-child(3n+2) .n{background:var(--teal);color:#fff}.item:nth-child(3n) .n{background:var(--coral);color:#fff}
+.item h4{font:800 1.05rem/1.25 var(--display);margin:0 0 4px}.item p{margin:0;color:var(--ink-2);font-size:.95rem}
+details{background:var(--card);border:2px solid var(--line);border-radius:14px;padding:14px 18px}details+details{margin-top:10px}
+summary{font-weight:700;cursor:pointer}details p{margin:8px 0 2px;color:var(--ink-2)}
+.contact{background:var(--yellow);color:var(--deep);border-radius:22px;padding:26px;display:grid;gap:12px;border:4px solid var(--osh);box-shadow:0 8px 0 var(--osh)}
+.contact p{margin:0;max-width:62ch}.contact h2{margin:0}
+.small{font-size:.93rem;color:var(--ink-2);margin-top:16px;max-width:68ch}
+footer{background:var(--osh);color:#e6f3f3;margin-top:44px;border-top:6px solid var(--teal)}
+footer .wrap{padding-block:28px 40px;display:grid;gap:16px}
+.family{display:grid;grid-template-columns:1fr auto 1fr;gap:20px;align-items:start;padding-bottom:18px;border-bottom:1px solid rgba(255,255,255,.18)}
+.ent{display:grid;gap:6px;justify-items:start;min-width:0;max-width:360px}.ent.r{justify-self:end;justify-items:end;text-align:right}
+.ent b{font:800 1.08rem/1.2 var(--display);color:#fff;margin-top:6px}
+.ent .tl{font:700 .76rem/1.35 var(--display);text-transform:uppercase;letter-spacing:.08em;color:var(--yellow)}.ent p{margin:0;font-size:.9rem}
+.mark{background:#fff;border-radius:14px;padding:8px;display:inline-flex;height:104px;align-items:center}.mark img{display:block;height:88px;width:auto;border-radius:8px}
+.amp{font:900 2.1rem/1 var(--display);color:var(--yellow);align-self:center}
+@media (max-width:680px){.family{grid-template-columns:1fr}.ent.r{justify-self:start;justify-items:start;text-align:left}}
+footer p.fine{margin:0;font-size:.86rem;opacity:.9}footer a{color:#fff}
+/* blog */
+.crumbs{font:600 .85rem/1.4 var(--display);color:var(--ink-2);padding-top:22px}.crumbs a{color:var(--ink-2)}
+.posthead{padding-block:6px 26px;max-width:860px}
+.postmeta{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;margin-top:16px;color:var(--ink-2);font:500 .92rem/1.3 var(--body)}
+.postgrid{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:40px;align-items:start;padding-bottom:20px}
+.postgrid>div{min-width:0}
+@media (max-width:920px){.postgrid{grid-template-columns:1fr}}
+article.post{background:var(--card);border:2px solid var(--line);border-radius:20px;padding:clamp(18px,4vw,40px);min-width:0;font-size:1.07rem;line-height:1.72}
+article.post h2{font-size:clamp(1.3rem,3vw,1.7rem);margin:1.8em 0 .5em;color:var(--deep)}
+article.post h2:first-child{margin-top:0}
+article.post h3{font:800 1.15rem/1.3 var(--display);margin:1.4em 0 .4em;color:var(--osh)}
+article.post p,article.post ul,article.post ol{margin:0 0 1em}article.post li{margin-bottom:.35em}
+article.post blockquote{margin:0 0 1.2em;padding:14px 18px;border-left:6px solid var(--yellow);background:#fffbea;border-radius:0 12px 12px 0}
+article.post blockquote p{margin:0}
+article.post .eq{font:500 1.12rem/1.6 ui-monospace,"SF Mono",Menlo,Consolas,monospace;background:var(--board);color:var(--chalk);border-radius:12px;padding:14px 18px;overflow-x:auto;white-space:nowrap;border:6px solid var(--wood)}
+article.post .eq .ar{color:var(--chalk-y)}
+article.post strong{color:var(--deep)}
+.vframe{aspect-ratio:16/9;border-radius:16px;overflow:hidden;background:var(--board);border:3px solid var(--osh);margin:6px 0 8px}
+.vframe iframe{width:100%;height:100%;border:0;display:block}
+.vcap{font:600 .9rem/1.35 var(--display);color:var(--ink-2);margin:0 0 26px}
+aside.side{display:grid;gap:18px;position:sticky;top:90px}@media (max-width:920px){aside.side{position:static}}
+.sbox{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:18px;display:grid;gap:10px}
+.sbox.y{background:var(--yellow);border-color:var(--osh);box-shadow:0 6px 0 var(--osh)}
+.sbox h3{font:900 1.05rem/1.2 var(--display);text-transform:uppercase;margin:0}.sbox p{margin:0;font-size:.95rem}
+.sbox .btn{justify-self:start;font-size:.85rem;padding:.75rem 1rem}
+.postlist{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,320px),1fr));gap:18px}
+.pcard{display:grid;gap:10px;align-content:start;text-decoration:none;color:var(--ink);background:var(--card);border:2px solid var(--line);border-radius:18px;padding:12px 12px 18px;transition:border-color .12s,transform .12s}
+.pcard:hover{border-color:var(--osh);transform:translateY(-2px)}@media (prefers-reduced-motion:reduce){.pcard{transition:none}.pcard:hover{transform:none}}
+.pcard .th{aspect-ratio:16/9;border-radius:12px;overflow:hidden;background:var(--board);position:relative}
+.pcard .th img{width:100%;height:100%;object-fit:cover;display:block}
+.pcard .th .pill{position:absolute;left:8px;top:8px;font-size:.7rem;padding:.4rem .55rem}
+.pcard b{font:800 1.12rem/1.28 var(--display);padding-inline:6px}
+.pcard p{margin:0;padding-inline:6px;color:var(--ink-2);font-size:.95rem}
+.pcard small{padding-inline:6px;color:var(--mute);font:600 .82rem/1 var(--display);text-transform:uppercase;letter-spacing:.05em}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+.chips button{font:800 .82rem/1 var(--display);text-transform:uppercase;letter-spacing:.04em;padding:.62rem .9rem;border-radius:10px;border:2px solid var(--osh);background:#fff;color:var(--deep);cursor:pointer}
+.chips button[aria-pressed="true"]{background:var(--osh);color:#fff}
+/* masterclass */
+.status{font:800 .78rem/1 var(--display);text-transform:uppercase;letter-spacing:.05em;padding:.45rem .65rem;border-radius:8px;justify-self:start;background:var(--wall-2);color:var(--deep)}
+.status.soon{background:var(--coral);color:#fff}.status.done{background:var(--line);color:var(--ink-2)}
+.steps{counter-reset:s;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:14px;padding:0;margin:0;list-style:none}
+.steps li{counter-increment:s;background:var(--card);border:2px solid var(--line);border-radius:16px;padding:18px 18px 18px 64px;position:relative}
+.steps li::before{content:counter(s);position:absolute;left:16px;top:16px;width:34px;height:34px;border-radius:10px;background:var(--yellow);color:var(--deep);font:900 1.1rem/34px var(--display);text-align:center}
+.steps b{display:block;font:800 1.02rem/1.25 var(--display)}.steps span{color:var(--ink-2);font-size:.95rem}
+</style>
+<!-- geo:start (generated by geo_build.py; edit geo_sites.py, not here) -->
+<link rel="canonical" href="https://quadacademy.org/blog/coordinate-geometry-board-questions/">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Coordinate Geometry: 6 Board Question Types, Solved (CBSE Class 10 Maths Chapter 7)","description":"CBSE Class 10 Maths Chapter 7 solved: distance formula, equidistant points, proving a square, section formula, ratio from an axis and the parallelogram trick, with marking tips.","url":"https://quadacademy.org/blog/coordinate-geometry-board-questions/","mainEntityOfPage":"https://quadacademy.org/blog/coordinate-geometry-board-questions/","datePublished":"2026-11-09","dateModified":"2026-11-09","inLanguage":"en-IN","wordCount":1067,"author":{"@type":"Organization","name":"Team QUAD","@id":"https://quadacademy.org/#org"},"publisher":{"@id":"https://quadacademy.org/#org"},"educationalLevel":"Class 10","keywords":"Maths, Chapter 7, coordinate geometry, distance formula, section formula, CBSE board questions","image":"https://i.ytimg.com/vi/MYfxqBicem0/hqdefault.jpg","isPartOf":{"@type":"Blog","url":"https://quadacademy.org/blog/"},"video":{"@type":"VideoObject","name":"Coordinate Geometry Class 10: 8 must-do questions + MCQ tricks","description":"CBSE Class 10 Maths Chapter 7 solved: distance formula, equidistant points, proving a square, section formula, ratio from an axis and the parallelogram trick, with marking tips.","thumbnailUrl":"https://i.ytimg.com/vi/MYfxqBicem0/hqdefault.jpg","uploadDate":"2026-11-09","embedUrl":"https://www.youtube-nocookie.com/embed/MYfxqBicem0","contentUrl":"https://www.youtube.com/watch?v=MYfxqBicem0"}}</script>
+<!-- geo:end -->
+</head>
+<body>
+<header class="bar">
+  <div class="wrap">
+    <a class="brand" href="/"><img src="/quad_logo.jpg" alt="QUAD Academy logo"><span><b>QUAD Academy</b><small>Your Student Navigator · by OSH</small></span></a>
+    <nav aria-label="Site"><a href="/quest.html" class="qlink">Quest</a><a href="/#videos">Videos</a><a href="/#chapters">Chapters</a><a href="/free/">Free PDFs</a><a href="/blog/" aria-current="page">Blog</a><a href="/masterclass/">₹49 Masterclass</a><a href="/board-boost/" class="boostlink">Board Boost · live batches</a></nav>
+  </div>
+</header>
+<main class="wrap">
+<p class="crumbs"><a href="/">QUAD Academy</a> › <a href="/blog/">Blog</a></p>
+<header class="posthead">
+  <div class="kicker"><span class="pill y">Maths</span><span class="pill t">Chapter 7</span><span class="pill">CBSE Class 10</span></div>
+  <h1 style="font-size:clamp(1.8rem,4.6vw,3rem);line-height:1.08">Coordinate Geometry: 6 Board Question Types, Solved (CBSE Class 10 Maths Chapter 7)</h1>
+  <div class="postmeta"><span>By Team QUAD</span><time datetime="2026-11-09">9 Nov 2026</time><span>5 min read</span></div>
+</header>
+<div class="postgrid">
+  <div>
+    <div class="vframe"><iframe src="https://www.youtube-nocookie.com/embed/MYfxqBicem0" loading="lazy" title="Coordinate Geometry Class 10: 8 must-do questions + MCQ tricks" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div><p class="vcap">▶ Coordinate Geometry Class 10: 8 must-do questions + MCQ tricks · <a href="https://www.youtube.com/watch?v=MYfxqBicem0" target="_blank" rel="noopener">open on YouTube</a></p>
+    <article class="post">
+<p>Chapter 7 of CBSE Class 10 Maths, <em>Coordinate Geometry</em>, is short and very scoring. In the rationalised NCERT book it has only two tools: the <strong>distance formula</strong> and the <strong>section formula</strong> (with the midpoint as a special case). Almost every board question is one of six patterns built from those two. Marks are lost on <strong>sign errors with negative coordinates</strong>, on <strong>mixing up the ratio m : n</strong>, and on <strong>not writing the formula before substituting</strong>.</p>
+<p>Read each question, <strong>pause and try it yourself</strong>, then check the model answer.</p>
+<p>Join our WhatsApp Channel for daily updates: <a href="https://whatsapp.com/channel/0029Vb9DNhtADTOEAMwyH723" target="_blank" rel="noopener">QUAD on WhatsApp</a></p>
+<h2>The two formulas you must know</h2>
+<ul><li><strong>Distance</strong> between P(x₁, y₁) and Q(x₂, y₂): PQ = √[(x₂ − x₁)² + (y₂ − y₁)²]</li><li><strong>Section formula</strong>: the point dividing PQ internally in the ratio m : n is ((m x₂ + n x₁)/(m + n), (m y₂ + n y₁)/(m + n))</li><li><strong>Midpoint</strong> (ratio 1 : 1): ((x₁ + x₂)/2, (y₁ + y₂)/2)</li></ul>
+<p>A memory hook for the section formula: <strong>m goes with the far point</strong> (x₂, y₂), <strong>n goes with the near point</strong> (x₁, y₁). Cross-multiply, never straight-multiply.</p>
+<h2>Type 1: Distance between two points</h2>
+<blockquote><p>Find the distance between (2, 3) and (4, 1).</p></blockquote>
+<ul><li>PQ = √[(4 − 2)² + (1 − 3)²] = √(4 + 4) = √8 = <strong>2√2 units</strong></li></ul>
+<p><strong>Marking tip:</strong> write the formula line first, then the substituted line. If the final arithmetic slips, the first two lines still earn the method marks.</p>
+<h2>Type 2: A point on an axis that is equidistant</h2>
+<blockquote><p>Find the point on the x-axis which is equidistant from (2, −5) and (−2, 9).</p></blockquote>
+<ul><li>Any point on the x-axis is P(x, 0). Set PA² = PB² (squaring removes the roots).</li><li>(x − 2)² + (0 + 5)² = (x + 2)² + (0 − 9)²</li><li>x² − 4x + 4 + 25 = x² + 4x + 4 + 81</li><li>−8x = 56, so x = −7. The point is <strong>(−7, 0)</strong>.</li></ul>
+<p><strong>Common mistake:</strong> writing (0 − (−5))² as (−5)² and then forgetting it is +25. Brackets around every negative coordinate prevent this.</p>
+<h2>Type 3: Prove the shape (square, rhombus, right triangle)</h2>
+<blockquote><p>Show that A(1, 7), B(4, 2), C(−1, −1) and D(−4, 4) are the vertices of a square.</p></blockquote>
+<ul><li>AB² = 3² + (−5)² = 34, BC² = (−5)² + (−3)² = 34</li><li>CD² = (−3)² + 5² = 34, DA² = 5² + 3² = 34</li><li>Diagonals: AC² = (−2)² + (−8)² = 68, BD² = (−8)² + 2² = 68</li><li>All four sides are equal <strong>and</strong> the diagonals are equal, so ABCD is a <strong>square</strong>.</li></ul>
+<p><strong>Marking tip:</strong> four equal sides only prove a rhombus. The equal diagonals are what make it a square, so always write both lines and the conclusion sentence.</p>
+<h2>Type 4: Section formula, ratio given</h2>
+<blockquote><p>Find the coordinates of the point which divides the join of (−1, 7) and (4, −3) in the ratio 2 : 3.</p></blockquote>
+<ul><li>m = 2, n = 3, (x₁, y₁) = (−1, 7), (x₂, y₂) = (4, −3)</li><li>x = (2 × 4 + 3 × (−1)) / 5 = (8 − 3)/5 = 1</li><li>y = (2 × (−3) + 3 × 7) / 5 = (−6 + 21)/5 = 3</li><li>The point is <strong>(1, 3)</strong>.</li></ul>
+<p><strong>Points of trisection</strong> use the same formula twice, with ratios 1 : 2 and 2 : 1. For (4, −1) and (−2, −3) they are <strong>(2, −5/3)</strong> and <strong>(0, −7/3)</strong>.</p>
+<h2>Type 5: Find the ratio in which an axis divides a segment</h2>
+<blockquote><p>Find the ratio in which the y-axis divides the line segment joining (5, −6) and (−1, −4). Also find the point of intersection.</p></blockquote>
+<ul><li>Take the ratio as k : 1. On the y-axis the x-coordinate is 0.</li><li>x = (k × (−1) + 1 × 5)/(k + 1) = 0, so −k + 5 = 0 and <strong>k = 5</strong>. The ratio is <strong>5 : 1</strong>.</li><li>y = (5 × (−4) + 1 × (−6))/6 = −26/6 = −13/3</li><li>The point is <strong>(0, −13/3)</strong>.</li></ul>
+<p><strong>Why k : 1?</strong> One unknown is easier than two. Whatever k comes out as, the ratio is k : 1.</p>
+<h2>Type 6: Parallelogram, find the missing coordinates</h2>
+<blockquote><p>If (1, 2), (4, y), (x, 6) and (3, 5) are the vertices of a parallelogram taken in order, find x and y.</p></blockquote>
+<ul><li>The diagonals of a parallelogram bisect each other, so the midpoint of AC = the midpoint of BD.</li><li>((1 + x)/2, (2 + 6)/2) = ((4 + 3)/2, (y + 5)/2)</li><li>1 + x = 7, so <strong>x = 6</strong>; 8 = y + 5, so <strong>y = 3</strong>.</li></ul>
+<p><strong>Marking tip:</strong> state the property ("diagonals bisect each other") in words. That one sentence is often a separate mark.</p>
+<h2>A four-step routine for every question</h2>
+<ol><li>Write the points as (x₁, y₁) and (x₂, y₂) and label them before you start.</li><li>Put every negative coordinate in brackets.</li><li>For "equidistant" questions, compare squares (PA² = PB²) instead of square roots.</li><li>Check your answer: a midpoint should sit between the two points, and a point on the x-axis must have y = 0.</li></ol>
+<h2>FAQ</h2>
+<p><strong>Is the area of a triangle formula still in Chapter 7?</strong> No. The "area of a triangle" section was removed from the rationalised NCERT Class 10 book, so current questions use only the distance and section formulas. Always check the latest CBSE syllabus and sample paper for your exam year.</p>
+<p><strong>Can I leave the answer as √8?</strong> Simplify surds where you can (√8 = 2√2) and write "units". It is a small step that examiners expect.</p>
+<p><strong>What is the fastest MCQ check?</strong> Substitute the options. If a question says the point lies on the x-axis, any option with y ≠ 0 is wrong straight away.</p>
+<h2>Before you move on</h2>
+<p>Cover the solutions and solve all six in your notebook. Then watch the <strong>8 must-do questions</strong> video at the top of this page, pausing before every answer.</p>
+<p>Free for this chapter: the <a href="https://drive.google.com/file/d/1r1Hx0JTNCY_s7aU1-GVjo9SWYTs7Pdt2/view" target="_blank" rel="noopener">revision notes</a> and the <a href="https://drive.google.com/file/d/14JwgcQVKGTmJf90kpjn2_aJmk6L_w3UE/view" target="_blank" rel="noopener">complete chapter guide</a>, plus every chapter on the <a href="/free/">free PDFs page</a>. Practise with points and streaks in <a href="/quest.html?c=m7">QUAD Quest</a>, see the live <a href="/masterclass/">Maths Masterclass</a> with Shwetha J, then carry these skills into <a href="/blog/introduction-to-trigonometry-board-questions/">Introduction to Trigonometry</a>.</p>
+<p><em>Sources: NCERT Mathematics Class 10 (rationalised), Chapter 7 "Coordinate Geometry" (Exercises 7.1 and 7.2); CBSE Class 10 Mathematics syllabus.</em></p>
+    </article>
+    <section style="border-top:0;padding-block:30px 0">
+      <div class="contact">
+        <h2>Stuck on a chapter?</h2>
+        <p>Tell us which chapter costs you the most marks, and we will cover it in a video. Send it on WhatsApp.</p>
+        <div class="cta" style="margin-top:4px"><a class="btn o" href="https://wa.me/918088443156?text=Hi%20QUAD%2C%20I%20read%20your%20blog.%20The%20chapter%20where%20I%20lose%20the%20most%20marks%20is%3A%20">Message on WhatsApp</a></div>
+      </div>
+    </section>
+    <section style="border-top:0;padding-block:30px 0"><h2>More from the <span class="t">blog</span></h2><ul><li><a href="/blog/introduction-to-trigonometry-board-questions/">Introduction to Trigonometry: 5 Board Question Types, Solved (CBSE Class 10 Maths Chapter 8)</a></li><li><a href="/blog/heights-and-distances-board-questions/">Heights and Distances: 4 Board Question Types, Solved (CBSE Class 10 Maths Chapter 9)</a></li><li><a href="/blog/previous-year-questions-smart-way/">How to Use Previous-Year Questions the Smart Way (Class 10)</a></li><li><a href="/blog/chemical-reactions-equations-board-questions/">Chemical Reactions and Equations: 3 Board Question Types, Solved (CBSE Class 10 Science)</a></li></ul></section>
+  </div>
+  <aside class="side">
+  <div class="sbox y">
+    <h3>₹49 Board Masterclass</h3>
+    <p>2 hours live: the 20 questions that come almost every year, solved live, with a PDF to keep. Maths Sun 22 Nov, Science Sun 29 Nov, 10:30 am.</p>
+    <a class="btn o" href="/masterclass/">See the Masterclass</a>
+  </div>
+  <div class="sbox">
+    <h3>Board Boost · live batches</h3>
+    <p>6 weeks from Mon 7 Dec: 18 live classes, a scored mock every Sunday, weekly parent reports. From ₹1,499.</p>
+    <a class="btn" href="/board-boost/">Batches &amp; fees</a>
+  </div>
+  <div class="sbox">
+    <h3>Join our WhatsApp Channel for daily updates</h3>
+    <p>One board-exam trick a day, new revision videos and free PDFs: <a href="https://whatsapp.com/channel/0029Vb9DNhtADTOEAMwyH723" target="_blank" rel="noopener">follow QUAD Academy on WhatsApp</a></p>
+    <a class="btn" href="https://www.youtube.com/@QuadAcademyOSH?sub_confirmation=1" target="_blank" rel="noopener">Subscribe</a>
+    <a class="btn" href="https://whatsapp.com/channel/0029Vb9DNhtADTOEAMwyH723" target="_blank" rel="noopener">WhatsApp channel</a>
+  </div>
+</aside>
+</div>
+</main>
+<footer>
+  <div class="wrap">
+    <div class="family">
+      <div class="ent">
+        <span class="mark"><img src="/quad_logo.jpg" alt="QUAD Academy logo" loading="lazy"></span>
+        <b>QUAD Academy</b>
+        <span class="tl">Learn • Grow • Prepare • Build</span>
+        <p>Board-exam preparation for Class 10: free revision on YouTube, live batches and mock tests. <a href="https://www.youtube.com/@QuadAcademyOSH">@QuadAcademyOSH</a> · <a href="https://whatsapp.com/channel/0029Vb9DNhtADTOEAMwyH723">WhatsApp channel</a></p>
+      </div>
+      <span class="amp" aria-hidden="true">&amp;</span>
+      <div class="ent r">
+        <span class="mark"><img src="/osh_logo.png" alt="OurSchoolHouse logo" loading="lazy"></span>
+        <b>OurSchoolHouse</b>
+        <span class="tl">Achieve your goals</span>
+        <p>India's homeschooling support portal for Classes 1–12, since 2020. <a href="https://ourschoolhouse.in">ourschoolhouse.in</a></p>
+      </div>
+    </div>
+    <p class="fine">We collect only the parent's contact details and the student's name and school, and use them only for QUAD batches. CBSE question papers are © CBSE; solutions and materials © QUAD Academy. Free to use for personal study.</p>
+  </div>
+</footer>
+<script src="/hits.js" defer></script>
+</body>
+</html>
