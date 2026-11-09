@@ -1,0 +1,13 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>QUAD site stats</title>
+<style>body{font-family:system-ui,sans-serif;background:#0f1a2e;color:#f3f6fb;margin:0 auto;padding:18px;max-width:640px}h1{font-size:20px}h2{font-size:15px;color:#ffc845;margin:22px 0 8px}.r{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid #ffffff1a;gap:8px}.r span{font-size:14px}.r img{height:22px}p{font-size:13px;opacity:.75}code{background:#ffffff14;padding:1px 5px;border-radius:4px}</style></head><body>
+<h1>QUAD Academy: site stats</h1>
+<p>Each row shows today / all-time. Opening this page adds 1 to every counter, so subtract your own checks.</p>
+<p>Share links with a tag so they show up below: add <code>?src=wa</code> for WhatsApp groups (e.g. <code>quadacademy.org/free/?src=wa</code>), <code>?src=ig</code> Instagram, <code>?src=fb</code> Facebook, <code>?src=tg</code> Telegram.</p>
+<div id="s"></div>
+<script>
+var G=[['Visitors',[['visits','All visits (once per visit)'],['new-visitors','First-time visitors'],['returning-visitors','Returning visitors (loyal)']]],
+['Where they came from',[['from-whatsapp','WhatsApp'],['from-youtube','YouTube'],['from-search','Google / Bing search'],['from-ai','AI assistants (ChatGPT, Gemini…)'],['from-instagram','Instagram'],['from-facebook','Facebook'],['from-telegram','Telegram'],['from-ad','Ads'],['from-direct','Typed / untagged link'],['from-other','Other sites']]],
+['What they did',[['enquiry-clicks','Tapped WhatsApp enquiry (any)'],['enquiry-masterclass','…for ₹49 Masterclass'],['enquiry-boardboost','…for Board Boost'],['wa-follow-clicks','Tapped Follow WhatsApp Channel'],['yt-clicks','Tapped a YouTube link'],['pdf-clicks','Opened a free PDF / notes'],['pay-clicks','Tapped a payment link']]],
+['Pages',['index','free','masterclass','board-boost','quest','blog','blog-previous-year-questions-smart-way','blog-chemical-reactions-equations-board-questions','blog-introduction-to-trigonometry-board-questions','blog-heights-and-distances-board-questions'].map(function(g){return['page-'+g,g.replace(/^blog-/,'blog: ')]})]];
+document.getElementById('s').innerHTML=G.map(function(g){return '<h2>'+g[0]+'</h2>'+g[1].map(function(r){return '<div class="r"><span>'+r[1]+'</span><img alt="" src="https://hits.sh/quadacademy.org/'+r[0]+'.svg?view=today-total&label=&color=2f7de1"></div>'}).join('')}).join('');
+</script></body></html>

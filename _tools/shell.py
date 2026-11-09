@@ -183,6 +183,7 @@ def page(title, description, body, active="", og_url="", og_image="", extra_head
 {body}
 </main>
 {FOOTER}
-{script}</body>
+{script}<script src="/hits.js" defer></script>
+</body>
 </html>
 """
