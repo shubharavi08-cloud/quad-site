@@ -1,6 +1,12 @@
 {
  "posts": [
   {
+   "title": "Carbon and its Compounds: 7 Board Question Types, Solved (CBSE Class 10 Science Chapter 4)",
+   "url": "https://quadacademy.org/blog/carbon-and-its-compounds-board-questions/",
+   "date": "2026-11-12",
+   "description": "CBSE Class 10 Science Chapter 4 solved: homologous series, soap micelles, isomers, conductivity, glacial acetic acid, identify-the-compound and why carbon shares electrons."
+  },
+  {
    "title": "Coordinate Geometry: 6 Board Question Types, Solved (CBSE Class 10 Maths Chapter 7)",
    "url": "https://quadacademy.org/blog/coordinate-geometry-board-questions/",
    "date": "2026-11-09",
@@ -47,6 +53,12 @@
      "blogPost": [
       {
        "@type": "BlogPosting",
+       "headline": "Carbon and its Compounds: 7 Board Question Types, Solved (CBSE Class 10 Science Chapter 4)",
+       "url": "https://quadacademy.org/blog/carbon-and-its-compounds-board-questions/",
+       "datePublished": "2026-11-12"
+      },
+      {
+       "@type": "BlogPosting",
        "headline": "Coordinate Geometry: 6 Board Question Types, Solved (CBSE Class 10 Maths Chapter 7)",
        "url": "https://quadacademy.org/blog/coordinate-geometry-board-questions/",
        "datePublished": "2026-11-09"
@@ -76,6 +88,47 @@
        "datePublished": "2026-11-06"
       }
      ]
+    }
+   ]
+  },
+  {
+   "path": "blog/carbon-and-its-compounds-board-questions/index.html",
+   "priority": 0.6,
+   "jsonld": [
+    {
+     "@type": "BlogPosting",
+     "headline": "Carbon and its Compounds: 7 Board Question Types, Solved (CBSE Class 10 Science Chapter 4)",
+     "description": "CBSE Class 10 Science Chapter 4 solved: homologous series, soap micelles, isomers, conductivity, glacial acetic acid, identify-the-compound and why carbon shares electrons.",
+     "url": "https://quadacademy.org/blog/carbon-and-its-compounds-board-questions/",
+     "mainEntityOfPage": "https://quadacademy.org/blog/carbon-and-its-compounds-board-questions/",
+     "datePublished": "2026-11-12",
+     "dateModified": "2026-11-12",
+     "inLanguage": "en-IN",
+     "wordCount": 958,
+     "author": {
+      "@type": "Organization",
+      "name": "Team QUAD",
+      "@id": "https://quadacademy.org/#org"
+     },
+     "publisher": {
+      "@id": "https://quadacademy.org/#org"
+     },
+     "educationalLevel": "Class 10",
+     "keywords": "Science, Chapter 4, carbon and its compounds, homologous series, isomers, ethanol, ethanoic acid, CBSE board questions",
+     "image": "https://i.ytimg.com/vi/2-nwRNJr1Lc/hqdefault.jpg",
+     "isPartOf": {
+      "@type": "Blog",
+      "url": "https://quadacademy.org/blog/"
+     },
+     "video": {
+      "@type": "VideoObject",
+      "name": "Carbon and its Compounds Class 10: 7 must-do board questions + MCQ tricks",
+      "description": "CBSE Class 10 Science Chapter 4 solved: homologous series, soap micelles, isomers, conductivity, glacial acetic acid, identify-the-compound and why carbon shares electrons.",
+      "thumbnailUrl": "https://i.ytimg.com/vi/2-nwRNJr1Lc/hqdefault.jpg",
+      "uploadDate": "2026-11-12",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/2-nwRNJr1Lc",
+      "contentUrl": "https://www.youtube.com/watch?v=2-nwRNJr1Lc"
+     }
     }
    ]
   },
