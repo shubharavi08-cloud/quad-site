@@ -111,6 +111,7 @@ h2 .t{color:var(--teal)}
 a.lk:hover{border-color:var(--osh)}
 .lk.v{border-color:#e5534b;color:#b5332c} .lk.n{border-color:var(--teal);color:#0d7383} .lk.a{border-color:#d9a400;color:var(--gold)} .lk.mm{border-color:#7a5fd6;color:#5b42b8} .lk.g{border-color:var(--osh);background:var(--yellow);color:var(--deep);font-weight:800}
 .lk.off{border-style:dashed;color:var(--mute)}
+.lk.lv{display:inline-flex;align-items:center;gap:.4rem;border-color:#e5534b;color:#b5332c}.lk.lv i{width:.5rem;height:.5rem;border-radius:50%;background:#e5534b}
 .lk.q{border-color:var(--osh);background:var(--yellow);color:var(--deep)}
 nav a.qlink{background:var(--yellow);color:var(--deep)}
 .quest{display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:center}
@@ -286,7 +287,7 @@ footer a{color:#fff}
   <section id="chapters">
     <h2>Every chapter, <span class="t">one place</span></h2>
     <p class="sub">Pick a chapter. Revision notes are free to download here. Each solutions book is linked in its chapter video's description: watch, try every question yourself, then check your working. PDFs open in Google Drive; tap the download arrow there to save.</p>
-    <div class="legend"><span class="lk v">Video</span><span class="lk n">Revision notes</span><span class="lk a">Solutions book</span><span class="lk mm">Mind map</span><span class="lk off">Coming soon</span></div>
+    <div class="legend"><span class="lk v">Video</span><span class="lk n">Revision notes</span><span class="lk a">Solutions book</span><span class="lk mm">Mind map</span><span class="lk lv"><i></i>Live class</span><span class="lk off">Scheduled</span></div>
     <div class="hubgrid">
       <div class="subj m"><h3>Maths <span class="pill y">041 Standard</span></h3><div id="hub-m"></div></div>
       <div class="subj s"><h3>Science <span class="pill">086</span></h3><div id="hub-s"></div></div>
@@ -380,10 +381,10 @@ footer a{color:#fff}
         <div class="cta" style="margin-top:0"><a class="btn y" href="masterclass/#book">Book for ₹49</a><a class="btn" href="masterclass/">Details</a></div>
       </div>
       <div class="batch s">
-        <span class="pill" style="justify-self:start;background:var(--teal)">Free · every Sunday</span>
-        <h3>Sunday Board Booster</h3>
-        <p>A free 45-minute live class on the QUAD YouTube channel: the top 10 board questions from one chapter each week.</p>
-        <dl><dt>When</dt><dd>Sundays, 6:00–6:45 pm</dd><dt>Where</dt><dd>QUAD Academy on YouTube</dd></dl>
+        <span class="pill" style="justify-self:start;background:var(--teal)">Free · every weekend</span>
+        <h3>Free weekly live classes</h3>
+        <p>A free one-hour live class on the QUAD YouTube channel with a real teacher: one or two chapters a week, board questions, and live chat for doubts.</p>
+        <dl><dt>Maths</dt><dd>Sundays, 7–8 pm, from 15 Nov</dd><dt>Science</dt><dd>Saturdays, 7–8 pm, from 21 Nov</dd></dl>
         <a class="btn" style="justify-self:start" href="https://www.youtube.com/@QuadAcademyOSH?sub_confirmation=1">Subscribe for the live class</a>
       </div>
     </div>
@@ -521,10 +522,15 @@ for(const [s,list] of Object.entries(CH)){
     let links="";
     // one button per video type made so far (must-do questions, 10-min revision, full chapter, chapter in 5 min)
     vs.forEach(x=>{ links+= live(x)?`<a class="lk v" href="${YT(x.id)}">▶ ${x.label}</a>`:`<span class="lk off">${x.label} · ${x.hold?"coming soon":fmt(x.at)}</span>`; });
-    if(!vs.length) links+=`<span class="lk off">Video coming soon</span>`;
+    const lk=(s==="Maths"?"m":"s")+(i+1), L=LIVES[lk];
+    if(L){ const st=Date.parse(L+"T19:00:00+05:30"), rec=LIVE_REC[lk];
+      links+= rec?`<a class="lk v" href="${YT(rec)}">▶ Live class recording</a>`
+        : now<st?`<a class="lk lv" href="${LIVE_URL}"><i></i>Live class · ${fmt(st)}</a>`
+        : now<st+2*36e5?`<a class="lk lv" href="${LIVE_URL}"><i></i>Live now</a>`
+        : `<span class="lk off">Live class held · recording uploads soon</span>`; }
     const gk=(s==="Maths"?"m":"s")+(i+1); if(GUIDE[gk]) links+=`<a class="lk g" href="${D(GUIDE[gk])}">📘 Complete guide</a>`;
     links+=`<a class="lk n" href="${D(notes)}">Revision notes</a>`;
-    links+= (v&&live(v))?`<a class="lk a" href="${YT(v.id)}" title="The solutions book link is in the video description">Solutions book · in video description</a>`:`<span class="lk off">Solutions book comes with the video</span>`;
+    links+= (v&&live(v))?`<a class="lk a" href="${YT(v.id)}" title="The solutions book link is in the video description">Solutions book · in video description</a>`:"";
     links+= mm?`<a class="lk mm" href="${D(mm)}">Mind map</a>`:"";
     links+=`<a class="lk q" href="quest.html?c=${s==="Maths"?"m":"s"}${i+1}">⭐ Quest</a>`;
     box.appendChild(el("div",{class:"ch"},`<span class="no">${i+1}</span><div><div class="nm">${n}</div><div class="links">${links}</div></div>`));

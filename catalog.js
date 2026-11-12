@@ -44,3 +44,15 @@ function vidsFor(s, c) {
 }
 // Complete Chapter Guides (Drive PDF ids, shared "anyone with the link" at launch). Key = m<chapter> / s<chapter>.
 var GUIDE = {m1:"1GfYx6q3W1z1ckr4YbwoeK_voTe3hF7Dq",m2:"1gY6LQVZQZZSR5v5yI8I4muGT2eGn9CXg",m3:"1Q3-rRGxXTTVpwcd860HEUbVD-dWkn6D2",m4:"1acUTO1fhZ4k4g0PcBV0zz7XQfuS9Ojxn",m5:"11pVdBBmfKkZQuyqux7xhg5bmTFU84BdW",m6:"1y_jzkVWeB8cNACQmJu3KcYGrPcmNM_uZ",m7:"14JwgcQVKGTmJf90kpjn2_aJmk6L_w3UE",m8:"1zv1ThW2ry-4YhPFZi0pKNUb1ByTyDsS4",m9:"11C3khXgpEQmR6r65amVtYmdYbclypKkA",m10:"1r3D6xRzGCagMG7LA-mPfC2Tq1oHOD1He",m11:"1ZhJCW_2dwtn5XpUS0h7_MsC0tx55GRQw",m12:"1NY6BrSYgHd-1of7SJjivfruTcd1sYdk5",m13:"1i6D3diye1u_Rd1AU_-IreFH7epbgiH8t",m14:"1vqtoyNJ8MLUpPz1lIJNLLdTZMkZCEKbm",s1:"16HU4aCCU_mGydz8_r-WZYr5KPAwENVk1",s2:"10zJeAUAmx22QS2es90dR8k4bnYcQK3IF",s3:"1fsK13aTGbu07gB34P-aXmeNIZPgdx33S",s4:"1X8OOP5FTZ1OjVklN6eD0ecYN5E7ZDe6m",s5:"1GvFocd0sA6-6aBco9JUj58xm5qZbGIoN",s6:"12Py3RRVEbiqrQ30COTpv2RqN3ZdKedfV",s7:"1jmrcNB3DpuLzh1fLIx5scue4p9uJWHTD",s8:"1_OhJVuF7JEZaG9NX7_gHlB4cTFj4d4JD",s9:"1akwf7SBtFQSeQ3V1gsKLS_fsLiB6q17w",s10:"13rNdUJ-H_ZYzaNaIRVx3pk4Vm_kqlEvB",s11:"1zKLSMRgTwpW4sNfv2omkByGUX6Y4n4PB",s12:"1kIlw5BOTJ0wdWOIMWUOk7xZph5qg6x9G",s13:"1PX4rRRyt6ltNEarbJbRVAbhdxS28n2KE"};
+
+// Free weekly live classes on the QUAD YouTube channel, 7-8 pm IST (Maths Sundays from 15 Nov, Science Saturdays from 21 Nov 2026).
+// Source of truth: Drive sheet "QUAD Live doubt hours — schedule". Key = m<chapter> / s<chapter>, value = class date (IST).
+// After a class, put its recording's YouTube id in LIVE_REC (e.g. LIVE_REC.m1="VIDEOID") and the chapter shows "Live class recording".
+var LIVE_URL = "https://www.youtube.com/@QuadAcademyOSH/live";
+var LIVES = {
+ m1:"2026-11-15", m7:"2026-11-15", m2:"2026-11-22", m3:"2026-11-22", m8:"2026-11-29", m9:"2026-11-29",
+ m4:"2026-12-06", m5:"2026-12-13", m6:"2026-12-20", m10:"2026-12-27", m11:"2026-12-27", m12:"2027-01-03", m13:"2027-01-03", m14:"2027-01-10",
+ s1:"2026-11-21", s2:"2026-11-21", s3:"2026-11-28", s4:"2026-11-28", s5:"2026-12-05", s6:"2026-12-12", s7:"2026-12-12", s8:"2026-12-19", s13:"2026-12-19",
+ s9:"2026-12-26", s10:"2027-01-02", s12:"2027-01-02", s11:"2027-01-09"
+};
+var LIVE_REC = {};
