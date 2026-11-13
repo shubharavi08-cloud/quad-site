@@ -1,6 +1,12 @@
 {
  "posts": [
   {
+   "title": "Life Processes: 7 Board Question Types, Solved (CBSE Class 10 Science Chapter 5)",
+   "url": "https://quadacademy.org/blog/life-processes-board-questions/",
+   "date": "2026-11-13",
+   "description": "CBSE Class 10 Science Chapter 5 solved: photosynthesis, stomata, digestion enzymes, aerobic vs anaerobic respiration, double circulation, xylem and phloem, and the nephron."
+  },
+  {
    "title": "Carbon and its Compounds: 7 Board Question Types, Solved (CBSE Class 10 Science Chapter 4)",
    "url": "https://quadacademy.org/blog/carbon-and-its-compounds-board-questions/",
    "date": "2026-11-12",
@@ -53,6 +59,12 @@
      "blogPost": [
       {
        "@type": "BlogPosting",
+       "headline": "Life Processes: 7 Board Question Types, Solved (CBSE Class 10 Science Chapter 5)",
+       "url": "https://quadacademy.org/blog/life-processes-board-questions/",
+       "datePublished": "2026-11-13"
+      },
+      {
+       "@type": "BlogPosting",
        "headline": "Carbon and its Compounds: 7 Board Question Types, Solved (CBSE Class 10 Science Chapter 4)",
        "url": "https://quadacademy.org/blog/carbon-and-its-compounds-board-questions/",
        "datePublished": "2026-11-12"
@@ -88,6 +100,47 @@
        "datePublished": "2026-11-06"
       }
      ]
+    }
+   ]
+  },
+  {
+   "path": "blog/life-processes-board-questions/index.html",
+   "priority": 0.6,
+   "jsonld": [
+    {
+     "@type": "BlogPosting",
+     "headline": "Life Processes: 7 Board Question Types, Solved (CBSE Class 10 Science Chapter 5)",
+     "description": "CBSE Class 10 Science Chapter 5 solved: photosynthesis, stomata, digestion enzymes, aerobic vs anaerobic respiration, double circulation, xylem and phloem, and the nephron.",
+     "url": "https://quadacademy.org/blog/life-processes-board-questions/",
+     "mainEntityOfPage": "https://quadacademy.org/blog/life-processes-board-questions/",
+     "datePublished": "2026-11-13",
+     "dateModified": "2026-11-13",
+     "inLanguage": "en-IN",
+     "wordCount": 1273,
+     "author": {
+      "@type": "Organization",
+      "name": "Team QUAD",
+      "@id": "https://quadacademy.org/#org"
+     },
+     "publisher": {
+      "@id": "https://quadacademy.org/#org"
+     },
+     "educationalLevel": "Class 10",
+     "keywords": "Science, Chapter 5, life processes, photosynthesis, respiration, double circulation, nephron, CBSE board questions",
+     "image": "https://i.ytimg.com/vi/60YEG6vC5JM/hqdefault.jpg",
+     "isPartOf": {
+      "@type": "Blog",
+      "url": "https://quadacademy.org/blog/"
+     },
+     "video": {
+      "@type": "VideoObject",
+      "name": "Life Processes Class 10: important board questions, solved",
+      "description": "CBSE Class 10 Science Chapter 5 solved: photosynthesis, stomata, digestion enzymes, aerobic vs anaerobic respiration, double circulation, xylem and phloem, and the nephron.",
+      "thumbnailUrl": "https://i.ytimg.com/vi/60YEG6vC5JM/hqdefault.jpg",
+      "uploadDate": "2026-11-13",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/60YEG6vC5JM",
+      "contentUrl": "https://www.youtube.com/watch?v=60YEG6vC5JM"
+     }
     }
    ]
   },
