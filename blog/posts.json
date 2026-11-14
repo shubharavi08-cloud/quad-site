@@ -1,6 +1,12 @@
 {
  "posts": [
   {
+   "title": "Control and Coordination: 7 Board Question Types, Solved (CBSE Class 10 Science Chapter 6)",
+   "url": "https://quadacademy.org/blog/control-and-coordination-board-questions/",
+   "date": "2026-11-14",
+   "description": "CBSE Class 10 Science Chapter 6 solved: neuron and synapse, reflex arc, parts of the brain, plant movements and tropisms, plant hormones, endocrine glands and feedback."
+  },
+  {
    "title": "Life Processes: 7 Board Question Types, Solved (CBSE Class 10 Science Chapter 5)",
    "url": "https://quadacademy.org/blog/life-processes-board-questions/",
    "date": "2026-11-13",
@@ -59,6 +65,12 @@
      "blogPost": [
       {
        "@type": "BlogPosting",
+       "headline": "Control and Coordination: 7 Board Question Types, Solved (CBSE Class 10 Science Chapter 6)",
+       "url": "https://quadacademy.org/blog/control-and-coordination-board-questions/",
+       "datePublished": "2026-11-14"
+      },
+      {
+       "@type": "BlogPosting",
        "headline": "Life Processes: 7 Board Question Types, Solved (CBSE Class 10 Science Chapter 5)",
        "url": "https://quadacademy.org/blog/life-processes-board-questions/",
        "datePublished": "2026-11-13"
@@ -100,6 +112,47 @@
        "datePublished": "2026-11-06"
       }
      ]
+    }
+   ]
+  },
+  {
+   "path": "blog/control-and-coordination-board-questions/index.html",
+   "priority": 0.6,
+   "jsonld": [
+    {
+     "@type": "BlogPosting",
+     "headline": "Control and Coordination: 7 Board Question Types, Solved (CBSE Class 10 Science Chapter 6)",
+     "description": "CBSE Class 10 Science Chapter 6 solved: neuron and synapse, reflex arc, parts of the brain, plant movements and tropisms, plant hormones, endocrine glands and feedback.",
+     "url": "https://quadacademy.org/blog/control-and-coordination-board-questions/",
+     "mainEntityOfPage": "https://quadacademy.org/blog/control-and-coordination-board-questions/",
+     "datePublished": "2026-11-14",
+     "dateModified": "2026-11-14",
+     "inLanguage": "en-IN",
+     "wordCount": 1425,
+     "author": {
+      "@type": "Organization",
+      "name": "Team QUAD",
+      "@id": "https://quadacademy.org/#org"
+     },
+     "publisher": {
+      "@id": "https://quadacademy.org/#org"
+     },
+     "educationalLevel": "Class 10",
+     "keywords": "Science, Chapter 6, control and coordination, reflex arc, neuron, brain, tropism, plant hormones, endocrine glands, CBSE board questions",
+     "image": "https://i.ytimg.com/vi/BaXOil6vcyE/hqdefault.jpg",
+     "isPartOf": {
+      "@type": "Blog",
+      "url": "https://quadacademy.org/blog/"
+     },
+     "video": {
+      "@type": "VideoObject",
+      "name": "Control and Coordination Class 10: important board questions, solved",
+      "description": "CBSE Class 10 Science Chapter 6 solved: neuron and synapse, reflex arc, parts of the brain, plant movements and tropisms, plant hormones, endocrine glands and feedback.",
+      "thumbnailUrl": "https://i.ytimg.com/vi/BaXOil6vcyE/hqdefault.jpg",
+      "uploadDate": "2026-11-14",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/BaXOil6vcyE",
+      "contentUrl": "https://www.youtube.com/watch?v=BaXOil6vcyE"
+     }
     }
    ]
   },
