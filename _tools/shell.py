@@ -176,7 +176,7 @@ def page(title, description, body, active="", og_url="", og_image="", extra_head
 <link rel="alternate" type="application/rss+xml" title="QUAD Academy Blog" href="/blog/feed.xml">
 {FONTS}
 <style>{CSS}</style>
-{extra_head}<link rel="stylesheet" href="/cursor-quad.css?v=2"></head>
+{extra_head}<link rel="stylesheet" href="/cursor-quad.css?v=3"></head>
 <body>
 {header(active)}
 <main class="wrap">
