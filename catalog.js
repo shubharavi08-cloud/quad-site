@@ -12,8 +12,17 @@ var IQ = [
  {s:"Maths",c:7,n:"Coordinate Geometry",id:"MYfxqBicem0",th:"m7",q:"8 must-do questions + MCQ tricks"},
  {s:"Maths",c:8,n:"Introduction to Trigonometry",id:"c7cVAsI5Huk",th:"m8",q:"8 must-do questions",at:"2026-11-05T17:00:00+05:30"},
  {s:"Maths",c:9,n:"Some Applications of Trigonometry",id:"SeTmHlYHsNs",th:"m9",q:"6 must-do questions"},
+ {s:"Maths",c:10,n:"Circles",id:"c7JSK02pCyo",q:"8 must-do questions"},
+ {s:"Maths",c:11,n:"Areas Related to Circles",id:"kCdWLUltkY4",q:"6 must-do questions"},
+ {s:"Maths",c:12,n:"Surface Areas and Volumes",id:"FQ_3ayD-nVc",q:"10 must-do questions"},
+ {s:"Maths",c:13,n:"Statistics",id:"P0wTpyeOs-A",q:"10 must-do questions"},
+ {s:"Maths",c:14,n:"Probability",id:"18FpEzQFjG4",q:"10 must-do questions"},
  {s:"Science",c:1,n:"Chemical Reactions and Equations",id:"NFgXgUhtMDI",th:"s1",q:"10 must-do questions + MCQ tricks"},
  {s:"Science",c:2,n:"Acids, Bases and Salts",id:"Rf4k6uxFFOM",th:"s2",q:"7 must-do questions + MCQ tricks",hold:1},
+ {s:"Science",c:3,n:"Metals and Non-metals",id:"masmd3I48iY",q:"7 must-do questions + MCQ tricks"},
+ {s:"Science",c:4,n:"Carbon and its Compounds",id:"2-nwRNJr1Lc",q:"7 must-do questions + MCQ tricks"},
+ {s:"Science",c:5,n:"Life Processes",id:"60YEG6vC5JM",q:"7 must-do questions + MCQ tricks"},
+ {s:"Science",c:6,n:"Control and Coordination",id:"BaXOil6vcyE",q:"7 must-do questions + MCQ tricks"},
 ];
 var CH = {
  Maths:[["Real Numbers","1QLFRWBBIvvyel26x0hdGOQDJNWUXbAEu","1BMGclmmC4eXLKstP7GlIjfb4qdkb_hF2"],["Polynomials","1Zbitj9HnHpAr-K5EIOuM0NGtPDQ6s0S7"],["Pair of Linear Equations in Two Variables","1S2T-3Spieod0LkGq4VKfOCVTfM2i7058"],
@@ -34,6 +43,8 @@ var MORE = [
  // {s:"Maths",c:12,type:"full",id:"VIDEOID",at:"2026-11-20T17:00:00+05:30",ts:{sa:60,vol:900}},
 ];
 var VTYPE = {iq:["Must-do questions",1], r10:["10-min revision",2], full:["Full chapter",3], c5:["Chapter in 5 min",4]};
+// card thumbnail: local thumbs/<th>.jpg when set, else the YouTube thumbnail
+var TH = v => v.th ? "thumbs/" + v.th + ".jpg" : "https://i.ytimg.com/vi/" + v.id + "/hqdefault.jpg";
 var isLiveV = v => v && !v.hold && (!v.at || Date.parse(v.at) <= Date.now());
 // every video for one chapter, in a fixed order: [{type,label,id,th,at,hold,ts}]
 function vidsFor(s, c) {
