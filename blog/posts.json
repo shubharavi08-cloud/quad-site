@@ -1,6 +1,12 @@
 {
  "posts": [
   {
+   "title": "How Do Organisms Reproduce: 7 Board Question Types, Solved (CBSE Class 10 Science Chapter 7)",
+   "url": "https://quadacademy.org/blog/how-do-organisms-reproduce-board-questions/",
+   "date": "2026-11-15",
+   "description": "CBSE Class 10 Science Chapter 7 solved: DNA copying and variation, fission, budding, regeneration, spores, vegetative propagation, flowers, pollination, human reproduction and health."
+  },
+  {
    "title": "Control and Coordination: 7 Board Question Types, Solved (CBSE Class 10 Science Chapter 6)",
    "url": "https://quadacademy.org/blog/control-and-coordination-board-questions/",
    "date": "2026-11-14",
@@ -65,6 +71,12 @@
      "blogPost": [
       {
        "@type": "BlogPosting",
+       "headline": "How Do Organisms Reproduce: 7 Board Question Types, Solved (CBSE Class 10 Science Chapter 7)",
+       "url": "https://quadacademy.org/blog/how-do-organisms-reproduce-board-questions/",
+       "datePublished": "2026-11-15"
+      },
+      {
+       "@type": "BlogPosting",
        "headline": "Control and Coordination: 7 Board Question Types, Solved (CBSE Class 10 Science Chapter 6)",
        "url": "https://quadacademy.org/blog/control-and-coordination-board-questions/",
        "datePublished": "2026-11-14"
@@ -112,6 +124,47 @@
        "datePublished": "2026-11-06"
       }
      ]
+    }
+   ]
+  },
+  {
+   "path": "blog/how-do-organisms-reproduce-board-questions/index.html",
+   "priority": 0.6,
+   "jsonld": [
+    {
+     "@type": "BlogPosting",
+     "headline": "How Do Organisms Reproduce: 7 Board Question Types, Solved (CBSE Class 10 Science Chapter 7)",
+     "description": "CBSE Class 10 Science Chapter 7 solved: DNA copying and variation, fission, budding, regeneration, spores, vegetative propagation, flowers, pollination, human reproduction and health.",
+     "url": "https://quadacademy.org/blog/how-do-organisms-reproduce-board-questions/",
+     "mainEntityOfPage": "https://quadacademy.org/blog/how-do-organisms-reproduce-board-questions/",
+     "datePublished": "2026-11-15",
+     "dateModified": "2026-11-15",
+     "inLanguage": "en-IN",
+     "wordCount": 1237,
+     "author": {
+      "@type": "Organization",
+      "name": "Team QUAD",
+      "@id": "https://quadacademy.org/#org"
+     },
+     "publisher": {
+      "@id": "https://quadacademy.org/#org"
+     },
+     "educationalLevel": "Class 10",
+     "keywords": "Science, Chapter 7, how do organisms reproduce, asexual reproduction, binary fission, budding, pollination, fertilisation, reproductive health, CBSE board questions",
+     "image": "https://i.ytimg.com/vi/Q1XWqeNI8I0/hqdefault.jpg",
+     "isPartOf": {
+      "@type": "Blog",
+      "url": "https://quadacademy.org/blog/"
+     },
+     "video": {
+      "@type": "VideoObject",
+      "name": "How Do Organisms Reproduce Class 10: important board questions, solved",
+      "description": "CBSE Class 10 Science Chapter 7 solved: DNA copying and variation, fission, budding, regeneration, spores, vegetative propagation, flowers, pollination, human reproduction and health.",
+      "thumbnailUrl": "https://i.ytimg.com/vi/Q1XWqeNI8I0/hqdefault.jpg",
+      "uploadDate": "2026-11-15",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/Q1XWqeNI8I0",
+      "contentUrl": "https://www.youtube.com/watch?v=Q1XWqeNI8I0"
+     }
     }
    ]
   },
