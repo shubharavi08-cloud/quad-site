@@ -1,6 +1,12 @@
 {
  "posts": [
   {
+   "title": "Heredity Class 10: 7 Must-Do Board Questions, Solved (CBSE Science Chapter 8, Punnett Squares)",
+   "url": "https://quadacademy.org/blog/heredity-board-questions/",
+   "date": "2026-11-16",
+   "description": "CBSE Class 10 Science Chapter 8 Heredity solved: monohybrid and dihybrid Punnett squares, 1:2:1 and 9:3:3:1 ratios, inherited vs acquired traits, and sex determination (44 + XY)."
+  },
+  {
    "title": "How Do Organisms Reproduce: 7 Board Question Types, Solved (CBSE Class 10 Science Chapter 7)",
    "url": "https://quadacademy.org/blog/how-do-organisms-reproduce-board-questions/",
    "date": "2026-11-15",
@@ -71,6 +77,12 @@
      "blogPost": [
       {
        "@type": "BlogPosting",
+       "headline": "Heredity Class 10: 7 Must-Do Board Questions, Solved (CBSE Science Chapter 8, Punnett Squares)",
+       "url": "https://quadacademy.org/blog/heredity-board-questions/",
+       "datePublished": "2026-11-16"
+      },
+      {
+       "@type": "BlogPosting",
        "headline": "How Do Organisms Reproduce: 7 Board Question Types, Solved (CBSE Class 10 Science Chapter 7)",
        "url": "https://quadacademy.org/blog/how-do-organisms-reproduce-board-questions/",
        "datePublished": "2026-11-15"
@@ -124,6 +136,47 @@
        "datePublished": "2026-11-06"
       }
      ]
+    }
+   ]
+  },
+  {
+   "path": "blog/heredity-board-questions/index.html",
+   "priority": 0.6,
+   "jsonld": [
+    {
+     "@type": "BlogPosting",
+     "headline": "Heredity Class 10: 7 Must-Do Board Questions, Solved (CBSE Science Chapter 8, Punnett Squares)",
+     "description": "CBSE Class 10 Science Chapter 8 Heredity solved: monohybrid and dihybrid Punnett squares, 1:2:1 and 9:3:3:1 ratios, inherited vs acquired traits, and sex determination (44 + XY).",
+     "url": "https://quadacademy.org/blog/heredity-board-questions/",
+     "mainEntityOfPage": "https://quadacademy.org/blog/heredity-board-questions/",
+     "datePublished": "2026-11-16",
+     "dateModified": "2026-11-16",
+     "inLanguage": "en-IN",
+     "wordCount": 1273,
+     "author": {
+      "@type": "Organization",
+      "name": "Team QUAD",
+      "@id": "https://quadacademy.org/#org"
+     },
+     "publisher": {
+      "@id": "https://quadacademy.org/#org"
+     },
+     "educationalLevel": "Class 10",
+     "keywords": "Science, Chapter 8, heredity, Mendel, Punnett square, monohybrid cross, dihybrid cross, sex determination, inherited traits, CBSE board questions",
+     "image": "https://i.ytimg.com/vi/cc-mRqD_0vA/hqdefault.jpg",
+     "isPartOf": {
+      "@type": "Blog",
+      "url": "https://quadacademy.org/blog/"
+     },
+     "video": {
+      "@type": "VideoObject",
+      "name": "Heredity Class 10 Important Questions: 7 must-do + Punnett square tricks",
+      "description": "CBSE Class 10 Science Chapter 8 Heredity solved: monohybrid and dihybrid Punnett squares, 1:2:1 and 9:3:3:1 ratios, inherited vs acquired traits, and sex determination (44 + XY).",
+      "thumbnailUrl": "https://i.ytimg.com/vi/cc-mRqD_0vA/hqdefault.jpg",
+      "uploadDate": "2026-11-16",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/cc-mRqD_0vA",
+      "contentUrl": "https://www.youtube.com/watch?v=cc-mRqD_0vA"
+     }
     }
    ]
   },
