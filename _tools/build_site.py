@@ -491,6 +491,145 @@ def free_page(root):
 
 
 # ------------------------------------------------------------------ main
+
+# ------------------------------------------------------------------ 90-day Board Countdown (/countdown/), approved 9 Nov 2026
+CD_START = "2026-11-20"  # Day 1 (IST). One question a day for 90 days; answer + video the next day.
+CD_DAYS = 90
+
+
+def countdown_data(root):
+    """90 questions from the verified QUAD Quest sets, chapters interleaved Maths/Science so every day is a new chapter."""
+    _, _, iq = read_catalog(root)
+    order = []
+    for i in range(1, 15):
+        order.append(("m", i))
+        if i <= 13:
+            order.append(("s", i))
+    sets = {}
+    for k, i in order:
+        d = json.loads((root / f"quest/data/{k}{i}.json").read_text(encoding="utf-8"))
+        qs = [q for q in d["questions"] if q["kind"] != "proof" and "figure" not in q["text"].lower() and " fig" not in q["text"].lower()]
+        sets[(k, i)] = (d, qs)
+    start = dt.date.fromisoformat(CD_START)
+    out, rnd = [], 0
+    while len(out) < CD_DAYS:
+        for k, i in order:
+            d, qs = sets[(k, i)]
+            if rnd >= len(qs) or len(out) >= CD_DAYS:
+                continue
+            q = qs[rnd]
+            subj = "Maths" if k == "m" else "Science"
+            v = iq.get((subj, i))
+            vid = v["id"] if v and not v["hold"] else ""
+            day = len(out) + 1
+            out.append({"d": day, "date": (start + dt.timedelta(days=day - 1)).isoformat(), "s": subj, "c": i, "ch": d["chapter"],
+                        "key": f"{k}{i}", "title": q["title"], "text": q["text"], "opts": q.get("opts") or [], "marks": q.get("marks"),
+                        "src": q.get("src", ""), "ans": q["ans"], "steps": q.get("steps") or [], "remember": q.get("remember", ""),
+                        "trap": q.get("trap", ""), "v": vid, "t": q.get("t", 0) if vid else 0})
+        rnd += 1
+    return out
+
+
+def countdown_page(root):
+    data = json.dumps(countdown_data(root), ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
+    utm = "utm_source=site&utm_medium=countdown&utm_campaign=quad-countdown"
+    body = f"""<div class="hero">
+  <div>
+    <div class="kicker"><span class="pill y">Free · one question a day</span><span class="pill">CBSE Class 10 · Boards 2027</span></div>
+    <h1>90-Day <span class="hl">Board</span> <span class="t">Countdown</span></h1>
+    <p class="lede">One board-pattern question every day for 90 days, Maths and Science in turn, a new chapter each day. Try it today; the full answer, the steps and the video solution open here tomorrow. Every past day stays on this page, so you can catch up any time.</p>
+    <div class="cta">
+      <a class="btn y" href="#today">Today's question</a>
+      <a class="btn" href="{WA_CHANNEL}" target="_blank" rel="noopener">Join on WhatsApp</a>
+    </div>
+  </div>
+  <div class="board tilt" aria-label="Countdown at a glance">
+    <h3>Countdown · at a glance</h3>
+    <div class="row"><span>Starts</span><span class="y">Fri 20 Nov 2026</span></div>
+    <div class="row"><span>Today</span><span class="y" id="cd-day">—</span></div>
+    <div class="row"><span>Days left</span><span class="y" id="cd-left">—</span></div>
+    <div class="row"><span>Subjects</span><span class="y">Maths · Science</span></div>
+  </div>
+</div>
+
+<section id="today">
+  <h2>Today's <span class="t">question</span></h2>
+  <div id="cd-today"></div>
+</section>
+
+<section id="yesterday" hidden>
+  <h2>Yesterday's <span class="t">answer</span></h2>
+  <div id="cd-yest"></div>
+</section>
+
+<section>
+  <div class="wa-cta" style="margin:0;padding:18px 20px;border:3px solid #1f9d55;border-radius:16px;background:#e8f7ee">
+    <h2 style="font-size:1.35rem;margin:0 0 6px">Join our WhatsApp Channel for daily updates</h2>
+    <p style="margin:0 0 12px">Daily board tips, new solved videos and a reminder when each Countdown question is out.</p>
+    <a class="btn o" href="{WA_CHANNEL}" target="_blank" rel="noopener">Join the QUAD WhatsApp Channel</a>
+    <p class="small" style="margin:.6rem 0 0">Or open: <a href="{WA_CHANNEL}">{WA_CHANNEL.replace("https://", "")}</a></p>
+  </div>
+</section>
+
+<section id="past" hidden>
+  <h2>All past <span class="t">days</span></h2>
+  <p class="sub">Open any day to see the question, the answer and the steps.</p>
+  <div id="cd-past"></div>
+</section>
+
+<section>
+  <h2>Want more <span class="t">practice?</span></h2>
+  <div class="cta" style="margin-top:0"><a class="btn y" href="/quest.html?{utm}">Play QUAD Quest</a><a class="btn" href="/free/?{utm}">Free chapter guides</a><a class="btn" href="/masterclass/">₹49 Masterclass</a><a class="btn o" href="/board-boost/">Board Boost · live batches</a></div>
+</section>"""
+    extra = """<style>
+.cdq{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:20px 22px;min-width:0}
+.cdq .meta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px}.cdq h3{font:800 1.25rem/1.25 var(--display);margin:0 0 8px}
+.cdq .qt{white-space:pre-line;margin:0 0 10px;overflow-wrap:anywhere}.cdq ol.op{margin:0 0 10px;padding-left:1.6rem}.cdq ol.op li{margin:.2rem 0}
+.cdq .ans{background:#fff8d6;border-left:5px solid var(--yellow);padding:10px 14px;border-radius:10px;margin:10px 0;font-weight:600}
+.cdq ul.st{margin:6px 0 10px;padding-left:1.2rem}.cdq .note{color:var(--ink-2);font-size:.95rem;margin:.3rem 0}
+#cd-past details{background:var(--card);border:2px solid var(--line);border-radius:14px;padding:10px 14px;margin:0 0 10px}
+#cd-past summary{cursor:pointer;font-weight:700}#cd-past details .cdq{border:0;padding:10px 0 0}
+</style>
+"""
+    script = "<script>\nvar CD=" + data + ";\n" + r"""(function(){
+  var ist=new Date(Date.now()+330*6e4).toISOString().slice(0,10);
+  var start=CD[0].date, dayMs=864e5;
+  var n=Math.floor((Date.parse(ist)-Date.parse(start))/dayMs)+1; /* today's day number */
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+  function fmt(iso){return new Date(iso+'T12:00:00+05:30').toLocaleDateString('en-IN',{weekday:'short',day:'numeric',month:'short',timeZone:'Asia/Kolkata'})}
+  function card(q,show){
+    var h='<div class="cdq"><div class="meta"><span class="pill y">Day '+q.d+' of 90</span><span class="pill">'+esc(q.s)+' · Ch '+q.c+' '+esc(q.ch)+'</span>'+(q.marks?'<span class="pill t">'+q.marks+' mark'+(q.marks>1?'s':'')+'</span>':'')+'</div>';
+    h+='<h3>'+esc(q.title)+'</h3><p class="qt">'+esc(q.text)+'</p>';
+    if(q.opts.length){h+='<ol class="op" type="a">'+q.opts.map(function(o){return'<li>'+esc(o)+'</li>'}).join('')+'</ol>'}
+    var quest='/quest.html?c='+q.key+'&utm_source=site&utm_medium=countdown&utm_campaign=quad-countdown-day'+q.d;
+    if(!show){h+='<p class="note">Write your answer in your notebook. The full answer and steps open here tomorrow ('+fmt(CD[Math.min(q.d,CD.length-1)].date)+').</p><div class="cta" style="margin-top:8px"><a class="btn y" href="'+quest+'">Practise this chapter in Quest</a></div></div>';return h}
+    h+='<div class="ans">'+esc(q.ans)+'</div>';
+    if(q.steps.length){h+='<ul class="st">'+q.steps.map(function(s){return'<li>'+esc(s)+'</li>'}).join('')+'</ul>'}
+    if(q.remember){h+='<p class="note"><strong>Remember:</strong> '+esc(q.remember)+'</p>'}
+    if(q.trap){h+='<p class="note"><strong>Trap:</strong> '+esc(q.trap)+'</p>'}
+    h+='<div class="cta" style="margin-top:8px">';
+    if(q.v){h+='<a class="btn o" href="https://www.youtube.com/watch?v='+q.v+(q.t?'&t='+q.t+'s':'')+'" target="_blank" rel="noopener">Watch the video solution</a>'}
+    h+='<a class="btn" href="'+quest+'">Practise this chapter in Quest</a></div></div>';return h}
+  var td=document.getElementById('cd-today'), dEl=document.getElementById('cd-day'), lEl=document.getElementById('cd-left');
+  if(n<1){
+    var wait=Math.round((Date.parse(start)-Date.parse(ist))/dayMs);
+    dEl.textContent='Starts in '+wait+' day'+(wait>1?'s':'');lEl.textContent='90';
+    td.innerHTML='<div class="cdq"><h3>Day 1 opens on '+fmt(start)+'</h3><p class="note">Come back on '+fmt(start)+' for the first question, or join the QUAD WhatsApp Channel below for daily board tips.</p></div>';
+    return}
+  if(n>CD.length){dEl.textContent='Complete';lEl.textContent='0';td.innerHTML='<div class="cdq"><h3>The 90-day countdown is complete</h3><p class="note">All 90 questions and answers are below. All the best for your boards!</p></div>'}
+  else{dEl.textContent='Day '+n+' of 90';lEl.textContent=String(CD.length-n);td.innerHTML=card(CD[n-1],false)}
+  var last=Math.min(n-1,CD.length);
+  if(last>=1){document.getElementById('yesterday').hidden=false;document.getElementById('cd-yest').innerHTML=card(CD[last-1],true)}
+  if(last>=2){var p='';for(var i=last-2;i>=0;i--){var q=CD[i];p+='<details><summary>Day '+q.d+' · '+fmt(q.date)+' · '+esc(q.s)+' Ch '+q.c+': '+esc(q.title)+'</summary>'+card(q,true)+'</details>'}
+    document.getElementById('past').hidden=false;document.getElementById('cd-past').innerHTML=p}
+})();
+</script>"""
+    return page("90-Day Board Countdown · CBSE Class 10 Maths & Science · QUAD Academy",
+                "Free 90-day CBSE Class 10 board countdown: one board-pattern Maths or Science question a day from 20 Nov 2026, "
+                "with the answer, steps and video solution the next day. Every past day stays on the page.",
+                body, active="", og_url=BASE + "countdown/", og_image=BASE + "quad_logo.jpg", extra_head=extra, script=script)
+
+
 def main():
     root = pathlib.Path(sys.argv[1] if len(sys.argv) > 1 else pathlib.Path(__file__).resolve().parent.parent)
     today = dt.datetime.now(dt.timezone(dt.timedelta(hours=5, minutes=30))).date()
@@ -519,7 +658,9 @@ def main():
     (root / "masterclass/index.html").write_text(masterclass_page(), encoding="utf-8")
     (root / "free").mkdir(exist_ok=True)
     (root / "free/index.html").write_text(free_page(root), encoding="utf-8")
-    print(f"built {len(posts)} posts, blog index, feed, posts.json, masterclass page, free PDFs page")
+    (root / "countdown").mkdir(exist_ok=True)
+    (root / "countdown/index.html").write_text(countdown_page(root), encoding="utf-8")
+    print(f"built {len(posts)} posts, blog index, feed, posts.json, masterclass page, free PDFs page, countdown page")
 
 
 if __name__ == "__main__":
