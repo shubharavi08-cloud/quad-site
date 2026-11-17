@@ -1,6 +1,12 @@
 {
  "posts": [
   {
+   "title": "Acids, Bases and Salts Class 10: 7 Must-Do Board Questions, Solved (CBSE Science Chapter 2, pH and Litmus)",
+   "url": "https://quadacademy.org/blog/acids-bases-and-salts-board-questions/",
+   "date": "2026-11-17",
+   "description": "CBSE Class 10 Science Chapter 2 solved: litmus, baking powder, nature of salts, CuO + HCl, the pH case study, Plaster of Paris and three give-reasons questions, with the trap in each."
+  },
+  {
    "title": "Heredity Class 10: 7 Must-Do Board Questions, Solved (CBSE Science Chapter 8, Punnett Squares)",
    "url": "https://quadacademy.org/blog/heredity-board-questions/",
    "date": "2026-11-16",
@@ -77,6 +83,12 @@
      "blogPost": [
       {
        "@type": "BlogPosting",
+       "headline": "Acids, Bases and Salts Class 10: 7 Must-Do Board Questions, Solved (CBSE Science Chapter 2, pH and Litmus)",
+       "url": "https://quadacademy.org/blog/acids-bases-and-salts-board-questions/",
+       "datePublished": "2026-11-17"
+      },
+      {
+       "@type": "BlogPosting",
        "headline": "Heredity Class 10: 7 Must-Do Board Questions, Solved (CBSE Science Chapter 8, Punnett Squares)",
        "url": "https://quadacademy.org/blog/heredity-board-questions/",
        "datePublished": "2026-11-16"
@@ -136,6 +148,47 @@
        "datePublished": "2026-11-06"
       }
      ]
+    }
+   ]
+  },
+  {
+   "path": "blog/acids-bases-and-salts-board-questions/index.html",
+   "priority": 0.6,
+   "jsonld": [
+    {
+     "@type": "BlogPosting",
+     "headline": "Acids, Bases and Salts Class 10: 7 Must-Do Board Questions, Solved (CBSE Science Chapter 2, pH and Litmus)",
+     "description": "CBSE Class 10 Science Chapter 2 solved: litmus, baking powder, nature of salts, CuO + HCl, the pH case study, Plaster of Paris and three give-reasons questions, with the trap in each.",
+     "url": "https://quadacademy.org/blog/acids-bases-and-salts-board-questions/",
+     "mainEntityOfPage": "https://quadacademy.org/blog/acids-bases-and-salts-board-questions/",
+     "datePublished": "2026-11-17",
+     "dateModified": "2026-11-17",
+     "inLanguage": "en-IN",
+     "wordCount": 1236,
+     "author": {
+      "@type": "Organization",
+      "name": "Team QUAD",
+      "@id": "https://quadacademy.org/#org"
+     },
+     "publisher": {
+      "@id": "https://quadacademy.org/#org"
+     },
+     "educationalLevel": "Class 10",
+     "keywords": "Science, Chapter 2, acids bases and salts, pH scale, litmus, universal indicator, baking soda, baking powder, plaster of Paris, neutralisation, CBSE board questions",
+     "image": "https://i.ytimg.com/vi/IktgWJCfTBM/hqdefault.jpg",
+     "isPartOf": {
+      "@type": "Blog",
+      "url": "https://quadacademy.org/blog/"
+     },
+     "video": {
+      "@type": "VideoObject",
+      "name": "Acids, Bases and Salts Class 10 Important Questions: must-do questions + litmus and pH tricks",
+      "description": "CBSE Class 10 Science Chapter 2 solved: litmus, baking powder, nature of salts, CuO + HCl, the pH case study, Plaster of Paris and three give-reasons questions, with the trap in each.",
+      "thumbnailUrl": "https://i.ytimg.com/vi/IktgWJCfTBM/hqdefault.jpg",
+      "uploadDate": "2026-11-17",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/IktgWJCfTBM",
+      "contentUrl": "https://www.youtube.com/watch?v=IktgWJCfTBM"
+     }
     }
    ]
   },
