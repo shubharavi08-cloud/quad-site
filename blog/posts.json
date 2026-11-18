@@ -1,6 +1,12 @@
 {
  "posts": [
   {
+   "title": "Light Reflection and Refraction Class 10: 7 Must-Do Board Questions, Solved (CBSE Science Chapter 9, Mirror and Lens Formula)",
+   "url": "https://quadacademy.org/blog/light-reflection-refraction-board-questions/",
+   "date": "2026-11-18",
+   "description": "CBSE Class 10 Science Chapter 9 solved: convex and concave lens numericals, negative magnification, refractive index and speed of light, and the rear-view mirror, with the sign-convention trap in each."
+  },
+  {
    "title": "Acids, Bases and Salts Class 10: 7 Must-Do Board Questions, Solved (CBSE Science Chapter 2, pH and Litmus)",
    "url": "https://quadacademy.org/blog/acids-bases-and-salts-board-questions/",
    "date": "2026-11-17",
@@ -83,6 +89,12 @@
      "blogPost": [
       {
        "@type": "BlogPosting",
+       "headline": "Light Reflection and Refraction Class 10: 7 Must-Do Board Questions, Solved (CBSE Science Chapter 9, Mirror and Lens Formula)",
+       "url": "https://quadacademy.org/blog/light-reflection-refraction-board-questions/",
+       "datePublished": "2026-11-18"
+      },
+      {
+       "@type": "BlogPosting",
        "headline": "Acids, Bases and Salts Class 10: 7 Must-Do Board Questions, Solved (CBSE Science Chapter 2, pH and Litmus)",
        "url": "https://quadacademy.org/blog/acids-bases-and-salts-board-questions/",
        "datePublished": "2026-11-17"
@@ -148,6 +160,47 @@
        "datePublished": "2026-11-06"
       }
      ]
+    }
+   ]
+  },
+  {
+   "path": "blog/light-reflection-refraction-board-questions/index.html",
+   "priority": 0.6,
+   "jsonld": [
+    {
+     "@type": "BlogPosting",
+     "headline": "Light Reflection and Refraction Class 10: 7 Must-Do Board Questions, Solved (CBSE Science Chapter 9, Mirror and Lens Formula)",
+     "description": "CBSE Class 10 Science Chapter 9 solved: convex and concave lens numericals, negative magnification, refractive index and speed of light, and the rear-view mirror, with the sign-convention trap in each.",
+     "url": "https://quadacademy.org/blog/light-reflection-refraction-board-questions/",
+     "mainEntityOfPage": "https://quadacademy.org/blog/light-reflection-refraction-board-questions/",
+     "datePublished": "2026-11-18",
+     "dateModified": "2026-11-18",
+     "inLanguage": "en-IN",
+     "wordCount": 1342,
+     "author": {
+      "@type": "Organization",
+      "name": "Team QUAD",
+      "@id": "https://quadacademy.org/#org"
+     },
+     "publisher": {
+      "@id": "https://quadacademy.org/#org"
+     },
+     "educationalLevel": "Class 10",
+     "keywords": "Science, Chapter 9, light reflection and refraction, mirror formula, lens formula, magnification, refractive index, convex lens, concave lens, convex mirror, sign convention, CBSE board questions",
+     "image": "https://i.ytimg.com/vi/cOPsrbR2PAQ/hqdefault.jpg",
+     "isPartOf": {
+      "@type": "Blog",
+      "url": "https://quadacademy.org/blog/"
+     },
+     "video": {
+      "@type": "VideoObject",
+      "name": "Light Class 10 Important Questions: 7 must-do questions + mirror and lens tricks",
+      "description": "CBSE Class 10 Science Chapter 9 solved: convex and concave lens numericals, negative magnification, refractive index and speed of light, and the rear-view mirror, with the sign-convention trap in each.",
+      "thumbnailUrl": "https://i.ytimg.com/vi/cOPsrbR2PAQ/hqdefault.jpg",
+      "uploadDate": "2026-11-18",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/cOPsrbR2PAQ",
+      "contentUrl": "https://www.youtube.com/watch?v=cOPsrbR2PAQ"
+     }
     }
    ]
   },
