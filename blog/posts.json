@@ -1,6 +1,12 @@
 {
  "posts": [
   {
+   "title": "Metals and Non-metals Class 10: 7 Must-Do Board Questions, Solved (CBSE Science Chapter 3, Reactivity Series)",
+   "url": "https://quadacademy.org/blog/metals-and-non-metals-board-questions/",
+   "date": "2026-11-19",
+   "description": "CBSE Class 10 Science Chapter 3 solved: metals with water and acids, the reactivity series, displacement in salt solutions, alloys, extraction and the ionic bond in MgO, with the trap in each question."
+  },
+  {
    "title": "Light Reflection and Refraction Class 10: 7 Must-Do Board Questions, Solved (CBSE Science Chapter 9, Mirror and Lens Formula)",
    "url": "https://quadacademy.org/blog/light-reflection-refraction-board-questions/",
    "date": "2026-11-18",
@@ -89,6 +95,12 @@
      "blogPost": [
       {
        "@type": "BlogPosting",
+       "headline": "Metals and Non-metals Class 10: 7 Must-Do Board Questions, Solved (CBSE Science Chapter 3, Reactivity Series)",
+       "url": "https://quadacademy.org/blog/metals-and-non-metals-board-questions/",
+       "datePublished": "2026-11-19"
+      },
+      {
+       "@type": "BlogPosting",
        "headline": "Light Reflection and Refraction Class 10: 7 Must-Do Board Questions, Solved (CBSE Science Chapter 9, Mirror and Lens Formula)",
        "url": "https://quadacademy.org/blog/light-reflection-refraction-board-questions/",
        "datePublished": "2026-11-18"
@@ -160,6 +172,47 @@
        "datePublished": "2026-11-06"
       }
      ]
+    }
+   ]
+  },
+  {
+   "path": "blog/metals-and-non-metals-board-questions/index.html",
+   "priority": 0.6,
+   "jsonld": [
+    {
+     "@type": "BlogPosting",
+     "headline": "Metals and Non-metals Class 10: 7 Must-Do Board Questions, Solved (CBSE Science Chapter 3, Reactivity Series)",
+     "description": "CBSE Class 10 Science Chapter 3 solved: metals with water and acids, the reactivity series, displacement in salt solutions, alloys, extraction and the ionic bond in MgO, with the trap in each question.",
+     "url": "https://quadacademy.org/blog/metals-and-non-metals-board-questions/",
+     "mainEntityOfPage": "https://quadacademy.org/blog/metals-and-non-metals-board-questions/",
+     "datePublished": "2026-11-19",
+     "dateModified": "2026-11-19",
+     "inLanguage": "en-IN",
+     "wordCount": 1450,
+     "author": {
+      "@type": "Organization",
+      "name": "Team QUAD",
+      "@id": "https://quadacademy.org/#org"
+     },
+     "publisher": {
+      "@id": "https://quadacademy.org/#org"
+     },
+     "educationalLevel": "Class 10",
+     "keywords": "Science, Chapter 3, metals and non-metals, reactivity series, displacement reaction, ionic compounds, alloys, steel, solder, electrolysis, magnesium oxide, CBSE board questions",
+     "image": "https://i.ytimg.com/vi/masmd3I48iY/hqdefault.jpg",
+     "isPartOf": {
+      "@type": "Blog",
+      "url": "https://quadacademy.org/blog/"
+     },
+     "video": {
+      "@type": "VideoObject",
+      "name": "Metals and Non-metals Class 10 Important Questions: 7 must-do questions + MCQ tricks",
+      "description": "CBSE Class 10 Science Chapter 3 solved: metals with water and acids, the reactivity series, displacement in salt solutions, alloys, extraction and the ionic bond in MgO, with the trap in each question.",
+      "thumbnailUrl": "https://i.ytimg.com/vi/masmd3I48iY/hqdefault.jpg",
+      "uploadDate": "2026-11-19",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/masmd3I48iY",
+      "contentUrl": "https://www.youtube.com/watch?v=masmd3I48iY"
+     }
     }
    ]
   },
