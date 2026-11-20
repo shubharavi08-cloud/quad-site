@@ -1,6 +1,12 @@
 {
  "posts": [
   {
+   "title": "Human Eye and the Colourful World Class 10: 7 Must-Do Board Questions, Solved (CBSE Science Chapter 10, Myopia and Hypermetropia)",
+   "url": "https://quadacademy.org/blog/human-eye-colourful-world-board-questions/",
+   "date": "2026-11-20",
+   "description": "CBSE Class 10 Science Chapter 10 solved: presbyopia, hypermetropia and myopia with the right corrective lens, power of accommodation, deviation through a prism and scattering of light, with the trap in each question."
+  },
+  {
    "title": "Metals and Non-metals Class 10: 7 Must-Do Board Questions, Solved (CBSE Science Chapter 3, Reactivity Series)",
    "url": "https://quadacademy.org/blog/metals-and-non-metals-board-questions/",
    "date": "2026-11-19",
@@ -95,6 +101,12 @@
      "blogPost": [
       {
        "@type": "BlogPosting",
+       "headline": "Human Eye and the Colourful World Class 10: 7 Must-Do Board Questions, Solved (CBSE Science Chapter 10, Myopia and Hypermetropia)",
+       "url": "https://quadacademy.org/blog/human-eye-colourful-world-board-questions/",
+       "datePublished": "2026-11-20"
+      },
+      {
+       "@type": "BlogPosting",
        "headline": "Metals and Non-metals Class 10: 7 Must-Do Board Questions, Solved (CBSE Science Chapter 3, Reactivity Series)",
        "url": "https://quadacademy.org/blog/metals-and-non-metals-board-questions/",
        "datePublished": "2026-11-19"
@@ -172,6 +184,47 @@
        "datePublished": "2026-11-06"
       }
      ]
+    }
+   ]
+  },
+  {
+   "path": "blog/human-eye-colourful-world-board-questions/index.html",
+   "priority": 0.6,
+   "jsonld": [
+    {
+     "@type": "BlogPosting",
+     "headline": "Human Eye and the Colourful World Class 10: 7 Must-Do Board Questions, Solved (CBSE Science Chapter 10, Myopia and Hypermetropia)",
+     "description": "CBSE Class 10 Science Chapter 10 solved: presbyopia, hypermetropia and myopia with the right corrective lens, power of accommodation, deviation through a prism and scattering of light, with the trap in each question.",
+     "url": "https://quadacademy.org/blog/human-eye-colourful-world-board-questions/",
+     "mainEntityOfPage": "https://quadacademy.org/blog/human-eye-colourful-world-board-questions/",
+     "datePublished": "2026-11-20",
+     "dateModified": "2026-11-20",
+     "inLanguage": "en-IN",
+     "wordCount": 1501,
+     "author": {
+      "@type": "Organization",
+      "name": "Team QUAD",
+      "@id": "https://quadacademy.org/#org"
+     },
+     "publisher": {
+      "@id": "https://quadacademy.org/#org"
+     },
+     "educationalLevel": "Class 10",
+     "keywords": "Science, Chapter 10, human eye, colourful world, myopia, hypermetropia, presbyopia, power of accommodation, near point, prism, angle of deviation, scattering of light, CBSE board questions",
+     "image": "https://i.ytimg.com/vi/kHMYIL-Lits/hqdefault.jpg",
+     "isPartOf": {
+      "@type": "Blog",
+      "url": "https://quadacademy.org/blog/"
+     },
+     "video": {
+      "@type": "VideoObject",
+      "name": "Human Eye and Colourful World Class 10 Important Questions: 7 must-do questions + MCQ tricks",
+      "description": "CBSE Class 10 Science Chapter 10 solved: presbyopia, hypermetropia and myopia with the right corrective lens, power of accommodation, deviation through a prism and scattering of light, with the trap in each question.",
+      "thumbnailUrl": "https://i.ytimg.com/vi/kHMYIL-Lits/hqdefault.jpg",
+      "uploadDate": "2026-11-20",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/kHMYIL-Lits",
+      "contentUrl": "https://www.youtube.com/watch?v=kHMYIL-Lits"
+     }
     }
    ]
   },
