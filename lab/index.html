@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>QUAD Maths Lab · Experiments (prototype)</title>
+<style>
+:root{--gold:#ffcf5a}
+*{box-sizing:border-box}html,body{margin:0}
+body{color:#fff;font:17px/1.5 "Gochi Hand","Trebuchet MS",system-ui,-apple-system,"Segoe UI",sans-serif;min-height:100vh;background:radial-gradient(900px 500px at 85% -5%,#2f9b5c55 0,transparent 60%),linear-gradient(160deg,#1c3a2d,#14231d 70%)}
+.wrap{max-width:1060px;margin:0 auto;padding:16px 14px 80px}
+header.top{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.brand{font-weight:900;letter-spacing:.6px;color:var(--gold);font-size:20px}.brand small{display:block;color:#d3f5df;font-weight:400;letter-spacing:0;font-size:12px}
+.chip{background:#ffffff22;border:1px solid #ffffff44;border-radius:999px;padding:5px 12px;font-size:14px;margin-left:6px}.chip b{color:var(--gold)}
+h1{font-size:30px;line-height:1.15;margin:12px 0 4px}h1 span{color:var(--gold)}
+p.lead{color:#d3f5df;margin:0 0 14px;max-width:760px}
+.tabs{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0}
+.tab{border:0;border-radius:14px;padding:10px 16px;font:inherit;font-weight:800;cursor:pointer;color:#1b1b1b;box-shadow:0 5px 0 #0004;opacity:.7}
+.tab.on{opacity:1;transform:translateY(-2px)}
+.t1{background:linear-gradient(135deg,#ffd54a,#ffb02e)}.t2{background:linear-gradient(135deg,#7ee8ff,#4db8ff)}.t3{background:linear-gradient(135deg,#ff9ac6,#ff6fa5)}.t4{background:linear-gradient(135deg,#c9b6ff,#9b7bff)}
+.cert{border:4px double var(--c1);border-radius:14px;padding:18px;text-align:center;background:#0003}.cert h2{margin:4px 0;color:var(--c1);font-size:26px}.cert .nm{font-size:30px;margin:8px 0;color:var(--ink)}
+input.txt{font:inherit;font-size:20px;padding:8px 12px;border-radius:10px;border:2px solid var(--c1);background:#0005;color:var(--ink);width:100%;letter-spacing:3px;text-transform:uppercase}
+.keyrow{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}.keyrow span{background:#0004;border-radius:8px;padding:3px 7px;font-size:14px}
+.swatches{display:flex;gap:6px;align-items:center;font-size:12px;margin-left:auto}
+.sw{width:26px;height:26px;border-radius:50%;border:3px solid #ffffffaa;cursor:pointer;padding:0}.sw.on{border-color:var(--gold);box-shadow:0 0 0 2px #0008}
+.board{border-radius:18px;padding:14px;background:var(--bg);color:var(--ink);border:8px solid var(--frame);box-shadow:0 14px 34px #0007,inset 0 0 40px #0003}
+.tray{height:8px;margin:12px -14px -14px;background:var(--frame)}
+.say{display:flex;gap:10px;align-items:flex-start;margin-bottom:10px}
+.av{flex:0 0 44px;height:44px;border-radius:50%;background:var(--c1);color:#222;display:grid;place-items:center;font-weight:900}
+.bubble{background:#0003;border-radius:14px;padding:9px 14px;flex:1;border-left:5px solid var(--c1)}
+.lab{display:grid;grid-template-columns:1.5fr 1fr;gap:14px;align-items:start}
+@media (max-width:820px){.lab{grid-template-columns:1fr}}
+.stage{position:sticky;top:8px;border:2px dashed #ffffff33;border-radius:12px;background:#0002;touch-action:none;user-select:none}
+.stage svg{display:block;width:100%;height:auto;touch-action:none}
+.stage text{fill:var(--ink);font-family:"Segoe Print","Bradley Hand","Chalkboard SE","Comic Sans MS",cursive}
+.panel{display:flex;flex-direction:column;gap:10px}
+.box{border:2px solid #ffffff33;border-radius:12px;padding:10px 12px;background:#0002}
+.box h4{margin:0 0 6px;color:var(--c1);font-size:15px;letter-spacing:.4px;text-transform:uppercase}
+.read{font-family:"Segoe Print","Bradley Hand","Chalkboard SE","Comic Sans MS",cursive;font-size:19px;line-height:1.7}
+.ok{color:var(--c4)}.no{color:var(--c3)}
+.chal{list-style:none;margin:0;padding:0}.chal li{padding:6px 0;display:flex;gap:8px;align-items:flex-start}
+.chal li i{font-style:normal;flex:0 0 24px;height:24px;border-radius:50%;border:2px solid var(--c1);display:grid;place-items:center;font-size:14px}
+.chal li.done i{background:var(--c4);color:#123;border-color:var(--c4)}.chal li.done span{opacity:.75}
+.btnrow{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+button.sm{background:#0004;color:var(--ink);border:2px solid var(--c1);border-radius:10px;padding:5px 12px;font:inherit;font-weight:700;cursor:pointer;min-width:38px}
+button.sm.on{background:var(--c1);color:#222}
+.step{display:flex;align-items:center;gap:6px;margin:4px 0}.step b{min-width:34px;text-align:center;font-size:20px}.step label{min-width:62px}
+.opts{display:grid;gap:8px;margin-top:8px}
+.opt{background:#0004;color:var(--ink);border:2px solid #ffffff44;border-radius:12px;padding:9px 12px;text-align:left;cursor:pointer;font:inherit}
+.opt:hover:not([disabled]){border-color:var(--c1)}.opt.good{background:#12a150aa;border-color:#4cd08a}.opt.bad{background:#d63a3aaa;border-color:#ff7a70}
+.fb{margin-top:8px;font-size:15px}
+.badge{display:none;margin:0 0 10px;text-align:center;padding:12px;border:3px solid var(--gold);border-radius:14px;background:#0003;font-size:20px}
+.badge.show{display:block;animation:pop .6s cubic-bezier(.3,1.6,.5,1)}
+@keyframes pop{from{transform:scale(.4);opacity:0}to{transform:scale(1);opacity:1}}
+footer{margin-top:20px;color:#cdeed8;font-size:13px}
+</style>
+</head>
+<body><div class="wrap" id="app"></div>
+<script>
+"use strict";
+var THEMES={chalk:{n:"QUAD board",bg:"#14231d",ink:"#f4efe2",c1:"#ffcf5a",c2:"#7fe3ff",c3:"#ff9bbd",c4:"#9dff9d",grid:"#f4efe222",frame:"#8a5a2e"},black:{n:"Blackboard",bg:"#15191e",ink:"#f1f1f1",c1:"#ffd54a",c2:"#6fd8ff",c3:"#ff8fb3",c4:"#8cf08c",grid:"#ffffff1c",frame:"#5a5f66"},white:{n:"Whiteboard",bg:"#fbfbf6",ink:"#1d2733",c1:"#d97a00",c2:"#0a78b8",c3:"#d6336c",c4:"#2b8a3e",grid:"#0000001a",frame:"#b9bec4"},blue:{n:"Blue board",bg:"#143a6b",ink:"#fff",c1:"#ffd166",c2:"#7ee0ff",c3:"#ff9ec7",c4:"#9be37d",grid:"#ffffff24",frame:"#c4cbd6"},paper:{n:"Cream paper",bg:"#f7edd3",ink:"#3a2d1f",c1:"#c2570a",c2:"#1f6f8b",c3:"#b5336a",c4:"#3a7d44",grid:"#8a6a3a24",frame:"#b08a55"},plum:{n:"Plum board",bg:"#3b1f54",ink:"#fbf3ff",c1:"#ffd54a",c2:"#7ae7ff",c3:"#ff9bd0",c4:"#a6f06a",grid:"#ffffff22",frame:"#8d6ab0"}};
+var S={xp:0,badges:{},theme:"chalk"};
+try{var r=localStorage.getItem("quadlab_v3");if(r){var o=JSON.parse(r);S.xp=o.xp||0;S.badges=o.badges||{};if(THEMES[o.theme])S.theme=o.theme}}catch(e){}
+function save(){try{localStorage.setItem("quadlab_v3",JSON.stringify(S))}catch(e){}}
+var NS="http://www.w3.org/2000/svg";
+function el(t,a,p){var e=document.createElementNS(NS,t);for(var k in a)e.setAttribute(k,a[k]);if(p)p.appendChild(e);return e}
+function fmt(n){n=Math.round(n*100)/100;if(Object.is(n,-0))n=0;return String(n).replace("-","−")}
+function tstyle(){var t=THEMES[S.theme];return "--bg:"+t.bg+";--ink:"+t.ink+";--c1:"+t.c1+";--c2:"+t.c2+";--c3:"+t.c3+";--c4:"+t.c4+";--grid:"+t.grid+";--frame:"+t.frame}
+function esc(t){var d=document.createElement("div");d.textContent=t;return d.innerHTML}
+var cur="m1",app=document.getElementById("app");
+function shell(){
+ var h='<header class="top"><div class="brand">QUAD MATHS LAB<small>Experiments · prototype of the new style</small></div><div><span class="chip">XP <b id="xp">'+S.xp+'</b></span><span class="chip">Badges <b id="bd">'+Object.keys(S.badges).length+'/3</b></span></div></header>';
+ h+='<h1>Don\'t watch maths. <span>Do it.</span></h1><p class="lead">Drag, build and change things. The board answers instantly, so you find the rule yourself. Three experiments and a secret vault from Class 10: Polynomials and Pair of Linear Equations.</p>';
+ h+='<div class="tabs"><button class="tab t1" id="tab_m1" onclick="go(\'m1\')">1 · Zero Dragger</button><button class="tab t2" id="tab_m2" onclick="go(\'m2\')">2 · Tile Builder</button><button class="tab t3" id="tab_m3" onclick="go(\'m3\')">3 · Lines Lab</button><button class="tab t4" id="tab_m4" onclick="go(\'m4\')">🔑 Secret Vault</button><div class="swatches">Board: '+Object.keys(THEMES).map(function(k){return '<button class="sw'+(k===S.theme?' on':'')+'" title="'+THEMES[k].n+'" aria-label="'+THEMES[k].n+'" style="background:'+THEMES[k].bg+'" onclick="setTheme(\''+k+'\')"></button>'}).join("")+'</div></div>';
+ h+='<div class="board" id="board" style="'+tstyle()+'"></div><footer>QUAD Academy · quadacademy.org · No login, no ads, nothing saved except on your own device.</footer>';
+ app.innerHTML=h}
+function setTheme(k){S.theme=k;save();document.getElementById("board").setAttribute("style",tstyle());document.querySelectorAll(".sw").forEach(function(x){x.classList.toggle("on",x.title===THEMES[k].n)})}
+function go(m){cur=m;["m1","m2","m3","m4"].forEach(function(k){document.getElementById("tab_"+k).classList.toggle("on",k===m)});({m1:M1,m2:M2,m3:M3,m4:M4})[m]()}
+function award(key,xp){if(!S.badges[key]){S.badges[key]=1;S.xp+=xp;save();document.getElementById("xp").textContent=S.xp;document.getElementById("bd").textContent=Object.keys(S.badges).length+"/3";var b=document.getElementById("badge");if(b)b.classList.add("show")}}
+var gained={};function bonus(id,xp){if(!gained[id]){gained[id]=1;S.xp+=xp;save();document.getElementById("xp").textContent=S.xp}}
+function drag(node,fn){node.style.cursor="grab";node.addEventListener("pointerdown",function(e){e.preventDefault();var svg=node.ownerSVGElement;svg._drag=fn;try{svg.setPointerCapture(e.pointerId)}catch(x){}
+ if(!svg._wired){svg._wired=1;svg.addEventListener("pointermove",function(ev){if(!svg._drag)return;var pt=svg.createSVGPoint();pt.x=ev.clientX;pt.y=ev.clientY;var q=pt.matrixTransform(svg.getScreenCTM().inverse());svg._drag(q.x,q.y)});var end=function(){svg._drag=null};svg.addEventListener("pointerup",end);svg.addEventListener("pointercancel",end)}})}
+function frame(title,say,stageHTML,panelHTML){
+ document.getElementById("board").innerHTML='<div class="say"><div class="av">D</div><div class="bubble" id="say">'+say+'</div></div><div id="badge" class="badge">🏅 Badge earned: <b>'+esc(title)+'</b>! +50 XP</div><div class="lab"><div class="stage"><svg id="svg" viewBox="0 0 440 320" role="application" aria-label="'+esc(title)+'"></svg></div><div class="panel">'+panelHTML+'</div></div><div class="tray"></div>'}
+function chalList(items,st){return '<ul class="chal">'+items.map(function(t,i){return '<li class="'+(st[i]?"done":"")+'"><i>'+(st[i]?"✓":i+1)+'</i><span>'+t+'</span></li>'}).join("")+'</ul>'}
+function notice(q,opts,ok,why,key){
+ return '<div class="box"><h4>Notice</h4><div>'+q+'</div><div class="opts" id="nq">'+opts.map(function(o,k){return '<button class="opt" onclick="nq('+k+','+ok+',\''+key+'\')">'+o+'</button>'}).join("")+'</div><div class="fb" id="nfb" data-why="'+esc(why)+'"></div></div>'}
+var nDone={};
+function nq(k,ok,key){var b=document.querySelectorAll("#nq .opt"),f=document.getElementById("nfb");if(k===ok){b.forEach(function(x){x.disabled=true});b[k].classList.add("good");f.innerHTML="✅ "+f.getAttribute("data-why");nDone[key]=1;bonus("n"+key,10);check(key)}else{b[k].classList.add("bad");b[k].disabled=true;f.innerHTML="❌ Not quite. Go back to the board, change things and look again."}}
+function check(key){var m=MS[key];if(nDone[key]&&m.all())award(key,50)}
+var MS={};
+function grid(svg,x0,x1,y0,y1,M,xs,ys){var g=el("g",{},svg),i;for(i=Math.ceil(x0/xs)*xs;i<=x1;i+=xs){el("line",{x1:M.x(i),x2:M.x(i),y1:M.y(y0),y2:M.y(y1),stroke:"var(--grid)","stroke-width":1},g)}for(i=Math.ceil(y0/ys)*ys;i<=y1;i+=ys){el("line",{y1:M.y(i),y2:M.y(i),x1:M.x(x0),x2:M.x(x1),stroke:"var(--grid)","stroke-width":1},g)}
+ el("line",{x1:M.x(x0),x2:M.x(x1),y1:M.y(0),y2:M.y(0),stroke:"var(--ink)","stroke-width":2.2},g);el("line",{x1:M.x(0),x2:M.x(0),y1:M.y(y0),y2:M.y(y1),stroke:"var(--ink)","stroke-width":2.2},g);
+ for(i=Math.ceil(x0/xs)*xs;i<=x1;i+=xs){if(i&&i%2===0){var t=el("text",{x:M.x(i),y:M.y(0)+13,"text-anchor":"middle","font-size":10},g);t.style.opacity=.7;t.textContent=fmt(i)}}
+ for(i=Math.ceil(y0/ys)*ys;i<=y1;i+=ys){if(i&&i%ys===0&&(i%4===0)){var t2=el("text",{x:M.x(0)-4,y:M.y(i)+4,"text-anchor":"end","font-size":10},g);t2.style.opacity=.7;t2.textContent=fmt(i)}}}
+function mapper(x0,x1,y0,y1){var L=30,R=10,T=10,B=24;return {x:function(a){return L+(a-x0)/(x1-x0)*(440-L-R)},y:function(b){return 320-B-(b-y0)/(y1-y0)*(320-T-B)},ix:function(px){return x0+(px-L)/(440-L-R)*(x1-x0)},iy:function(py){return y0+(320-B-py)/(320-T-B)*(y1-y0)}}}
+function clip(svg,id,M,x0,x1,y0,y1){var d=el("defs",{},svg),c=el("clipPath",{id:id},d);el("rect",{x:M.x(x0),y:M.y(y1),width:M.x(x1)-M.x(x0),height:M.y(y0)-M.y(y1)},c)}
+function poly(a,b,c){function term(co,v,first){if(co===0)return "";var s=co<0?"−":"+",m=Math.abs(co);var body=(m===1&&v)?v:fmt(m)+v;return first?((co<0?"−":"")+body):(" "+s+" "+body)}var t=term(a,"x²",true)+term(b,"x",!a)+term(c,"",!a&&!b);return t||"0"}
+
+/* ============ MISSION 1: Zero Dragger ============ */
+var m1={p:1,q:5,a:1,ch:[0,0,0]};
+function M1(){
+ frame("Zero Dragger","<b>Drag the two gold dots along the x-axis.</b> They are the zeroes of the polynomial. Watch the polynomial change. Can you make it match the challenges?",
+ "",
+ '<div class="box"><h4>Your polynomial</h4><div class="read" id="r1"></div></div><div class="box"><h4>Stretch it: change a</h4><div class="btnrow" id="ab"></div></div><div class="box"><h4>Challenges</h4><div id="c1"></div></div>'+notice("When a = 1, the zeroes of x² − 7x + 12 add up to 7. Which number in the polynomial tells you this?",["b = −7, but the sum is the opposite: −b","b = −7, so the sum is b","c = 12","a = 1"],0,"The sum of the zeroes is −b/a. Try a = 2 with zeroes 3 and 4: b becomes −14, a is 2, and −b/a = 14/2 = 7 again.","m1"));
+ var ab=document.getElementById("ab");[-2,-1,1,2,3].forEach(function(v){var b=document.createElement("button");b.className="sm";b.textContent="a = "+fmt(v);b.onclick=function(){m1.a=v;draw1()};b.id="a"+v;ab.appendChild(b)});
+ var svg=document.getElementById("svg");m1.svg=svg;draw1()}
+MS.m1={all:function(){return m1.ch[0]&&m1.ch[1]&&m1.ch[2]}};
+function draw1(){
+ var svg=m1.svg,X0=-8,X1=8,Y0=-12,Y1=12,M=mapper(X0,X1,Y0,Y1);while(svg.firstChild)svg.removeChild(svg.firstChild);
+ clip(svg,"cp1",M,X0,X1,Y0,Y1);grid(svg,X0,X1,Y0,Y1,M,1,2);
+ var a=m1.a,p=m1.p,q=m1.q,pts=[];for(var x=X0;x<=X1;x+=.1){pts.push(M.x(x).toFixed(1)+" "+M.y(a*(x-p)*(x-q)).toFixed(1))}
+ var cv=el("path",{d:"M"+pts.join(" L"),fill:"none","stroke-width":3.5,"stroke-linecap":"round","clip-path":"url(#cp1)"},svg);cv.style.stroke="var(--c2)";
+ [["p",p],["q",q]].forEach(function(z){var c=el("circle",{cx:M.x(z[1]),cy:M.y(0),r:12,"stroke-width":3,"stroke":"var(--bg)"},svg);c.style.fill="var(--c1)";var t=el("text",{x:M.x(z[1]),y:M.y(0)+(z[0]==="p"?-18:-18),"text-anchor":"middle","font-size":15},svg);t.style.fill="var(--c1)";t.textContent=fmt(z[1]);
+  drag(c,function(px){var v=Math.round(M.ix(px)*2)/2;v=Math.max(-7,Math.min(7,v));if(m1[z[0]]!==v){m1[z[0]]=v;draw1()}})});
+ var b=-a*(p+q),c=a*p*q,sum=p+q,prod=p*q;
+ document.getElementById("r1").innerHTML='y = '+poly(a,b,c)+'<br>zeroes: <b>'+fmt(p)+'</b> and <b>'+fmt(q)+'</b><br>sum of zeroes = '+fmt(sum)+'<br>product = '+fmt(prod)+'<br><span class="no">−b/a = '+fmt(-b/a)+'</span> &nbsp; <span class="ok">c/a = '+fmt(c/a)+'</span>';
+ document.querySelectorAll("#ab .sm").forEach(function(x){x.classList.toggle("on",x.id==="a"+a)});
+ var ch=m1.ch,oneOf=function(s,pr){return a===1&&((p+q===s&&p*q===pr))};
+ var c1=oneOf(7,12),c2=(p===q&&a===1),c3=(a===1&&p+q===-3&&p*q===-10);
+ if(c1)ch[0]=1;if(c2)ch[1]=1;if(c3)ch[2]=1;
+ var hint=function(s,pr){return a!==1?" (set a = 1 first)":(p+q===s?" Sum is right ("+fmt(s)+") but the product is "+fmt(p*q)+", need "+pr+".":(p*q===pr?" Product is right but the sum is "+fmt(p+q)+", need "+fmt(s)+".":" Now: sum "+fmt(p+q)+", product "+fmt(p*q)+"."))};
+ document.getElementById("c1").innerHTML=chalList(["Make <b>x² − 7x + 12</b>."+(ch[0]?"":hint(7,12)),"Make a parabola that <b>touches the x-axis at only one point</b> (a = 1)."+(ch[1]?"":(p===q?"":" The two dots must meet.")),"Make a polynomial whose zeroes add to <b>−3</b> and multiply to <b>−10</b> (a = 1)."+(ch[2]?"":hint(-3,-10))],ch);
+ if(c1||c2||c3){var w=document.getElementById("say");if(w)w.innerHTML=c1&&!m1.s1?"<b>Yes!</b> Zeroes 3 and 4 give x² − 7x + 12. Look at the readout: the sum of zeroes is 7, and b is −7. Spot the link?":(c2?"<b>One zero!</b> When both zeroes meet, the graph just touches the axis.":(c3?"<b>Nice.</b> Sum −3 and product −10 gave x² + 3x − 10.":w.innerHTML));if(c1)m1.s1=1;bonus("m1c"+(c1?1:c2?2:3),15)}
+ check("m1")}
+
+/* ============ MISSION 2: Tile Builder ============ */
+var m2={m:2,n:2,ch:[0,0,0],target:null};
+var T2=[{n:7,c:12,l:"x² + 7x + 12"},{n:5,c:6,l:"x² + 5x + 6"},{n:7,c:10,l:"x² + 7x + 10"}];
+function M2(){
+ frame("Tile Builder","<b>Build a rectangle out of tiles.</b> The big square is x by x. The long strips are x by 1. The little squares are 1 by 1. Drag the gold dots to stretch the rectangle. Its area is the polynomial!","",
+ '<div class="box"><h4>Your rectangle</h4><div class="read" id="r2"></div></div><div class="box"><h4>Challenges: build the area</h4><div id="c2"></div></div>'+notice("To factorise x² + 9x + 20, you look for two numbers that…",["add to 9 and multiply to 20","add to 20 and multiply to 9","both equal 9","multiply to 9 and add to 29"],0,"Two side lengths m and n: the strips add up to m + n (the x term) and the little squares multiply to m × n (the number). 4 and 5 work, so x² + 9x + 20 = (x + 4)(x + 5).","m2"));
+ m2.svg=document.getElementById("svg");draw2()}
+MS.m2={all:function(){return m2.ch[0]&&m2.ch[1]&&m2.ch[2]}};
+function draw2(){
+ var svg=m2.svg,L=100,u=18,x0=34,y0=300,m=m2.m,n=m2.n;while(svg.firstChild)svg.removeChild(svg.firstChild);
+ function R(x,y,w,h,c,t,fs){var r=el("rect",{x:x,y:y,width:w,height:h,rx:3,"stroke-width":1.5},svg);r.style.fill="var(--c"+c+")";r.style.fillOpacity=.55;r.style.stroke="var(--c"+c+")";if(t){var tx=el("text",{x:x+w/2,y:y+h/2+fs*.35,"text-anchor":"middle","font-size":fs},svg);tx.textContent=t}}
+ R(x0,y0-L,L,L,2,"x²",26);
+ for(var i=0;i<m;i++)R(x0+L+i*u,y0-L,u,L,1,i===0&&m>0?"":"" ,10);
+ for(var j=0;j<n;j++)R(x0,y0-L-(j+1)*u,L,u,1,"",10);
+ for(i=0;i<m;i++)for(j=0;j<n;j++)R(x0+L+i*u,y0-L-(j+1)*u,u,u,3,"",8);
+ var w=L+m*u,h=L+n*u;
+ var t1=el("text",{x:x0+w/2,y:y0+16,"text-anchor":"middle","font-size":15},svg);t1.textContent="x + "+m;
+ var t2=el("text",{x:x0-6,y:y0-h/2+5,"text-anchor":"end","font-size":15},svg);t2.textContent="x + "+n;
+ var hr=el("circle",{cx:x0+w,cy:y0-L/2,r:12,"stroke-width":3,stroke:"var(--bg)"},svg);hr.style.fill="var(--c1)";
+ drag(hr,function(px){var v=Math.round((px-x0-L)/u);v=Math.max(0,Math.min(9,v));if(v!==m2.m){m2.m=v;draw2()}});
+ var ht=el("circle",{cx:x0+L/2,cy:y0-h,r:12,"stroke-width":3,stroke:"var(--bg)"},svg);ht.style.fill="var(--c1)";
+ drag(ht,function(px,py){var v=Math.round((y0-L-py)/u);v=Math.max(0,Math.min(9,v));if(v!==m2.n){m2.n=v;draw2()}});
+ var lg=[["2","x² tile"],["1","x strip (x by 1)"],["3","unit square (1 by 1)"]];
+ lg.forEach(function(g,k){var r=el("rect",{x:300,y:14+k*20,width:14,height:14,rx:3},svg);r.style.fill="var(--c"+g[0]+")";r.style.fillOpacity=.6;var t=el("text",{x:320,y:26+k*20,"font-size":12},svg);t.textContent=g[1]});
+ var xs=m+n,un=m*n;
+ document.getElementById("r2").innerHTML='sides: (x + '+m+') and (x + '+n+')<br>area = x² + <b>'+xs+'</b>x + <b>'+un+'</b><br><span class="ok">= (x + '+m+')(x + '+n+')</span><br>zeroes: x = −'+m+' and x = −'+n;
+ var ch=m2.ch;T2.forEach(function(t,k){if(xs===t.n&&un===t.c){ch[k]=1;bonus("m2c"+k,15)}});
+ var h2=function(t){if(xs===t.n&&un===t.c)return "";return " Yours: x² + "+xs+"x + "+un+(xs===t.n?" (strips right, but units are "+un+", need "+t.c+")":(un===t.c?" (units right, but x-strips are "+xs+", need "+t.n+")":""))};
+ document.getElementById("c2").innerHTML=chalList(T2.map(function(t,k){return "Build <b>"+t.l+"</b>."+(ch[k]?"":h2(t))}),ch);
+ if(ch[0]&&!m2.s1){m2.s1=1;document.getElementById("say").innerHTML="<b>Rectangle built!</b> The tiles add up to x² + 7x + 12, and the sides are (x + 3) and (x + 4). Notice: 3 + 4 = 7 and 3 × 4 = 12."}
+ check("m2")}
+
+/* ============ MISSION 3: Lines Lab ============ */
+var m3={a:1,b:2,c:2,ch:[0,0,0]},L1={a:3,b:4,c:10};
+function M3(){
+ frame("Lines Lab","<b>The gold line is fixed: 3x + 4y = 10.</b> You control the second line with the + and − buttons. Watch where the lines meet, and what the ratios say.","",
+ '<div class="box"><h4>Your second line</h4><div id="st3"></div></div><div class="box"><h4>Readout</h4><div class="read" id="r3"></div></div><div class="box"><h4>Challenges</h4><div id="c3"></div></div>'+notice("The lines are parallel (no solution) when…",["a₁/a₂ = b₁/b₂ but c₁/c₂ is different","a₁/a₂ ≠ b₁/b₂","all three ratios are equal","c₁ = c₂"],0,"Equal a and b ratios mean the same slope. A different c ratio means a different position, so the lines run side by side forever.","m3"));
+ var st=document.getElementById("st3");
+ [["a","a₂ (x)"],["b","b₂ (y)"],["c","c₂"]].forEach(function(f){var d=document.createElement("div");d.className="step";d.innerHTML='<label>'+f[1]+'</label><button class="sm" aria-label="decrease '+f[0]+'">−</button><b id="v'+f[0]+'"></b><button class="sm" aria-label="increase '+f[0]+'">+</button>';var bs=d.querySelectorAll("button");var lim=f[0]==="c"?12:9;bs[0].onclick=function(){m3[f[0]]=Math.max(-lim,m3[f[0]]-1);draw3()};bs[1].onclick=function(){m3[f[0]]=Math.min(lim,m3[f[0]]+1);draw3()};st.appendChild(d)});
+ m3.svg=document.getElementById("svg");draw3()}
+MS.m3={all:function(){return m3.ch[0]&&m3.ch[1]&&m3.ch[2]}};
+function lineY(l,X0,X1,M,svg,cls,w){if(l.b!==0){var y0=(l.c-l.a*X0)/l.b,y1=(l.c-l.a*X1)/l.b;var e=el("line",{x1:M.x(X0),y1:M.y(y0),x2:M.x(X1),y2:M.y(y1),"stroke-width":w,"stroke-linecap":"round","clip-path":"url(#cp3)"},svg);e.style.stroke=cls;return e}else if(l.a!==0){var x=l.c/l.a;var e2=el("line",{x1:M.x(x),y1:M.y(-6),x2:M.x(x),y2:M.y(6),"stroke-width":w,"stroke-linecap":"round","clip-path":"url(#cp3)"},svg);e2.style.stroke=cls;return e2}}
+function draw3(){
+ var svg=m3.svg,X0=-6,X1=6,M=mapper(X0,X1,-6,6);while(svg.firstChild)svg.removeChild(svg.firstChild);clip(svg,"cp3",M,X0,X1,-6,6);grid(svg,X0,X1,-6,6,M,1,1);
+ var l2={a:m3.a,b:m3.b,c:m3.c};lineY(L1,X0,X1,M,svg,"var(--c1)",5);
+ var degenerate=(l2.a===0&&l2.b===0);if(!degenerate)lineY(l2,X0,X1,M,svg,"var(--c2)",3.5);
+ ["a","b","c"].forEach(function(k){document.getElementById("v"+k).textContent=fmt(m3[k])});
+ var det=L1.a*l2.b-l2.a*L1.b,txt;
+ var r1=l2.a?L1.a/l2.a:null,r2=l2.b?L1.b/l2.b:null,r3=l2.c?L1.c/l2.c:null;
+ var verdict,kind;
+ if(degenerate){verdict="Not a line. Make a₂ or b₂ non-zero.";kind="none"}
+ else if(det!==0){kind="one";var x=(L1.c*l2.b-l2.c*L1.b)/det,y=(L1.a*l2.c-l2.a*L1.c)/det;verdict="Cross at one point: <b>("+fmt(x)+", "+fmt(y)+")</b> → ONE solution";m3.pt=[x,y];
+  var d=el("circle",{cx:M.x(x),cy:M.y(y),r:8,"stroke-width":2,stroke:"var(--bg)"},svg);d.style.fill="var(--c4)";}
+ else{ if(L1.a*l2.c-l2.a*L1.c===0&&L1.b*l2.c-l2.b*L1.c===0){kind="same";verdict="Exactly the same line → INFINITELY many solutions"}else{kind="par";verdict="Parallel lines → NO solution"}}
+ function R(v){return v===null?"÷0":fmt(v)}
+ document.getElementById("r3").innerHTML='a₁/a₂ = '+R(r1)+'<br>b₁/b₂ = '+R(r2)+'<br>c₁/c₂ = '+R(r3)+'<br><span class="'+(kind==="one"?"ok":"no")+'">'+verdict+'</span>';
+ var ch=m3.ch,c1=(kind==="one"&&Math.abs(m3.pt[0]-2)<1e-9&&Math.abs(m3.pt[1]-1)<1e-9),c2=kind==="par",c3=kind==="same";
+ if(c1){ch[0]=1;bonus("m3c1",15)}if(c2){ch[1]=1;bonus("m3c2",15)}if(c3){ch[2]=1;bonus("m3c3",15)}
+ document.getElementById("c3").innerHTML=chalList(["Make the lines <b>cross at (2, 1)</b>.","Make the lines <b>parallel</b> (no solution). Which ratios must match?","Make the lines <b>the same line</b> (infinitely many). Which ratios must all match?"],ch);
+ check("m3")}
+/* ============ SECRET VAULT ============ */
+var WORD_OK="ROOTS";
+function M4(){
+ var key="";for(var i=1;i<=26;i++)key+='<span>'+String.fromCharCode(64+i)+'='+i+'</span>';
+ var open=!!S.vault;
+ document.getElementById("board").innerHTML='<div class="say"><div class="av">D</div><div class="bubble" id="say">'+(open?"<b>The vault is open!</b> You found the secret word in QUAD Maths Live 2. Put your name on your certificate and share a screenshot with us.":"<b>Shh, the vault is locked.</b> In QUAD Maths Live 2, every clue answer is a number. Turn each number into a letter (A=1, B=2, ...). Five letters make the secret word. Type it here!")+'</div></div><div class="lab"><div class="box" id="vl"></div><div class="panel"><div class="box"><h4>Number to letter</h4><div class="keyrow">'+key+'</div></div><div class="box"><h4>Next secret word</h4>Sunday 29 Nov, 7 PM: Trigonometry + Heights and Distances. A brand-new word, a new vault gift.</div></div></div><div class="tray"></div>';
+ var v=document.getElementById("vl");
+ if(!open){v.innerHTML='<h4>Enter the secret word</h4><input class="txt" id="sw" maxlength="12" autocomplete="off" aria-label="secret word"><div class="btnrow" style="margin-top:10px"><button class="sm on" id="swb">Open the vault</button></div><div class="fb" id="swf"></div>';
+  var tryw=function(){var w=document.getElementById("sw").value.trim().toUpperCase();if(w===WORD_OK){S.vault=1;S.xp+=100;save();document.getElementById("xp").textContent=S.xp;M4()}else{document.getElementById("swf").innerHTML='<span class="no">Not that one. Count the letters again: five clues, five letters.</span>'}};
+  document.getElementById("swb").onclick=tryw;document.getElementById("sw").onkeydown=function(e){if(e.key==="Enter")tryw()}}
+ else{v.innerHTML='<h4>Your certificate</h4><div class="cert"><div>QUAD ACADEMY</div><h2>Root Finder 🔑</h2><div>cracked the secret word in Maths Live 2</div><div class="nm" id="cn">'+esc(S.nm||"Your name")+'</div><div>Class 10 · Polynomials + Pair of Linear Equations</div></div><div class="btnrow" style="margin-top:10px"><input class="txt" id="nm" maxlength="24" placeholder="Type your name" style="letter-spacing:0;text-transform:none" aria-label="your name"></div><div class="fb">+100 XP earned. Take a screenshot and share it!</div>';
+  var nm=document.getElementById("nm");nm.value=S.nm||"";nm.oninput=function(){S.nm=nm.value;save();document.getElementById("cn").textContent=nm.value||"Your name"}}}
+shell();go("m1");
+</script>
+</body>
+</html>
