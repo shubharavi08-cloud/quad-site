@@ -1,4 +1,25 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style><title>QUAD Academy · Free CBSE Class 10 Maths &amp; Science Revision Videos</title>
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}
+/* makeover: pictures, less text */
+.ico{position:relative;width:46px;height:46px;border-radius:14px;display:grid;place-items:center;font-size:1.6rem;line-height:1;background:linear-gradient(135deg,#fff3b8,#ffd21f);box-shadow:0 2px 0 rgba(15,42,45,.18)}
+.subj.s .ico{background:linear-gradient(135deg,#c9f1f7,#6fd0e0)}
+.ico em{position:absolute;right:-6px;bottom:-6px;font:900 .68rem/1 var(--display);font-style:normal;background:var(--deep);color:#fff;border-radius:8px;padding:.22rem .38rem}
+.ch{grid-template-columns:52px 1fr!important;align-items:center!important}
+.ch .nm{font-size:1.05rem}
+.lk{font-size:.84rem;padding:.5rem .7rem;border-radius:999px}
+.sub{max-width:60ch}
+.hero .lede{max-width:34ch;font-size:1.15rem}
+.vid .th::after{content:attr(data-e);position:absolute;left:8px;top:8px;font-size:1.25rem;background:rgba(255,255,255,.92);border-radius:12px;padding:.1rem .4rem;box-shadow:0 2px 0 rgba(0,0,0,.15)}
+.vid .th{position:relative}
+.qsteps div{display:flex;gap:10px;align-items:center}
+.qsteps .qe{font-size:1.8rem;line-height:1;flex:none;width:46px;height:46px;display:grid;place-items:center;border-radius:14px;background:#fff3b8}
+.board .row .e{margin-right:.5rem}
+.dli .e{display:grid;place-items:center;width:54px;height:54px;border-radius:16px;background:#fff3b8;font-size:1.9rem;margin-bottom:6px}
+.btn.lab{background:#fff;border-color:var(--teal);color:#0d7383}
+.labcard{display:grid;grid-template-columns:auto 1fr auto;gap:16px;align-items:center;background:linear-gradient(135deg,#d8f5fa,#fff3b8);border:2px solid var(--line);border-radius:20px;padding:18px 20px}
+.labcard .big{font-size:2.6rem}
+.labcard h2{margin:0}.labcard p{margin:.2rem 0 0;color:var(--ink-2)}
+@media (max-width:680px){.labcard{grid-template-columns:auto 1fr}.labcard .btn{grid-column:1/-1;text-align:center}}
+</style><title>QUAD Academy · Free CBSE Class 10 Maths &amp; Science Revision Videos</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <meta name="description" content="QUAD Academy: free CBSE Class 10 Maths and Science revision. Important-question videos, board paper walkthroughs, revision notes and solutions books, plus live Board Boost batches.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -237,44 +258,49 @@ footer a{color:#fff}
     <div>
       <div class="kicker"><span class="pill y">CBSE Class 10</span><span class="pill">Maths + Science · Boards 2027</span><span class="pill dv" id="dv" hidden></span></div>
       <h1>Revise every chapter <span style="white-space:nowrap"><span class="hl">free</span>,</span> <span class="t">then ace the boards</span></h1>
-      <p class="lede">Important questions from real CBSE board papers, solved step by step. Full board paper walkthroughs, revision notes and solutions books for every chapter. All free, chapter by chapter, in NCERT order.</p>
+      <p class="lede">🎬 Videos · 📝 Notes · 🧪 Experiments · ⭐ Quests. Every Class 10 chapter, free.</p>
       <div class="cta">
-        <a class="btn y" href="#chapters">Find your chapter</a>
+        <a class="btn y" href="#chapters">📚 Find your chapter</a>
+        <a class="btn lab" href="https://lab.quadacademy.org/">🧪 Virtual Lab</a>
         <a class="btn" href="board-boost/">Live batches from ₹1,499</a>
-        <a class="btn r" href="https://www.youtube.com/@QuadAcademyOSH?sub_confirmation=1">Subscribe on YouTube</a>
+        <a class="btn r" href="https://www.youtube.com/@QuadAcademyOSH?sub_confirmation=1">▶ Subscribe</a>
       </div>
     </div>
     <div class="board tilt" aria-label="What is free on QUAD">
       <h3>On QUAD right now</h3>
-      <div class="row"><span>Important-question videos</span><span class="y" id="c-iq">11</span></div>
-      <div class="row"><span>Board paper parts solved</span><span class="y" id="c-bp">18</span></div>
-      <div class="row"><span>Revision notes (PDF)</span><span class="y">27</span></div>
-      <div class="row"><span>Solutions books (PDF)</span><span class="y">27</span></div>
-      <div class="row"><span>Mock tests</span><span class="y">Maths + Science</span></div>
-      <div class="row"><span>New video</span><span class="y">every day</span></div>
+      <div class="row"><span><span class="e">🎬</span>Question videos</span><span class="y" id="c-iq">11</span></div>
+      <div class="row"><span><span class="e">📜</span>Board paper parts</span><span class="y" id="c-bp">18</span></div>
+      <div class="row"><span><span class="e">📝</span>Revision notes</span><span class="y">27</span></div>
+      <div class="row"><span><span class="e">📕</span>Solutions books</span><span class="y">27</span></div>
+      <div class="row"><span><span class="e">⏱️</span>Mock tests</span><span class="y">Maths + Science</span></div>
+      <div class="row"><span><span class="e">🆕</span>New video</span><span class="y">every day</span></div>
     </div>
   </div>
+
+  <section id="lab">
+    <div class="labcard"><span class="big" aria-hidden="true">🧪</span><div><h2>Virtual <span class="t">Lab</span></h2><p>Do the experiments yourself. ⚗️ 🔬 🔥 🧲</p></div><a class="btn y" href="https://lab.quadacademy.org/">Enter the lab</a></div>
+  </section>
 
   <section id="quest">
     <div class="quest">
       <div>
         <span class="pill y">New · Beta</span>
         <h2 style="margin-top:10px">QUAD <span class="t">Quest</span></h2>
-        <p class="sub">Turn every chapter into a quest. Watch, try it hands-on, beat the real board questions for points and streaks, then lock it in with short revision rounds that come back just before you'd forget.</p>
+        <p class="sub">Turn every chapter into a game. Watch, try, earn points and streaks.</p>
         <div class="cta" style="margin-top:0"><a class="btn y" href="quest.html">Start a quest</a><a class="btn" href="quest.html?c=m12">Try Surface Areas</a></div>
       </div>
       <div class="qsteps" aria-label="The four stages">
-        <div><b>1 · LEARN</b><small>The chapter video, right here</small></div>
-        <div><b>2 · GROW</b><small>Hands-on interactives, starting with Ch 12</small></div>
-        <div><b>3 · PREPARE</b><small>Real board questions with points and streaks</small></div>
-        <div><b>4 · BUILD</b><small>Notes, Solutions Book and revision rounds</small></div>
+        <div><span class="qe">🎬</span><span><b>1 · LEARN</b><small>Watch the video</small></span></div>
+        <div><span class="qe">🧪</span><span><b>2 · GROW</b><small>Try it hands-on</small></span></div>
+        <div><span class="qe">🏆</span><span><b>3 · PREPARE</b><small>Beat board questions</small></span></div>
+        <div><span class="qe">🧱</span><span><b>4 · BUILD</b><small>Notes and revision</small></span></div>
       </div>
     </div>
   </section>
 
   <section id="videos">
     <h2>Important <span class="t">questions</span></h2>
-    <p class="sub">One video per chapter: the must-do questions from CBSE board papers and sample papers, with a pause-and-try moment before every answer.</p>
+    <p class="sub">One video per chapter. Pause, try, then check.</p>
     <div class="tabs" role="group" aria-label="Filter by subject">
       <button type="button" id="f-all" data-f="all" aria-pressed="true">All</button>
       <button type="button" id="f-maths" data-f="Maths" aria-pressed="false">Maths</button>
@@ -286,8 +312,8 @@ footer a{color:#fff}
 
   <section id="chapters">
     <h2>Every chapter, <span class="t">one place</span></h2>
-    <p class="sub">Pick a chapter. Revision notes are free to download here. Each solutions book is linked in its chapter video's description: watch, try every question yourself, then check your working. PDFs open in Google Drive; tap the download arrow there to save.</p>
-    <div class="legend"><span class="lk v">Video</span><span class="lk n">Revision notes</span><span class="lk a">Solutions book</span><span class="lk mm">Mind map</span><span class="lk lv"><i></i>Live class</span><span class="lk off">Scheduled</span></div>
+    <p class="sub">Pick a chapter. Notes are free. Each solutions book is in its video's description.</p>
+    <div class="legend"><span class="lk v">▶ Video</span><span class="lk n">📝 Notes</span><span class="lk a">📕 Solutions</span><span class="lk mm">🧠 Mind map</span><span class="lk lv"><i></i>Live</span></div>
     <div class="hubgrid">
       <div class="subj m"><h3>Maths <span class="pill y">041 Standard</span></h3><div id="hub-m"></div></div>
       <div class="subj s"><h3>Science <span class="pill">086</span></h3><div id="hub-s"></div></div>
@@ -296,18 +322,18 @@ footer a{color:#fff}
 
   <section id="papers">
     <h2>Board papers, <span class="t">solved in full</span></h2>
-    <p class="sub">Complete CBSE board papers worked through section by section, in parts you can finish in one sitting.</p>
+    <p class="sub">Full CBSE papers, solved in short parts.</p>
     <div class="papers" id="papers-list"></div>
   </section>
 
   <section id="downloads">
     <h2>Free <span class="t">downloads</span></h2>
-    <p class="sub">The full libraries. Open a folder and pick what you need.</p>
+    <p class="sub">Open a folder and pick what you need.</p>
     <div class="dl">
-      <a class="dli" href="https://drive.google.com/drive/folders/1sH6j0V007OiKelAPtwDDKZ8uiFEL01KP"><span class="n">27</span><b>Revision notes</b><p>One crisp PDF per chapter, Maths and Science.</p></a>
-      <a class="dli" href="#videos"><span class="n">27</span><b>Solutions books</b><p>Every important question, fully solved, one per page. Linked in each chapter video's description: watch, try, then check.</p></a>
-      <a class="dli" href="https://drive.google.com/drive/folders/1zxDgrAMtbNd7ea0uz4YqgChRjUkxx2yK"><span class="n">2</span><b>Mock tests</b><p>Board-pattern papers with answer keys. Time yourself: 3 hours.</p></a>
-      <a class="dli" href="https://drive.google.com/file/d/1vQWWr6p_mhzvyV_JBZYR4xdpVcyVnh-X/view"><span class="n">1</span><b>Chapter mind maps</b><p>A whole chapter on one page, with exam traps. More every week.</p></a>
+      <a class="dli" href="https://drive.google.com/drive/folders/1sH6j0V007OiKelAPtwDDKZ8uiFEL01KP"><span class="e">📝</span><span class="n">27</span><b>Revision notes</b><p>One PDF per chapter.</p></a>
+      <a class="dli" href="#videos"><span class="e">📕</span><span class="n">27</span><b>Solutions books</b><p>Every question solved. Link in each video.</p></a>
+      <a class="dli" href="https://drive.google.com/drive/folders/1zxDgrAMtbNd7ea0uz4YqgChRjUkxx2yK"><span class="e">⏱️</span><span class="n">2</span><b>Mock tests</b><p>Board-style papers. Time yourself.</p></a>
+      <a class="dli" href="https://drive.google.com/file/d/1vQWWr6p_mhzvyV_JBZYR4xdpVcyVnh-X/view"><span class="e">🧠</span><span class="n">1</span><b>Mind maps</b><p>A chapter on one page.</p></a>
     </div>
   </section>
 
@@ -496,6 +522,8 @@ const PAPERS = [
  {t:"Maths 2026 · 30/4/1", p:[["Section A MCQs","aBu-egz8hnI"],["MCQs + A–R","aFDyCUsU2DU"],["Section B 2-mark","cbbO8ire8b4"],["Section C 3-mark","02_G86HK1hs"],["Section D 5-mark","rw2qTRDsmmA"],["Case studies","rPOxkEClzsk"]]},
  {t:"Science 2026 · 31/1/1", p:[["Biology MCQs + A–R","CM_Rep_bzkw"],["Biology answers","hL5py8AbIBo"],["Chemistry MCQs + A–R","W-35ZnbEf-0"],["Chemistry long answers","UlmCRmV9DQ4"],["Physics: light, eye, electricity","zRDaDPtsqKs"],["Physics long + case study","ZbRRTmRvKtI"]]},
 ];
+const CHI = {Maths:["🔢","📈","⚖️","🎢","🪜","📐","🗺️","📏","🏗️","⭕","🍕","🧊","📊","🎲"],
+ Science:["⚗️","🍋","🔩","🕯️","🫁","🧠","🐣","🧬","🔦","👁️","💡","🧲","🌳"]};
 const now = Date.now();
 const live = v => !v.hold && (!v.at || Date.parse(v.at) <= now);
 const fmt = at => new Date(at).toLocaleString("en-IN",{weekday:"short",day:"numeric",month:"short",hour:"numeric",minute:"2-digit",timeZone:"Asia/Kolkata"});
@@ -504,7 +532,7 @@ function renderVids(f){
   const box=document.getElementById("vids"); box.innerHTML="";
   IQ.filter(v=>f==="all"||v.s===f).slice().sort((a,b)=>a.s===b.s?a.c-b.c:(a.s==="Maths"?-1:1)).forEach(v=>{
     const ok=live(v); const a=el(ok?"a":"div",ok?{class:"vid",href:YT(v.id)}:{class:"vid wait"});
-    a.innerHTML=`<div class="th"><img src="${TH(v)}" alt="" loading="lazy">${ok?"":`<span class="soon">${v.hold?"Coming soon":"Premieres "+fmt(v.at)}</span>`}</div><b>${v.s} Ch ${v.c} · ${v.n}</b><span class="m">${v.q}</span>`;
+    a.innerHTML=`<div class="th" data-e="${(CHI[v.s]||[])[v.c-1]||""}"><img src="${TH(v)}" alt="" loading="lazy">${ok?"":`<span class="soon">${v.hold?"Coming soon":"Premieres "+fmt(v.at)}</span>`}</div><b>${v.s} Ch ${v.c} · ${v.n}</b><span class="m">${v.q}</span>`;
     box.appendChild(a);
   });
 }
@@ -528,17 +556,17 @@ for(const [s,list] of Object.entries(CH)){
         : now<st?`<a class="lk lv" href="${LIVE_URL}"><i></i>Live class · ${fmt(st)}</a>`
         : now<st+2*36e5?`<a class="lk lv" href="${LIVE_URL}"><i></i>Live now</a>`
         : `<span class="lk off">Live class held · recording uploads soon</span>`; }
-    const gk=(s==="Maths"?"m":"s")+(i+1); if(GUIDE[gk]) links+=`<a class="lk g" href="${D(GUIDE[gk])}">📘 Complete guide</a>`;
-    links+=`<a class="lk n" href="${D(notes)}">Revision notes</a>`;
-    links+= (v&&live(v))?`<a class="lk a" href="${YT(v.id)}" title="The solutions book link is in the video description">Solutions book · in video description</a>`:"";
-    links+= mm?`<a class="lk mm" href="${D(mm)}">Mind map</a>`:"";
+    const gk=(s==="Maths"?"m":"s")+(i+1); if(GUIDE[gk]) links+=`<a class="lk g" href="${D(GUIDE[gk])}">📘 Guide</a>`;
+    links+=`<a class="lk n" href="${D(notes)}">📝 Notes</a>`;
+    links+= (v&&live(v))?`<a class="lk a" href="${YT(v.id)}" title="The solutions book link is in the video description">📕 Solutions</a>`:"";
+    links+= mm?`<a class="lk mm" href="${D(mm)}">🧠 Mind map</a>`:"";
     links+=`<a class="lk q" href="quest.html?c=${s==="Maths"?"m":"s"}${i+1}">⭐ Quest</a>`;
-    box.appendChild(el("div",{class:"ch"},`<span class="no">${i+1}</span><div><div class="nm">${n}</div><div class="links">${links}</div></div>`));
+    box.appendChild(el("div",{class:"ch"},`<span class="ico" aria-hidden="true">${CHI[s][i]||"📘"}<em>${i+1}</em></span><div><div class="nm">${n}</div><div class="links">${links}</div></div>`));
   });
 }
 const pl=document.getElementById("papers-list");
 PAPERS.forEach(P=>{
-  pl.appendChild(el("div",{class:"board"},`<h3>${P.t}</h3>`+P.p.map(([t,id],i)=>`<div class="row"><span><a href="${YT(id)}">Part ${i+1} · ${t}</a></span><span class="y">▶</span></div>`).join("")));
+  pl.appendChild(el("div",{class:"board"},`<h3>${P.t}</h3>`+P.p.map(([t,id],i)=>`<div class="row"><span><span class="e">${["1️⃣","2️⃣","3️⃣","4️⃣","5️⃣","6️⃣","7️⃣","8️⃣"][i]||"▶"}</span><a href="${YT(id)}">Part ${i+1} · ${t}</a></span><span class="y">▶</span></div>`).join("")));
 });
 function route(){
   const h=location.hash.slice(1); const boost=h==="board-boost"||h==="batches"||h==="reserve";
