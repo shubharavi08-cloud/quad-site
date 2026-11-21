@@ -1,6 +1,12 @@
 {
  "posts": [
   {
+   "title": "Our Environment Class 10: 7 Must-Do Board Questions, Solved (CBSE Science Chapter 13, 10% Law and Biomagnification)",
+   "url": "https://quadacademy.org/blog/our-environment-board-questions/",
+   "date": "2026-11-21",
+   "description": "CBSE Class 10 Science Chapter 13 solved: biodegradable vs non-biodegradable, the 10 percent law, energy at each trophic level, biological magnification, decomposers and the ozone layer, with the trap in each question."
+  },
+  {
    "title": "Human Eye and the Colourful World Class 10: 7 Must-Do Board Questions, Solved (CBSE Science Chapter 10, Myopia and Hypermetropia)",
    "url": "https://quadacademy.org/blog/human-eye-colourful-world-board-questions/",
    "date": "2026-11-20",
@@ -101,6 +107,12 @@
      "blogPost": [
       {
        "@type": "BlogPosting",
+       "headline": "Our Environment Class 10: 7 Must-Do Board Questions, Solved (CBSE Science Chapter 13, 10% Law and Biomagnification)",
+       "url": "https://quadacademy.org/blog/our-environment-board-questions/",
+       "datePublished": "2026-11-21"
+      },
+      {
+       "@type": "BlogPosting",
        "headline": "Human Eye and the Colourful World Class 10: 7 Must-Do Board Questions, Solved (CBSE Science Chapter 10, Myopia and Hypermetropia)",
        "url": "https://quadacademy.org/blog/human-eye-colourful-world-board-questions/",
        "datePublished": "2026-11-20"
@@ -184,6 +196,47 @@
        "datePublished": "2026-11-06"
       }
      ]
+    }
+   ]
+  },
+  {
+   "path": "blog/our-environment-board-questions/index.html",
+   "priority": 0.6,
+   "jsonld": [
+    {
+     "@type": "BlogPosting",
+     "headline": "Our Environment Class 10: 7 Must-Do Board Questions, Solved (CBSE Science Chapter 13, 10% Law and Biomagnification)",
+     "description": "CBSE Class 10 Science Chapter 13 solved: biodegradable vs non-biodegradable, the 10 percent law, energy at each trophic level, biological magnification, decomposers and the ozone layer, with the trap in each question.",
+     "url": "https://quadacademy.org/blog/our-environment-board-questions/",
+     "mainEntityOfPage": "https://quadacademy.org/blog/our-environment-board-questions/",
+     "datePublished": "2026-11-21",
+     "dateModified": "2026-11-21",
+     "inLanguage": "en-IN",
+     "wordCount": 1484,
+     "author": {
+      "@type": "Organization",
+      "name": "Team QUAD",
+      "@id": "https://quadacademy.org/#org"
+     },
+     "publisher": {
+      "@id": "https://quadacademy.org/#org"
+     },
+     "educationalLevel": "Class 10",
+     "keywords": "Science, Chapter 13, Our Environment, ecosystem, food chain, trophic level, 10 percent law, biological magnification, DDT, decomposers, ozone layer, CFCs, biodegradable, CBSE board questions",
+     "image": "https://i.ytimg.com/vi/jFgJzNGRfhs/hqdefault.jpg",
+     "isPartOf": {
+      "@type": "Blog",
+      "url": "https://quadacademy.org/blog/"
+     },
+     "video": {
+      "@type": "VideoObject",
+      "name": "Our Environment Class 10 Important Questions: 7 must-do questions + food chain tricks",
+      "description": "CBSE Class 10 Science Chapter 13 solved: biodegradable vs non-biodegradable, the 10 percent law, energy at each trophic level, biological magnification, decomposers and the ozone layer, with the trap in each question.",
+      "thumbnailUrl": "https://i.ytimg.com/vi/jFgJzNGRfhs/hqdefault.jpg",
+      "uploadDate": "2026-11-21",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/jFgJzNGRfhs",
+      "contentUrl": "https://www.youtube.com/watch?v=jFgJzNGRfhs"
+     }
     }
    ]
   },
