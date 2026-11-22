@@ -1,6 +1,12 @@
 {
  "posts": [
   {
+   "title": "Polynomials Class 10: 8 Must-Do Board Questions, Solved (CBSE Maths Chapter 2, Sum and Product of Zeroes)",
+   "url": "https://quadacademy.org/blog/polynomials-board-questions/",
+   "date": "2026-11-22",
+   "description": "CBSE Class 10 Maths Chapter 2 solved: sum and product of zeroes, finding p from a condition, reciprocal zeroes, alpha-beta expressions, building a polynomial from its zeroes and the arch case study, with the trap in each question."
+  },
+  {
    "title": "Our Environment Class 10: 7 Must-Do Board Questions, Solved (CBSE Science Chapter 13, 10% Law and Biomagnification)",
    "url": "https://quadacademy.org/blog/our-environment-board-questions/",
    "date": "2026-11-21",
@@ -107,6 +113,12 @@
      "blogPost": [
       {
        "@type": "BlogPosting",
+       "headline": "Polynomials Class 10: 8 Must-Do Board Questions, Solved (CBSE Maths Chapter 2, Sum and Product of Zeroes)",
+       "url": "https://quadacademy.org/blog/polynomials-board-questions/",
+       "datePublished": "2026-11-22"
+      },
+      {
+       "@type": "BlogPosting",
        "headline": "Our Environment Class 10: 7 Must-Do Board Questions, Solved (CBSE Science Chapter 13, 10% Law and Biomagnification)",
        "url": "https://quadacademy.org/blog/our-environment-board-questions/",
        "datePublished": "2026-11-21"
@@ -196,6 +208,47 @@
        "datePublished": "2026-11-06"
       }
      ]
+    }
+   ]
+  },
+  {
+   "path": "blog/polynomials-board-questions/index.html",
+   "priority": 0.6,
+   "jsonld": [
+    {
+     "@type": "BlogPosting",
+     "headline": "Polynomials Class 10: 8 Must-Do Board Questions, Solved (CBSE Maths Chapter 2, Sum and Product of Zeroes)",
+     "description": "CBSE Class 10 Maths Chapter 2 solved: sum and product of zeroes, finding p from a condition, reciprocal zeroes, alpha-beta expressions, building a polynomial from its zeroes and the arch case study, with the trap in each question.",
+     "url": "https://quadacademy.org/blog/polynomials-board-questions/",
+     "mainEntityOfPage": "https://quadacademy.org/blog/polynomials-board-questions/",
+     "datePublished": "2026-11-22",
+     "dateModified": "2026-11-22",
+     "inLanguage": "en-IN",
+     "wordCount": 1457,
+     "author": {
+      "@type": "Organization",
+      "name": "Team QUAD",
+      "@id": "https://quadacademy.org/#org"
+     },
+     "publisher": {
+      "@id": "https://quadacademy.org/#org"
+     },
+     "educationalLevel": "Class 10",
+     "keywords": "Maths, Chapter 2, Polynomials, zeroes of a polynomial, sum of zeroes, product of zeroes, alpha beta, quadratic polynomial, reciprocal zeroes, assertion reason, case study, CBSE board questions",
+     "image": "https://i.ytimg.com/vi/UdB7RuEAjW0/hqdefault.jpg",
+     "isPartOf": {
+      "@type": "Blog",
+      "url": "https://quadacademy.org/blog/"
+     },
+     "video": {
+      "@type": "VideoObject",
+      "name": "Class 10 Maths Polynomials Important Questions: 8 Must-Do Board Questions",
+      "description": "CBSE Class 10 Maths Chapter 2 solved: sum and product of zeroes, finding p from a condition, reciprocal zeroes, alpha-beta expressions, building a polynomial from its zeroes and the arch case study, with the trap in each question.",
+      "thumbnailUrl": "https://i.ytimg.com/vi/UdB7RuEAjW0/hqdefault.jpg",
+      "uploadDate": "2026-11-22",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/UdB7RuEAjW0",
+      "contentUrl": "https://www.youtube.com/watch?v=UdB7RuEAjW0"
+     }
     }
    ]
   },

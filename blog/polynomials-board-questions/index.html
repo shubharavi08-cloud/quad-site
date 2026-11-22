@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Polynomials Class 10: 8 Must-Do Board Questions, Solved (CBSE Maths Chapter 2, Sum and Product of Zeroes) · QUAD Academy Blog</title>
+<meta name="description" content="CBSE Class 10 Maths Chapter 2 solved: sum and product of zeroes, finding p from a condition, reciprocal zeroes, alpha-beta expressions, building a polynomial from its zeroes and the arch case study, with the trap in each question.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Polynomials Class 10: 8 Must-Do Board Questions, Solved (CBSE Maths Chapter 2, Sum and Product of Zeroes) · QUAD Academy Blog">
+<meta property="og:description" content="CBSE Class 10 Maths Chapter 2 solved: sum and product of zeroes, finding p from a condition, reciprocal zeroes, alpha-beta expressions, building a polynomial from its zeroes and the arch case study, with the trap in each question.">
+<meta property="og:url" content="https://quadacademy.org/blog/polynomials-board-questions/">
+<meta property="og:image" content="https://i.ytimg.com/vi/UdB7RuEAjW0/hqdefault.jpg">
+<link rel="icon" href="/quad_logo.jpg">
+<link rel="alternate" type="application/rss+xml" title="QUAD Academy Blog" href="/blog/feed.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700;800;900&family=Gochi+Hand&display=swap">
+<style>
+:root{--wall:#f7f2e7;--wall-2:#efe7d6;--stripe:rgba(80,60,20,.025);--ink:#0f3b40;--ink-2:#4d6466;--deep:#0f2a2d;--osh:#0f5258;--gold:#9a6f00;
+--yellow:#ffd21f;--teal:#139fb3;--coral:#ff6b4f;--board:#14231d;--wood:#8a5a2e;--chalk:#f4efe2;--chalk-y:#ffcf5a;--card:#fff;--line:#e3d9c4;--mute:#8a8270;
+--display:"Rubik","Arial Black",system-ui,sans-serif;--body:"Rubik","Segoe UI",system-ui,sans-serif;--chalkf:"Gochi Hand","Comic Sans MS",cursive;color-scheme:light}
+*{box-sizing:border-box}[hidden]{display:none!important}html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;color:var(--ink);font:400 1.02rem/1.6 var(--body);background:repeating-linear-gradient(0deg,var(--stripe) 0 2px,transparent 2px 6px),linear-gradient(180deg,var(--wall),var(--wall-2));background-color:var(--wall)}
+img{max-width:100%}
+.wrap{max-width:1120px;margin:0 auto;padding-inline:max(16px,env(safe-area-inset-left,0px)) max(16px,env(safe-area-inset-right,0px))}
+a{color:var(--osh)}:focus-visible{outline:3px solid var(--teal);outline-offset:3px}
+.bar{position:sticky;top:0;z-index:5;background:rgba(247,242,231,.94);backdrop-filter:blur(6px);border-bottom:2px solid var(--line)}
+.bar .wrap{display:flex;align-items:center;gap:14px;padding-block:10px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink)}
+.brand img{width:46px;height:46px;border-radius:10px;border:1px solid var(--line);background:#fff}
+.brand b{font:900 1.15rem/1 var(--display)}.brand small{display:block;font:500 .72rem/1.3 var(--body);color:var(--ink-2)}
+nav{display:flex;flex-wrap:wrap;gap:4px;margin-left:auto}
+nav a{font:700 .85rem/1 var(--display);text-transform:uppercase;letter-spacing:.04em;text-decoration:none;color:var(--ink);padding:.6rem .7rem;border-radius:10px}
+nav a:hover{background:var(--yellow)}nav a.qlink{background:var(--yellow);color:var(--deep)}
+nav a.boostlink{background:var(--osh);color:#fff}nav a.boostlink:hover{background:var(--deep)}
+@media (max-width:680px){nav{flex-wrap:nowrap;overflow-x:auto;width:100%;margin-left:0;scrollbar-width:none;padding-bottom:2px}nav a{white-space:nowrap}}
+nav a[aria-current="page"]{background:var(--yellow);color:var(--deep);box-shadow:inset 0 -3px 0 var(--osh)}
+.pill{display:inline-block;font:800 .82rem/1 var(--display);letter-spacing:.03em;text-transform:uppercase;padding:.55rem .85rem;border-radius:10px;background:var(--osh);color:#fff;text-decoration:none}
+.pill.y{background:var(--yellow);color:var(--deep)}.pill.t{background:var(--teal)}.pill.c{background:var(--coral)}
+.kicker{display:flex;flex-wrap:wrap;gap:8px}
+h1{font:900 clamp(2.1rem,6vw,3.8rem)/1.02 var(--display);text-transform:uppercase;margin:14px 0 0;letter-spacing:-.01em;text-wrap:balance}
+h1 .hl{display:inline-block;background:var(--yellow);color:var(--deep);padding:.02em .18em .06em;border-radius:12px;margin-block:.06em}
+h1 .t{color:var(--teal)}
+.lede{max-width:60ch;color:var(--ink-2);font-size:1.08rem;margin:16px 0 0}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+.btn{display:inline-flex;align-items:center;gap:8px;font:800 .95rem/1 var(--display);text-transform:uppercase;letter-spacing:.02em;padding:.95rem 1.2rem;border-radius:14px;text-decoration:none;border:3px solid var(--osh);box-shadow:0 5px 0 var(--osh);transition:transform .12s,box-shadow .12s;color:var(--deep);background:#fff}
+.btn.y{background:var(--yellow)}.btn.o{background:var(--osh);color:#fff;box-shadow:0 5px 0 var(--deep);border-color:var(--deep)}
+.btn:hover{transform:translateY(2px);box-shadow:0 3px 0 var(--osh)}
+@media (prefers-reduced-motion:reduce){.btn{transition:none}.btn:hover{transform:none}}
+.board{background:var(--board);border:12px solid var(--wood);border-radius:6px;padding:20px 22px;color:var(--chalk);font-family:var(--chalkf);box-shadow:0 0 0 2px #5e3b1b inset,0 3px 0 #6b4320,0 16px 26px rgba(60,40,10,.28);min-width:0}
+.board.tilt{transform:rotate(-1.2deg)}@media (prefers-reduced-motion:reduce){.board.tilt{transform:none}}
+.board h3{font:400 1.6rem/1.2 var(--chalkf);margin:0 0 6px;color:var(--chalk-y)}
+.board .row{display:flex;justify-content:space-between;gap:14px;font-size:1.3rem;line-height:1.5;border-bottom:1px dashed rgba(244,239,226,.18);padding-block:4px}
+.board .row:last-child{border-bottom:0}.board .y{color:var(--chalk-y);font-variant-numeric:tabular-nums;text-align:right}
+section{padding-block:44px;border-top:2px solid var(--line);scroll-margin-top:80px}
+h2{font:900 clamp(1.5rem,3.6vw,2.2rem)/1.08 var(--display);text-transform:uppercase;margin:0 0 8px;text-wrap:balance}
+h2 .t{color:var(--teal)}.sub{color:var(--ink-2);margin:0 0 22px;max-width:64ch}
+.hero{display:grid;grid-template-columns:1.2fr .8fr;gap:30px;align-items:center;padding-block:34px 44px}
+@media (max-width:860px){.hero{grid-template-columns:1fr}}
+.batches{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));gap:18px}
+.batch{border-radius:18px;padding:22px;background:var(--card);border:3px solid var(--line);display:grid;gap:12px;align-content:start;min-width:0}
+.batch.m{border-color:var(--yellow)}.batch.s{border-color:var(--teal)}
+.batch h3{font:900 1.5rem/1.1 var(--display);text-transform:uppercase;margin:0}.batch.m h3{color:var(--gold)}.batch.s h3{color:#0d7383}
+.batch p{margin:0}.batch dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:8px 14px}
+.batch dt{font:700 .74rem/1.9 var(--display);text-transform:uppercase;letter-spacing:.08em;color:var(--ink-2)}.batch dd{margin:0;font-weight:500}
+.gets{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:14px}
+.item{background:var(--card);border:2px solid var(--line);border-radius:16px;padding:18px;min-width:0}
+.item .n{display:inline-block;font:900 1.4rem/1 var(--display);color:var(--deep);background:var(--yellow);padding:.35rem .6rem;border-radius:10px;margin-bottom:10px;font-variant-numeric:tabular-nums}
+.item:nth-child(3n+2) .n{background:var(--teal);color:#fff}.item:nth-child(3n) .n{background:var(--coral);color:#fff}
+.item h4{font:800 1.05rem/1.25 var(--display);margin:0 0 4px}.item p{margin:0;color:var(--ink-2);font-size:.95rem}
+details{background:var(--card);border:2px solid var(--line);border-radius:14px;padding:14px 18px}details+details{margin-top:10px}
+summary{font-weight:700;cursor:pointer}details p{margin:8px 0 2px;color:var(--ink-2)}
+.contact{background:var(--yellow);color:var(--deep);border-radius:22px;padding:26px;display:grid;gap:12px;border:4px solid var(--osh);box-shadow:0 8px 0 var(--osh)}
+.contact p{margin:0;max-width:62ch}.contact h2{margin:0}
+.small{font-size:.93rem;color:var(--ink-2);margin-top:16px;max-width:68ch}
+footer{background:var(--osh);color:#e6f3f3;margin-top:44px;border-top:6px solid var(--teal)}
+footer .wrap{padding-block:28px 40px;display:grid;gap:16px}
+.family{display:grid;grid-template-columns:1fr auto 1fr;gap:20px;align-items:start;padding-bottom:18px;border-bottom:1px solid rgba(255,255,255,.18)}
+.ent{display:grid;gap:6px;justify-items:start;min-width:0;max-width:360px}.ent.r{justify-self:end;justify-items:end;text-align:right}
+.ent b{font:800 1.08rem/1.2 var(--display);color:#fff;margin-top:6px}
+.ent .tl{font:700 .76rem/1.35 var(--display);text-transform:uppercase;letter-spacing:.08em;color:var(--yellow)}.ent p{margin:0;font-size:.9rem}
+.mark{background:#fff;border-radius:14px;padding:8px;display:inline-flex;height:104px;align-items:center}.mark img{display:block;height:88px;width:auto;border-radius:8px}
+.amp{font:900 2.1rem/1 var(--display);color:var(--yellow);align-self:center}
+@media (max-width:680px){.family{grid-template-columns:1fr}.ent.r{justify-self:start;justify-items:start;text-align:left}}
+footer p.fine{margin:0;font-size:.86rem;opacity:.9}footer a{color:#fff}
+/* blog */
+.crumbs{font:600 .85rem/1.4 var(--display);color:var(--ink-2);padding-top:22px}.crumbs a{color:var(--ink-2)}
+.posthead{padding-block:6px 26px;max-width:860px}
+.postmeta{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;margin-top:16px;color:var(--ink-2);font:500 .92rem/1.3 var(--body)}
+.postgrid{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:40px;align-items:start;padding-bottom:20px}
+.postgrid>div{min-width:0}
+@media (max-width:920px){.postgrid{grid-template-columns:1fr}}
+article.post{background:var(--card);border:2px solid var(--line);border-radius:20px;padding:clamp(18px,4vw,40px);min-width:0;font-size:1.07rem;line-height:1.72}
+article.post h2{font-size:clamp(1.3rem,3vw,1.7rem);margin:1.8em 0 .5em;color:var(--deep)}
+article.post h2:first-child{margin-top:0}
+article.post h3{font:800 1.15rem/1.3 var(--display);margin:1.4em 0 .4em;color:var(--osh)}
+article.post p,article.post ul,article.post ol{margin:0 0 1em}article.post li{margin-bottom:.35em}
+article.post blockquote{margin:0 0 1.2em;padding:14px 18px;border-left:6px solid var(--yellow);background:#fffbea;border-radius:0 12px 12px 0}
+article.post blockquote p{margin:0}
+article.post .eq{font:500 1.12rem/1.6 ui-monospace,"SF Mono",Menlo,Consolas,monospace;background:var(--board);color:var(--chalk);border-radius:12px;padding:14px 18px;overflow-x:auto;white-space:nowrap;border:6px solid var(--wood)}
+article.post .eq .ar{color:var(--chalk-y)}
+article.post strong{color:var(--deep)}
+.vframe{aspect-ratio:16/9;border-radius:16px;overflow:hidden;background:var(--board);border:3px solid var(--osh);margin:6px 0 8px}
+.vframe iframe{width:100%;height:100%;border:0;display:block}
+.vcap{font:600 .9rem/1.35 var(--display);color:var(--ink-2);margin:0 0 26px}
+aside.side{display:grid;gap:18px;position:sticky;top:90px}@media (max-width:920px){aside.side{position:static}}
+.sbox{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:18px;display:grid;gap:10px}
+.sbox.y{background:var(--yellow);border-color:var(--osh);box-shadow:0 6px 0 var(--osh)}
+.sbox h3{font:900 1.05rem/1.2 var(--display);text-transform:uppercase;margin:0}.sbox p{margin:0;font-size:.95rem}
+.sbox .btn{justify-self:start;font-size:.85rem;padding:.75rem 1rem}
+.postlist{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,320px),1fr));gap:18px}
+.pcard{display:grid;gap:10px;align-content:start;text-decoration:none;color:var(--ink);background:var(--card);border:2px solid var(--line);border-radius:18px;padding:12px 12px 18px;transition:border-color .12s,transform .12s}
+.pcard:hover{border-color:var(--osh);transform:translateY(-2px)}@media (prefers-reduced-motion:reduce){.pcard{transition:none}.pcard:hover{transform:none}}
+.pcard .th{aspect-ratio:16/9;border-radius:12px;overflow:hidden;background:var(--board);position:relative}
+.pcard .th img{width:100%;height:100%;object-fit:cover;display:block}
+.pcard .th .pill{position:absolute;left:8px;top:8px;font-size:.7rem;padding:.4rem .55rem}
+.pcard b{font:800 1.12rem/1.28 var(--display);padding-inline:6px}
+.pcard p{margin:0;padding-inline:6px;color:var(--ink-2);font-size:.95rem}
+.pcard small{padding-inline:6px;color:var(--mute);font:600 .82rem/1 var(--display);text-transform:uppercase;letter-spacing:.05em}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+.chips button{font:800 .82rem/1 var(--display);text-transform:uppercase;letter-spacing:.04em;padding:.62rem .9rem;border-radius:10px;border:2px solid var(--osh);background:#fff;color:var(--deep);cursor:pointer}
+.chips button[aria-pressed="true"]{background:var(--osh);color:#fff}
+/* masterclass */
+.status{font:800 .78rem/1 var(--display);text-transform:uppercase;letter-spacing:.05em;padding:.45rem .65rem;border-radius:8px;justify-self:start;background:var(--wall-2);color:var(--deep)}
+.status.soon{background:var(--coral);color:#fff}.status.done{background:var(--line);color:var(--ink-2)}
+.steps{counter-reset:s;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:14px;padding:0;margin:0;list-style:none}
+.steps li{counter-increment:s;background:var(--card);border:2px solid var(--line);border-radius:16px;padding:18px 18px 18px 64px;position:relative}
+.steps li::before{content:counter(s);position:absolute;left:16px;top:16px;width:34px;height:34px;border-radius:10px;background:var(--yellow);color:var(--deep);font:900 1.1rem/34px var(--display);text-align:center}
+.steps b{display:block;font:800 1.02rem/1.25 var(--display)}.steps span{color:var(--ink-2);font-size:.95rem}
+</style>
+<link rel="stylesheet" href="/cursor-quad.css?v=6"><!-- geo:start (generated by geo_build.py; edit geo_sites.py, not here) -->
+<link rel="canonical" href="https://quadacademy.org/blog/polynomials-board-questions/">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Polynomials Class 10: 8 Must-Do Board Questions, Solved (CBSE Maths Chapter 2, Sum and Product of Zeroes)","description":"CBSE Class 10 Maths Chapter 2 solved: sum and product of zeroes, finding p from a condition, reciprocal zeroes, alpha-beta expressions, building a polynomial from its zeroes and the arch case study, with the trap in each question.","url":"https://quadacademy.org/blog/polynomials-board-questions/","mainEntityOfPage":"https://quadacademy.org/blog/polynomials-board-questions/","datePublished":"2026-11-22","dateModified":"2026-11-22","inLanguage":"en-IN","wordCount":1457,"author":{"@type":"Organization","name":"Team QUAD","@id":"https://quadacademy.org/#org"},"publisher":{"@id":"https://quadacademy.org/#org"},"educationalLevel":"Class 10","keywords":"Maths, Chapter 2, Polynomials, zeroes of a polynomial, sum of zeroes, product of zeroes, alpha beta, quadratic polynomial, reciprocal zeroes, assertion reason, case study, CBSE board questions","image":"https://i.ytimg.com/vi/UdB7RuEAjW0/hqdefault.jpg","isPartOf":{"@type":"Blog","url":"https://quadacademy.org/blog/"},"video":{"@type":"VideoObject","name":"Class 10 Maths Polynomials Important Questions: 8 Must-Do Board Questions","description":"CBSE Class 10 Maths Chapter 2 solved: sum and product of zeroes, finding p from a condition, reciprocal zeroes, alpha-beta expressions, building a polynomial from its zeroes and the arch case study, with the trap in each question.","thumbnailUrl":"https://i.ytimg.com/vi/UdB7RuEAjW0/hqdefault.jpg","uploadDate":"2026-11-22","embedUrl":"https://www.youtube-nocookie.com/embed/UdB7RuEAjW0","contentUrl":"https://www.youtube.com/watch?v=UdB7RuEAjW0"}}</script>
+<!-- geo:end -->
+</head>
+<body>
+<header class="bar">
+  <div class="wrap">
+    <a class="brand" href="/"><img src="/quad_logo.jpg" alt="QUAD Academy logo"><span><b>QUAD Academy</b><small>Your Student Navigator · by OSH</small></span></a>
+    <nav aria-label="Site"><a href="/quest.html" class="qlink">Quest</a><a href="https://lab.quadacademy.org/">Virtual Lab</a><a href="/#videos">Videos</a><a href="/#chapters">Chapters</a><a href="/free/">Free PDFs</a><a href="/blog/" aria-current="page">Blog</a><a href="/masterclass/">₹49 Masterclass</a><a href="/board-boost/" class="boostlink">Board Boost · live batches</a></nav>
+  </div>
+</header>
+<main class="wrap">
+<p class="crumbs"><a href="/">QUAD Academy</a> › <a href="/blog/">Blog</a></p>
+<header class="posthead">
+  <div class="kicker"><span class="pill y">Maths</span><span class="pill t">Chapter 2</span><span class="pill">CBSE Class 10</span></div>
+  <h1 style="font-size:clamp(1.8rem,4.6vw,3rem);line-height:1.08">Polynomials Class 10: 8 Must-Do Board Questions, Solved (CBSE Maths Chapter 2, Sum and Product of Zeroes)</h1>
+  <div class="postmeta"><span>By Team QUAD</span><time datetime="2026-11-22">22 Nov 2026</time><span>7 min read</span></div>
+</header>
+<div class="postgrid">
+  <div>
+    <div class="vframe"><iframe src="https://www.youtube-nocookie.com/embed/UdB7RuEAjW0" loading="lazy" title="Class 10 Maths Polynomials Important Questions: 8 Must-Do Board Questions" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div><p class="vcap">▶ Class 10 Maths Polynomials Important Questions: 8 Must-Do Board Questions · <a href="https://www.youtube.com/watch?v=UdB7RuEAjW0" target="_blank" rel="noopener">open on YouTube</a></p>
+    <article class="post">
+<p>Chapter 2 of CBSE Class 10 Maths, <em>Polynomials</em>, is short, but it shows up in almost every board paper, usually as 1 and 2 mark questions plus a case study. Nearly every question rests on just <strong>two formulas</strong>. If you can write them without thinking, you can finish this chapter's questions in a few minutes and bank the marks.</p>
+<p>Below are eight question types from recent CBSE papers and sample papers. The video above solves all eight. Read each question, <strong>pause and try it yourself</strong>, then check the model answer and the trap.</p>
+<p>Join our WhatsApp Channel for daily updates: <a href="https://whatsapp.com/channel/0029Vb9DNhtADTOEAMwyH723" target="_blank" rel="noopener">QUAD on WhatsApp</a></p>
+<h2>The two formulas you must know first</h2>
+<p>For a quadratic polynomial <strong>ax² + bx + c</strong> (a ≠ 0) with zeroes <strong>α</strong> and <strong>β</strong>:</p>
+<p>| What | Formula | |---|---| | <strong>Sum of zeroes</strong> | α + β = −b/a | | <strong>Product of zeroes</strong> | αβ = c/a | | <strong>Polynomial from its zeroes</strong> | k[x² − (sum)x + (product)] |</p>
+<p>A <strong>zero</strong> of a polynomial is a value of x that makes it equal to 0. On a graph, the zeroes are the points where the curve meets the <strong>x-axis</strong>.</p>
+<h2>Type 1: α + β + αβ (1 mark)</h2>
+<blockquote><p>If α and β are the zeroes of p(x) = x² − ax − b, then (α + β + αβ) equals: (a) a + b (b) −a − b (c) a − b (d) −a + b</p></blockquote>
+<ul><li>Write the coefficients first: x² → 1, x → −a, constant → −b.</li><li>α + β = −(−a)/1 = a, and αβ = −b/1 = −b.</li><li><strong>Answer: (c) a − b.</strong></li></ul>
+<p><strong>Trap:</strong> confusing the letter <em>a</em> in the question with the coefficient <em>a</em> in the formula. <strong>Try it:</strong> α, β are zeroes of x² − 5x + 6. Find α + β − αβ. <em>5 − 6 = −1.</em></p>
+<h2>Type 2: Pick the zeroes without solving (1 mark)</h2>
+<blockquote><p>Zeroes of p(x) = x² − 3√2x + 4 are: (a) 2, √2 (b) 2√2, √2 (c) 4√2, −√2 (d) √2, 2</p></blockquote>
+<ul><li>The sum must be 3√2 and the product must be 4.</li><li>(a): 2 + √2 is not 3√2. ✗</li><li>(b): 2√2 + √2 = 3√2 ✓ and 2√2 × √2 = 4 ✓</li><li><strong>Answer: (b) 2√2, √2.</strong></li></ul>
+<p><strong>Trap:</strong> checking only the product or only the sum. Always test <strong>both</strong>. <strong>Try it:</strong> find the zeroes of x² − 2√3x + 3. <em>√3, √3.</em></p>
+<h2>Type 3: Find p from a condition (1 mark)</h2>
+<blockquote><p>If α and β are the zeroes of f(x) = px² − 2x + 3p and α + β = αβ, then p is: (a) −2/3 (b) 2/3 (c) 1/3 (d) −1/3</p></blockquote>
+<ul><li>a = p, b = −2, c = 3p.</li><li>α + β = −(−2)/p = 2/p, and αβ = 3p/p = 3.</li><li>2/p = 3, so 3p = 2 and p = 2/3.</li><li><strong>Answer: (b) 2/3.</strong></li></ul>
+<p><strong>Trap:</strong> writing the sum as −2/p. Minus of minus 2 is <strong>plus</strong> 2. <strong>Try it:</strong> the product of the zeroes of kx² + 4x + 5 is 3. Find k. <em>5/k = 3, so k = 5/3.</em></p>
+<h2>Type 4: Assertion and Reason, reciprocal zeroes (1 mark)</h2>
+<blockquote><p><strong>Assertion (A):</strong> If the zeroes of (2k − 1)x² + 4x − 3 are reciprocals of each other, then k = −1.<br><strong>Reason (R):</strong> If a = c, then the zeroes of ax² + bx + c, a ≠ 0, are reciprocals of each other.</p></blockquote>
+<ul><li>Reciprocal zeroes are α and 1/α, so their product is 1. Product = c/a = 1 means a = c. <strong>R is true.</strong></li><li>Here 2k − 1 = −3, so 2k = −2 and k = −1. <strong>A is true.</strong></li><li>A was solved using exactly the condition in R.</li><li><strong>Answer: (a) Both A and R are true, and R is the correct explanation of A.</strong></li></ul>
+<p><strong>Trap:</strong> finding k correctly and then not checking whether R actually explains A. <strong>Try it:</strong> for what k are the zeroes of kx² + 3x + 5 reciprocals? <em>k = 5.</em></p>
+<h2>Type 5: A big α-β expression (2 marks)</h2>
+<blockquote><p>If α and β are the zeroes of p(y) = y² − 5y + 3, find α⁴β³ + α³β⁴.</p></blockquote>
+<ul><li>α + β = 5 and αβ = 3.</li><li>Take out the common factor: α⁴β³ + α³β⁴ = α³β³(α + β) = (αβ)³(α + β).</li><li>= 3³ × 5 = 27 × 5 = <strong>135</strong>.</li></ul>
+<p><strong>Trap:</strong> trying to find α and β separately. They are irrational here, and it wastes time. <strong>Try it:</strong> same polynomial, find α²β + αβ². <em>αβ(α + β) = 3 × 5 = 15.</em></p>
+<h2>Type 6: α³β + β³α in letters (2 marks)</h2>
+<blockquote><p>If α and β are the zeroes of px² + qx + r, find α³β + β³α.</p></blockquote>
+<ul><li>α + β = −q/p and αβ = r/p.</li><li>α³β + β³α = αβ(α² + β²), and α² + β² = (α + β)² − 2αβ = (q² − 2pr)/p².</li><li>So α³β + β³α = (r/p) × (q² − 2pr)/p² = <strong>r(q² − 2pr)/p³</strong>.</li></ul>
+<p><strong>Trap:</strong> writing α² + β² = (α + β)². Do not forget the <strong>−2αβ</strong>. <strong>Try it:</strong> α, β are zeroes of x² − 7x + 10. Find α² + β². <em>49 − 20 = 29.</em></p>
+<h2>Type 7: Find the zeroes, then build a new polynomial (3 marks)</h2>
+<blockquote><p>Find the zeroes of p(x) = 3x² − 4x − 4. Hence write a polynomial whose zeroes are each 2 more than the zeroes of p(x).</p></blockquote>
+<ul><li>Split the middle term: 3x² − 6x + 2x − 4 = 3x(x − 2) + 2(x − 2) = (3x + 2)(x − 2).</li><li>Zeroes: <strong>2 and −2/3</strong>.</li><li>New zeroes: 2 + 2 = 4 and −2/3 + 2 = 4/3.</li><li>Sum = 16/3, product = 16/3, so the polynomial is k[x² − (16/3)x + 16/3]. Take k = 3: <strong>3x² − 16x + 16</strong>.</li></ul>
+<p><strong>Check:</strong> 3(4)² − 16(4) + 16 = 48 − 64 + 16 = 0. ✓</p>
+<p><strong>Trap:</strong> adding 2 to the coefficients instead of to the zeroes. <strong>Try it:</strong> find a quadratic polynomial whose zeroes are 3 and −5. <em>x² + 2x − 15.</em></p>
+<h2>Type 8: Case study, the arch (4 marks)</h2>
+<blockquote><p>A theatre backdrop shows arches whose curve is p(x) = −x² + 2x + 8, where x is the length in feet along the stage. (i) Find the height of the arch. (ii) Find the zeroes of p(x) and the span of the arch. (iii) Where does the curve meet the y-axis?</p></blockquote>
+<ul><li>Zeroes: −x² + 2x + 8 = 0 means x² − 2x − 8 = 0, so (x − 4)(x + 2) = 0 and the zeroes are <strong>4 and −2</strong>.</li><li>Span = 4 − (−2) = <strong>6 ft</strong>.</li><li>The top of the arch is midway between the zeroes, at x = 1. Height = p(1) = −1 + 2 + 8 = <strong>9 ft</strong>.</li><li>On the y-axis x = 0, so p(0) = 8: the point <strong>(0, 8)</strong>.</li></ul>
+<p><strong>Trap:</strong> taking the y-intercept (8) as the height. The top is at x = 1, not x = 0. <strong>Try it:</strong> for the same arch, find p(3). <em>−9 + 6 + 8 = 5 ft.</em></p>
+<h2>One-minute revision</h2>
+<ul><li>Sum of zeroes = −b/a; product of zeroes = c/a. Write a, b, c down before you start.</li><li>In an MCQ, test each option with both the sum and the product.</li><li>Reciprocal zeroes: product = 1, so a = c.</li><li>α² + β² = (α + β)² − 2αβ. Factor big α-β expressions before substituting.</li><li>From zeroes: k[x² − (sum)x + (product)].</li><li>Graph: zeroes are where the curve meets the x-axis; a downward arch is highest midway between them.</li></ul>
+<h2>FAQ</h2>
+<p><strong>How many marks does Polynomials carry in the board exam?</strong> Polynomials is part of the Algebra unit, which CBSE gives the largest share of the Class 10 Maths paper. From this chapter expect mostly 1 and 2 mark questions, often with a case study or an assertion-reason item like the ones above.</p>
+<p><strong>Do I need to learn the cubic polynomial relations?</strong> The current NCERT book focuses on quadratic polynomials for the relationship between zeroes and coefficients, so master the two formulas above first. Every question in this post uses only those.</p>
+<h2>Free notes and next steps</h2>
+<ul><li>Free Chapter 2 guide and revision notes: <a href="https://quadacademy.org/free/?utm_source=site&amp;utm_medium=post&amp;utm_campaign=quad-20261122-m02-polynomials">quadacademy.org/free/</a></li><li>Practise these questions as a game: <a href="https://quadacademy.org/quest.html?c=m2&amp;utm_source=site&amp;utm_medium=post&amp;utm_campaign=quad-20261122-m02-polynomials">QUAD Quest</a></li><li>One board question a day for 90 days: <a href="https://quadacademy.org/countdown/?utm_source=site&amp;utm_medium=post&amp;utm_campaign=quad-20261122-m02-polynomials">Board Countdown</a></li><li>More Maths, solved the same way: <a href="/blog/coordinate-geometry-board-questions/">Coordinate Geometry, board questions solved</a></li><li>Two-hour live board revision class: <a href="/masterclass/">₹49 Masterclass</a></li><li>Board Boost batch for Class 10: <a href="/board-boost/">Board Boost</a></li></ul>
+<p><em>Sources: NCERT Class 10 Mathematics, Chapter 2 Polynomials (sections 2.2 and 2.3, Exercise 2.2); questions from recent CBSE board papers and sample papers.</em></p>
+    </article>
+    <section style="border-top:0;padding-block:30px 0">
+      <div class="contact">
+        <h2>Stuck on a chapter?</h2>
+        <p>Tell us which chapter costs you the most marks, and we will cover it in a video. Send it on WhatsApp.</p>
+        <div class="cta" style="margin-top:4px"><a class="btn o" href="https://wa.me/918088443156?text=Hi%20QUAD%2C%20I%20read%20your%20blog.%20The%20chapter%20where%20I%20lose%20the%20most%20marks%20is%3A%20">Message on WhatsApp</a></div>
+      </div>
+    </section>
+    <section style="border-top:0;padding-block:30px 0"><h2>More from the <span class="t">blog</span></h2><ul><li><a href="/blog/our-environment-board-questions/">Our Environment Class 10: 7 Must-Do Board Questions, Solved (CBSE Science Chapter 13, 10% Law and Biomagnification)</a></li><li><a href="/blog/human-eye-colourful-world-board-questions/">Human Eye and the Colourful World Class 10: 7 Must-Do Board Questions, Solved (CBSE Science Chapter 10, Myopia and Hypermetropia)</a></li><li><a href="/blog/metals-and-non-metals-board-questions/">Metals and Non-metals Class 10: 7 Must-Do Board Questions, Solved (CBSE Science Chapter 3, Reactivity Series)</a></li><li><a href="/blog/light-reflection-refraction-board-questions/">Light Reflection and Refraction Class 10: 7 Must-Do Board Questions, Solved (CBSE Science Chapter 9, Mirror and Lens Formula)</a></li></ul></section>
+  </div>
+  <aside class="side">
+  <div class="sbox y">
+    <h3>₹49 Board Masterclass</h3>
+    <p>2 hours live: the 20 questions that come almost every year, solved live, with a PDF to keep. Maths Sun 22 Nov, Science Sun 29 Nov, 10:30 am.</p>
+    <a class="btn o" href="/masterclass/">See the Masterclass</a>
+  </div>
+  <div class="sbox">
+    <h3>Board Boost · live batches</h3>
+    <p>6 weeks from Mon 7 Dec: 18 live classes, a scored mock every Sunday, weekly parent reports. From ₹1,499.</p>
+    <a class="btn" href="/board-boost/">Batches &amp; fees</a>
+  </div>
+  <div class="sbox">
+    <h3>Join our WhatsApp Channel for daily updates</h3>
+    <p>One board-exam trick a day, new revision videos and free PDFs: <a href="https://whatsapp.com/channel/0029Vb9DNhtADTOEAMwyH723" target="_blank" rel="noopener">follow QUAD Academy on WhatsApp</a></p>
+    <a class="btn" href="https://www.youtube.com/@QuadAcademyOSH?sub_confirmation=1" target="_blank" rel="noopener">Subscribe</a>
+    <a class="btn" href="https://whatsapp.com/channel/0029Vb9DNhtADTOEAMwyH723" target="_blank" rel="noopener">WhatsApp channel</a>
+  </div>
+</aside>
+</div>
+</main>
+<footer>
+  <div class="wrap">
+    <div class="family">
+      <div class="ent">
+        <span class="mark"><img src="/quad_logo.jpg" alt="QUAD Academy logo" loading="lazy"></span>
+        <b>QUAD Academy</b>
+        <span class="tl">Learn • Grow • Prepare • Build</span>
+        <p>Board-exam preparation for Class 10: free revision on YouTube, live batches and mock tests. <a href="https://www.youtube.com/@QuadAcademyOSH">@QuadAcademyOSH</a> · <a href="https://whatsapp.com/channel/0029Vb9DNhtADTOEAMwyH723">WhatsApp channel</a></p>
+      </div>
+      <span class="amp" aria-hidden="true">&amp;</span>
+      <div class="ent r">
+        <span class="mark"><img src="/osh_logo.png" alt="OurSchoolHouse logo" loading="lazy"></span>
+        <b>OurSchoolHouse</b>
+        <span class="tl">Achieve your goals</span>
+        <p>India's homeschooling support portal for Classes 1–12, since 2020. <a href="https://ourschoolhouse.in">ourschoolhouse.in</a></p>
+      </div>
+    </div>
+    <p class="fine">We collect only the parent's contact details and the student's name and school, and use them only for QUAD batches. CBSE question papers are © CBSE; solutions and materials © QUAD Academy. Free to use for personal study.</p>
+  </div>
+</footer>
+<script src="/hits.js" defer></script>
+</body>
+</html>
