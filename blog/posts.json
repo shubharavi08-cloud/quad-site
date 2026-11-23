@@ -1,6 +1,12 @@
 {
  "posts": [
   {
+   "title": "Real Numbers Class 10: 8 Must-Do Board Questions, Solved (CBSE Maths Chapter 1, HCF, LCM and Irrational Proofs)",
+   "url": "https://quadacademy.org/blog/real-numbers-board-questions/",
+   "date": "2026-11-23",
+   "description": "CBSE Class 10 Maths Chapter 1 solved: LCM and HCF by prime factorisation, remainder and co-prime traps, HCF × LCM, bells and ruler word problems, and the √5 and 2 + 3√3 irrational proofs."
+  },
+  {
    "title": "Polynomials Class 10: 8 Must-Do Board Questions, Solved (CBSE Maths Chapter 2, Sum and Product of Zeroes)",
    "url": "https://quadacademy.org/blog/polynomials-board-questions/",
    "date": "2026-11-22",
@@ -113,6 +119,12 @@
      "blogPost": [
       {
        "@type": "BlogPosting",
+       "headline": "Real Numbers Class 10: 8 Must-Do Board Questions, Solved (CBSE Maths Chapter 1, HCF, LCM and Irrational Proofs)",
+       "url": "https://quadacademy.org/blog/real-numbers-board-questions/",
+       "datePublished": "2026-11-23"
+      },
+      {
+       "@type": "BlogPosting",
        "headline": "Polynomials Class 10: 8 Must-Do Board Questions, Solved (CBSE Maths Chapter 2, Sum and Product of Zeroes)",
        "url": "https://quadacademy.org/blog/polynomials-board-questions/",
        "datePublished": "2026-11-22"
@@ -208,6 +220,47 @@
        "datePublished": "2026-11-06"
       }
      ]
+    }
+   ]
+  },
+  {
+   "path": "blog/real-numbers-board-questions/index.html",
+   "priority": 0.6,
+   "jsonld": [
+    {
+     "@type": "BlogPosting",
+     "headline": "Real Numbers Class 10: 8 Must-Do Board Questions, Solved (CBSE Maths Chapter 1, HCF, LCM and Irrational Proofs)",
+     "description": "CBSE Class 10 Maths Chapter 1 solved: LCM and HCF by prime factorisation, remainder and co-prime traps, HCF × LCM, bells and ruler word problems, and the √5 and 2 + 3√3 irrational proofs.",
+     "url": "https://quadacademy.org/blog/real-numbers-board-questions/",
+     "mainEntityOfPage": "https://quadacademy.org/blog/real-numbers-board-questions/",
+     "datePublished": "2026-11-23",
+     "dateModified": "2026-11-23",
+     "inLanguage": "en-IN",
+     "wordCount": 1475,
+     "author": {
+      "@type": "Organization",
+      "name": "Team QUAD",
+      "@id": "https://quadacademy.org/#org"
+     },
+     "publisher": {
+      "@id": "https://quadacademy.org/#org"
+     },
+     "educationalLevel": "Class 10",
+     "keywords": "Maths, Chapter 1, Real Numbers, HCF, LCM, prime factorisation, Fundamental Theorem of Arithmetic, co-prime, irrational numbers, proof by contradiction, assertion reason, CBSE board questions",
+     "image": "https://i.ytimg.com/vi/aBNZhkaaPWM/hqdefault.jpg",
+     "isPartOf": {
+      "@type": "Blog",
+      "url": "https://quadacademy.org/blog/"
+     },
+     "video": {
+      "@type": "VideoObject",
+      "name": "Class 10 Maths Real Numbers Important Questions: 8 Must-Do Board Questions",
+      "description": "CBSE Class 10 Maths Chapter 1 solved: LCM and HCF by prime factorisation, remainder and co-prime traps, HCF × LCM, bells and ruler word problems, and the √5 and 2 + 3√3 irrational proofs.",
+      "thumbnailUrl": "https://i.ytimg.com/vi/aBNZhkaaPWM/hqdefault.jpg",
+      "uploadDate": "2026-11-23",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/aBNZhkaaPWM",
+      "contentUrl": "https://www.youtube.com/watch?v=aBNZhkaaPWM"
+     }
     }
    ]
   },
