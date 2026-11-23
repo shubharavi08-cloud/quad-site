@@ -8,8 +8,8 @@ build(api){
  const AC={HCl:['chloride','Cl',1,1],H2SO4:['sulphate','SO₄',2,1],HNO3:['nitrate','NO₃',1,1],H2CO3:['carbonate','CO₃',2,0]};
  const BA={NaOH:['sodium','Na',1,1],KOH:['potassium','K',1,1],'Ca(OH)2':['calcium','Ca',2,1],NH4OH:['ammonium','NH₄',1,0]};
  let a='HCl',b='NaOH',step=0;const seen=new Set();
- const lab=k=>k==='HNO3'?'HNO₃':k==='NH4OH'?'NH₄OH':k.replace(/(\d)/g,'₂');
- api.ctrl.innerHTML=`<b>1. Choose an acid</b><div class="row" id="ac">${Object.keys(AC).map(k=>`<button data-k="${k}">${lab(k)}</button>`).join('')}</div><b>2. Choose a base</b><div class="row" id="bs">${Object.keys(BA).map(k=>`<button data-k="${k}">${lab(k)}</button>`).join('')}</div><div class="row"><button class="pri" id="mix">🧪 3. Pour and mix</button><button class="pri" id="evap">🔥 4. Heat to get the salt</button></div><p id="rs" style="font-weight:800"></p>${chal?'<button class="pri" id="ck">Check: I made potassium nitrate</button>':''}`;
+ const LB={HCl:'HCl',H2SO4:'H₂SO₄',HNO3:'HNO₃',H2CO3:'H₂CO₃',NaOH:'NaOH',KOH:'KOH','Ca(OH)2':'Ca(OH)₂',NH4OH:'NH₄OH'};const lab=k=>LB[k]||k;
+ api.ctrl.innerHTML=`<b>1. Choose an acid</b><div class="row" id="ac">${Object.keys(AC).map(k=>`<button data-k="${k}">${lab(k)}</button>`).join('')}</div><b>2. Choose a base</b><div class="row" id="bs">${Object.keys(BA).map(k=>`<button data-k="${k}">${lab(k)}</button>`).join('')}</div><div class="row"><button class="pri" id="mix">🧪 3. Pour and mix</button><button class="pri" id="evap" style="background:#ff9f1c;color:#1b2a4a">🔥 4. Heat to get the salt</button></div><p id="rs" style="font-weight:800"></p>${chal?'<button class="pri" id="ck">Check: I made potassium nitrate</button>':''}`;
  const q=x=>api.ctrl.querySelector(x);
  function salt(){const A=AC[a],B=BA[b];const g=(x,n)=>n>1?(x.length>2||/[A-Z][a-z]?[₄₃]/.test(x)&&x.length>2?`(${x})`:x)+'₂':x;
   const cat=B[2]===2&&A[2]===2?B[1]+A[1]:B[2]===A[2]?B[1]+A[1]:B[2]===2?B[1]+g(A[1],2):g(B[1],2)+A[1];
@@ -28,7 +28,8 @@ build(api){
   ${mixed?`<rect x="323" y="${248-water}" width="114" height="${water+18}" fill="${col}" opacity=".9"/>`:''}${crys}
   ${dry?'<g><path d="M380 300 C360 285 365 272 380 262 C395 272 400 285 380 300Z" fill="#ffb347"><animate attributeName="opacity" values="1;.4;1" dur=".6s" repeatCount="indefinite"/></path></g>':''}
   <text x="380" y="30" text-anchor="middle" font-size="26" font-weight="800">${dry?s.name+' crystals ('+s.fm+')':mixed?'Mixed: '+(s.nature==='neutral'?'green = neutral':s.nature==='acidic'?'orange = acidic':s.nature==='basic'?'blue = basic':'almost neutral')+' (indicator colour)':'Pick an acid and a base, then pour and mix'}</text>`);
-  q('#rs').textContent=dry?`${s.name} (${s.fm}): ${s.msg}.`:mixed?'Neutralisation: acid + base → salt + water. Now heat it to see the salt.':'';
+  q('#mix').style.display=step===0?'':'none';q('#evap').style.display=step===1?'':'none';
+  q('#rs').textContent=dry?`${s.name} (${s.fm}): ${s.msg}. Salts made: ${seen.size+(seen.has(a+b)?0:1)} of 3. ${seen.size+(seen.has(a+b)?0:1)>=3?'Done! Press the purple "I tried it. Show me why" button below.':'Now pick a different acid or base (step 1 and 2) to make another salt.'}`:mixed?'Colour shows the result. Now press the orange button to heat it and get the salt.':'Step 1: choose an acid. Step 2: choose a base. Step 3: press Pour and mix.';
   if(dry){seen.add(a+b);if(!chal&&seen.size>=3){api.award('did');api.ready()}}}
  const pick=(sel,set)=>q(sel).querySelectorAll('button').forEach(x=>x.onclick=()=>{set(x.dataset.k);step=0;q(sel).querySelectorAll('button').forEach(y=>y.className=y===x?'pri':'');draw()});
  pick('#ac',v=>a=v);pick('#bs',v=>b=v);
