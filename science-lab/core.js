@@ -10,14 +10,15 @@ const CHEER=['Good try!','So close!','Mistakes are how scientists learn.','You a
 function coach(kind,title,html){const C=$('#coach');C.innerHTML=`<div class="coach ${kind}" role="status"><span class="ic" aria-hidden="true">${kind==='ok'?'🎉':kind==='warn'?'💡':'🔎'}</span><div><b>${title}</b><br>${html}</div></div>`}
 function register(e){REG[e.id]=e}
 const STEPS=['Hook','Guess','Do','See','Why','Check','Challenge','Real life'];
-function bar(i){return `<div class="steps" aria-label="Steps">${STEPS.map((s,j)=>`<span class="${j<i?'done':j===i?'on':''}">${j+1}. ${s}</span>`).join('')}</div>`}
-function open(id){
+let maxS=0;
+function bar(i){return `<div class="steps" aria-label="Steps">${STEPS.map((s,j)=>`<button type="button" data-j="${j}" class="${j<i?'done':j===i?'on':''}${j>maxS?' lock':''}">${j+1}. ${s}</button>`).join('')}</div>`}
+function open(id){maxS=0;
   const e=REG[id];if(!e)return;cur=e;st={seen:false};
   const app=$('#app');
   app.innerHTML=`<div class="top"><a class="home" href="#/">← All experiments</a><h1>${e.title}</h1><span class="pts" id="pts"></span></div>${e.code?`<p class="strip">OSH Science Series · Concept ${e.code}</p>`:''}<div id="bar"></div><div id="coach" aria-live="polite"></div><div id="body"></div>`;
   pts();hook();
 }
-function setBar(i){$('#bar').innerHTML=bar(i)}
+function setBar(i){maxS=Math.max(maxS,i);const b=$('#bar');b.innerHTML=bar(i);b.onclick=ev=>{const t=ev.target.closest('button[data-j]');if(!t)return;const j=+t.dataset.j;if(j>maxS)return coach('warn','Not yet','Finish the steps before it first. Do the lab, then this opens.');[hook,guess,doIt,why,why,()=>check(0),challenge,real][j]()}}
 function hook(){setBar(0);const e=cur;$('#body').innerHTML=`<div class="card"><div class="hook"><div class="em" aria-hidden="true">${e.emoji}</div><div style="flex:1;min-width:220px"><h2>${e.hook.title}</h2><p>${e.hook.text}</p>${e.prior?`<p><b>Before you start:</b> ${e.prior}</p>`:''}<button class="pri" id="go">Let's guess first →</button></div></div></div>`;$('#go').onclick=guess;$('#coach').innerHTML=''}
 function guess(){setBar(1);const g=cur.guess;
   $('#body').innerHTML=`<div class="card"><h2>Guess first</h2><p>${g.q}</p><div class="opts">${g.options.map((o,i)=>`<button data-i="${i}">${o}</button>`).join('')}</div></div>`;

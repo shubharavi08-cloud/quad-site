@@ -10,8 +10,8 @@ button{font:inherit;font-weight:800;cursor:pointer;border-radius:12px;padding:10
 button:hover{border-color:var(--cyan)}button.pri{background:var(--osh);color:#fff;border-color:var(--deep)}
 button:focus-visible,input:focus-visible{outline:3px solid #2a8cff;outline-offset:2px}
 .steps{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0 14px}
-.steps span{font-size:13px;font-weight:800;padding:5px 11px;border-radius:999px;background:#fff;border:2px solid var(--line);color:var(--ink2)}
-.steps span.on{background:var(--yellow);border-color:#e08a1e;color:var(--deep)}.steps span.done{background:#dff5e8;border-color:#9bd6b4;color:#176a43}
+.steps button{font-size:13px;font-weight:800;padding:5px 11px;border-radius:999px;background:#fff;border:2px solid var(--line);color:var(--ink2)}
+.steps button.on{background:var(--yellow);border-color:#e08a1e;color:var(--deep)}.steps button.done{background:#dff5e8;border-color:#9bd6b4;color:#176a43}
 .card{background:var(--card);border:2px solid var(--line);border-radius:18px;padding:18px;margin:12px 0}
 .card h2{font-size:1.5rem;margin-bottom:6px}
 .hook{display:flex;gap:16px;align-items:center;flex-wrap:wrap}.hook .em{font-size:64px}
@@ -47,3 +47,6 @@ button:focus-visible,input:focus-visible{outline:3px solid #2a8cff;outline-offse
 
 .lockhint{text-align:center;font-weight:700;color:#4b3fd1;margin:6px 8px 0}
 button[disabled]{opacity:.45}
+
+.steps button{font:inherit;font-size:13px;font-weight:800;cursor:pointer}
+.steps button.lock{opacity:.55}
