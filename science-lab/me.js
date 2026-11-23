@@ -22,6 +22,7 @@ Q.me=function(){const m=load();const app=$('#app');const st=stickers();
  const list=Object.values(Q.REG);const nextL=Q.LEVELS.find(l=>l[0]>Q.total());
  app.innerHTML=`<div class="top"><a class="home" href="#/">← All experiments</a><h1>📒 My notebook</h1><span class="pts" id="pts"></span></div>
  <div class="card"><h2>Who is the scientist?</h2><input id="nm" class="inp" maxlength="18" placeholder="Your first name" value="${(m.name||'').replace(/"/g,'')}"><p>${nextL?`Next level <b>${nextL[1]}</b> at ${nextL[0]} points (${nextL[0]-Q.total()} more).`:'You are a Master Scientist!'}</p><p class="lockhint" style="text-align:left">Each experiment gives points: 🎬 watch the video +10, 🔬 do the lab +10, ❓ quiz +4 each, 🏆 challenge +10.</p></div>
+ ${Q.achHTML?Q.achHTML():''}
  <div class="card"><h2>My progress</h2><div class="prog">${list.map(e=>`<a class="prow" href="#/x/${e.id}"><span>${e.emoji}</span><b>${e.title}</b><small>${(Q.VIDEOS&&Q.VIDEOS[e.id])?(Q.P[e.id+':watch']?'🎬✅':'🎬'):''} ${Q.P[e.id+':did']?'🔬✅':'🔬'} ${Q.P[e.id+':q2']?'❓✅':'❓'} ${Q.P[e.id+':challenge']?'🏆✅':'🏆'}</small></a>`).join('')}</div></div>
  <div class="card"><h2>Build my science card</h2>${Q.total()<30?`<p>🔒 Earn <b>30 points</b> to unlock the card builder. You have ${Q.total()}.</p>`:`<p>Pick a picture, colour and stickers. Every experiment you finish unlocks a new sticker.</p>
  <b>My picture</b><div class="row" id="av">${['🧑‍🔬','👩‍🔬','🦉','🐱','🦁','🚀','🤖','🌟'].map(a=>`<button data-a="${a}" class="${(m.avatar||'🧑‍🔬')===a?'pri':''}">${a}</button>`).join('')}</div>

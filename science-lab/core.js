@@ -5,7 +5,7 @@ const REG={};let cur=null,st={};
 const $=(s,r=document)=>r.querySelector(s);
 const PK='qlab2_pts',P=(()=>{try{return JSON.parse(localStorage.getItem(PK)||'{}')}catch(e){return{}}})();
 function award(k){if(P[k])return;P[k]=1;try{if(QLab.onAward)QLab.onAward(k)}catch(e){}try{localStorage.setItem(PK,JSON.stringify(P))}catch(e){}pts()}
-const W=k=>{const s=k.split(':')[1]||'';return s==='watch'||s==='did'||s==='challenge'?10:s==='done'?5:s==='guess'?2:/^q\d/.test(s)?4:1};
+const W=k=>{if(k.indexOf('game:')===0)return +k.split(':')[2]||10;const s=k.split(':')[1]||'';return s==='watch'||s==='did'||s==='challenge'?10:s==='done'?5:s==='guess'?2:/^q\d/.test(s)?4:1};
 const total=()=>Object.keys(P).reduce((a,k)=>a+W(k),0);
 const LEVELS=[[0,'Curious Cat'],[30,'Lab Rookie'],[100,'Young Scientist'],[250,'Lab Hero'],[500,'Master Scientist']];
 const level=()=>{const t=total();let l=LEVELS[0];LEVELS.forEach(x=>{if(t>=x[0])l=x});return l[1]};
@@ -67,13 +67,13 @@ function catalog(){
   const app=$('#app');const list=Object.values(REG);
   const grades=[...new Set(list.map(e=>e.grade))].sort((a,b)=>a-b),subs=[...new Set(list.map(e=>e.subject))];
   let fg='all',fs='all';
-  function draw(){app.innerHTML=`<div class="top"><h1>OSH Science Lab</h1><span class="pts" id="pts"></span><a class="home" href="#/me">📒 My notebook</a></div><p>Try real experiments on your screen. Guess first, then test it. No teacher needed.</p>
+  function draw(){app.innerHTML=`<div class="top"><h1>OSH Science Lab</h1><span class="pts" id="pts"></span><a class="home" href="#/me">📒 My notebook</a> <a class="home" href="#/game">🎮 Mystery Lab game</a></div><p>Try real experiments on your screen. Guess first, then test it. No teacher needed.</p>
   <div class="chips" aria-label="Filter by grade"><button data-g="all" class="${fg==='all'?'on':''}">All grades</button>${grades.map(g=>`<button data-g="${g}" class="${fg==g?'on':''}">Grade ${g}</button>`).join('')}</div>
   <div class="chips" aria-label="Filter by subject"><button data-s="all" class="${fs==='all'?'on':''}">All subjects</button>${subs.map(s=>`<button data-s="${s}" class="${fs===s?'on':''}">${s}</button>`).join('')}</div>
   <div class="cat">${list.filter(e=>(fg==='all'||e.grade==fg)&&(fs==='all'||e.subject===fs)).map(e=>`<a class="tile" href="#/x/${e.id}"><div class="em" aria-hidden="true">${e.emoji}</div><b>${e.title}</b><br><small>Grade ${e.grade} · ${e.subject}</small><br><span class="bdg">${vids(e).length?(P[e.id+':watch']?'🎬✅':'🎬'):''} ${P[e.id+':did']?'🔬✅':'🔬'} ${P[e.id+':q2']?'❓✅':'❓'}</span></a>`).join('')}</div>`;
   pts();app.querySelectorAll('[data-g]').forEach(b=>b.onclick=()=>{fg=b.dataset.g;draw()});app.querySelectorAll('[data-s]').forEach(b=>b.onclick=()=>{fs=b.dataset.s;draw()})}
   draw()}
-function route(){const m=location.hash.match(/#\/x\/([\w-]+)/);if(location.hash==='#/me'&&QLab.me)return QLab.me();m?open(m[1]):catalog()}
+function route(){const m=location.hash.match(/#\/x\/([\w-]+)/);if(location.hash==='#/me'&&QLab.me)return QLab.me();if(location.hash==='#/game'&&QLab.game)return QLab.game();m?open(m[1]):catalog()}
 addEventListener('hashchange',route);
 return{P,total,level,LEVELS,pts,award,register,route,svg:(w,h,inner)=>`<svg viewBox="0 0 ${w} ${h}" role="img">${inner}</svg>`,$,REG};
 })();
