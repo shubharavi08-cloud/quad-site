@@ -29,8 +29,8 @@ build(api){
   ${dry?'<g><path d="M380 300 C360 285 365 272 380 262 C395 272 400 285 380 300Z" fill="#ffb347"><animate attributeName="opacity" values="1;.4;1" dur=".6s" repeatCount="indefinite"/></path></g>':''}
   <text x="380" y="30" text-anchor="middle" font-size="26" font-weight="800">${dry?s.name+' crystals ('+s.fm+')':mixed?'Mixed: '+(s.nature==='neutral'?'green = neutral':s.nature==='acidic'?'orange = acidic':s.nature==='basic'?'blue = basic':'almost neutral')+' (indicator colour)':'Pick an acid and a base, then pour and mix'}</text>`);
   q('#mix').style.display=step===0?'':'none';q('#evap').style.display=step===1?'':'none';
-  q('#rs').textContent=dry?`${s.name} (${s.fm}): ${s.msg}. Salts made: ${seen.size+(seen.has(a+b)?0:1)} of 3. ${seen.size+(seen.has(a+b)?0:1)>=3?'Done! Press the purple "I tried it. Show me why" button below.':'Now pick a different acid or base (step 1 and 2) to make another salt.'}`:mixed?'Colour shows the result. Now press the orange button to heat it and get the salt.':'Step 1: choose an acid. Step 2: choose a base. Step 3: press Pour and mix.';
-  if(dry){seen.add(a+b);if(!chal&&seen.size>=3){api.award('did');api.ready()}}}
+  q('#rs').textContent=dry?`${s.name} (${s.fm}): ${s.msg}. Salts made: ${seen.size+(seen.has(a+b)?0:1)} of 2. ${seen.size+(seen.has(a+b)?0:1)>=2?'Done! Press the purple "I tried it. Show me why" button below.':'Now pick a different acid or base (step 1 and 2) to make another salt.'}`:mixed?'Colour shows the result. Now press the orange button to heat it and get the salt.':'Step 1: choose an acid. Step 2: choose a base. Step 3: press Pour and mix.';
+  if(dry){seen.add(a+b);if(!chal&&seen.size>=2){api.award('did');api.ready()}}}
  const pick=(sel,set)=>q(sel).querySelectorAll('button').forEach(x=>x.onclick=()=>{set(x.dataset.k);step=0;q(sel).querySelectorAll('button').forEach(y=>y.className=y===x?'pri':'');draw()});
  pick('#ac',v=>a=v);pick('#bs',v=>b=v);
  q('#mix').onclick=()=>{step=1;draw()};
