@@ -13,7 +13,7 @@ build(api){
  const q=s=>api.ctrl.querySelector(s);
  function draw(res){const c=m!==null?MET[m]:null;
   const wild=res&&((test==='air'&&c[0]==='Magnesium')||(test==='wat'&&c[0]==='Sodium')||(test==='air'&&c[0]==='Sodium'));
-  api.stage.innerHTML=QLab.svg(760,300,`<rect width="760" height="300" fill="#fff"/>
+  api.stage.innerHTML=QLab.svg(760,300,`<rect width="760" height="300" fill="none"/>
   ${test==='wat'?'<path d="M240 120 V250 Q240 265 255 265 H505 Q520 265 520 250 V120" fill="none" stroke="#1b2a4a" stroke-width="5"/><rect x="243" y="150" width="274" height="113" fill="#cde9f9" opacity=".85"/>':'<rect x="270" y="215" width="220" height="14" fill="#8a7a50"/>'}
   ${c?`<rect x="${test==='wat'?340:330}" y="${test==='wat'?138:190}" width="80" height="24" rx="6" fill="${c[2]}" stroke="#1b2a4a" stroke-width="3"/><text x="${test==='wat'?380:370}" y="${test==='wat'?156:208}" text-anchor="middle" font-size="14" font-weight="800">${c[1]}</text>`:''}
   ${wild?'<text x="380" y="110" text-anchor="middle" font-size="60">'+(test==='air'&&c[0]==='Magnesium'?'✨':'💥')+'</text>':''}

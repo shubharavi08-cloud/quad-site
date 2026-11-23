@@ -10,7 +10,7 @@ build(api){
  api.ctrl.innerHTML=`<b>Put an object in the gap</b><div class="row" id="ob" style="flex-wrap:wrap">${M.map((m,i)=>`<button data-i="${i}">${m[1]} ${m[0]}</button>`).join('')}</div><p id="res" style="font-weight:800"></p><div id="tbl" style="font-size:14px"></div>${chal?'<p><b>Which bench object is NOT a metal but still conducts?</b></p><div class="row" id="ans"></div>':''}`;
  const q=s=>api.ctrl.querySelector(s);
  function draw(){const on=cur!==null&&M[cur][2];
-  api.stage.innerHTML=QLab.svg(760,300,`<rect width="760" height="300" fill="#fff"/><g stroke="#1b2a4a" stroke-width="5" fill="none"><path d="M120 150 V70 H640 V150"/><path d="M120 150 V240 H300"/><path d="M460 240 H640 V150"/></g>
+  api.stage.innerHTML=QLab.svg(760,300,`<rect width="760" height="300" fill="none"/><g stroke="#1b2a4a" stroke-width="5" fill="none"><path d="M120 150 V70 H640 V150"/><path d="M120 150 V240 H300"/><path d="M460 240 H640 V150"/></g>
   <rect x="300" y="215" width="160" height="50" rx="10" fill="${cur!==null?'#f1f5ff':'none'}" stroke="#8aa0c8" stroke-dasharray="6 5" stroke-width="3"/><text x="380" y="247" text-anchor="middle" font-size="${cur!==null?15:13}" font-weight="800">${cur!==null?M[cur][1]+' '+M[cur][0]:'object goes here'}</text>
   <circle cx="380" cy="70" r="34" fill="${on?'#ffe14d':'#e9edf5'}" stroke="#1b2a4a" stroke-width="4"/>${on?'<g stroke="#f0a800" stroke-width="4"><path d="M380 14V26M330 30L338 40M430 30L422 40M320 70H334M440 70H426"/></g>':''}<text x="380" y="78" text-anchor="middle" font-size="22">💡</text>
   <rect x="104" y="140" width="32" height="60" rx="6" fill="#ffb347" stroke="#1b2a4a" stroke-width="3"/><text x="120" y="176" text-anchor="middle" font-size="14" font-weight="800">+ −</text>

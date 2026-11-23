@@ -7,11 +7,11 @@ const PK='qlab2_pts',P=(()=>{try{return JSON.parse(localStorage.getItem(PK)||'{}
 function award(k){if(P[k])return;P[k]=1;try{if(QLab.onAward)QLab.onAward(k)}catch(e){}try{localStorage.setItem(PK,JSON.stringify(P))}catch(e){}pts()}
 const W=k=>{if(k.indexOf('game:')===0)return +k.split(':')[2]||10;const s=k.split(':')[1]||'';return s==='watch'||s==='did'||s==='challenge'?10:s==='done'?5:s==='guess'?2:/^q\d/.test(s)?4:1};
 const total=()=>Object.keys(P).reduce((a,k)=>a+W(k),0);
-const LEVELS=[[0,'Curious Cat'],[30,'Lab Rookie'],[100,'Young Scientist'],[250,'Lab Hero'],[500,'Master Scientist']];
+const LEVELS=[[0,'Curious Kid'],[30,'Young Explorer'],[100,'Science Student'],[250,'Science Stream Star'],[500,'College Scientist'],[800,'Masters Scholar'],[1200,'Research Scholar'],[1700,'Scientist'],[2300,'Professor'],[3000,'Nobel Laureate']];
 const level=()=>{const t=total();let l=LEVELS[0];LEVELS.forEach(x=>{if(t>=x[0])l=x});return l[1]};
 function pts(){const e=$('#pts');if(e)e.innerHTML='⭐ '+total()+' points · '+level()}
 const CHEER=['Good try!','So close!','Mistakes are how scientists learn.','You are getting there!','Nice thinking!'];let ci=0;
-function coach(kind,title,html){const C=$('#coach');C.innerHTML=`<div class="coach ${kind}" role="status"><span class="ic" aria-hidden="true">${kind==='ok'?'🎉':kind==='warn'?'💡':'🔎'}</span><div><b>${title}</b><br>${html}</div></div>`}
+function coach(kind,title,html){const C=$('#coach');if(kind==='ok'&&QLab.fx)QLab.fx.burst(40);C.innerHTML=`<div class="coach ${kind}" role="status"><span class="ic" aria-hidden="true">${kind==='ok'?'🎉':kind==='warn'?'💡':'🔎'}</span><div><b>${title}</b><br>${html}</div></div>`}
 function register(e){REG[e.id]=e}
 const STEPS=['Hook','Guess','Do','See','Why','Check','Challenge','Real life'];
 let maxS=0;
@@ -67,13 +67,13 @@ function catalog(){
   const app=$('#app');const list=Object.values(REG);
   const grades=[...new Set(list.map(e=>e.grade))].sort((a,b)=>a-b),subs=[...new Set(list.map(e=>e.subject))];
   let fg='all',fs='all';
-  function draw(){app.innerHTML=`<div class="top"><h1>OSH Science Lab</h1><span class="pts" id="pts"></span><a class="home" href="#/me">📒 My notebook</a> <a class="home" href="#/game">🎮 Mystery Lab game</a></div><p>Try real experiments on your screen. Guess first, then test it. No teacher needed.</p>
+  function draw(){app.innerHTML=`<div class="top"><h1>OSH Science Lab</h1><span class="pts" id="pts"></span><a class="home" href="#/me">📒 My notebook</a> <a class="home" href="#/game">🎮 Mystery Lab game</a> <a class="home" href="#/career">🏅 Become a scientist</a> <a class="home" href="#/fields">🌍 Fields of science</a></div><p>Try real experiments on your screen. Guess first, then test it. No teacher needed.</p>
   <div class="chips" aria-label="Filter by grade"><button data-g="all" class="${fg==='all'?'on':''}">All grades</button>${grades.map(g=>`<button data-g="${g}" class="${fg==g?'on':''}">Grade ${g}</button>`).join('')}</div>
   <div class="chips" aria-label="Filter by subject"><button data-s="all" class="${fs==='all'?'on':''}">All subjects</button>${subs.map(s=>`<button data-s="${s}" class="${fs===s?'on':''}">${s}</button>`).join('')}</div>
-  <div class="cat">${list.filter(e=>(fg==='all'||e.grade==fg)&&(fs==='all'||e.subject===fs)).map(e=>`<a class="tile" href="#/x/${e.id}"><div class="em" aria-hidden="true">${e.emoji}</div><b>${e.title}</b><br><small>Grade ${e.grade} · ${e.subject}</small><br><span class="bdg">${vids(e).length?(P[e.id+':watch']?'🎬✅':'🎬'):''} ${P[e.id+':did']?'🔬✅':'🔬'} ${P[e.id+':q2']?'❓✅':'❓'}</span></a>`).join('')}</div>`;
+  <div class="cat">${list.filter(e=>(fg==='all'||e.grade==fg)&&(fs==='all'||e.subject===fs)).map(e=>`<a class="tile sub-${e.subject}" href="#/x/${e.id}"><div class="em" aria-hidden="true">${e.emoji}</div><b>${e.title}</b><br><small>Grade ${e.grade} · ${e.subject}</small><br><span class="bdg">${vids(e).length?(P[e.id+':watch']?'🎬✅':'🎬'):''} ${P[e.id+':did']?'🔬✅':'🔬'} ${P[e.id+':q2']?'❓✅':'❓'}</span></a>`).join('')}</div>`;
   pts();app.querySelectorAll('[data-g]').forEach(b=>b.onclick=()=>{fg=b.dataset.g;draw()});app.querySelectorAll('[data-s]').forEach(b=>b.onclick=()=>{fs=b.dataset.s;draw()})}
   draw()}
-function route(){const m=location.hash.match(/#\/x\/([\w-]+)/);if(location.hash==='#/me'&&QLab.me)return QLab.me();if(location.hash==='#/game'&&QLab.game)return QLab.game();m?open(m[1]):catalog()}
+function route(){const m=location.hash.match(/#\/x\/([\w-]+)/);if(location.hash==='#/me'&&QLab.me)return QLab.me();if(location.hash==='#/game'&&QLab.game)return QLab.game();if(location.hash==='#/career'&&QLab.career)return QLab.career();if(location.hash==='#/fields'&&QLab.fields)return QLab.fields();m?open(m[1]):catalog()}
 addEventListener('hashchange',route);
-return{P,total,level,LEVELS,pts,award,register,route,svg:(w,h,inner)=>`<svg viewBox="0 0 ${w} ${h}" role="img">${inner}</svg>`,$,REG};
+return{W,P,total,level,LEVELS,pts,award,register,route,svg:(w,h,inner)=>`<svg viewBox="0 0 ${w} ${h}" role="img"><defs><linearGradient id="lw" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#cfeeff"/><stop offset="1" stop-color="#fff6d6"/></linearGradient><linearGradient id="lb" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f7d79a"/><stop offset="1" stop-color="#e7b56a"/></linearGradient><pattern id="lt" width="60" height="60" patternUnits="userSpaceOnUse"><path d="M60 0H0V60" fill="none" stroke="#ffffff" stroke-opacity=".55" stroke-width="3"/></pattern></defs><rect width="${w}" height="${h}" fill="url(#lw)"/><rect width="${w}" height="${h*.86}" fill="url(#lt)"/><rect y="${h*.86}" width="${w}" height="${h*.14}" fill="url(#lb)"/><rect y="${h*.86-3}" width="${w}" height="6" fill="#c88a3c" opacity=".6"/>${inner}</svg>`,$,REG};
 })();

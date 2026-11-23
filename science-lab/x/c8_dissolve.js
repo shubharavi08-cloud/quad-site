@@ -13,7 +13,7 @@ build(api){
   const h=Math.min(200,120+dis*.35),dots=Math.min(60,Math.round(dis/3));
   let d='';for(let i=0;i<dots;i++)d+=`<circle cx="${250+((i*53)%160)}" cy="${150+((i*37)%(h-30))}" r="3" fill="#7a8cff" opacity=".8"/>`;
   let b='';for(let i=0;i<Math.min(40,Math.round(bot/2));i++)b+=`<rect x="${255+(i*17%150)}" y="${268-Math.floor(i/9)*8}" width="9" height="7" fill="#fff" stroke="#8aa0c8"/>`;
-  api.stage.innerHTML=QLab.svg(760,320,`<rect width="760" height="320" fill="#fff"/><path d="M230 70 V275 Q230 290 245 290 H415 Q430 290 430 275 V70" fill="none" stroke="#1b2a4a" stroke-width="5"/><rect x="233" y="${290-h+40}" width="194" height="${h-40}" fill="#cde9f9" opacity=".8"/>${d}${b}
+  api.stage.innerHTML=QLab.svg(760,320,`<rect width="760" height="320" fill="none"/><path d="M230 70 V275 Q230 290 245 290 H415 Q430 290 430 275 V70" fill="none" stroke="#1b2a4a" stroke-width="5"/><rect x="233" y="${290-h+40}" width="194" height="${h-40}" fill="#cde9f9" opacity=".8"/>${d}${b}
   <text x="520" y="130" font-size="16" font-weight="800" fill="#1b2a4a">Limit at ${T} °C:</text><text x="520" y="156" font-size="28" font-weight="900" fill="#4b3fd1">${lim} g</text><text x="520" y="182" font-size="14" fill="#55688a">per 100 mL of water</text>
   <text x="330" y="52" text-anchor="middle" font-size="16" font-weight="800">100 mL water</text>`);
   q('#tv').textContent=T;q('#ad').textContent=added;q('#di').textContent=dis;q('#bo').textContent=bot;

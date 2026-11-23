@@ -11,7 +11,7 @@ build(api){
  const q=s=>api.ctrl.querySelector(s);
  const mystery='Black pen B';
  function draw(){const P=chal?INK[mystery]:INK[pen];
-  api.stage.innerHTML=QLab.svg(760,320,`<rect width="760" height="320" fill="#fff"/><rect x="300" y="30" width="160" height="260" fill="#faf7ef" stroke="#c9c2ad" stroke-width="3"/><rect x="260" y="250" width="240" height="60" fill="#cde9f9" opacity=".8"/><line x1="300" y1="230" x2="460" y2="230" stroke="#c9c2ad" stroke-dasharray="5 4"/>
+  api.stage.innerHTML=QLab.svg(760,320,`<rect width="760" height="320" fill="none"/><rect x="300" y="30" width="160" height="260" fill="#faf7ef" stroke="#c9c2ad" stroke-width="3"/><rect x="260" y="250" width="240" height="60" fill="#cde9f9" opacity=".8"/><line x1="300" y1="230" x2="460" y2="230" stroke="#c9c2ad" stroke-dasharray="5 4"/>
   <circle cx="380" cy="230" r="${t===0?9:5}" fill="#222" opacity="${t===0?1:Math.max(0,.9-t/6)}"/>
   ${t>0?P.map((c,i)=>{const y=230-c[1]*Math.min(t,10)/10*190;return `<ellipse cx="380" cy="${y}" rx="${14+i*4}" ry="${6}" fill="${c[0]}" opacity=".85"/>`}).join(''):''}
   <text x="380" y="20" text-anchor="middle" font-size="14" font-weight="800">${chal?'Mystery ink':pen}</text>`);

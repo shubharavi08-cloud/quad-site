@@ -20,7 +20,7 @@ build(api){
   const col=mixed?(s.nature==='neutral'?'#7fd37a':s.nature==='acidic'?'#ffb347':'#6a8cff'):'#ffd1d1';
   const pour=mixed&&step===1?`<path d="M180 120 Q250 60 330 140" fill="none" stroke="#ff9aa2" stroke-width="6" opacity=".8"><animate attributeName="opacity" values="0;.9;0" dur="1.2s" repeatCount="2"/></path><path d="M580 120 Q510 60 430 140" fill="none" stroke="#9ec8ff" stroke-width="6" opacity=".8"><animate attributeName="opacity" values="0;.9;0" dur="1.2s" repeatCount="2"/></path>`:'';
   const water=dry?0:mixed?70:0,crys=dry?[...Array(14)].map((_,i)=>`<polygon points="${340+i*6},248 ${344+i*6},238 ${348+i*6},248" fill="#fff" stroke="#9aa7b8"/>`).join(''):'';
-  api.stage.innerHTML=QLab.svg(760,320,`<rect width="760" height="320" fill="#fff"/>
+  api.stage.innerHTML=QLab.svg(760,320,`<rect width="760" height="320" fill="none"/>
   <g><path d="M120 150 L110 250 Q110 268 128 268 H212 Q230 268 230 250 L220 150 Z" fill="#ffd1d1" stroke="#1b2a4a" stroke-width="4"/><text x="170" y="215" text-anchor="middle" font-size="30" font-weight="900">${lab(a)}</text><text x="170" y="292" text-anchor="middle" font-size="22">acid</text></g>
   <g><path d="M530 150 L520 250 Q520 268 538 268 H622 Q640 268 640 250 L630 150 Z" fill="#cfe4ff" stroke="#1b2a4a" stroke-width="4"/><text x="580" y="215" text-anchor="middle" font-size="30" font-weight="900">${lab(b)}</text><text x="580" y="292" text-anchor="middle" font-size="22">base</text></g>
   ${pour}

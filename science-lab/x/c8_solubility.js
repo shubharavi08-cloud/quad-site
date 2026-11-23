@@ -14,7 +14,7 @@ build(api){
  function draw(res){
   const col=res&&dissolves()&&solv==='water'&&W[item][2]==='blue'?'#8ec9ff':'#e8f3fb',sol=solv==='water'?'#cde9f9':'#f5e29a';
   const lump=!res?'':dissolves()?'':item==='ghee'?'🧈':item==='mustard oil'?'🫒':'⚪';
-  api.stage.innerHTML=QLab.svg(760,300,`<rect width="760" height="300" fill="#fff"/><path d="M270 60 V250 Q270 265 285 265 H475 Q490 265 490 250 V60" fill="none" stroke="#1b2a4a" stroke-width="5"/><rect x="273" y="120" width="214" height="143" fill="${res&&dissolves()&&solv==='water'&&W[item][2]==='blue'?col:sol}" opacity=".85"/>
+  api.stage.innerHTML=QLab.svg(760,300,`<rect width="760" height="300" fill="none"/><path d="M270 60 V250 Q270 265 285 265 H475 Q490 265 490 250 V60" fill="none" stroke="#1b2a4a" stroke-width="5"/><rect x="273" y="120" width="214" height="143" fill="${res&&dissolves()&&solv==='water'&&W[item][2]==='blue'?col:sol}" opacity=".85"/>
   <text x="380" y="42" text-anchor="middle" font-size="18" font-weight="800">${item||'Pick a substance'} in ${solv}</text>
   ${res&&!dissolves()?`<text x="380" y="${solv==='water'&&(item==='ghee'||item==='mustard oil')?135:245}" text-anchor="middle" font-size="40">${lump}${lump}${lump}</text>`:''}
   ${res&&dissolves()?`<text x="380" y="200" text-anchor="middle" font-size="18" font-weight="800" fill="#4b3fd1">Gone! It dissolved</text>`:''}`)}

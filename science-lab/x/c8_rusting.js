@@ -10,7 +10,7 @@ build(api){
  api.ctrl.innerHTML=`<label for="dy">Day: <span id="dv"></span></label><input id="dy" type="range" min="0" max="7" value="0">${chal?'<p><b>Tick the tubes where the nail WILL rust, then check.</b></p><div class="row" id="pk">'+T.map(t=>`<button data-k="${t[0]}" aria-pressed="false">${t[0]}</button>`).join('')+'</div><button class="pri" id="ck">Check my answer</button>':'<p id="inf" style="font-size:14px;color:#55688a"></p>'}`;
  const q=s=>api.ctrl.querySelector(s);
  function draw(reveal){const show=!chal||reveal;
-  api.stage.innerHTML=QLab.svg(760,320,`<rect width="760" height="320" fill="#fff"/>${T.map((t,i)=>{const x=60+i*136,r=show?Math.min(1,(t[3]*day)/(t[3]===2?5:7)):0,col=`rgb(${Math.round(160+r*0)},${Math.round(165-r*85)},${Math.round(170-r*120)})`;
+  api.stage.innerHTML=QLab.svg(760,320,`<rect width="760" height="320" fill="none"/>${T.map((t,i)=>{const x=60+i*136,r=show?Math.min(1,(t[3]*day)/(t[3]===2?5:7)):0,col=`rgb(${Math.round(160+r*0)},${Math.round(165-r*85)},${Math.round(170-r*120)})`;
    const water=t[0]==='A'?'#fff':t[0]==='B'?'#cde9f9':'#cde9f9';
    return `<g><path d="M${x} 60 V250 Q${x} 265 ${x+15} 265 H${x+75} Q${x+90} 265 ${x+90} 250 V60" fill="none" stroke="#1b2a4a" stroke-width="4"/><rect x="${x+3}" y="${t[0]==='A'?250:120}" width="84" height="${t[0]==='A'?12:143}" fill="${water}" opacity=".85"/>${t[0]==='B'?`<rect x="${x+3}" y="116" width="84" height="10" fill="#f1c84b"/>`:''}${t[0]==='A'?`<text x="${x+45}" y="256" font-size="11" text-anchor="middle">dry</text>`:''}
    <rect x="${x+38}" y="${t[0]==='A'?100:90}" width="14" height="150" rx="5" fill="${col}" stroke="${t[0]==='E'?'#2aa5d8':'#555'}" stroke-width="${t[0]==='E'?5:2}"/>

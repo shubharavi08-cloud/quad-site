@@ -10,7 +10,7 @@ build(api){
  let i=0,step=0,tries=0;
  api.ctrl.innerHTML=`<p><b id="jb"></b></p><p id="jq"></p><div class="row" style="flex-wrap:wrap"><button data-m="filter">🧻 Filter</button><button data-m="evaporate">🔥 Evaporate</button><button data-m="distil">⚗️ Distil</button><button data-m="magnet">🧲 Magnet</button></div><p id="fb" style="font-weight:800"></p>`;
  const q=s=>api.ctrl.querySelector(s);
- function draw(){const j=J[i];api.stage.innerHTML=QLab.svg(760,280,`<rect width="760" height="280" fill="#fff"/><rect x="230" y="90" width="300" height="110" rx="20" fill="#f1f5ff" stroke="#8aa0c8" stroke-width="3"/><text x="380" y="155" text-anchor="middle" font-size="20" font-weight="800">${j?j[0]:'All done!'}</text><text x="380" y="245" text-anchor="middle" font-size="14" fill="#55688a">${i+(j?1:0)} of ${J.length}</text>`);
+ function draw(){const j=J[i];api.stage.innerHTML=QLab.svg(760,280,`<rect width="760" height="280" fill="none"/><rect x="230" y="90" width="300" height="110" rx="20" fill="#f1f5ff" stroke="#8aa0c8" stroke-width="3"/><text x="380" y="155" text-anchor="middle" font-size="20" font-weight="800">${j?j[0]:'All done!'}</text><text x="380" y="245" text-anchor="middle" font-size="14" fill="#55688a">${i+(j?1:0)} of ${J.length}</text>`);
   if(j){q('#jb').textContent='Mixture: '+j[0];q('#jq').textContent=j[1]+(j[2].length>1?` (step ${step+1} of ${j[2].length})`:'')}}
  api.ctrl.querySelectorAll('[data-m]').forEach(b=>b.onclick=()=>{const j=J[i];if(!j)return;const want=j[2][step];
   if(b.dataset.m===want){q('#fb').textContent='✅ '+(step===j[2].length-1?j[3]:'Right. Next step?');step++;if(step>=j[2].length){i++;step=0}draw();

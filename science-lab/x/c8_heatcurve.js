@@ -10,7 +10,7 @@ build(api){
  api.ctrl.innerHTML=`<p>Time: <b id="tm"></b> min</p><p>Thermometer: <span class="read" id="th"></span></p><p>Now: <b id="sg"></b></p><button class="pri" id="heat">🔥 Heat for 30 seconds</button>${chal?'<p style="margin-top:12px"><b>Boiling point is…</b></p><div class="row" id="bp">'+[90,100,110,120].map(x=>`<button data-b="${x}" aria-pressed="false">${x} °C</button>`).join('')+'</div><button class="pri" id="ck">Check my answer</button>':''}`;
  const gx=m=>60+m/20*640,gy=T=>240-(T+20)/150*200;
  function draw(){const T=temp(t);
-  api.stage.innerHTML=QLab.svg(760,300,`<rect width="760" height="300" fill="#fff"/><g stroke="#1b2a4a" stroke-width="3"><line x1="60" y1="240" x2="700" y2="240"/><line x1="60" y1="240" x2="60" y2="30"/></g>
+  api.stage.innerHTML=QLab.svg(760,300,`<rect width="760" height="300" fill="none"/><g stroke="#1b2a4a" stroke-width="3"><line x1="60" y1="240" x2="700" y2="240"/><line x1="60" y1="240" x2="60" y2="30"/></g>
   <text x="380" y="285" text-anchor="middle" font-size="14" font-weight="700">Time (minutes)</text><text x="14" y="135" font-size="14" font-weight="700" transform="rotate(-90 14 135)" text-anchor="middle">Temperature (°C)</text>
   ${[0,5,10,15,20].map(m=>`<text x="${gx(m)}" y="258" text-anchor="middle" font-size="11">${m}</text>`).join('')}${[0,50,100].map(v=>`<text x="50" y="${gy(v)+4}" text-anchor="end" font-size="11">${v}</text><line x1="60" y1="${gy(v)}" x2="700" y2="${gy(v)}" stroke="#cfdcee" stroke-dasharray="4 4"/>`).join('')}
   <polyline fill="none" stroke="#2aa5d8" stroke-width="3" points="${pts.map(p=>gx(p.t)+','+gy(p.T)).join(' ')}"/>${pts.map(p=>`<circle cx="${gx(p.t)}" cy="${gy(p.T)}" r="4" fill="#e5534b"/>`).join('')}`);

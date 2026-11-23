@@ -8,7 +8,7 @@ build(api){
  let z=null;const seen=new Set();
  api.ctrl.innerHTML=chal?`<p><b>A goldsmith melts gold. Click the zone where the gold should go.</b></p>`:`<div class="row" id="zb">${Object.entries(Z).map(([k,v])=>`<button data-z="${k}">${v[0]}</button>`).join('')}</div><p>Thermometer: <span class="read" id="th">—</span></p><p id="zn" style="font-size:14px"></p>`;
  const q=s=>api.ctrl.querySelector(s);
- function draw(){api.stage.innerHTML=QLab.svg(760,320,`<rect width="760" height="320" fill="#fff"/><rect x="368" y="240" width="24" height="70" fill="#f4efe0" stroke="#8a7a50" stroke-width="3"/><line x1="380" y1="240" x2="380" y2="215" stroke="#333" stroke-width="3"/>
+ function draw(){api.stage.innerHTML=QLab.svg(760,320,`<rect width="760" height="320" fill="none"/><rect x="368" y="240" width="24" height="70" fill="#f4efe0" stroke="#8a7a50" stroke-width="3"/><line x1="380" y1="240" x2="380" y2="215" stroke="#333" stroke-width="3"/>
   <path d="M380 70 C330 130 320 190 380 225 C440 190 430 130 380 70Z" fill="#7ab8ff" opacity=".55" data-z="outer" style="cursor:pointer"/>
   <path d="M380 105 C350 150 345 185 380 215 C415 185 410 150 380 105Z" fill="#ffd54a" data-z="mid" style="cursor:pointer"/>
   <path d="M380 165 C368 185 370 205 380 215 C390 205 392 185 380 165Z" fill="#4a3b2a" data-z="inner" style="cursor:pointer"/>

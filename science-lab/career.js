@@ -1,0 +1,21 @@
+/* Scientist career ladder: Curious Cat to Nobel Laureate. */
+(()=>{const Q=QLab,$=s=>document.querySelector(s);
+const R=[
+['🐱','Curious Kid','Class 1 to 5 · You are here when you ask "why?"','Every scientist starts as a curious child. You notice things, ask questions and play with ideas. Nothing else is needed yet!'],
+['🧭','Young Explorer','Class 6 to 8 · Learn the basics of science','School science introduces physics, chemistry and biology together. You learn to guess, test and observe, just like in this lab.'],
+['📘','Science Student','Class 9 to 10 · Board exams and strong basics','You study science and maths in more detail and take your Class 10 board exams. Good basics here open every door later.'],
+['⭐','Science Stream Star','Class 11 to 12 · Choose your science stream','After Class 10 you pick Science: PCM (physics, chemistry, maths) or PCB (physics, chemistry, biology). Entrance exams such as JEE, NEET, CUET or IISER and NISER tests can come next.'],
+['🎓','College Scientist','Bachelor\'s degree · About 3 to 4 years','You study a science subject in depth at college, such as a BSc or BTech in physics, chemistry, biology, computer science or home science. Labs become much bigger and real.'],
+['📚','Masters Scholar','Master\'s degree · About 2 years','You specialise in one field, for example organic chemistry, marine biology, biotechnology or AI. Now you can work as a lab assistant or junior technician.'],
+['🔬','Research Scholar','PhD · About 4 to 6 years','You ask a brand-new question nobody has answered, run your own experiments, and write a thesis. Many scholars receive a research fellowship (JRF/SRF).'],
+['👩‍🔬','Scientist','Research job · Labs, institutes, companies','You work at places like ISRO, DRDO, CSIR, IISc, universities or companies, leading projects and publishing discoveries.'],
+['👩‍🏫','Professor','Senior scientist · Teach and lead','You lead a research team, guide students and shape the next generation of scientists.'],
+['🏆','Nobel Laureate','The highest honour in science','A Nobel Prize honours a discovery that helps all humanity, like vaccines, new materials or how the universe works. Very few people ever win it, but every great scientist once started as a curious kid like you.']];
+const idx=()=>{let t=Q.total(),i=0;Q.LEVELS.forEach((l,j)=>{if(t>=l[0])i=j});return i};
+Q.career=function(){const i=idx(),t=Q.total(),nx=Q.LEVELS[i+1];
+$('#app').innerHTML=`<div class="top"><a class="home" href="#/">← All experiments</a><h1>🏅 Become a scientist</h1><span class="pts" id="pts"></span></div>
+<div class="card"><p>This is the real road to becoming a scientist, starting from where you are today. Every point you earn moves you one step along it. Watch videos, do labs, pass quizzes and win missions to climb all the way to the <b>Nobel Prize</b>!</p><p class=\"lockhint\" style=\"text-align:left\">You do not have to become a scientist. Understanding science is a superpower for any job. But if you love it, this shows the road.</p>${nx?`<p><b>Next step: ${R[i+1][0]} ${nx[1]}</b> at ${nx[0]} points. Only ${nx[0]-t} more!</p><div class="bar" style="height:16px;background:#fff;border:3px solid #ffd0e8;border-radius:99px;overflow:hidden"><i style="display:block;height:100%;width:${Math.round(100*(t-Q.LEVELS[i][0])/(nx[0]-Q.LEVELS[i][0]))}%;background:linear-gradient(90deg,#6c4cf0,#ff4d9d)"></i></div>`:'<p><b>🎉 You won the Nobel Prize! You are a true science champion.</b></p>'}</div>
+${R.map((r,j)=>`<div class="card" style="${j===i?'border-color:#ffc233;box-shadow:0 6px 0 #ffc233;background:#fff9d9':j>i?'opacity:.75':''}"><h2>${r[0]} ${j+1}. ${r[1]} ${j<i?'✅':j===i?'⭐ You are here':'🔒'}</h2><p><b>${r[2]}</b></p><p>${r[3]}</p><small>⭐ ${Q.LEVELS[j][0]} points in this lab</small></div>`).join('')}`;
+Q.pts();if(i===R.length-1&&Q.fx)Q.fx.burst(120)};
+const prev=Q.onAward;let last=idx();Q.onAward=k=>{prev&&prev(k);const n=idx();if(n>last){last=n;if(Q.fx)Q.fx.burst(n===R.length-1?160:90);const t=document.createElement('div');t.className='toast';t.innerHTML='<span>'+R[n][0]+'</span><div><b>New level!</b><br>'+Q.LEVELS[n][1]+'</div>';document.body.appendChild(t);setTimeout(()=>t.classList.add('show'),30);setTimeout(()=>{t.classList.remove('show');setTimeout(()=>t.remove(),500)},3800)}};
+})();

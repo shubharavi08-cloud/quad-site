@@ -1,0 +1,41 @@
+/* Kids theme: bright, bouncy, colourful. Loaded after core.css */
+:root{--ink:#2b2350;--ink2:#6a5f8e;--line:#ffd0e8;--osh:#6c4cf0;--yellow:#ffc233;--cyan:#19b5e8;--coral:#ff5d73;--green:#22c070;--card:#fff}
+body{font-family:ui-rounded,"SF Pro Rounded","Nunito","Quicksand","Trebuchet MS",system-ui,sans-serif;font-weight:600;color:var(--ink);background:radial-gradient(circle at 12% 8%,#ffe7f4 0,transparent 36%),radial-gradient(circle at 92% 18%,#d8f4ff 0,transparent 34%),radial-gradient(circle at 20% 92%,#fff2b8 0,transparent 38%),linear-gradient(180deg,#d9f2ff,#fff7d6 60%,#ffe3f1) fixed}
+h1,h2,h3{font-family:inherit;font-weight:900;letter-spacing:-.01em}
+h1{font-size:clamp(1.7rem,6vw,2.6rem);background:linear-gradient(90deg,#6c4cf0,#ff4d9d,#ff9a1f);-webkit-background-clip:text;background-clip:text;color:transparent;display:inline-block}
+.top a.home{background:linear-gradient(180deg,#ffd45e,#ffb020);color:#4a2a00;border-radius:999px;padding:9px 16px;box-shadow:0 4px 0 #d98a00;border:0}
+.pts{background:linear-gradient(180deg,#fff,#fff3c9);border:3px solid #ffc233;color:#8a4b00;box-shadow:0 4px 0 #e6a200;font-size:.95rem}
+button{border-radius:18px;border:3px solid #ffb7dc;background:#fff;box-shadow:0 4px 0 #ffb7dc;font-weight:800;transition:transform .12s,box-shadow .12s}
+button:hover{border-color:#ff7ab8;transform:translateY(-2px)}button:active{transform:translateY(3px);box-shadow:0 1px 0 #ffb7dc}
+button.pri,a.pri{background:linear-gradient(180deg,#8f6bff,#5a3fe0);color:#fff;border:3px solid #3b27a8;box-shadow:0 5px 0 #3b27a8}
+button.pri:hover{border-color:#2a1a80}
+.card{border:3px solid #ffd0e8;border-radius:28px;box-shadow:0 6px 0 #ffd0e8;animation:pop .35s ease both}
+.card:nth-of-type(3n+2){border-color:#bfe9ff;box-shadow:0 6px 0 #bfe9ff}.card:nth-of-type(3n+3){border-color:#ffe08a;box-shadow:0 6px 0 #ffe08a}
+.steps button{font-size:14px;padding:6px 12px;border-radius:999px;border:3px solid #e3d7ff;box-shadow:none;color:#6a5f8e;background:#fff}
+.steps button.done{background:#d9f7e4;border-color:#5fd493;color:#13683c}.steps button.on{background:#ffc233;border-color:#e69a00;color:#4a2a00;animation:wiggle 1.6s ease-in-out infinite}
+.opts button{border-radius:20px;font-size:1.05rem}.opts button.right{background:#d9f7e4;border-color:#22c070;box-shadow:0 4px 0 #22c070;animation:pop .3s}.opts button.try{background:#ffeccf;border-color:#ff9a1f;box-shadow:0 4px 0 #ff9a1f;animation:shake .35s}
+.stage{border:4px solid #ffb7dc;border-radius:26px;background:#fff;box-shadow:0 6px 0 #ffb7dc;padding:6px;overflow:hidden}
+.ctrl{background:#fff9d9;border:3px solid #ffe08a;border-radius:24px;box-shadow:0 5px 0 #ffe08a}
+.coach{border-radius:24px;border-width:3px;animation:pop .35s ease both;font-size:1.05rem}
+.coach.ok{background:linear-gradient(135deg,#dcf9e8,#fff6c8);border-color:#22c070}.coach.warn{background:#fff0d2;border-color:#ff9a1f}.coach.info{background:#dff5ff;border-color:#19b5e8}
+.coach .ic{font-size:38px;animation:bounce 1.2s ease-in-out infinite}
+.hook .em{font-size:84px;animation:bounce 2s ease-in-out infinite}
+.word{background:linear-gradient(180deg,transparent 55%,#ffe36b 55%);border-radius:0}
+.chips button{border-radius:999px}.chips button.on{background:#ffc233;border-color:#e69a00;box-shadow:0 4px 0 #e69a00}
+.cat{grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:14px}
+.tile{border-radius:26px;border:3px solid #ffb7dc;background:#fff0f8;box-shadow:0 6px 0 #ffb7dc;transition:transform .15s;color:var(--ink);padding:14px 12px;text-align:center}
+.tile:nth-child(odd){transform:rotate(-1deg)}.tile:nth-child(even){transform:rotate(1deg)}
+.tile:hover{transform:translateY(-5px) rotate(0)}.tile .em{font-size:58px;display:block;animation:bounce 2.6s ease-in-out infinite}.tile:nth-child(3n) .em{animation-delay:.4s}.tile:nth-child(3n+1) .em{animation-delay:.9s}
+.tile.sub-Chemistry{background:#fff0f8;border-color:#ff8fc8;box-shadow:0 6px 0 #ff8fc8}.tile.sub-Physics{background:#e6f6ff;border-color:#59c4f5;box-shadow:0 6px 0 #59c4f5}.tile.sub-Biology{background:#e8fbe6;border-color:#6bd36b;box-shadow:0 6px 0 #6bd36b}.tile.sub-Maths{background:#fff4d0;border-color:#ffc233;box-shadow:0 6px 0 #ffc233}
+.tile b{font-size:1rem;line-height:1.2;display:block;margin-top:4px}.tile small{display:block;margin-top:2px}.bdg{display:block;margin-top:6px;font-size:16px}
+.toast{background:linear-gradient(135deg,#6c4cf0,#ff4d9d);border:3px solid #fff}
+.badge{border-radius:20px;border:3px solid #e3d7ff;background:#f4f0ff}.badge.on{background:linear-gradient(180deg,#fff6c8,#ffe08a);border-color:#ffc233;animation:pop .4s}.badge.on .bi{animation:bounce 2s ease-in-out infinite}
+.badge .bar i{background:linear-gradient(90deg,#6c4cf0,#ff4d9d)}
+.inp{border:3px solid #ffd0e8;border-radius:16px}
+.lgl{background:#e6f6ff;border-radius:16px}.shop{border-radius:22px}.mis h2{font-size:1.2rem}
+.fxfloat{position:fixed;z-index:98;font-weight:900;font-size:26px;color:#e68a00;text-shadow:0 2px 0 #fff,0 0 8px #fff;pointer-events:none;animation:floatup 1.3s ease-out forwards}
+@keyframes pop{0%{transform:scale(.8);opacity:0}70%{transform:scale(1.03)}100%{transform:scale(1);opacity:1}}
+@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+@keyframes wiggle{0%,100%{transform:rotate(-2deg)}50%{transform:rotate(2deg)}}
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+@keyframes floatup{0%{transform:translateY(0) scale(.7);opacity:0}15%{opacity:1;transform:translateY(-10px) scale(1.2)}100%{transform:translateY(-90px) scale(1);opacity:0}}

@@ -13,7 +13,7 @@ build(api){
  function draw(){const d=M[k],cx=380,cy=150;let o='';
   for(let i=0;i<hs;i++){const a=i/d.h*6.28-1.57;const x=cx+95*Math.cos(a),y=cy+95*Math.sin(a);o+=`<line x1="${cx}" y1="${cy}" x2="${x}" y2="${y}" stroke="#4b3fd1" stroke-width="5"/><circle cx="${x}" cy="${y}" r="20" fill="#ffb347" stroke="#333"/><text x="${x}" y="${y+5}" text-anchor="middle" font-weight="900">H</text>`}
   o+=`<circle cx="${cx}" cy="${cy}" r="30" fill="#2aa5d8" stroke="#333"/><text x="${cx}" y="${cy+6}" text-anchor="middle" font-weight="900" font-size="18">${d.c}</text>`;
-  const full=hs>=d.h;api.stage.innerHTML=QLab.svg(760,300,`<rect width="760" height="300" fill="#fff"/>${o}<text x="380" y="285" text-anchor="middle" font-size="18" font-weight="800">${full?d.n+' '+d.f+' is complete':hs+' of '+d.h+' hydrogens'}</text>`);
+  const full=hs>=d.h;api.stage.innerHTML=QLab.svg(760,300,`<rect width="760" height="300" fill="none"/>${o}<text x="380" y="285" text-anchor="middle" font-size="18" font-weight="800">${full?d.n+' '+d.f+' is complete':hs+' of '+d.h+' hydrogens'}</text>`);
   if(q('#st'))q('#st').textContent=full?`${d.c} needs ${V[d.c]} bond${V[d.c]>1?'s':''}: each line is one shared pair of electrons.`:'Add hydrogens until the central atom is full.';
   if(full&&!chal){done.add(k);if(done.size>=4){api.award('did');api.ready()}}}
  if(!chal){q('#pp').querySelectorAll('button').forEach(b=>b.onclick=()=>{k=b.dataset.k;hs=0;q('#pp').querySelectorAll('button').forEach(x=>x.className=x===b?'pri':'');draw()});q('#pp button').className='pri';
