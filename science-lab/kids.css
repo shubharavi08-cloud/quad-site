@@ -39,3 +39,15 @@ button.pri:hover{border-color:#2a1a80}
 @keyframes wiggle{0%,100%{transform:rotate(-2deg)}50%{transform:rotate(2deg)}}
 @keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
 @keyframes floatup{0%{transform:translateY(0) scale(.7);opacity:0}15%{opacity:1;transform:translateY(-10px) scale(1.2)}100%{transform:translateY(-90px) scale(1);opacity:0}}
+/* Compact controls so the experiment stays visible */
+button{padding:6px 12px;min-height:38px;font-size:15px;border-width:2px;border-radius:14px;box-shadow:0 3px 0 #ffb7dc}
+button:hover{transform:translateY(-1px)}button:active{transform:translateY(2px);box-shadow:0 1px 0 #ffb7dc}
+button.pri,a.pri{border-width:2px;box-shadow:0 3px 0 #3b27a8}
+.opts{gap:8px;margin:8px 0}.opts button{font-size:15px}.opts button.right{box-shadow:0 3px 0 #22c070}.opts button.try{box-shadow:0 3px 0 #ff9a1f}
+.row{gap:6px}.row button{flex:0 1 auto}
+.chips button.on{box-shadow:0 3px 0 #e69a00}
+.stage{border-width:3px;border-radius:20px;box-shadow:0 4px 0 #ffb7dc;padding:2px;margin:8px 0}
+.ctrl{padding:10px;border-width:2px;border-radius:18px;box-shadow:0 3px 0 #ffe08a}
+.card{padding:14px;border-width:2px;border-radius:22px;box-shadow:0 4px 0 #ffd0e8}
+.coach{padding:10px 12px;font-size:1rem}.coach .ic{font-size:30px}
+.tile{padding:12px 10px}
