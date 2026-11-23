@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>QUAD Maths Lab · Experiments (prototype)</title>
+<title>OSH Maths Lab · Fun maths experiments</title>
 <style>
 :root{--gold:#ffcf5a}
 *{box-sizing:border-box}html,body{margin:0}
@@ -53,40 +53,72 @@ button.sm.on{background:var(--c1);color:#222}
 .badge.show{display:block;animation:pop .6s cubic-bezier(.3,1.6,.5,1)}
 @keyframes pop{from{transform:scale(.4);opacity:0}to{transform:scale(1);opacity:1}}
 footer{margin-top:20px;color:#cdeed8;font-size:13px}
+
+/* OSH kids brand (matches the OSH Science Lab) */
+body{color:#2b2350;font:600 17px/1.5 ui-rounded,"SF Pro Rounded","Nunito","Quicksand","Trebuchet MS",system-ui,sans-serif;background:radial-gradient(circle at 12% 8%,#ffe7f4 0,transparent 36%),radial-gradient(circle at 92% 18%,#d8f4ff 0,transparent 34%),radial-gradient(circle at 20% 92%,#fff2b8 0,transparent 38%),linear-gradient(180deg,#d9f2ff,#fff7d6 60%,#ffe3f1) fixed}
+.brand{font-size:22px;background:linear-gradient(90deg,#6c4cf0,#ff4d9d,#ff9a1f);-webkit-background-clip:text;background-clip:text;color:transparent;display:inline-block}.brand small{color:#6a5f8e;-webkit-text-fill-color:#6a5f8e}
+.nav a{display:inline-block;margin:0 6px 6px 0;background:linear-gradient(180deg,#ffd45e,#ffb020);color:#4a2a00;border-radius:999px;padding:7px 14px;box-shadow:0 3px 0 #d98a00;text-decoration:none;font-weight:800;font-size:15px}
+.nav a.cur{background:linear-gradient(180deg,#8f6bff,#5a3fe0);color:#fff;box-shadow:0 3px 0 #3b27a8}
+.chip{background:linear-gradient(180deg,#fff,#fff3c9);border:3px solid #ffc233;color:#8a4b00;box-shadow:0 3px 0 #e6a200}.chip b{color:#c25a00}
+h1{font-size:clamp(1.7rem,6vw,2.5rem);font-weight:900}h1 span{background:linear-gradient(90deg,#6c4cf0,#ff4d9d,#ff9a1f);-webkit-background-clip:text;background-clip:text;color:transparent}
+p.lead{color:#4b4272}
+.tab{border-radius:999px;box-shadow:0 4px 0 #0003;opacity:.85;font-weight:900}.tab.on{opacity:1;transform:translateY(-2px) scale(1.04)}
+.board{border-width:6px;box-shadow:0 8px 0 #ffb7dc}
+.stage{border:3px dashed #ffb7dc;background:#ffffffaa}
+.box{background:#ffffffcc;border:3px solid #ffd0e8;border-radius:18px;color:#2b2350}
+.bubble{background:#fff;border-left-width:6px;border-radius:18px;box-shadow:0 3px 0 #ffd0e8}
+.av{background:#fff;border:3px solid var(--c1);font-size:26px}
+button.sm{border-radius:14px;border-width:2px;background:#fff;box-shadow:0 3px 0 #ffb7dc}button.sm.on{color:#fff}
+.opt{background:#fff;border:2px solid #ffb7dc;border-radius:16px;box-shadow:0 3px 0 #ffb7dc;font-weight:700}
+.opt.good{background:#d9f7e4;border-color:#22c070;box-shadow:0 3px 0 #22c070;animation:pop .35s}.opt.bad{background:#ffeccf;border-color:#ff9a1f;box-shadow:0 3px 0 #ff9a1f;animation:shake .35s;color:#2b2350}
+.badge{background:linear-gradient(135deg,#fff6c8,#ffe08a);border-color:#ffc233;color:#4a2a00}
+.keyrow span{background:#fff;color:#2b2350}input.txt{background:#fff;color:#2b2350}
+.cert{background:#fff}
+footer{color:#6a5f8e}
+.mascot{display:inline-block;animation:bounce 2s ease-in-out infinite}
+.fxfloat{position:fixed;z-index:98;font-weight:900;font-size:26px;color:#e68a00;text-shadow:0 2px 0 #fff,0 0 8px #fff;pointer-events:none;animation:floatup 1.3s ease-out forwards}
+.kind{background:#fff;border:3px solid #bfe9ff;border-radius:18px;padding:10px 14px;margin:0 0 12px;box-shadow:0 4px 0 #bfe9ff}
+@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+@keyframes floatup{0%{transform:translateY(0) scale(.7);opacity:0}15%{opacity:1;transform:translateY(-10px) scale(1.2)}100%{transform:translateY(-90px) scale(1);opacity:0}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
 </style>
 </head>
 <body><div class="wrap" id="app"></div>
 <script>
 "use strict";
-var THEMES={chalk:{n:"QUAD board",bg:"#14231d",ink:"#f4efe2",c1:"#ffcf5a",c2:"#7fe3ff",c3:"#ff9bbd",c4:"#9dff9d",grid:"#f4efe222",frame:"#8a5a2e"},black:{n:"Blackboard",bg:"#15191e",ink:"#f1f1f1",c1:"#ffd54a",c2:"#6fd8ff",c3:"#ff8fb3",c4:"#8cf08c",grid:"#ffffff1c",frame:"#5a5f66"},white:{n:"Whiteboard",bg:"#fbfbf6",ink:"#1d2733",c1:"#d97a00",c2:"#0a78b8",c3:"#d6336c",c4:"#2b8a3e",grid:"#0000001a",frame:"#b9bec4"},blue:{n:"Blue board",bg:"#143a6b",ink:"#fff",c1:"#ffd166",c2:"#7ee0ff",c3:"#ff9ec7",c4:"#9be37d",grid:"#ffffff24",frame:"#c4cbd6"},paper:{n:"Cream paper",bg:"#f7edd3",ink:"#3a2d1f",c1:"#c2570a",c2:"#1f6f8b",c3:"#b5336a",c4:"#3a7d44",grid:"#8a6a3a24",frame:"#b08a55"},plum:{n:"Plum board",bg:"#3b1f54",ink:"#fbf3ff",c1:"#ffd54a",c2:"#7ae7ff",c3:"#ff9bd0",c4:"#a6f06a",grid:"#ffffff22",frame:"#8d6ab0"}};
-var S={xp:0,badges:{},theme:"chalk"};
-try{var r=localStorage.getItem("quadlab_v3");if(r){var o=JSON.parse(r);S.xp=o.xp||0;S.badges=o.badges||{};if(THEMES[o.theme])S.theme=o.theme}}catch(e){}
+var THEMES={sunny:{n:"Sunny board",bg:"#fffdf0",ink:"#2b2350",c1:"#e8590c",c2:"#1a7fd4",c3:"#d6246e",c4:"#1b9a50",grid:"#6c4cf022",frame:"#ffb7dc"},mint:{n:"Mint board",bg:"#e9fbf1",ink:"#1d3a2e",c1:"#d9480f",c2:"#0b7fab",c3:"#c2255c",c4:"#2b8a3e",grid:"#2b8a3e22",frame:"#6bd36b"},sky:{n:"Sky board",bg:"#e6f6ff",ink:"#16324f",c1:"#d9480f",c2:"#1971c2",c3:"#c2255c",c4:"#2b8a3e",grid:"#1971c222",frame:"#59c4f5"},chalk:{n:"Chalkboard",bg:"#14231d",ink:"#f4efe2",c1:"#ffcf5a",c2:"#7fe3ff",c3:"#ff9bbd",c4:"#9dff9d",grid:"#f4efe222",frame:"#8a5a2e"},black:{n:"Blackboard",bg:"#15191e",ink:"#f1f1f1",c1:"#ffd54a",c2:"#6fd8ff",c3:"#ff8fb3",c4:"#8cf08c",grid:"#ffffff1c",frame:"#5a5f66"},white:{n:"Whiteboard",bg:"#fbfbf6",ink:"#1d2733",c1:"#d97a00",c2:"#0a78b8",c3:"#d6336c",c4:"#2b8a3e",grid:"#0000001a",frame:"#b9bec4"},blue:{n:"Blue board",bg:"#143a6b",ink:"#fff",c1:"#ffd166",c2:"#7ee0ff",c3:"#ff9ec7",c4:"#9be37d",grid:"#ffffff24",frame:"#c4cbd6"},paper:{n:"Cream paper",bg:"#f7edd3",ink:"#3a2d1f",c1:"#c2570a",c2:"#1f6f8b",c3:"#b5336a",c4:"#3a7d44",grid:"#8a6a3a24",frame:"#b08a55"},plum:{n:"Plum board",bg:"#3b1f54",ink:"#fbf3ff",c1:"#ffd54a",c2:"#7ae7ff",c3:"#ff9bd0",c4:"#a6f06a",grid:"#ffffff22",frame:"#8d6ab0"}};
+var S={xp:0,badges:{},theme:"sunny"};
+try{var r=localStorage.getItem("quadlab_v3");if(r){var o=JSON.parse(r);S.xp=o.xp||0;S.badges=o.badges||{};if(THEMES[o.theme]&&o.theme!=="chalk")S.theme=o.theme}}catch(e){}
 function save(){try{localStorage.setItem("quadlab_v3",JSON.stringify(S))}catch(e){}}
 var NS="http://www.w3.org/2000/svg";
 function el(t,a,p){var e=document.createElementNS(NS,t);for(var k in a)e.setAttribute(k,a[k]);if(p)p.appendChild(e);return e}
 function fmt(n){n=Math.round(n*100)/100;if(Object.is(n,-0))n=0;return String(n).replace("-","−")}
 function tstyle(){var t=THEMES[S.theme];return "--bg:"+t.bg+";--ink:"+t.ink+";--c1:"+t.c1+";--c2:"+t.c2+";--c3:"+t.c3+";--c4:"+t.c4+";--grid:"+t.grid+";--frame:"+t.frame}
 function esc(t){var d=document.createElement("div");d.textContent=t;return d.innerHTML}
+
+function fxBurst(n){if(window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches)return;var c=document.createElement("canvas");c.width=innerWidth;c.height=innerHeight;c.style.cssText="position:fixed;inset:0;z-index:97;pointer-events:none";document.body.appendChild(c);var g=c.getContext("2d"),cols=["#ff4d9d","#ffc233","#19b5e8","#22c070","#6c4cf0","#ff7a2f"],ps=[],i;for(i=0;i<(n||70);i++)ps.push({x:innerWidth/2+(Math.random()-.5)*160,y:innerHeight*.35,vx:(Math.random()-.5)*11,vy:-Math.random()*11-3,s:5+Math.random()*7,c:cols[Math.random()*6|0],r:Math.random()*6,vr:(Math.random()-.5)*.4});var f=0;(function t(){g.clearRect(0,0,c.width,c.height);ps.forEach(function(p){p.x+=p.vx;p.y+=p.vy;p.vy+=.35;p.r+=p.vr;g.save();g.translate(p.x,p.y);g.rotate(p.r);g.fillStyle=p.c;g.fillRect(-p.s/2,-p.s/3,p.s,p.s*.6);g.restore()});if(++f<90)requestAnimationFrame(t);else c.remove()})()}
+function fxPlus(txt){var e=document.getElementById("xp"),r=e?e.getBoundingClientRect():{left:innerWidth/2,top:80},d=document.createElement("div");d.className="fxfloat";d.textContent=txt;d.style.left=Math.max(10,r.left)+"px";d.style.top=(r.top+30)+"px";document.body.appendChild(d);setTimeout(function(){d.remove()},1400)}
 var cur="m1",app=document.getElementById("app");
 function shell(){
- var h='<header class="top"><div class="brand">QUAD MATHS LAB<small>Experiments · prototype of the new style</small></div><div><span class="chip">XP <b id="xp">'+S.xp+'</b></span><span class="chip">Badges <b id="bd">'+Object.keys(S.badges).length+'/3</b></span></div></header>';
- h+='<h1>Don\'t watch maths. <span>Do it.</span></h1><p class="lead">Drag, build and change things. The board answers instantly, so you find the rule yourself. Three experiments and a secret vault from Class 10: Polynomials and Pair of Linear Equations.</p>';
+ var h='<header class="top"><div><div class="brand">OSH Maths Lab</div><small style="display:block;color:#6a5f8e">by OurSchoolHouse · free, fun maths</small><div class="nav"><a href="/science-lab/">🔬 Science Lab</a><a class="cur" href="/lab/">🧮 Maths Lab</a></div></div><div><span class="chip">⭐ Stars <b id="xp">'+S.xp+'</b></span><span class="chip">Badges <b id="bd">'+Object.keys(S.badges).length+'/3</b></span></div></header>';
+ h+='<h1>Maths is a <span>game!</span> 🎮</h1><div class="kind"><span class="mascot">🦉</span> <b>Nervous about maths? Good news:</b> nobody gets marks here. Drag, tap and play. A wrong move just teaches you something. Every try earns you stars!</div><p class="lead">Drag, build and change things. The board answers instantly, so you find the rule yourself. Three experiments and a secret vault from Class 10: Polynomials and Pair of Linear Equations.</p>';
  h+='<div class="tabs"><button class="tab t1" id="tab_m1" onclick="go(\'m1\')">1 · Zero Dragger</button><button class="tab t2" id="tab_m2" onclick="go(\'m2\')">2 · Tile Builder</button><button class="tab t3" id="tab_m3" onclick="go(\'m3\')">3 · Lines Lab</button><button class="tab t4" id="tab_m4" onclick="go(\'m4\')">🔑 Secret Vault</button><div class="swatches">Board: '+Object.keys(THEMES).map(function(k){return '<button class="sw'+(k===S.theme?' on':'')+'" title="'+THEMES[k].n+'" aria-label="'+THEMES[k].n+'" style="background:'+THEMES[k].bg+'" onclick="setTheme(\''+k+'\')"></button>'}).join("")+'</div></div>';
- h+='<div class="board" id="board" style="'+tstyle()+'"></div><footer>QUAD Academy · quadacademy.org · No login, no ads, nothing saved except on your own device.</footer>';
+ h+='<div class="board" id="board" style="'+tstyle()+'"></div><footer>OurSchoolHouse · OSH Maths Lab · Free to play. No ads. Your stars are saved only on your own device.</footer>';
  app.innerHTML=h}
 function setTheme(k){S.theme=k;save();document.getElementById("board").setAttribute("style",tstyle());document.querySelectorAll(".sw").forEach(function(x){x.classList.toggle("on",x.title===THEMES[k].n)})}
 function go(m){cur=m;["m1","m2","m3","m4"].forEach(function(k){document.getElementById("tab_"+k).classList.toggle("on",k===m)});({m1:M1,m2:M2,m3:M3,m4:M4})[m]()}
-function award(key,xp){if(!S.badges[key]){S.badges[key]=1;S.xp+=xp;save();document.getElementById("xp").textContent=S.xp;document.getElementById("bd").textContent=Object.keys(S.badges).length+"/3";var b=document.getElementById("badge");if(b)b.classList.add("show")}}
-var gained={};function bonus(id,xp){if(!gained[id]){gained[id]=1;S.xp+=xp;save();document.getElementById("xp").textContent=S.xp}}
+function award(key,xp){if(!S.badges[key]){S.badges[key]=1;S.xp+=xp;save();document.getElementById("xp").textContent=S.xp;document.getElementById("bd").textContent=Object.keys(S.badges).length+"/3";var b=document.getElementById("badge");if(b)b.classList.add("show");fxBurst(120);fxPlus("+"+xp+" ⭐")}}
+var gained={};function bonus(id,xp){if(!gained[id]){gained[id]=1;S.xp+=xp;save();document.getElementById("xp").textContent=S.xp;fxBurst(40);fxPlus("+"+xp+" ⭐")}}
 function drag(node,fn){node.style.cursor="grab";node.addEventListener("pointerdown",function(e){e.preventDefault();var svg=node.ownerSVGElement;svg._drag=fn;try{svg.setPointerCapture(e.pointerId)}catch(x){}
  if(!svg._wired){svg._wired=1;svg.addEventListener("pointermove",function(ev){if(!svg._drag)return;var pt=svg.createSVGPoint();pt.x=ev.clientX;pt.y=ev.clientY;var q=pt.matrixTransform(svg.getScreenCTM().inverse());svg._drag(q.x,q.y)});var end=function(){svg._drag=null};svg.addEventListener("pointerup",end);svg.addEventListener("pointercancel",end)}})}
 function frame(title,say,stageHTML,panelHTML){
- document.getElementById("board").innerHTML='<div class="say"><div class="av">D</div><div class="bubble" id="say">'+say+'</div></div><div id="badge" class="badge">🏅 Badge earned: <b>'+esc(title)+'</b>! +50 XP</div><div class="lab"><div class="stage"><svg id="svg" viewBox="0 0 440 320" role="application" aria-label="'+esc(title)+'"></svg></div><div class="panel">'+panelHTML+'</div></div><div class="tray"></div>'}
+ document.getElementById("board").innerHTML='<div class="say"><div class="av">🦉</div><div class="bubble" id="say">'+say+'</div></div><div id="badge" class="badge">🏅 Badge earned: <b>'+esc(title)+'</b>! +50 ⭐</div><div class="lab"><div class="stage"><svg id="svg" viewBox="0 0 440 320" role="application" aria-label="'+esc(title)+'"></svg></div><div class="panel">'+panelHTML+'</div></div><div class="tray"></div>'}
 function chalList(items,st){return '<ul class="chal">'+items.map(function(t,i){return '<li class="'+(st[i]?"done":"")+'"><i>'+(st[i]?"✓":i+1)+'</i><span>'+t+'</span></li>'}).join("")+'</ul>'}
 function notice(q,opts,ok,why,key){
  return '<div class="box"><h4>Notice</h4><div>'+q+'</div><div class="opts" id="nq">'+opts.map(function(o,k){return '<button class="opt" onclick="nq('+k+','+ok+',\''+key+'\')">'+o+'</button>'}).join("")+'</div><div class="fb" id="nfb" data-why="'+esc(why)+'"></div></div>'}
 var nDone={};
-function nq(k,ok,key){var b=document.querySelectorAll("#nq .opt"),f=document.getElementById("nfb");if(k===ok){b.forEach(function(x){x.disabled=true});b[k].classList.add("good");f.innerHTML="✅ "+f.getAttribute("data-why");nDone[key]=1;bonus("n"+key,10);check(key)}else{b[k].classList.add("bad");b[k].disabled=true;f.innerHTML="❌ Not quite. Go back to the board, change things and look again."}}
+function nq(k,ok,key){var b=document.querySelectorAll("#nq .opt"),f=document.getElementById("nfb");if(k===ok){b.forEach(function(x){x.disabled=true});b[k].classList.add("good");f.innerHTML="✅ "+f.getAttribute("data-why");nDone[key]=1;bonus("n"+key,10);check(key)}else{b[k].classList.add("bad");b[k].disabled=true;f.innerHTML="🌱 Good try! Mistakes help your brain grow. Go back to the board, change things and look again."}}
 function check(key){var m=MS[key];if(nDone[key]&&m.all())award(key,50)}
 var MS={};
 function grid(svg,x0,x1,y0,y1,M,xs,ys){var g=el("g",{},svg),i;for(i=Math.ceil(x0/xs)*xs;i<=x1;i+=xs){el("line",{x1:M.x(i),x2:M.x(i),y1:M.y(y0),y2:M.y(y1),stroke:"var(--grid)","stroke-width":1},g)}for(i=Math.ceil(y0/ys)*ys;i<=y1;i+=ys){el("line",{y1:M.y(i),y2:M.y(i),x1:M.x(x0),x2:M.x(x1),stroke:"var(--grid)","stroke-width":1},g)}
@@ -189,12 +221,12 @@ var WORD_OK="ROOTS";
 function M4(){
  var key="";for(var i=1;i<=26;i++)key+='<span>'+String.fromCharCode(64+i)+'='+i+'</span>';
  var open=!!S.vault;
- document.getElementById("board").innerHTML='<div class="say"><div class="av">D</div><div class="bubble" id="say">'+(open?"<b>The vault is open!</b> You found the secret word in QUAD Maths Live 2. Put your name on your certificate and share a screenshot with us.":"<b>Shh, the vault is locked.</b> In QUAD Maths Live 2, every clue answer is a number. Turn each number into a letter (A=1, B=2, ...). Five letters make the secret word. Type it here!")+'</div></div><div class="lab"><div class="box" id="vl"></div><div class="panel"><div class="box"><h4>Number to letter</h4><div class="keyrow">'+key+'</div></div><div class="box"><h4>Next secret word</h4>Sunday 29 Nov, 7 PM: Trigonometry + Heights and Distances. A brand-new word, a new vault gift.</div></div></div><div class="tray"></div>';
+ document.getElementById("board").innerHTML='<div class="say"><div class="av">🦉</div><div class="bubble" id="say">'+(open?"<b>The vault is open!</b> You found the secret word in the Maths Live 2 video. Put your name on your certificate and share a screenshot with us.":"<b>Shh, the vault is locked.</b> In the Maths Live 2 video, every clue answer is a number. Turn each number into a letter (A=1, B=2, ...). Five letters make the secret word. Type it here!")+'</div></div><div class="lab"><div class="box" id="vl"></div><div class="panel"><div class="box"><h4>Number to letter</h4><div class="keyrow">'+key+'</div></div><div class="box"><h4>Next secret word</h4>Sunday 29 Nov, 7 PM: Trigonometry + Heights and Distances. A brand-new word, a new vault gift.</div></div></div><div class="tray"></div>';
  var v=document.getElementById("vl");
  if(!open){v.innerHTML='<h4>Enter the secret word</h4><input class="txt" id="sw" maxlength="12" autocomplete="off" aria-label="secret word"><div class="btnrow" style="margin-top:10px"><button class="sm on" id="swb">Open the vault</button></div><div class="fb" id="swf"></div>';
   var tryw=function(){var w=document.getElementById("sw").value.trim().toUpperCase();if(w===WORD_OK){S.vault=1;S.xp+=100;save();document.getElementById("xp").textContent=S.xp;M4()}else{document.getElementById("swf").innerHTML='<span class="no">Not that one. Count the letters again: five clues, five letters.</span>'}};
   document.getElementById("swb").onclick=tryw;document.getElementById("sw").onkeydown=function(e){if(e.key==="Enter")tryw()}}
- else{v.innerHTML='<h4>Your certificate</h4><div class="cert"><div>QUAD ACADEMY</div><h2>Root Finder 🔑</h2><div>cracked the secret word in Maths Live 2</div><div class="nm" id="cn">'+esc(S.nm||"Your name")+'</div><div>Class 10 · Polynomials + Pair of Linear Equations</div></div><div class="btnrow" style="margin-top:10px"><input class="txt" id="nm" maxlength="24" placeholder="Type your name" style="letter-spacing:0;text-transform:none" aria-label="your name"></div><div class="fb">+100 XP earned. Take a screenshot and share it!</div>';
+ else{v.innerHTML='<h4>Your certificate</h4><div class="cert"><div>OSH MATHS LAB</div><h2>Root Finder 🔑</h2><div>cracked the secret word in Maths Live 2</div><div class="nm" id="cn">'+esc(S.nm||"Your name")+'</div><div>Class 10 · Polynomials + Pair of Linear Equations</div></div><div class="btnrow" style="margin-top:10px"><input class="txt" id="nm" maxlength="24" placeholder="Type your name" style="letter-spacing:0;text-transform:none" aria-label="your name"></div><div class="fb">+100 XP earned. Take a screenshot and share it!</div>';
   var nm=document.getElementById("nm");nm.value=S.nm||"";nm.oninput=function(){S.nm=nm.value;save();document.getElementById("cn").textContent=nm.value||"Your name"}}}
 shell();go("m1");
 </script>
