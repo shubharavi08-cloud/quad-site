@@ -25,8 +25,8 @@ function guess(){setBar(1);const g=cur.guess;
     if(i===g.answer){b.classList.add('right');award(cur.id+':guess');coach('ok','Great guess!',g.after||'Now let us test it.');setTimeout(doIt,900)}
     else{b.classList.add('try');coach('warn',CHEER[ci++%CHEER.length],'That is a good thought. '+(g.hint||'Try another one.'))}})}
 function doIt(){setBar(2);const e=cur;
-  $('#body').innerHTML=`<div class="lab"><div class="stage" id="stage" aria-label="Experiment"></div><div class="ctrl" id="ctrl"></div></div><p style="text-align:center"><button class="pri" id="seeBtn" disabled>I tried it. Show me why →</button></p>`;
-  const api={stage:$('#stage'),ctrl:$('#ctrl'),coach,award:k=>award(cur.id+':'+k),ready(){$('#seeBtn').disabled=false;coach('info','Nice work!','You can keep playing, or press the button to see why.')},state:st};
+  $('#body').innerHTML=`<div class="lab"><div class="stage" id="stage" aria-label="Experiment"></div><div class="ctrl" id="ctrl"></div></div><p style="text-align:center"><button class="pri" id="seeBtn" disabled>I tried it. Show me why →</button></p><p class="lockhint" id="lockhint">🔒 This button unlocks after you try the lab above. Try several different options and watch what happens.</p>`;
+  const api={stage:$('#stage'),ctrl:$('#ctrl'),coach,award:k=>award(cur.id+':'+k),ready(){$('#seeBtn').disabled=false;const lh=$('#lockhint');if(lh)lh.style.display='none';coach('info','Nice work!','You can keep playing, or press the button to see why.')},state:st};
   e.build(api);$('#seeBtn').onclick=why}
 function why(){setBar(4);const e=cur;
   $('#body').innerHTML=`<div class="card why"><h2>Why did that happen?</h2><ul>${e.why.map(x=>`<li>${x}</li>`).join('')}</ul><button class="pri" id="chk">Check yourself →</button></div>`;$('#chk').onclick=()=>check(0);$('#coach').innerHTML=''}
