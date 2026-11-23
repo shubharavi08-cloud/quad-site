@@ -121,7 +121,7 @@ aside.side{display:grid;gap:18px;position:sticky;top:90px}@media (max-width:920p
 .steps b{display:block;font:800 1.02rem/1.25 var(--display)}.steps span{color:var(--ink-2);font-size:.95rem}
 """
 
-NAV = [("/quest.html", "Quest", "qlink"), ("https://lab.quadacademy.org/", "Virtual Lab", ""), ("/#videos", "Videos", ""), ("/#chapters", "Chapters", ""), ("/free/", "Free PDFs", ""),
+NAV = [("/quest.html", "Quest", "qlink"), ("https://lab.quadacademy.org/", "Virtual Lab", ""), ("/#videos", "Videos", ""), ("/#chapters", "Chapters", ""), ("/free/", "Free PDFs", ""), ("/countdown/", "Board Countdown", ""),
        ("/blog/", "Blog", ""), ("/masterclass/", "₹49 Masterclass", ""), ("/board-boost/", "Board Boost · live batches", "boostlink")]
 
 

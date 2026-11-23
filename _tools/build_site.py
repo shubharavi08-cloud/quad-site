@@ -567,7 +567,7 @@ def countdown_page(root):
     <h2 style="font-size:1.35rem;margin:0 0 6px">Join our WhatsApp Channel for daily updates</h2>
     <p style="margin:0 0 12px">Daily board tips, new solved videos and a reminder when each Countdown question is out.</p>
     <a class="btn o" href="{WA_CHANNEL}" target="_blank" rel="noopener">Join the QUAD WhatsApp Channel</a>
-    <p class="small" style="margin:.6rem 0 0">Or open: <a href="{WA_CHANNEL}">{WA_CHANNEL.replace("https://", "")}</a></p>
+    <p class="small" style="margin:.6rem 0 0;overflow-wrap:anywhere">Or open: <a href="{WA_CHANNEL}">{WA_CHANNEL.replace("https://", "")}</a></p>
   </div>
 </section>
 
