@@ -1,1 +1,1 @@
-["c8_dissolve.js","c8_evap.js","c8_heatcurve.js","c8_solubility.js","c8_states.js","ohm.js"].forEach(f=>document.write('<script src="x/'+f+'"><\/script>'));
+["c8_conduct.js","c8_dissolve.js","c8_evap.js","c8_firetriangle.js","c8_flame.js","c8_heatcurve.js","c8_metalreact.js","c8_rusting.js","c8_solubility.js","c8_sortchange.js","c8_states.js","ohm.js"].forEach(f=>document.write('<script src="x/'+f+'"><\/script>'));
