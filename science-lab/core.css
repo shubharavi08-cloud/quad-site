@@ -50,3 +50,7 @@ button[disabled]{opacity:.45}
 
 .steps button{font:inherit;font-size:13px;font-weight:800;cursor:pointer}
 .steps button.lock{opacity:.55}
+
+.card.watch h2 small{font-size:14px;color:#1f8a5b}.vmore{font-size:14px}.inp{width:100%;box-sizing:border-box;font:inherit;font-size:18px;padding:12px;border-radius:12px;border:2px solid var(--line);margin:6px 0}
+.bdg{font-size:15px}.prow{display:flex;gap:10px;align-items:center;padding:8px 6px;border-bottom:1px solid var(--line);text-decoration:none;color:inherit;flex-wrap:wrap}.prow b{flex:1;min-width:150px;font-size:15px}.prow span{font-size:24px}
+#vframe,#vbox iframe{width:100%;aspect-ratio:16/9;border:0;border-radius:12px}
