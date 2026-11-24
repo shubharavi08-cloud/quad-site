@@ -22,7 +22,7 @@ function drawCard(cv,m,done){const D=DESIGNS.find(d=>d.k===(m.design||'green'))|
   g.fillStyle=D.a;g.fillRect(0,0,W,H);
   for(let i=0;i<14;i++){g.globalAlpha=.18;g.fillStyle='#fff';g.beginPath();g.arc((i*173)%W,(i*271)%H,30+(i%4)*14,0,7);g.fill()}g.globalAlpha=1;
   g.fillStyle='#fff';rr(g,28,28,W-56,H-56,44);g.fill();g.fillStyle=D.b;rr(g,28,28,W-56,170,44);g.fill();g.fillRect(28,120,W-56,78);
-  g.textAlign='center';g.fillStyle='#2b2350';g.font='900 46px ui-rounded,system-ui,sans-serif';g.fillText('OSH SCIENTIST ID',W/2,98);g.font='800 26px ui-rounded,system-ui,sans-serif';g.fillStyle=D.a;g.fillText(D.d+' '+D.n+' '+D.d,W/2,150);
+  g.textAlign='center';g.fillStyle='#2b2350';g.font='800 40px "OSH Logo",Montserrat,sans-serif';g.fillText('OurSchoolHouse ID',W/2,98);g.font='800 26px ui-rounded,system-ui,sans-serif';g.fillStyle=D.a;g.fillText(D.d+' '+D.n+' '+D.d,W/2,150);
   const cx=W/2,cy=330,R=120;g.fillStyle=D.c;g.beginPath();g.arc(cx,cy,R+12,0,7);g.fill();
   const finish=()=>{
     g.fillStyle='#2b2350';g.font='900 54px ui-rounded,system-ui,sans-serif';g.fillText((m.name||'Young Scientist').slice(0,16),cx,520);
@@ -31,7 +31,7 @@ function drawCard(cv,m,done){const D=DESIGNS.find(d=>d.k===(m.design||'green'))|
     g.textAlign='left';let y=626;rows.forEach(r=>{g.fillStyle='#6a5f8e';g.font='700 24px ui-rounded,system-ui,sans-serif';g.fillText(r[0],80,y);g.fillStyle='#2b2350';g.font='800 28px ui-rounded,system-ui,sans-serif';g.fillText(String(r[1]).slice(0,22),300,y);y+=46});
     g.textAlign='center';const bi=bdgIcons().slice(-6);g.font='54px ui-rounded,system-ui,sans-serif';bi.forEach((s,i)=>g.fillText(s,cx-(bi.length-1)*38+i*76,Math.max(y+40,880)));
     const st=(m.stick||[]).slice(0,6);g.font='40px ui-rounded,system-ui,sans-serif';st.forEach((s,i)=>g.fillText(s,cx-(st.length-1)*30+i*60,Math.max(y+100,940)));
-    g.fillStyle='#6a5f8e';g.font='700 22px ui-rounded,system-ui,sans-serif';g.fillText('Labs done: '+stickers().length+'   ·   OSH Science Lab',cx,1008);
+    g.fillStyle='#6a5f8e';g.font='800 22px "OSH Logo",Montserrat,sans-serif';g.fillText('Labs done: '+stickers().length+'   ·   OurSchoolHouse Science Lab',cx,1008);
     done&&done()};
   if(m.photo){const im=new Image();im.onload=()=>{g.save();g.beginPath();g.arc(cx,cy,R,0,7);g.clip();g.drawImage(im,cx-R,cy-R,2*R,2*R);g.restore();finish()};im.onerror=()=>{g.font='150px ui-rounded,system-ui,sans-serif';g.fillText(m.avatar||'🧑‍🔬',cx,cy+50);finish()};im.src=m.photo}
   else{g.fillStyle='#fff';g.beginPath();g.arc(cx,cy,R,0,7);g.fill();g.font='150px ui-rounded,system-ui,sans-serif';g.fillStyle='#000';g.fillText(m.avatar||'🧑‍🔬',cx,cy+50);finish()}}
