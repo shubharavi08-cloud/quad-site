@@ -51,3 +51,26 @@ button.pri,a.pri{border-width:2px;box-shadow:0 3px 0 #3b27a8}
 .card{padding:14px;border-width:2px;border-radius:22px;box-shadow:0 4px 0 #ffd0e8}
 .coach{padding:10px 12px;font-size:1rem}.coach .ic{font-size:30px}
 .tile{padding:12px 10px}
+
+/* Fields of science: puzzle pieces */
+.fnote{margin:6px 2px 2px;font-size:1rem}.fh{margin:14px 4px 8px;font-size:1.25rem}
+.pzg{display:grid;grid-template-columns:1fr 1fr;gap:0;padding:12px 14px 14px;margin:0 -2px}
+.pz{position:relative;border:0;background:none;padding:0;margin:0;height:118px;font:inherit;color:#2b2350;cursor:pointer}
+.pz .pf{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;text-align:center;background:var(--c);border:3px solid var(--d);border-radius:18px;padding:6px 8px;transition:transform .15s}
+.pz:active .pf{transform:scale(.96)}
+.pz .pe{font-size:42px;line-height:1}.pz .pe img.em{width:44px;height:44px;vertical-align:baseline}
+.pz b{font-size:.88rem;line-height:1.1}
+.pb{font-style:normal;font-size:.7rem;font-weight:900;background:#fff;border-radius:99px;padding:1px 8px;color:#8b82b0}.pb.on{background:#6c4cf0;color:#fff}
+.pz .pk{position:absolute;width:26px;height:26px;border-radius:50%;background:var(--c);border:3px solid var(--d);z-index:2}
+.pz .pk.r{right:-17px;top:calc(50% - 13px);border-left-color:var(--c)}
+.pz .pk.b{bottom:-17px;left:calc(50% - 13px);border-top-color:var(--c)}
+.pz.nl .pf{-webkit-mask-image:radial-gradient(circle 16px at 0 50%,#0000 97%,#000 100%);mask-image:radial-gradient(circle 16px at 0 50%,#0000 97%,#000 100%)}
+.pz.nt .pf{-webkit-mask-image:radial-gradient(circle 16px at 50% 0,#0000 97%,#000 100%);mask-image:radial-gradient(circle 16px at 50% 0,#0000 97%,#000 100%)}
+.pz.nl.nt .pf{-webkit-mask-image:radial-gradient(circle 16px at 0 50%,#0000 97%,#000 100%),radial-gradient(circle 16px at 50% 0,#0000 97%,#000 100%);-webkit-mask-composite:source-in;mask-image:radial-gradient(circle 16px at 0 50%,#0000 97%,#000 100%),radial-gradient(circle 16px at 50% 0,#0000 97%,#000 100%);mask-composite:intersect}
+.pzs{position:fixed;inset:0;background:rgba(43,35,80,.45);display:flex;align-items:flex-end;justify-content:center;z-index:50;animation:pzf .2s ease}
+.pzs[hidden]{display:none}.pzc{position:relative;background:#fff;border-radius:26px 26px 0 0;width:min(560px,100%);padding:18px 18px 26px;box-shadow:0 -8px 30px rgba(0,0,0,.2);animation:pzu .25s ease}
+.pzh{display:flex;align-items:center;gap:10px}.pzh h3{margin:0;font-size:1.35rem}.pzh .pe{font-size:44px}.pzh .pe img.em{width:48px;height:48px;vertical-align:baseline}
+.pzx{position:absolute;right:12px;top:10px;border:0;background:#efeaff;border-radius:50%;width:38px;height:38px;font-size:18px;color:#6c4cf0;cursor:pointer}
+.pzgo{display:inline-block;padding:10px 18px;border-radius:999px;text-decoration:none}.pzsoon{color:#8b82b0;font-weight:800}
+@keyframes pzu{from{transform:translateY(40px)}to{transform:none}}@keyframes pzf{from{opacity:0}to{opacity:1}}
+.pzg{max-width:520px;margin-left:auto;margin-right:auto}

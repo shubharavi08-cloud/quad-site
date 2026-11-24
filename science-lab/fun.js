@@ -1,0 +1,5 @@
+/* Sparkle trail behind the mouse (desktop only, off for reduced motion). */
+(()=>{if(!matchMedia('(pointer:fine)').matches||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+const C=['#ffc233','#ff4d9d','#19b5e8','#8a5cf0','#22c070'],star=c=>"url(\"data:image/svg+xml,"+encodeURIComponent("<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><polygon points='10,0 12.5,7.5 20,10 12.5,12.5 10,20 7.5,12.5 0,10 7.5,7.5' fill='"+c+"'/></svg>")+"\")";
+let last=0,live=0;addEventListener('mousemove',e=>{const t=performance.now();if(t-last<45||live>14)return;last=t;live++;const d=document.createElement('i');d.className='qtrail';d.style.backgroundImage=star(C[Math.floor(Math.random()*C.length)]);const s=.6+Math.random()*.9,dx=(Math.random()-.5)*26;document.body.appendChild(d);
+ const a=d.animate([{transform:`translate(${e.clientX-7}px,${e.clientY-7}px) scale(${s}) rotate(0)`,opacity:.95},{transform:`translate(${e.clientX-7+dx}px,${e.clientY+22}px) scale(0) rotate(160deg)`,opacity:0}],{duration:650,easing:'ease-out'});a.onfinish=()=>{d.remove();live--}},{passive:true})})();

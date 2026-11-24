@@ -1,5 +1,9 @@
 /* OSH Home Lab styles, all scoped to body.homebody so they cannot touch other labs */
-body.homebody{background:linear-gradient(180deg,#fff6e0 0,#ffe9f4 40%,#e8f6ff 100%);font-family:"Baloo 2","Fredoka","Comic Sans MS","Chalkboard SE",ui-rounded,"Trebuchet MS",system-ui,sans-serif}
+@font-face{font-family:"OSH Fredoka";font-weight:500;font-display:swap;src:url(fonts/fredoka-latin-500-normal.woff2) format("woff2")}
+@font-face{font-family:"OSH Fredoka";font-weight:600;font-display:swap;src:url(fonts/fredoka-latin-600-normal.woff2) format("woff2")}
+@font-face{font-family:"OSH Fredoka";font-weight:700;font-display:swap;src:url(fonts/fredoka-latin-700-normal.woff2) format("woff2")}
+@keyframes qhover{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+body.homebody{background:linear-gradient(180deg,#fff6e0 0,#ffe9f4 40%,#e8f6ff 100%);font-family:"OSH Fredoka","Baloo 2","Fredoka","Comic Sans MS","Chalkboard SE",ui-rounded,"Trebuchet MS",system-ui,sans-serif}
 body.homebody h1{font-size:clamp(1.6rem,6.5vw,2.4rem)}
 .homebanner{display:flex;align-items:center;gap:14px;margin:10px 0;padding:14px 16px;border-radius:26px;background:linear-gradient(135deg,#ffd45e,#ff9ec8);color:#3a1d00;text-decoration:none;box-shadow:0 6px 0 #e08a00;border:3px solid #fff;animation:bounceIn .7s ease both}
 .homebanner:hover{transform:translateY(-2px) rotate(-.5deg)}
@@ -28,7 +32,7 @@ body.homebody .room{display:flex;flex-direction:column;align-items:center;gap:2p
 body.homebody .room:nth-child(odd){animation:pop .5s ease both}
 body.homebody .room:nth-child(even){animation:pop .7s ease both}
 body.homebody .room:hover,body.homebody .room:active{transform:translateY(-4px) rotate(-1deg)}
-body.homebody .room .re{font-size:clamp(48px,14vw,72px);line-height:1.1;animation:bob 3s ease-in-out infinite}
+body.homebody .room .re{font-size:clamp(68px,22vw,96px);line-height:1.1;animation:bob 3s ease-in-out infinite}
 body.homebody .room:nth-child(even) .re{animation-delay:-1s}
 body.homebody .room b{font-size:clamp(1.05rem,4vw,1.3rem)}
 body.homebody .room small{opacity:.75}
@@ -82,10 +86,10 @@ body.homebody .plate{position:absolute;left:calc(50% - 90px);top:18px;width:180p
 body.homebody .dt{position:absolute;width:20px;height:20px;border-radius:50%}
 body.homebody .wd{position:absolute;left:50%;top:50%;font-style:normal;font-size:20px;transform:translate(-50%,-50%);opacity:.8}
 body.homebody .cube{position:absolute;top:70px;width:90px;height:90px;border-radius:18px;background:linear-gradient(135deg,#e6f7ff,#9ad8ff);border:3px solid #fff;box-shadow:0 6px 0 #7cc4ee;display:flex;align-items:center;justify-content:center;font-size:36px;transform-origin:bottom center}
-body.homebody .lab{position:absolute;top:172px;font-style:normal;font-weight:900;background:#fff;padding:2px 10px;border-radius:99px;font-size:.95rem}
+body.homebody .hl{position:absolute;top:172px;font-style:normal;font-weight:900;background:#fff;padding:2px 10px;border-radius:99px;font-size:.95rem}
 body.homebody .tall{position:absolute;left:12%;top:16px;width:32%;height:200px;border:5px solid #ffffffcc;border-radius:12px 12px 24px 24px;background:#ffffff44;overflow:hidden}
 body.homebody .ly{position:absolute;left:0;right:0;font-style:normal;height:0}
-body.homebody .lab[style*="left:52%"]{left:52%}
+body.homebody .hl[style*="left:52%"]{left:52%}
 body.homebody .pot{position:absolute;left:calc(50% - 50px);bottom:8px;width:100px;height:60px;background:linear-gradient(#d2691e,#a0522d);border-radius:8px 8px 30px 30px}
 body.homebody .seed{position:absolute;left:calc(50% - 30px);bottom:56px;font-size:60px;transform-origin:bottom center}
 body.homebody .sun{position:absolute;font-size:56px;z-index:2;left:8%;top:60px}
@@ -175,5 +179,15 @@ body.homebody .hstage .it{font-size:56px}
 }
 @media(prefers-reduced-motion:reduce){body.homebody .anu,body.homebody .anu .orb,body.homebody .room .re,body.homebody .act .ae,.homebanner .hb-e{animation:none}
 }
-body.homebody .he{-webkit-text-fill-color:#2b2350;color:#2b2350;font-style:normal}
+body.homebody .he{font-style:normal}
 
+
+body.homebody .hstage .it{will-change:transform;backface-visibility:hidden;transform:translateZ(0)}
+body.homebody .hstage .it.idle{animation:qhover 1.8s ease-in-out infinite}
+body.homebody :focus-visible{outline:4px solid #6c4cf0;outline-offset:3px;border-radius:12px}
+body.homebody .hstage .it img.em,body.homebody .big2 span img.em,body.homebody .re img.em{width:1em;height:1em;vertical-align:baseline}
+body.homebody .hstage .it img.em{display:block}
+body.homebody .fi span img.em,body.homebody .ae img.em{vertical-align:middle}
+
+body.homebody .hl{display:inline-block}
+body.homebody .act .ae{font-size:60px}

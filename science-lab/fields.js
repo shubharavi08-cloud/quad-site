@@ -25,8 +25,15 @@ const F=[
 ['🍲','Food science','Why bread rises, milk curdles and pickles last for months.','Food technologist, chef-scientist','c10_burn'],
 ['🕵️','Forensic science','Solving mysteries using science clues, like our Mystery Lab!','Forensic scientist, detective','#/game'],
 ['📐','Mathematics','The language of science: patterns, numbers and shapes.','Mathematician, data analyst, cryptographer','']]]];
-Q.fields=function(){
-$('#app').innerHTML=`<div class="top"><a class="home" href="#/">← All experiments</a><h1>🌍 Fields of science</h1><span class="pts" id="pts"></span></div>
-<div class="card"><p>Science is a huge world. Start with <b>physics, chemistry and biology</b>, then see the many branches that grow from them. You do not need to know anything yet. Just tap a field and be curious!</p><p><a class="pri" href="#/career" style="display:inline-block;padding:8px 14px;border-radius:14px;text-decoration:none">🏅 How to become a scientist</a></p></div>
-${F.map(g=>`<h2 style="margin:18px 4px 6px">${g[1]}</h2><div class="cat">${g[2].map(f=>{const live=f[4]&&(f[4][0]==='#'||Q.REG[f[4]]);const href=f[4]?(f[4][0]==='#'?f[4]:'#/x/'+f[4]):'';const t=`<span class="em">${f[0]}</span><b>${f[1]}</b><small>${f[2]}</small><small><b>Jobs:</b> ${f[3]}</small>${live?'<span class="bdg">▶ Try it now</span>':'<span class="bdg">🚧 Lab coming soon</span>'}`;return live?`<a class="tile sub-Physics" href="${href}">${t}</a>`:`<div class="tile sub-Maths">${t}</div>`}).join('')}</div>`).join('')}`;Q.pts()};
+const COL={core:['#ffd0ec','#ff8ac6'],branch:['#cdeeff','#5cc3f5'],new:['#ffe9a8','#ffc233']};
+Q.fields=function(){document.body.classList.add('fieldsbody');let sheet=null;
+$('#app').innerHTML=`<div class="top"><a class="home" href="#/">← Science Lab</a><h1>🌍 Fields of science</h1><span class="pts" id="pts"></span></div>
+<p class="fnote">Tap a puzzle piece to open it. Start with the big three, then see where science can take you.</p>
+${F.map(g=>`<h2 class="fh">${g[1]}</h2><div class="pzg" style="--c:${COL[g[0]][0]};--d:${COL[g[0]][1]}">${g[2].map((f,i)=>{const r=Math.floor(i/2),c=i%2,has=i+1<g[2].length,live=f[4]&&(f[4][0]==='#'||Q.REG[f[4]]);return`<button class="pz ${c?'nl':'kr'} ${r%2?'nt':'kb'}${has&&c===0?'':' lone'}" data-i="${g[0]}:${i}"><span class="pf"><span class="pe">${f[0]}</span><b>${f[1]}</b>${live?'<i class="pb on">▶ Lab</i>':'<i class="pb">soon</i>'}</span>${c===0&&i+1<g[2].length?'<span class="pk r"></span>':''}${r%2===0&&i+2<g[2].length?'<span class="pk b"></span>':''}</button>`}).join('')}</div>`).join('')}
+<div class="pzs" id="pzs" hidden><div class="pzc"><button class="pzx" aria-label="Close">✕</button><div id="pzb"></div></div></div>`;
+const find=k=>{const [g,i]=k.split(':');return F.find(x=>x[0]===g)[2][+i]};
+document.querySelectorAll('.pz').forEach(b=>b.onclick=()=>{const f=find(b.dataset.i),live=f[4]&&(f[4][0]==='#'||Q.REG[f[4]]),href=f[4]?(f[4][0]==='#'?f[4]:'#/x/'+f[4]):'';
+ $('#pzb').innerHTML=`<div class="pzh"><span class="pe">${f[0]}</span><h3>${f[1]}</h3></div><p>${f[2]}</p><p><b>Jobs:</b> ${f[3]}</p>${live?`<a class="pri pzgo" href="${href}">▶ Try it now</a>`:'<p class="pzsoon">🚧 Lab coming soon</p>'}`;$('#pzs').hidden=false;if(window.QEmoji)QEmoji.parse($('#pzs'))});
+const cl=()=>{$('#pzs').hidden=true};$('.pzx').onclick=cl;$('#pzs').onclick=e=>{if(e.target.id==='pzs')cl()};
+Q.pts()};
 })();
