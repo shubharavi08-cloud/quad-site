@@ -19,7 +19,7 @@ function bar(i){return `<div class="steps" aria-label="Steps">${STEPS.map((s,j)=
 function open(id){maxS=0;
   const e=REG[id];if(!e)return;cur=e;st={seen:false};
   const app=$('#app');
-  app.innerHTML=`<div class="top"><a class="home" href="#/">← All experiments</a><h1>${e.title}</h1><span class="pts" id="pts"></span></div>${e.code?`<p class="strip">OSH Science Series · Concept ${e.code}</p>`:''}<div id="bar"></div><div id="coach" aria-live="polite"></div><div id="body"></div>`;
+  app.innerHTML=`<div class="top"><a class="home" href="#/">← All experiments</a><h1>${e.title}</h1><span class="pts" id="pts"></span></div><span class="tline">${QLab.topicLine?QLab.topicLine(e):'Grade '+e.grade+' · '+e.subject}</span>${e.code?`<p class="strip">OSH Science Series · Concept ${e.code}</p>`:''}<div id="bar"></div><div id="coach" aria-live="polite"></div><div id="body"></div>`;
   pts();hook();
 }
 function setBar(i){maxS=Math.max(maxS,i);const b=$('#bar');b.innerHTML=bar(i);b.onclick=ev=>{const t=ev.target.closest('button[data-j]');if(!t)return;const j=+t.dataset.j;if(j>maxS)return coach('warn','Not yet','Finish the steps before it first. Do the lab, then this opens.');[hook,guess,doIt,why,why,()=>check(0),challenge,real][j]()}}
