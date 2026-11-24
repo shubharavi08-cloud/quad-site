@@ -1,6 +1,6 @@
 /* OSH student login and points saving. Guests keep playing on their own device. */
 (()=>{const Q=QLab;
-const URL_=window.QLAB_SYNC_URL||'PENDING_SYNC_URL';
+const URL_=window.QLAB_SYNC_URL||'https://script.google.com/macros/s/AKfycbzrarH15970bRj-Rv6IFRbvkreUVhjwmKuO_D-6z0ME4sXQrbT5asBKEsyNdWzLgVBO/exec';
 const LK='qlab2_login';
 const ld=()=>{try{return JSON.parse(localStorage.getItem(LK)||'null')}catch(e){return null}};
 const jg=k=>{try{return JSON.parse(localStorage.getItem(k)||'null')}catch(e){return null}};
