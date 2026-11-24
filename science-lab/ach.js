@@ -26,7 +26,7 @@ const A=[
  {id:'m1',i:'🕵️',t:'Young Detective',d:'Solve your first Mystery Lab mission',prog:()=>[Object.keys(gm().cleared||{}).length,1],ok:()=>Object.keys(gm().cleared||{}).length>=1},
  {id:'m4',i:'🔎',t:'Case Closer',d:'Solve 4 missions',prog:()=>[Object.keys(gm().cleared||{}).length,4],ok:()=>Object.keys(gm().cleared||{}).length>=4},
  {id:'m7',i:'🧑‍🔬',t:'Master Detective',d:'Solve all 7 missions',prog:()=>[Object.keys(gm().cleared||{}).length,7],ok:()=>Object.keys(gm().cleared||{}).length>=7}];
-function toast(a){const t=document.createElement('div');t.className='toast';t.innerHTML=`<span>${a.i}</span><div><b>Badge earned!</b><br>${a.t}</div>`;document.body.appendChild(t);setTimeout(()=>t.classList.add('show'),30);setTimeout(()=>{t.classList.remove('show');setTimeout(()=>t.remove(),400)},4200)}
+function toast(a){Q.pop(a.i,'Badge earned!',a.t,0,2300)}
 Q.achCheck=()=>{const g=got();let q=[];A.forEach(a=>{if(!g[a.id]&&a.ok()){g[a.id]=1;q.push(a)}});if(q.length){try{localStorage.setItem(AK,JSON.stringify(g))}catch(e){}q.forEach((a,i)=>setTimeout(()=>toast(a),i*900))}};
 const prevAward=Q.onAward;Q.onAward=k=>{setTimeout(()=>Q.achCheck(),0)};
 Q.ACH=A;

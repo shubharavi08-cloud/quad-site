@@ -19,7 +19,7 @@ function bindSnd(){const b=$('#snb');if(b)b.onclick=()=>{try{localStorage.setIte
 const top=(back,title)=>{const m=String(title).match(/^(\S+)\s(.*)$/);return `<div class="top"><a class="home" href="${back[0]}">${back[1]}</a><h1><span class="he">${m?m[1]:''}</span> ${m?m[2]:title}</h1><span class="pts" id="pts"></span>${sndBtn()}</div>`};
 const total=()=>ACTS.length,doneN=pl=>ACTS.filter(a=>(!pl||a.pl===pl)&&isDone(a)).length;
 /* ---------- hub and place pages ---------- */
-Q.homeBanner=()=>`<a class="homebanner" href="#/home"><span class="hb-e">🏠</span><span><b>NEW: Home Lab for little scientists (ages 3 to 7)</b><br><small>Easy experiments with things you already have: kitchen, bathroom, garden, toys, shop and sky. For parents and kids together.</small></span><span class="hb-go">Go ▶</span></a>`;
+Q.homeBanner=()=>`<a class="homebanner" href="#/home"><span class="hb-e">🏠</span><span><b>NEW: Home Lab for little scientists (ages 3 to 7)</b><br><small>Easy experiments with things at home, for parents and kids together.</small></span><span class="hb-go">Go ▶</span></a>`;
 Q.home=function(){clearT();const m=location.hash.match(/^#\/home\/(\w+)/);document.body.classList.add('homebody');return m&&plc(m[1])?place(plc(m[1])):hub()};
 function hub(){app().innerHTML=`${top(['#/','← Science Lab'],'🏠 Home Lab')}
 <div class="hbox"><div class="hmasc">${mascot()}</div><div class="hsay"><b>Hi little scientist! I am Anu.</b><br>Pick a room and we will do a fun experiment with things from home. ${doneN()?'You have done '+doneN()+' of '+total()+'. Wow!':''}<br><button class="sp" id="spk">🔊 Hear me</button></div></div>
