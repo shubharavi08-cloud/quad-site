@@ -1,0 +1,24 @@
+/* Find a lesson: search + filters over NIOS lessons and every experiment (all boards). */
+(function(){const Q=QLab;
+const N=[[1,'Measurement in Science and Technology',[]],[2,'Matter in our Surroundings',['c8_states','c8_heatcurve','c8_evap','c9_separate']],[3,'Atoms and Molecules',['c9_mole','c9_compound','c9_mass']],[4,'Chemical Reactions and Equations',['c10_balance','c10_types','c10_gas','c8_rusting']],[5,'Atomic Structure',['c9_buildatom','c9_rutherford','c9_isotopes']],[6,'Periodic Classification of Elements',[]],[7,'Chemical Bonding',['c10_ionic','c10_molecule']],[8,'Acids, Bases and Salts',['c10_indicators','c10_salts','c10_titration']],[9,'Motion and its Description',[]],[10,'Force and Motion',[]],[11,'Gravitation',[]],[12,'Sources of Energy',[]],[13,'Work and Energy',[]],[14,'Thermal Energy',[]],[15,'Light Energy',[]],[16,'Electrical Energy',['ohm']],[17,'Magnetic Effect of Electric Current',[]],[18,'Sound and Communication',[]],[19,'Classification of Living Organisms',[]],[20,'History of Life on Earth',[]],[21,'Building Blocks of Life: Cell and Tissues',[]],[22,'Life Processes I: Nutrition, Transportation, Respiration, Excretion',[]],[23,'Life Processes II: Control and Coordination',[]],[24,'Life Processes III: Reproduction',[]],[25,'Heredity',[]],[26,'Air and Water',[]],[27,'Metals and Non-metals',['c10_metalacid','c10_displace','c10_series','c8_metalreact','c8_conduct']],[28,'Carbon and Its Compounds',['c10_ethanol','c10_soap']],[29,'Natural Environment',[]],[30,'Human Impact on Environment',[]],[31,'Food Production',[]],[32,'Health and Hygiene',[]]];
+const SUB=n=>n<=8||n>=26&&n<=28?'Chemistry':n>=9&&n<=18?'Physics':n>=19&&n<=25?'Biology':'Environment';
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+let st={q:'',g:'',s:''};
+Q.find=function(){const app=document.getElementById('app')||document.body;const m=location.hash.match(/^#\/find\/(.*)/);if(m)st.q=decodeURIComponent(m[1]);
+ const R=Object.values(Q.REG||{});const ex=R.map(e=>({e,txt:(e.title+' '+e.subject+' Grade '+e.grade+' Class '+e.grade+' '+(Q.topicLine?Q.topicLine(e):'')+' '+(Q.boardsFor?Q.boardsFor(e).map(b=>b.join(' ')).join(' '):'')+' '+(e.hook||'')).toLowerCase()}));
+ const byId={};ex.forEach(x=>byId[x.e.id]=x);
+ app.innerHTML=`<div class="top"><h1>Find a lesson</h1></div><nav class="qnav"><a class="home" href="#/">← All experiments</a> <a class="home" href="coverage.html">📋 What is covered</a></nav>
+ <div class="fnd"><input id="fq" type="search" placeholder="Search a lesson, topic, board or grade, e.g. acids, IGCSE, Class 9" value="${esc(st.q)}" autocomplete="off">
+ <div class="fch" id="fg"></div><div class="fch" id="fs"></div><div id="fr"></div></div>`;
+ const chips=(id,key,opts)=>{const el=document.getElementById(id);el.innerHTML=opts.map(o=>`<button class="${st[key]===o[0]?'on':''}" data-v="${o[0]}">${o[1]}</button>`).join('');el.onclick=ev=>{const b=ev.target.closest('button');if(!b)return;st[key]=b.dataset.v;chips(id,key,opts);go()}};
+ chips('fg','g',[['','All grades'],['8','Grade 8'],['9','Grade 9'],['10','Grade 10']]);
+ chips('fs','s',[['','All subjects'],['Chemistry','Chemistry'],['Physics','Physics'],['Biology','Biology'],['Environment','Environment']]);
+ function go(){const q=st.q.trim().toLowerCase(),ws=q.split(/\s+/).filter(Boolean);const hit=t=>ws.every(w=>t.includes(w));
+  let out='';
+  const L=N.filter(([n,name,ids])=>(!st.s||SUB(n)===st.s)&&(!st.g||ids.some(i=>byId[i]&&String(byId[i].e.grade)===st.g))&&hit((name+' '+SUB(n)+' nios lesson '+n+' L.'+n+' '+ids.map(i=>byId[i]?byId[i].txt:'').join(' ')).toLowerCase()));
+  out+=`<h2>NIOS Science and Technology lessons</h2>`+(L.length?L.map(([n,name,ids])=>{const live=ids.filter(i=>byId[i]);return`<div class="fcard"><b>L.${n} ${esc(name)}</b> <span class="ftag ${live.length?'ok':'soon'}">${live.length?live.length+' experiment'+(live.length>1?'s':''):'Coming soon'}</span><div>${SUB(n)}</div>${live.map(i=>`<a href="#/x/${i}">${byId[i].e.emoji||'🧪'} ${esc(byId[i].e.title)}</a>`).join('')}</div>`}).join(''):'<p>No lesson matches.</p>');
+  const X=ex.filter(x=>(!st.s||x.e.subject===st.s)&&(!st.g||String(x.e.grade)===st.g)&&hit(x.txt));
+  out+=`<h2>All experiments (${X.length})</h2>`+(X.length?X.map(x=>`<a class="fcard fx" href="#/x/${x.e.id}"><b>${x.e.emoji||'🧪'} ${esc(x.e.title)}</b><div>${esc(Q.topicLine?Q.topicLine(x.e):'Grade '+x.e.grade)}</div></a>`).join(''):'<p>No experiment matches. Try fewer words.</p>');
+  document.getElementById('fr').innerHTML=out}
+ document.getElementById('fq').oninput=ev=>{st.q=ev.target.value;go()};go()};
+})();
