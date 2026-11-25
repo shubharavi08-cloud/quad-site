@@ -1,6 +1,12 @@
 {
  "posts": [
   {
+   "title": "Pair of Linear Equations in Two Variables Class 10: 8 Must-Do Board Questions, Solved (CBSE Maths Chapter 3)",
+   "url": "https://quadacademy.org/blog/pair-of-linear-equations-board-questions/",
+   "date": "2026-11-24",
+   "description": "CBSE Class 10 Maths Chapter 3 solved: the a1/a2, b1/b2, c1/c2 ratio test for unique, no and infinitely many solutions, substitution, elimination, and the age, fraction and taxi-fare word problems."
+  },
+  {
    "title": "Real Numbers Class 10: 8 Must-Do Board Questions, Solved (CBSE Maths Chapter 1, HCF, LCM and Irrational Proofs)",
    "url": "https://quadacademy.org/blog/real-numbers-board-questions/",
    "date": "2026-11-23",
@@ -119,6 +125,12 @@
      "blogPost": [
       {
        "@type": "BlogPosting",
+       "headline": "Pair of Linear Equations in Two Variables Class 10: 8 Must-Do Board Questions, Solved (CBSE Maths Chapter 3)",
+       "url": "https://quadacademy.org/blog/pair-of-linear-equations-board-questions/",
+       "datePublished": "2026-11-24"
+      },
+      {
+       "@type": "BlogPosting",
        "headline": "Real Numbers Class 10: 8 Must-Do Board Questions, Solved (CBSE Maths Chapter 1, HCF, LCM and Irrational Proofs)",
        "url": "https://quadacademy.org/blog/real-numbers-board-questions/",
        "datePublished": "2026-11-23"
@@ -220,6 +232,47 @@
        "datePublished": "2026-11-06"
       }
      ]
+    }
+   ]
+  },
+  {
+   "path": "blog/pair-of-linear-equations-board-questions/index.html",
+   "priority": 0.6,
+   "jsonld": [
+    {
+     "@type": "BlogPosting",
+     "headline": "Pair of Linear Equations in Two Variables Class 10: 8 Must-Do Board Questions, Solved (CBSE Maths Chapter 3)",
+     "description": "CBSE Class 10 Maths Chapter 3 solved: the a1/a2, b1/b2, c1/c2 ratio test for unique, no and infinitely many solutions, substitution, elimination, and the age, fraction and taxi-fare word problems.",
+     "url": "https://quadacademy.org/blog/pair-of-linear-equations-board-questions/",
+     "mainEntityOfPage": "https://quadacademy.org/blog/pair-of-linear-equations-board-questions/",
+     "datePublished": "2026-11-24",
+     "dateModified": "2026-11-24",
+     "inLanguage": "en-IN",
+     "wordCount": 1239,
+     "author": {
+      "@type": "Organization",
+      "name": "Team QUAD",
+      "@id": "https://quadacademy.org/#org"
+     },
+     "publisher": {
+      "@id": "https://quadacademy.org/#org"
+     },
+     "educationalLevel": "Class 10",
+     "keywords": "Maths, Chapter 3, Pair of Linear Equations in Two Variables, consistent, inconsistent, infinitely many solutions, substitution method, elimination method, word problems, CBSE board questions",
+     "image": "https://i.ytimg.com/vi/d13fv7BGvdc/hqdefault.jpg",
+     "isPartOf": {
+      "@type": "Blog",
+      "url": "https://quadacademy.org/blog/"
+     },
+     "video": {
+      "@type": "VideoObject",
+      "name": "Class 10 Maths Pair of Linear Equations Important Questions: 10 Must-Do Board Questions",
+      "description": "CBSE Class 10 Maths Chapter 3 solved: the a1/a2, b1/b2, c1/c2 ratio test for unique, no and infinitely many solutions, substitution, elimination, and the age, fraction and taxi-fare word problems.",
+      "thumbnailUrl": "https://i.ytimg.com/vi/d13fv7BGvdc/hqdefault.jpg",
+      "uploadDate": "2026-11-24",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/d13fv7BGvdc",
+      "contentUrl": "https://www.youtube.com/watch?v=d13fv7BGvdc"
+     }
     }
    ]
   },
