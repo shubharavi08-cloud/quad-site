@@ -32,6 +32,7 @@ build(api){
  api.ctrl.querySelector('#nb').onclick=empty;
  if(chal)api.ctrl.querySelector('#ck').onclick=()=>a==='HNO3'&&b==='KOH'?api.solved():api.nope('Potassium comes from KOH and nitrate from HNO₃. You chose '+(a?lab(a):'no acid')+' and '+(b?lab(b):'no base')+'.');
  empty()},
+demo:[[0,0,'Add hydrochloric acid to the beaker.'],[4,0,'Add sodium hydroxide. The colour shows the result.'],[8,0,'Heat it. The water boils off and salt crystals are left.']],
 why:['A <span class="word">salt</span> is made when the hydrogen of an acid is replaced by a metal (or ammonium) from a base.','Name: <b>metal name</b> from the base + <b>anion name</b> from the acid. HCl gives chlorides, H₂SO₄ gives sulphates, HNO₃ gives nitrates, H₂CO₃ gives carbonates.','Strong acid + strong base → <b>neutral</b> salt (NaCl, pH 7). Strong acid + weak base → <b>acidic</b> salt (NH₄Cl). Weak acid + strong base → <b>basic</b> salt (Na₂CO₃).','Salts of the same acid or the same base form a <b>family</b>, for example all chlorides.'],
 check:[{q:'H₂SO₄ + 2NaOH → ?',options:['Sodium sulphate + water','Sodium chloride + water','Sodium nitrate + water','Sodium carbonate + water'],answer:0,why:'Sulphate from sulphuric acid, sodium from sodium hydroxide.',hint:'Name from each part.'},
  {q:'NaCl in water is…',options:['Acidic','Basic','Neutral','A metal'],answer:2,why:'Strong acid + strong base.',hint:'pH 7.'},

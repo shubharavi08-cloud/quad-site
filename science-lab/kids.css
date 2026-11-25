@@ -150,3 +150,12 @@ body.ptopen{overflow:hidden}
 .qnav .home{display:inline-block;background:linear-gradient(#ffd45e,#ffb81c);color:#4a2c00!important;text-decoration:none!important;font-weight:800;border:2px solid #fff}
 .lgd{padding:10px 14px;margin:8px 0}.lgd summary{cursor:pointer;font-weight:900;font-size:.95rem;list-style:none}.lgd summary::-webkit-details-marker{display:none}.lgd summary small{font-weight:700;color:#8b82b0}.lgd[open] summary{margin-bottom:6px}
 .homebanner{padding:8px 12px!important;gap:10px!important;border-radius:22px!important}.homebanner .hb-e{font-size:34px!important}.homebanner b{font-size:.9rem}.homebanner small{font-size:.75rem}.homebanner .go,.homebanner span:last-child{font-size:.85rem}
+.stage{position:relative}.watchbar{display:flex;justify-content:flex-end;margin:0 4px 6px}.watchbtn{border:0;border-radius:99px;padding:7px 14px;font:800 .85rem/1 inherit;font-family:inherit;color:#fff;background:linear-gradient(#ff7ab8,#e2468f);box-shadow:0 3px 0 #b02e6d,0 4px 10px rgba(0,0,0,.2);cursor:pointer}.watchbtn:active{transform:translateY(2px)}.watchbtn:disabled{opacity:.75}.watchbtn img.em{width:15px;height:15px;vertical-align:-2px}
+.tline.cv{margin-left:6px;background:#eef9ff;border-color:#bfe3f5;color:#1f6b86}
+
+.cvd{margin:4px 0 8px;background:#eef9ff;border:2px solid #bfe3f5;border-radius:16px;padding:6px 12px;font-size:.8rem;color:#1f6b86}.cvd summary{cursor:pointer;font-weight:800;list-style:none}.cvd summary::-webkit-details-marker{display:none}
+.cvd ul{margin:6px 0 2px;padding-left:16px}.cvd li{margin:2px 0;color:#2b2350}.cvd li b{color:#1f6b86}
+
+.bds{margin:4px 0 8px;background:#eef9ff;border:2px solid #bfe3f5;border-radius:16px;padding:6px 12px;font-size:.8rem;color:#1f6b86}
+.bds summary{cursor:pointer;font-weight:800;list-style:none}.bds summary::-webkit-details-marker{display:none}.bds summary i{font-style:normal;background:#1f9bd0;color:#fff;border-radius:99px;padding:0 8px;margin-left:4px;font-size:.7rem}
+.bds ul{margin:6px 0 4px;padding-left:16px}.bds li{margin:3px 0;color:#2b2350}.bds li b{color:#1f6b86}.bds p{margin:4px 0 0;font-size:.72rem;color:#5a6b73}

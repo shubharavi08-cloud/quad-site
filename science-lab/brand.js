@@ -4,6 +4,8 @@ const CH={'8-C1':'Particles of matter','8-C2':'Solutions and mixtures','8-C3':'M
 '9-C1':'Is matter around us pure?','9-C2':'Structure of the atom','9-C3':'Atoms, molecules and the mole',
 '10-C1':'Chemical reactions and equations','10-C2':'Acids, bases and salts','10-C3':'Metals and non-metals','10-C4':'Carbon and its compounds','10-P3':'Electricity'};
 Q.topicLine=e=>{const t=CH[e.code];return `Grade ${e.grade} · ${e.subject}${t?' · '+t:''}`};
+
+Q.coversLine=e=>{const m=Q.CURR&&Q.CURR.of(e.id);if(!m)return'';const rows=Q.CURR.boards.filter(x=>m[x[0]]).map(x=>`<li><b>${x[1]}</b> ${m[x[0]]}</li>`).join('');return`<details class="cvd"><summary>📘 Where this fits: ${Q.CURR.boards.filter(x=>m[x[0]]).map(x=>x[1].replace(/ \(.*\)/,'')).join(' · ')}</summary><ul>${rows}</ul></details>`};
 const RX=/\bOSH\b|\b[Oo]ur[Ss]chool[Hh]ouse\b/;
 function wrap(root){const w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,{acceptNode:n=>{const p=n.parentNode;if(!p||!RX.test(n.nodeValue))return NodeFilter.FILTER_REJECT;if(p.closest&&p.closest('script,style,textarea,input,svg,canvas,.oshn,title'))return NodeFilter.FILTER_REJECT;return NodeFilter.FILTER_ACCEPT}});
 const L=[];while(w.nextNode())L.push(w.currentNode);

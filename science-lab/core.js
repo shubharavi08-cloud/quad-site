@@ -19,7 +19,7 @@ function bar(i){return `<div class="steps" aria-label="Steps">${STEPS.map((s,j)=
 function open(id){maxS=0;
   const e=REG[id];if(!e)return;cur=e;st={seen:false};
   const app=$('#app');
-  app.innerHTML=`<div class="top"><a class="home" href="#/">← All experiments</a><h1>${e.title}</h1><span class="pts" id="pts"></span></div><span class="tline">${QLab.topicLine?QLab.topicLine(e):'Grade '+e.grade+' · '+e.subject}</span>${e.code?`<p class="strip">OSH Science Series · Concept ${e.code}</p>`:''}<div id="bar"></div><div id="coach" aria-live="polite"></div><div id="body"></div>`;
+  app.innerHTML=`<div class="top"><a class="home" href="#/">← All experiments</a><h1>${e.title}</h1><span class="pts" id="pts"></span></div><span class="tline">${QLab.topicLine?QLab.topicLine(e):'Grade '+e.grade+' · '+e.subject}</span>${QLab.coversLine?QLab.coversLine(e):''}${e.code?`<p class="strip">OSH Science Series · Concept ${e.code}</p>`:''}<div id="bar"></div><div id="coach" aria-live="polite"></div><div id="body"></div>`;
   pts();hook();
 }
 function setBar(i){maxS=Math.max(maxS,i);const b=$('#bar');b.innerHTML=bar(i);b.onclick=ev=>{const t=ev.target.closest('button[data-j]');if(!t)return;const j=+t.dataset.j;if(j>maxS)return coach('warn','Not yet','Finish the steps before it first. Do the lab, then this opens.');[hook,guess,doIt,why,why,()=>check(0),challenge,real][j]()}}
@@ -44,7 +44,7 @@ function guess(){clearInterval(ytT);setBar(1);const g=cur.guess;
 function doIt(){setBar(2);const e=cur;
   $('#body').innerHTML=`<div class="lab"><div class="stage" id="stage" aria-label="Experiment"></div><div class="ctrl" id="ctrl"></div></div><p style="text-align:center"><button class="pri" id="seeBtn" disabled>I tried it. Show me why →</button></p><p class="lockhint" id="lockhint">🔒 This button unlocks after you try the lab above. Try several different options and watch what happens.</p>`;
   const api={stage:$('#stage'),ctrl:$('#ctrl'),coach,award:k=>award(cur.id+':'+k),ready(){$('#seeBtn').disabled=false;const lh=$('#lockhint');if(lh)lh.style.display='none';coach('info','Nice work!','Now press the purple button below: I tried it. Show me why.');try{$('#seeBtn').scrollIntoView({behavior:'smooth',block:'center'})}catch(e){}},state:st};
-  e.build(api);$('#seeBtn').onclick=why}
+  e._api=api;e.build(api);$('#seeBtn').onclick=why;QLab.watchBtn&&QLab.watchBtn(e)}
 function why(){setBar(4);const e=cur;
   $('#body').innerHTML=`<div class="card why"><h2>Why did that happen?</h2><ul>${e.why.map(x=>`<li>${x}</li>`).join('')}</ul><button class="pri" id="chk">Check yourself →</button></div>`;$('#chk').onclick=()=>check(0);$('#coach').innerHTML=''}
 function check(i){setBar(5);const q=cur.check[i];

@@ -46,7 +46,7 @@ function scene(stage,o){css();o=o||{};const P=!o.w&&((stage.clientWidth||innerWi
   say(t,k){say.className='labsay'+(k?' '+k:'');say.style.animation='none';void say.offsetWidth;say.style.animation='';say.textContent=t||''},
   pt(e){const p=svg.createSVGPoint();p.x=e.clientX;p.y=e.clientY;return p.matrixTransform(svg.getScreenCTM().inverse())},
   snd,sleep,E,emo};
- stage._S=S;S.vessel=o2=>vessel(S,o2);S.tool=o2=>tool(S,o2);S.burner=(x,y)=>burner(S,x,y);
+ stage._S=S;S.vessel=o2=>vessel(S,o2);S.auto=async(ti,vi,cap)=>{const T=S.tools[ti],v=S.vessels[vi];if(!T||!v)return;if(cap)S.say(cap);const gx=v.x,gy=v.y-v.h*.75;S.svg.appendChild(S.gTool);T.g.classList.add('lift');await new Promise(r=>tween(T.g,[T.x,T.y],[gx,gy],800,r));T.busy=true;try{await T.use(v)}catch(e){}T.busy=false;await new Promise(r=>tween(T.g,[gx,gy],[T.x,T.y],500,r));T.g.classList.remove('lift');await sleep(500)};S.tool=o2=>tool(S,o2);S.burner=(x,y)=>burner(S,x,y);
  S.puff=(x,y,c,n,up)=>puff(S,x,y,c,n,up);S.flash=(x,y,c,r)=>flash(S,x,y,c,r);S.image=(g,src,x,y,s)=>{const i=E('image',{href:src,x:x-s/2,y:y-s/2,width:s,height:s},g);return i};
  return S}
 /* vessel: beaker, tube, bottle, flask, jar. x = centre, y = bottom of glass */

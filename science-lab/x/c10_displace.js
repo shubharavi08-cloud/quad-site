@@ -25,6 +25,7 @@ build(api){
  sc.say('Drag a metal strip into a beaker. A more reactive metal pushes the other one out.');
  api.ctrl.innerHTML=`<div class="row"><button id="rs">↺ Fresh solutions</button></div><p style="font-size:13px;margin:6px 0 0">Reactivity: Mg > Zn > Fe > Cu > Ag. Try 6 different pairs to unlock the next step.</p>`;
  api.ctrl.querySelector('#rs').onclick=reset},
+demo:[[2,0,'Iron goes into blue copper sulphate. Copper coats the iron.'],[4,2,'Silver in zinc sulphate: nothing. Silver is less reactive.'],[0,1,'Magnesium pushes iron out of iron sulphate.']],
 why:['A more reactive metal <b>displaces</b> a less reactive metal from its salt solution: Fe + CuSO₄ → FeSO₄ + Cu.','If the metal strip is less reactive than the metal in the solution, <b>nothing happens</b>.','From your tests: Mg > Zn > Fe > Cu > Ag. This is part of the <span class="word">reactivity series</span>.','Displacement reactions are used to extract and recover metals.'],
 check:[{q:'Will copper displace iron from FeSO₄?',options:['Yes','No, copper is less reactive','Only when hot','Only in acid'],answer:1,why:'Copper is below iron.',hint:'Series: Mg, Zn, Fe, Cu, Ag.'},
  {q:'Iron nail in CuSO₄ becomes coated with…',options:['Zinc','Copper','Silver','Rust only'],answer:1,why:'Iron displaces copper.',hint:'Red-brown.'},

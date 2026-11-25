@@ -49,6 +49,7 @@ build(api){
  api.ctrl.querySelector('#rs').onclick=()=>{V=0;seen=false;upd()};
  if(chal)api.ctrl.querySelectorAll('#cc button').forEach(b=>b.onclick=()=>{if(V<15.5)return api.nope('First titrate: add base until the flask just turns pink, then work out the concentration.');b.dataset.a==='0.08 M'?api.solved():api.nope('At the end point moles of acid = moles of base. 0.10 × V(base) = C × 20.')});
  upd()},
+demo:[[S=>S.titrate(20),'Run the base in fast at first.',1200],[S=>S.titrate(4.9),'Slow down near the end point.',1200],[S=>S.titrate(.1),'One drop at a time...',900],[S=>S.titrate(.2),'Pink! The acid is just used up.',1500]],
 why:['<span class="word">Neutralisation</span>: acid + base → salt + water. HCl + NaOH → NaCl + H₂O.','At the <b>end point</b> the acid has just been used up, so the solution is neutral (pH 7) and phenolphthalein turns pink with the next drop of base.','The pH curve is steady, then <b>jumps suddenly</b> near the end point. That is why a single drop changes the colour.','At the end point: moles of acid = moles of base, so you can find an unknown concentration.'],
 check:[{q:'HCl + NaOH → ?',options:['NaCl + H₂O','NaO + HCl','Na + Cl₂','H₂'],answer:0,why:'A salt and water.',hint:'Neutralisation.'},
  {q:'pH at the exact end point (strong acid + strong base) is…',options:['1','7','10','14'],answer:1,why:'The solution is neutral.',hint:'Watch the meter.'},
