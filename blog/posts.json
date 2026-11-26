@@ -1,6 +1,18 @@
 {
  "posts": [
   {
+   "title": "Arithmetic Progressions Class 10: 8 Must-Do Board Questions, Solved (CBSE Maths Chapter 5, nth Term and Sum of n Terms)",
+   "url": "https://quadacademy.org/blog/arithmetic-progressions-board-questions/",
+   "date": "2026-11-26",
+   "description": "CBSE Class 10 Maths Chapter 5 solved: the nth term, which term is a given number, the nth term from the end, finding k for three terms in AP, the sum of n terms, the two-answer \"how many terms\" question, finding the nth term from Sn, and the cash-prize word problem."
+  },
+  {
+   "title": "Quadratic Equations Class 10: 8 Must-Do Board Questions, Solved (CBSE Maths Chapter 4, Discriminant and Word Problems)",
+   "url": "https://quadacademy.org/blog/quadratic-equations-board-questions/",
+   "date": "2026-11-25",
+   "description": "CBSE Class 10 Maths Chapter 4 solved: finding k when a root is given, equal roots, the discriminant and nature of roots, factorisation with surds, the quadratic formula, and the consecutive-integer and train-speed word problems."
+  },
+  {
    "title": "Pair of Linear Equations in Two Variables Class 10: 8 Must-Do Board Questions, Solved (CBSE Maths Chapter 3)",
    "url": "https://quadacademy.org/blog/pair-of-linear-equations-board-questions/",
    "date": "2026-11-24",
@@ -125,6 +137,18 @@
      "blogPost": [
       {
        "@type": "BlogPosting",
+       "headline": "Arithmetic Progressions Class 10: 8 Must-Do Board Questions, Solved (CBSE Maths Chapter 5, nth Term and Sum of n Terms)",
+       "url": "https://quadacademy.org/blog/arithmetic-progressions-board-questions/",
+       "datePublished": "2026-11-26"
+      },
+      {
+       "@type": "BlogPosting",
+       "headline": "Quadratic Equations Class 10: 8 Must-Do Board Questions, Solved (CBSE Maths Chapter 4, Discriminant and Word Problems)",
+       "url": "https://quadacademy.org/blog/quadratic-equations-board-questions/",
+       "datePublished": "2026-11-25"
+      },
+      {
+       "@type": "BlogPosting",
        "headline": "Pair of Linear Equations in Two Variables Class 10: 8 Must-Do Board Questions, Solved (CBSE Maths Chapter 3)",
        "url": "https://quadacademy.org/blog/pair-of-linear-equations-board-questions/",
        "datePublished": "2026-11-24"
@@ -232,6 +256,88 @@
        "datePublished": "2026-11-06"
       }
      ]
+    }
+   ]
+  },
+  {
+   "path": "blog/arithmetic-progressions-board-questions/index.html",
+   "priority": 0.6,
+   "jsonld": [
+    {
+     "@type": "BlogPosting",
+     "headline": "Arithmetic Progressions Class 10: 8 Must-Do Board Questions, Solved (CBSE Maths Chapter 5, nth Term and Sum of n Terms)",
+     "description": "CBSE Class 10 Maths Chapter 5 solved: the nth term, which term is a given number, the nth term from the end, finding k for three terms in AP, the sum of n terms, the two-answer \"how many terms\" question, finding the nth term from Sn, and the cash-prize word problem.",
+     "url": "https://quadacademy.org/blog/arithmetic-progressions-board-questions/",
+     "mainEntityOfPage": "https://quadacademy.org/blog/arithmetic-progressions-board-questions/",
+     "datePublished": "2026-11-26",
+     "dateModified": "2026-11-26",
+     "inLanguage": "en-IN",
+     "wordCount": 1497,
+     "author": {
+      "@type": "Organization",
+      "name": "Team QUAD",
+      "@id": "https://quadacademy.org/#org"
+     },
+     "publisher": {
+      "@id": "https://quadacademy.org/#org"
+     },
+     "educationalLevel": "Class 10",
+     "keywords": "Maths, Chapter 5, Arithmetic Progressions, AP, nth term, sum of n terms, common difference, word problems, CBSE board questions",
+     "image": "https://i.ytimg.com/vi/5ZTkXgz6f78/hqdefault.jpg",
+     "isPartOf": {
+      "@type": "Blog",
+      "url": "https://quadacademy.org/blog/"
+     },
+     "video": {
+      "@type": "VideoObject",
+      "name": "Arithmetic Progressions Class 10 Important Questions + MCQ Tricks | CBSE 2026-27",
+      "description": "CBSE Class 10 Maths Chapter 5 solved: the nth term, which term is a given number, the nth term from the end, finding k for three terms in AP, the sum of n terms, the two-answer \"how many terms\" question, finding the nth term from Sn, and the cash-prize word problem.",
+      "thumbnailUrl": "https://i.ytimg.com/vi/5ZTkXgz6f78/hqdefault.jpg",
+      "uploadDate": "2026-11-26",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/5ZTkXgz6f78",
+      "contentUrl": "https://www.youtube.com/watch?v=5ZTkXgz6f78"
+     }
+    }
+   ]
+  },
+  {
+   "path": "blog/quadratic-equations-board-questions/index.html",
+   "priority": 0.6,
+   "jsonld": [
+    {
+     "@type": "BlogPosting",
+     "headline": "Quadratic Equations Class 10: 8 Must-Do Board Questions, Solved (CBSE Maths Chapter 4, Discriminant and Word Problems)",
+     "description": "CBSE Class 10 Maths Chapter 4 solved: finding k when a root is given, equal roots, the discriminant and nature of roots, factorisation with surds, the quadratic formula, and the consecutive-integer and train-speed word problems.",
+     "url": "https://quadacademy.org/blog/quadratic-equations-board-questions/",
+     "mainEntityOfPage": "https://quadacademy.org/blog/quadratic-equations-board-questions/",
+     "datePublished": "2026-11-25",
+     "dateModified": "2026-11-25",
+     "inLanguage": "en-IN",
+     "wordCount": 1442,
+     "author": {
+      "@type": "Organization",
+      "name": "Team QUAD",
+      "@id": "https://quadacademy.org/#org"
+     },
+     "publisher": {
+      "@id": "https://quadacademy.org/#org"
+     },
+     "educationalLevel": "Class 10",
+     "keywords": "Maths, Chapter 4, Quadratic Equations, discriminant, nature of roots, equal roots, quadratic formula, factorisation, word problems, CBSE board questions",
+     "image": "https://i.ytimg.com/vi/DSlCOJ0l9jI/hqdefault.jpg",
+     "isPartOf": {
+      "@type": "Blog",
+      "url": "https://quadacademy.org/blog/"
+     },
+     "video": {
+      "@type": "VideoObject",
+      "name": "Quadratic Equations Class 10 Important Questions + MCQ Tricks | CBSE 2026-27",
+      "description": "CBSE Class 10 Maths Chapter 4 solved: finding k when a root is given, equal roots, the discriminant and nature of roots, factorisation with surds, the quadratic formula, and the consecutive-integer and train-speed word problems.",
+      "thumbnailUrl": "https://i.ytimg.com/vi/DSlCOJ0l9jI/hqdefault.jpg",
+      "uploadDate": "2026-11-25",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/DSlCOJ0l9jI",
+      "contentUrl": "https://www.youtube.com/watch?v=DSlCOJ0l9jI"
+     }
     }
    ]
   },
