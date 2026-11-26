@@ -165,3 +165,5 @@ body.ptopen{overflow:hidden}
 .fch{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}.fch button{border:2px solid #cdb8ff;background:#fff;color:#4a2fa0;border-radius:99px;padding:4px 12px;font:inherit;font-size:.82rem;font-weight:700}.fch button.on{background:#6a3fd1;color:#fff;border-color:#6a3fd1}
 .fcard{display:block;background:#fff;border:2px solid #eadfff;border-radius:16px;padding:10px 14px;margin:8px 0;color:#2b2350;text-decoration:none;font-size:.9rem}.fcard a{display:block;color:#6a3fd1;font-weight:700;margin-top:4px;text-decoration:none}
 .ftag{font-size:.7rem;font-weight:800;color:#fff;border-radius:99px;padding:1px 9px;margin-left:6px}.ftag.ok{background:#2e9d5b}.ftag.soon{background:#9aa3ad}.fnd h2{font-size:1.05rem;margin:16px 0 4px}
+
+@keyframes qpop{from{transform:scale(0)}60%{transform:scale(1.4)}to{transform:scale(1)}}
