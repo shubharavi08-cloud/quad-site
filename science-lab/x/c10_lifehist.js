@@ -1,0 +1,20 @@
+QLab.register({
+id:'c10_lifehist',code:'10-B13',title:"History of life: from first cells to humans",grade:10,subject:'Biology',emoji:'🦴',
+hook:{title:"Life on Earth is about 3.5 billion years old. Humans appeared only a moment ago.",text:"Fossils show which groups of living things appeared first. Put them in order, oldest first."},
+prior:"You know that fossils are remains of ancient living things.",
+guess:{q:"Which appeared FIRST on Earth?",options:["Dinosaurs", "Simple single cells", "Humans", "Flowering plants"],answer:1,hint:"Life began very small, in water.",after:"Build the timeline."},
+build(api){
+ const chal=!!api.challenge;
+ const A=[["Single-celled life","About 3.5 billion years ago","The first life was simple cells in the oceans."],["Fish","About 500 million years ago","The first backbones appeared in the sea."],["Amphibians","About 370 million years ago","Animals began to move onto land."],["Reptiles and dinosaurs","From about 300 million years ago","Dry-skinned animals ruled the land for 150 million years."],["Mammals","About 200 million years ago","Small furry mammals lived among the dinosaurs."],["Humans","About 300 000 years ago","Homo sapiens appeared very recently."]],B=[["Bottom layer","Oldest fossils","In undisturbed rock, deeper layers are older."],["Middle layer","Younger fossils","Layers laid down later lie above."],["Upper layer","Even younger fossils","Newer sediment settles on top."],["Top layer","Newest fossils","The top layer is the youngest."]];
+ QLab.kit.order(api,chal?{stim:"🪨 START: a very old rock layer",resp:"🏔️ END: the top, newest layer",items:B,prompt:"Drag the four layers in order, oldest first.",first:"Which layer is oldest?",hint:'Think about what must happen first.',done(){api.solved()},fail(){api.nope('Start from the first event and follow what happens next.')}}
+  :{stim:"🌋 START: young Earth, no life",resp:"🧑 END: modern humans",items:A,prompt:'Drag each card into the numbered box in the right order.',first:'Which step comes first?',hint:'Think about what must happen first.',done(sc){api.award('did');api.ready();sc.say('All in order. Well done!','ok')}});
+},
+demo:[[S=>S.put(0,0),"The first life was simple cells in the oceans.",900],[S=>S.put(1,1),"The first backbones appeared in the sea.",900],[S=>S.put(2,2),"Animals began to move onto land.",900],[S=>S.put(3,3),"Dry-skinned animals ruled the land for 150 million years.",900],[S=>S.put(4,4),"Small furry mammals lived among the dinosaurs.",900],[S=>S.put(5,5),"Homo sapiens appeared very recently.",900]],
+why:["<span class=\"word\">Evolution</span> is the slow change of living things over many generations.", "Fossils in rock layers show the order: single cells, fish, amphibians, reptiles, mammals, humans.", "In undisturbed rock, <b>lower layers are older</b>. This lets scientists date fossils.", "Darwin explained this by natural selection: those best suited to their surroundings survive and pass on their features."],
+check:[{q:"Which group came first?",options:["Mammals", "Amphibians", "Fish", "Birds"],answer:2,why:"Fish came before land animals.",hint:"Sea first."},
+ {q:"In rock layers the oldest fossils are found…",options:["At the top", "At the bottom", "Anywhere", "Only in sand"],answer:1,why:"Newer layers settle on top.",hint:"Layers."},
+ {q:"Fossils are…",options:["Living animals", "Remains or marks of ancient life", "Modern bones", "Rocks that grow"],answer:1,why:"They are preserved in rock.",hint:"Ancient."}],
+challenge:{text:"Put <b>four rock layers</b> in order from oldest to youngest.",win:"Oldest at the bottom, newest at the top."},
+real:["The Ammonite museum fossils in India show ancient sea life.", "Dinosaur fossils were found in Gujarat and Tamil Nadu.", "Fossil fuel is formed from ancient living things."],
+words:{"Evolution": "Slow change of living things over generations.", "Fossil": "Remains or traces of ancient life preserved in rock.", "Natural selection": "Survival of those best suited to their surroundings.", "Species": "A group of living things that can breed together."}
+});
