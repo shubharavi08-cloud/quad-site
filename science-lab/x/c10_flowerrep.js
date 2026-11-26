@@ -1,0 +1,20 @@
+QLab.register({
+id:'c10_flowerrep',code:'10-B9',title:"Reproduction in flowering plants",grade:10,subject:'Biology',emoji:'🌸',
+hook:{title:"A bee visits a flower. Weeks later there is a fruit. What happened in between?",text:"Pollen must reach the right place, a tube must grow, and two cells must join. Put the steps in order."},
+prior:"You know that flowers make seeds and fruits.",
+guess:{q:"The transfer of pollen from the anther to the stigma is called…",options:["Fertilisation", "Pollination", "Germination", "Photosynthesis"],answer:1,hint:"Poll-ination is moving pollen.",after:"Order the steps."},
+build(api){
+ const chal=!!api.challenge;
+ const A=[["Pollen from anther","Pollen is made","Pollen grains are made in the anther."],["Pollination","Pollen reaches stigma","A bee or the wind carries pollen to the stigma."],["Pollen tube","Grows down the style","A tube grows down the style towards the ovule."],["Fertilisation","Male + female cell fuse","The male cell joins the egg in the ovule: fertilisation."],["Seed and fruit","Ovule → seed, ovary → fruit","The fertilised ovule becomes a seed and the ovary becomes the fruit."]],B=[["Seed absorbs water","Imbibition","The seed takes in water and swells."],["Radicle emerges","First root","The root (radicle) breaks out and grows down."],["Plumule grows up","First shoot","The shoot (plumule) grows up towards light."],["Leaves open","Green leaves","The first leaves open and turn green."],["Photosynthesis starts","Makes own food","Now the seedling makes its own food and the stored food is no longer needed."]];
+ QLab.kit.order(api,chal?{stim:"🌰 START: a dry seed in moist soil",resp:"🌱 END: a seedling that makes its own food",items:B,prompt:"Germination: drag each stage in order.",first:"What must the seed take in first?",hint:'Think about what must happen first.',done(){api.solved()},fail(){api.nope('Start from the first event and follow what happens next.')}}
+  :{stim:"🐝 START: a bee lands on a flower",resp:"🍎 END: a fruit with seeds",items:A,prompt:'Drag each card into the numbered box in the right order.',first:'Which step comes first?',hint:'Think about what must happen first.',done(sc){api.award('did');api.ready();sc.say('All in order. Well done!','ok')}});
+},
+demo:[[S=>S.put(0,0),"Pollen grains are made in the anther.",900],[S=>S.put(1,1),"A bee or the wind carries pollen to the stigma.",900],[S=>S.put(2,2),"A tube grows down the style towards the ovule.",900],[S=>S.put(3,3),"The male cell joins the egg in the ovule: fertilisation.",900],[S=>S.put(4,4),"The fertilised ovule becomes a seed and the ovary becomes the fruit.",900]],
+why:["<span class=\"word\">Pollination</span> is the transfer of pollen from an anther to a stigma, by insects, wind, water or birds.", "A pollen tube grows down the style and carries the male gamete to the ovule. The two gametes fuse: <span class=\"word\">fertilisation</span>.", "The fertilised ovule becomes the <b>seed</b>; the ovary becomes the <b>fruit</b>.", "Germination needs water, air and warmth. Light is not needed until the leaves open."],
+check:[{q:"The ovary of a flower becomes the…",options:["Seed", "Fruit", "Stem", "Petal"],answer:1,why:"The ovary ripens into the fruit.",hint:"Apple, mango."},
+ {q:"Fertilisation happens in the…",options:["Anther", "Ovule", "Petal", "Stigma"],answer:1,why:"The male gamete joins the egg in the ovule.",hint:"Inside the ovary."},
+ {q:"Which is NOT needed for germination?",options:["Water", "Air", "Warmth", "Sunlight"],answer:3,why:"Seeds sprout underground, in the dark.",hint:"Underground."}],
+challenge:{text:"Put the stages of <b>seed germination</b> in order.",win:"Water in, root out, shoot up, leaves open, then photosynthesis begins."},
+real:["Bees are vital for pollinating mango, apple and many crops.", "Farmers soak seeds before sowing to speed up germination.", "Wind pollinates rice, wheat and maize."],
+words:{"Pollination": "Transfer of pollen to a stigma.", "Fertilisation": "Fusion of male and female gametes.", "Germination": "A seed starting to grow.", "Ovule": "Part of the ovary that becomes the seed."}
+});
