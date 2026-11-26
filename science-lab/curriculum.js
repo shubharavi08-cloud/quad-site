@@ -15,9 +15,16 @@ const C={
  gases:{CBSE:'Class 9 · Matter in Our Surroundings',IGCSE:'Chemistry 0620 · 1 States of matter'},
  electric:{CBSE:'Class 10 · Electricity',NIOS:'Secondary Science · Electrical energy'},
  change:{IGCSE:'Chemistry 0620 · 6 Chemical reactions',NGSS:'MS-PS1-2 · Substances before and after reacting'},
- rust:{CBSE:'Class 10 · Chemical Reactions and Equations (corrosion)',IGCSE:'Chemistry 0620 · 9 Metals',NGSS:'MS-PS1-2 · Substances before and after reacting'}
+ rust:{CBSE:'Class 10 · Chemical Reactions and Equations (corrosion)',IGCSE:'Chemistry 0620 · 9 Metals',NGSS:'MS-PS1-2 · Substances before and after reacting'},
+ light:{CBSE:'Class 10 · Light: Reflection and Refraction',NIOS:'Secondary Science · Light energy',ICSE:'Class 10 · Light',IGCSE:'Physics 0625 · 3 Waves',NGSS:'MS-PS4-2 · Waves and materials'},
+ magnetism:{CBSE:'Class 10 · Magnetic Effects of Electric Current',NIOS:'Secondary Science · Magnetic effect of electric current',ICSE:'Class 10 · Electromagnetism',IGCSE:'Physics 0625 · 4 Electricity and magnetism',NGSS:'MS-PS2-3 · Electric and magnetic forces'},
+ photo:{CBSE:'Class 10 · Life Processes',NIOS:'Secondary Science · Life processes I',ICSE:'Class 10 · Photosynthesis',IGCSE:'Biology 0610 · 6 Plant nutrition and transport',NGSS:'MS-LS1-6 · Photosynthesis'},
+ resp:{CBSE:'Class 10 · Life Processes',NIOS:'Secondary Science · Life processes I',ICSE:'Class 10 · Respiration',IGCSE:'Biology 0610 · 12 Respiration',NGSS:'MS-LS1-7 · Matter and energy in organisms'},
+ coord:{CBSE:'Class 10 · Control and Coordination',NIOS:'Secondary Science · Control and coordination',ICSE:'Class 10 · Nervous system',IGCSE:'Biology 0610 · 14 Coordination and response',NGSS:'MS-LS1-8 · Sensory receptors'},
+ heredity:{CBSE:'Class 10 · Heredity',NIOS:'Secondary Science · Heredity',ICSE:'Class 10 · Genetics',IGCSE:'Biology 0610 · 16 Inheritance',NGSS:'MS-LS3-2 · Inheritance and variation'},
+ ecosystem:{CBSE:'Class 10 · Our Environment',NIOS:'Secondary Science · Natural environment',ICSE:'Class 9/10 · Ecosystems',IGCSE:'Biology 0610 · 18 Organisms and their environment',NGSS:'MS-LS2-3 · Energy flow in ecosystems'}
 };
-const M={c8_states:'states',c8_heatcurve:'states',c8_evap:'states',c8_dissolve:'mixtures',c8_solubility:'mixtures',c9_separate:'mixtures',c9_chromato:'mixtures',c9_colloid:'mixtures',
+const M={c10_mirror:'light',c10_refract:'light',c10_lens:'light',c10_circuit:'electric',c10_joule:'electric',c10_magfield:'magnetism',c10_motor:'magnetism',c10_induct:'magnetism',c10_photo:'photo',c10_respire:'resp',c10_reflex:'coord',c10_tropism:'coord',c10_mendel:'heredity',c10_foodchain:'ecosystem',c8_states:'states',c8_heatcurve:'states',c8_evap:'states',c8_dissolve:'mixtures',c8_solubility:'mixtures',c9_separate:'mixtures',c9_chromato:'mixtures',c9_colloid:'mixtures',
  c9_buildatom:'atoms',c9_rutherford:'atoms',c9_isotopes:'atoms',c9_mole:'moles',c9_mass:'moles',c9_compound:'moles',
  c10_balance:'reactions',c10_types:'reactions',c10_oxid:'reactions',c8_firetriangle:'combustion',c8_flame:'combustion',c10_burn:'combustion',
  c10_indicators:'acids',c10_titration:'acids',c10_salts:'acids',c10_metalacid:'metals',c10_displace:'metals',c10_series:'metals',c8_metalreact:'metals',
