@@ -1,6 +1,12 @@
 {
  "posts": [
   {
+   "title": "Triangles Class 10: 8 Must-Do Board Questions, Solved (CBSE Maths Chapter 6, BPT and Similarity)",
+   "url": "https://quadacademy.org/blog/triangles-board-questions/",
+   "date": "2026-11-27",
+   "description": "CBSE Class 10 Maths Chapter 6 solved: similar-triangle ratios, the DE ∥ AB question, the converse of BPT, matching sides from the letter order, PQ² = PS × PR, the parallelogram AA proof, the 5-mark BPT proof with the trapezium, and the cabinet case study."
+  },
+  {
    "title": "Arithmetic Progressions Class 10: 8 Must-Do Board Questions, Solved (CBSE Maths Chapter 5, nth Term and Sum of n Terms)",
    "url": "https://quadacademy.org/blog/arithmetic-progressions-board-questions/",
    "date": "2026-11-26",
@@ -137,6 +143,12 @@
      "blogPost": [
       {
        "@type": "BlogPosting",
+       "headline": "Triangles Class 10: 8 Must-Do Board Questions, Solved (CBSE Maths Chapter 6, BPT and Similarity)",
+       "url": "https://quadacademy.org/blog/triangles-board-questions/",
+       "datePublished": "2026-11-27"
+      },
+      {
+       "@type": "BlogPosting",
        "headline": "Arithmetic Progressions Class 10: 8 Must-Do Board Questions, Solved (CBSE Maths Chapter 5, nth Term and Sum of n Terms)",
        "url": "https://quadacademy.org/blog/arithmetic-progressions-board-questions/",
        "datePublished": "2026-11-26"
@@ -256,6 +268,47 @@
        "datePublished": "2026-11-06"
       }
      ]
+    }
+   ]
+  },
+  {
+   "path": "blog/triangles-board-questions/index.html",
+   "priority": 0.6,
+   "jsonld": [
+    {
+     "@type": "BlogPosting",
+     "headline": "Triangles Class 10: 8 Must-Do Board Questions, Solved (CBSE Maths Chapter 6, BPT and Similarity)",
+     "description": "CBSE Class 10 Maths Chapter 6 solved: similar-triangle ratios, the DE ∥ AB question, the converse of BPT, matching sides from the letter order, PQ² = PS × PR, the parallelogram AA proof, the 5-mark BPT proof with the trapezium, and the cabinet case study.",
+     "url": "https://quadacademy.org/blog/triangles-board-questions/",
+     "mainEntityOfPage": "https://quadacademy.org/blog/triangles-board-questions/",
+     "datePublished": "2026-11-27",
+     "dateModified": "2026-11-27",
+     "inLanguage": "en-IN",
+     "wordCount": 1679,
+     "author": {
+      "@type": "Organization",
+      "name": "Team QUAD",
+      "@id": "https://quadacademy.org/#org"
+     },
+     "publisher": {
+      "@id": "https://quadacademy.org/#org"
+     },
+     "educationalLevel": "Class 10",
+     "keywords": "Maths, Chapter 6, Triangles, similar triangles, Basic Proportionality Theorem, BPT, Thales theorem, AA similarity, case study, CBSE board questions",
+     "image": "https://i.ytimg.com/vi/IKxXfup-GYI/hqdefault.jpg",
+     "isPartOf": {
+      "@type": "Blog",
+      "url": "https://quadacademy.org/blog/"
+     },
+     "video": {
+      "@type": "VideoObject",
+      "name": "Triangles Class 10 Important Questions + MCQ Tricks | CBSE 2026-27",
+      "description": "CBSE Class 10 Maths Chapter 6 solved: similar-triangle ratios, the DE ∥ AB question, the converse of BPT, matching sides from the letter order, PQ² = PS × PR, the parallelogram AA proof, the 5-mark BPT proof with the trapezium, and the cabinet case study.",
+      "thumbnailUrl": "https://i.ytimg.com/vi/IKxXfup-GYI/hqdefault.jpg",
+      "uploadDate": "2026-11-27",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/IKxXfup-GYI",
+      "contentUrl": "https://www.youtube.com/watch?v=IKxXfup-GYI"
+     }
     }
    ]
   },

@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Triangles Class 10: 8 Must-Do Board Questions, Solved (CBSE Maths Chapter 6, BPT and Similarity) · QUAD Academy Blog</title>
+<meta name="description" content="CBSE Class 10 Maths Chapter 6 solved: similar-triangle ratios, the DE ∥ AB question, the converse of BPT, matching sides from the letter order, PQ² = PS × PR, the parallelogram AA proof, the 5-mark BPT proof with the trapezium, and the cabinet case study.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Triangles Class 10: 8 Must-Do Board Questions, Solved (CBSE Maths Chapter 6, BPT and Similarity) · QUAD Academy Blog">
+<meta property="og:description" content="CBSE Class 10 Maths Chapter 6 solved: similar-triangle ratios, the DE ∥ AB question, the converse of BPT, matching sides from the letter order, PQ² = PS × PR, the parallelogram AA proof, the 5-mark BPT proof with the trapezium, and the cabinet case study.">
+<meta property="og:url" content="https://quadacademy.org/blog/triangles-board-questions/">
+<meta property="og:image" content="https://i.ytimg.com/vi/IKxXfup-GYI/hqdefault.jpg">
+<link rel="icon" href="/quad_logo.jpg">
+<link rel="alternate" type="application/rss+xml" title="QUAD Academy Blog" href="/blog/feed.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700;800;900&family=Gochi+Hand&display=swap">
+<style>
+:root{--wall:#f7f2e7;--wall-2:#efe7d6;--stripe:rgba(80,60,20,.025);--ink:#0f3b40;--ink-2:#4d6466;--deep:#0f2a2d;--osh:#0f5258;--gold:#9a6f00;
+--yellow:#ffd21f;--teal:#139fb3;--coral:#ff6b4f;--board:#14231d;--wood:#8a5a2e;--chalk:#f4efe2;--chalk-y:#ffcf5a;--card:#fff;--line:#e3d9c4;--mute:#8a8270;
+--display:"Rubik","Arial Black",system-ui,sans-serif;--body:"Rubik","Segoe UI",system-ui,sans-serif;--chalkf:"Gochi Hand","Comic Sans MS",cursive;color-scheme:light}
+*{box-sizing:border-box}[hidden]{display:none!important}html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;color:var(--ink);font:400 1.02rem/1.6 var(--body);background:repeating-linear-gradient(0deg,var(--stripe) 0 2px,transparent 2px 6px),linear-gradient(180deg,var(--wall),var(--wall-2));background-color:var(--wall)}
+img{max-width:100%}
+.wrap{max-width:1120px;margin:0 auto;padding-inline:max(16px,env(safe-area-inset-left,0px)) max(16px,env(safe-area-inset-right,0px))}
+a{color:var(--osh)}:focus-visible{outline:3px solid var(--teal);outline-offset:3px}
+.bar{position:sticky;top:0;z-index:5;background:rgba(247,242,231,.94);backdrop-filter:blur(6px);border-bottom:2px solid var(--line)}
+.bar .wrap{display:flex;align-items:center;gap:14px;padding-block:10px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink)}
+.brand img{width:46px;height:46px;border-radius:10px;border:1px solid var(--line);background:#fff}
+.brand b{font:900 1.15rem/1 var(--display)}.brand small{display:block;font:500 .72rem/1.3 var(--body);color:var(--ink-2)}
+nav{display:flex;flex-wrap:wrap;gap:4px;margin-left:auto}
+nav a{font:700 .85rem/1 var(--display);text-transform:uppercase;letter-spacing:.04em;text-decoration:none;color:var(--ink);padding:.6rem .7rem;border-radius:10px}
+nav a:hover{background:var(--yellow)}nav a.qlink{background:var(--yellow);color:var(--deep)}
+nav a.boostlink{background:var(--osh);color:#fff}nav a.boostlink:hover{background:var(--deep)}
+@media (max-width:680px){nav{flex-wrap:nowrap;overflow-x:auto;width:100%;margin-left:0;scrollbar-width:none;padding-bottom:2px}nav a{white-space:nowrap}}
+nav a[aria-current="page"]{background:var(--yellow);color:var(--deep);box-shadow:inset 0 -3px 0 var(--osh)}
+.pill{display:inline-block;font:800 .82rem/1 var(--display);letter-spacing:.03em;text-transform:uppercase;padding:.55rem .85rem;border-radius:10px;background:var(--osh);color:#fff;text-decoration:none}
+.pill.y{background:var(--yellow);color:var(--deep)}.pill.t{background:var(--teal)}.pill.c{background:var(--coral)}
+.kicker{display:flex;flex-wrap:wrap;gap:8px}
+h1{font:900 clamp(2.1rem,6vw,3.8rem)/1.02 var(--display);text-transform:uppercase;margin:14px 0 0;letter-spacing:-.01em;text-wrap:balance}
+h1 .hl{display:inline-block;background:var(--yellow);color:var(--deep);padding:.02em .18em .06em;border-radius:12px;margin-block:.06em}
+h1 .t{color:var(--teal)}
+.lede{max-width:60ch;color:var(--ink-2);font-size:1.08rem;margin:16px 0 0}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+.btn{display:inline-flex;align-items:center;gap:8px;font:800 .95rem/1 var(--display);text-transform:uppercase;letter-spacing:.02em;padding:.95rem 1.2rem;border-radius:14px;text-decoration:none;border:3px solid var(--osh);box-shadow:0 5px 0 var(--osh);transition:transform .12s,box-shadow .12s;color:var(--deep);background:#fff}
+.btn.y{background:var(--yellow)}.btn.o{background:var(--osh);color:#fff;box-shadow:0 5px 0 var(--deep);border-color:var(--deep)}
+.btn:hover{transform:translateY(2px);box-shadow:0 3px 0 var(--osh)}
+@media (prefers-reduced-motion:reduce){.btn{transition:none}.btn:hover{transform:none}}
+.board{background:var(--board);border:12px solid var(--wood);border-radius:6px;padding:20px 22px;color:var(--chalk);font-family:var(--chalkf);box-shadow:0 0 0 2px #5e3b1b inset,0 3px 0 #6b4320,0 16px 26px rgba(60,40,10,.28);min-width:0}
+.board.tilt{transform:rotate(-1.2deg)}@media (prefers-reduced-motion:reduce){.board.tilt{transform:none}}
+.board h3{font:400 1.6rem/1.2 var(--chalkf);margin:0 0 6px;color:var(--chalk-y)}
+.board .row{display:flex;justify-content:space-between;gap:14px;font-size:1.3rem;line-height:1.5;border-bottom:1px dashed rgba(244,239,226,.18);padding-block:4px}
+.board .row:last-child{border-bottom:0}.board .y{color:var(--chalk-y);font-variant-numeric:tabular-nums;text-align:right}
+section{padding-block:44px;border-top:2px solid var(--line);scroll-margin-top:80px}
+h2{font:900 clamp(1.5rem,3.6vw,2.2rem)/1.08 var(--display);text-transform:uppercase;margin:0 0 8px;text-wrap:balance}
+h2 .t{color:var(--teal)}.sub{color:var(--ink-2);margin:0 0 22px;max-width:64ch}
+.hero{display:grid;grid-template-columns:1.2fr .8fr;gap:30px;align-items:center;padding-block:34px 44px}
+@media (max-width:860px){.hero{grid-template-columns:1fr}}
+.batches{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));gap:18px}
+.batch{border-radius:18px;padding:22px;background:var(--card);border:3px solid var(--line);display:grid;gap:12px;align-content:start;min-width:0}
+.batch.m{border-color:var(--yellow)}.batch.s{border-color:var(--teal)}
+.batch h3{font:900 1.5rem/1.1 var(--display);text-transform:uppercase;margin:0}.batch.m h3{color:var(--gold)}.batch.s h3{color:#0d7383}
+.batch p{margin:0}.batch dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:8px 14px}
+.batch dt{font:700 .74rem/1.9 var(--display);text-transform:uppercase;letter-spacing:.08em;color:var(--ink-2)}.batch dd{margin:0;font-weight:500}
+.gets{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:14px}
+.item{background:var(--card);border:2px solid var(--line);border-radius:16px;padding:18px;min-width:0}
+.item .n{display:inline-block;font:900 1.4rem/1 var(--display);color:var(--deep);background:var(--yellow);padding:.35rem .6rem;border-radius:10px;margin-bottom:10px;font-variant-numeric:tabular-nums}
+.item:nth-child(3n+2) .n{background:var(--teal);color:#fff}.item:nth-child(3n) .n{background:var(--coral);color:#fff}
+.item h4{font:800 1.05rem/1.25 var(--display);margin:0 0 4px}.item p{margin:0;color:var(--ink-2);font-size:.95rem}
+details{background:var(--card);border:2px solid var(--line);border-radius:14px;padding:14px 18px}details+details{margin-top:10px}
+summary{font-weight:700;cursor:pointer}details p{margin:8px 0 2px;color:var(--ink-2)}
+.contact{background:var(--yellow);color:var(--deep);border-radius:22px;padding:26px;display:grid;gap:12px;border:4px solid var(--osh);box-shadow:0 8px 0 var(--osh)}
+.contact p{margin:0;max-width:62ch}.contact h2{margin:0}
+.small{font-size:.93rem;color:var(--ink-2);margin-top:16px;max-width:68ch}
+footer{background:var(--osh);color:#e6f3f3;margin-top:44px;border-top:6px solid var(--teal)}
+footer .wrap{padding-block:28px 40px;display:grid;gap:16px}
+.family{display:grid;grid-template-columns:1fr auto 1fr;gap:20px;align-items:start;padding-bottom:18px;border-bottom:1px solid rgba(255,255,255,.18)}
+.ent{display:grid;gap:6px;justify-items:start;min-width:0;max-width:360px}.ent.r{justify-self:end;justify-items:end;text-align:right}
+.ent b{font:800 1.08rem/1.2 var(--display);color:#fff;margin-top:6px}
+.ent .tl{font:700 .76rem/1.35 var(--display);text-transform:uppercase;letter-spacing:.08em;color:var(--yellow)}.ent p{margin:0;font-size:.9rem}
+.mark{background:#fff;border-radius:14px;padding:8px;display:inline-flex;height:104px;align-items:center}.mark img{display:block;height:88px;width:auto;border-radius:8px}
+.amp{font:900 2.1rem/1 var(--display);color:var(--yellow);align-self:center}
+@media (max-width:680px){.family{grid-template-columns:1fr}.ent.r{justify-self:start;justify-items:start;text-align:left}}
+footer p.fine{margin:0;font-size:.86rem;opacity:.9}footer a{color:#fff}
+/* blog */
+.crumbs{font:600 .85rem/1.4 var(--display);color:var(--ink-2);padding-top:22px}.crumbs a{color:var(--ink-2)}
+.posthead{padding-block:6px 26px;max-width:860px}
+.postmeta{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;margin-top:16px;color:var(--ink-2);font:500 .92rem/1.3 var(--body)}
+.postgrid{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:40px;align-items:start;padding-bottom:20px}
+.postgrid>div{min-width:0}
+@media (max-width:920px){.postgrid{grid-template-columns:1fr}}
+article.post{background:var(--card);border:2px solid var(--line);border-radius:20px;padding:clamp(18px,4vw,40px);min-width:0;font-size:1.07rem;line-height:1.72}
+article.post h2{font-size:clamp(1.3rem,3vw,1.7rem);margin:1.8em 0 .5em;color:var(--deep)}
+article.post h2:first-child{margin-top:0}
+article.post h3{font:800 1.15rem/1.3 var(--display);margin:1.4em 0 .4em;color:var(--osh)}
+article.post p,article.post ul,article.post ol{margin:0 0 1em}article.post li{margin-bottom:.35em}
+article.post blockquote{margin:0 0 1.2em;padding:14px 18px;border-left:6px solid var(--yellow);background:#fffbea;border-radius:0 12px 12px 0}
+article.post blockquote p{margin:0}
+article.post .eq{font:500 1.12rem/1.6 ui-monospace,"SF Mono",Menlo,Consolas,monospace;background:var(--board);color:var(--chalk);border-radius:12px;padding:14px 18px;overflow-x:auto;white-space:nowrap;border:6px solid var(--wood)}
+article.post .eq .ar{color:var(--chalk-y)}
+article.post strong{color:var(--deep)}
+.vframe{aspect-ratio:16/9;border-radius:16px;overflow:hidden;background:var(--board);border:3px solid var(--osh);margin:6px 0 8px}
+.vframe iframe{width:100%;height:100%;border:0;display:block}
+.vcap{font:600 .9rem/1.35 var(--display);color:var(--ink-2);margin:0 0 26px}
+aside.side{display:grid;gap:18px;position:sticky;top:90px}@media (max-width:920px){aside.side{position:static}}
+.sbox{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:18px;display:grid;gap:10px}
+.sbox.y{background:var(--yellow);border-color:var(--osh);box-shadow:0 6px 0 var(--osh)}
+.sbox h3{font:900 1.05rem/1.2 var(--display);text-transform:uppercase;margin:0}.sbox p{margin:0;font-size:.95rem}
+.sbox .btn{justify-self:start;font-size:.85rem;padding:.75rem 1rem}
+.postlist{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,320px),1fr));gap:18px}
+.pcard{display:grid;gap:10px;align-content:start;text-decoration:none;color:var(--ink);background:var(--card);border:2px solid var(--line);border-radius:18px;padding:12px 12px 18px;transition:border-color .12s,transform .12s}
+.pcard:hover{border-color:var(--osh);transform:translateY(-2px)}@media (prefers-reduced-motion:reduce){.pcard{transition:none}.pcard:hover{transform:none}}
+.pcard .th{aspect-ratio:16/9;border-radius:12px;overflow:hidden;background:var(--board);position:relative}
+.pcard .th img{width:100%;height:100%;object-fit:cover;display:block}
+.pcard .th .pill{position:absolute;left:8px;top:8px;font-size:.7rem;padding:.4rem .55rem}
+.pcard b{font:800 1.12rem/1.28 var(--display);padding-inline:6px}
+.pcard p{margin:0;padding-inline:6px;color:var(--ink-2);font-size:.95rem}
+.pcard small{padding-inline:6px;color:var(--mute);font:600 .82rem/1 var(--display);text-transform:uppercase;letter-spacing:.05em}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+.chips button{font:800 .82rem/1 var(--display);text-transform:uppercase;letter-spacing:.04em;padding:.62rem .9rem;border-radius:10px;border:2px solid var(--osh);background:#fff;color:var(--deep);cursor:pointer}
+.chips button[aria-pressed="true"]{background:var(--osh);color:#fff}
+/* masterclass */
+.status{font:800 .78rem/1 var(--display);text-transform:uppercase;letter-spacing:.05em;padding:.45rem .65rem;border-radius:8px;justify-self:start;background:var(--wall-2);color:var(--deep)}
+.status.soon{background:var(--coral);color:#fff}.status.done{background:var(--line);color:var(--ink-2)}
+.steps{counter-reset:s;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:14px;padding:0;margin:0;list-style:none}
+.steps li{counter-increment:s;background:var(--card);border:2px solid var(--line);border-radius:16px;padding:18px 18px 18px 64px;position:relative}
+.steps li::before{content:counter(s);position:absolute;left:16px;top:16px;width:34px;height:34px;border-radius:10px;background:var(--yellow);color:var(--deep);font:900 1.1rem/34px var(--display);text-align:center}
+.steps b{display:block;font:800 1.02rem/1.25 var(--display)}.steps span{color:var(--ink-2);font-size:.95rem}
+</style>
+<link rel="stylesheet" href="/cursor-quad.css?v=6"><!-- geo:start (generated by geo_build.py; edit geo_sites.py, not here) -->
+<link rel="canonical" href="https://quadacademy.org/blog/triangles-board-questions/">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Triangles Class 10: 8 Must-Do Board Questions, Solved (CBSE Maths Chapter 6, BPT and Similarity)","description":"CBSE Class 10 Maths Chapter 6 solved: similar-triangle ratios, the DE ∥ AB question, the converse of BPT, matching sides from the letter order, PQ² = PS × PR, the parallelogram AA proof, the 5-mark BPT proof with the trapezium, and the cabinet case study.","url":"https://quadacademy.org/blog/triangles-board-questions/","mainEntityOfPage":"https://quadacademy.org/blog/triangles-board-questions/","datePublished":"2026-11-27","dateModified":"2026-11-27","inLanguage":"en-IN","wordCount":1679,"author":{"@type":"Organization","name":"Team QUAD","@id":"https://quadacademy.org/#org"},"publisher":{"@id":"https://quadacademy.org/#org"},"educationalLevel":"Class 10","keywords":"Maths, Chapter 6, Triangles, similar triangles, Basic Proportionality Theorem, BPT, Thales theorem, AA similarity, case study, CBSE board questions","image":"https://i.ytimg.com/vi/IKxXfup-GYI/hqdefault.jpg","isPartOf":{"@type":"Blog","url":"https://quadacademy.org/blog/"},"video":{"@type":"VideoObject","name":"Triangles Class 10 Important Questions + MCQ Tricks | CBSE 2026-27","description":"CBSE Class 10 Maths Chapter 6 solved: similar-triangle ratios, the DE ∥ AB question, the converse of BPT, matching sides from the letter order, PQ² = PS × PR, the parallelogram AA proof, the 5-mark BPT proof with the trapezium, and the cabinet case study.","thumbnailUrl":"https://i.ytimg.com/vi/IKxXfup-GYI/hqdefault.jpg","uploadDate":"2026-11-27","embedUrl":"https://www.youtube-nocookie.com/embed/IKxXfup-GYI","contentUrl":"https://www.youtube.com/watch?v=IKxXfup-GYI"}}</script>
+<!-- geo:end -->
+</head>
+<body>
+<header class="bar">
+  <div class="wrap">
+    <a class="brand" href="/"><img src="/quad_logo.jpg" alt="QUAD Academy logo"><span><b>QUAD Academy</b><small>Your Student Navigator · by OSH</small></span></a>
+    <nav aria-label="Site"><a href="/quest.html" class="qlink">Quest</a><a href="/science-lab/">Virtual Lab</a><a href="/#videos">Videos</a><a href="/#chapters">Chapters</a><a href="/free/">Free PDFs</a><a href="/countdown/">Board Countdown</a><a href="/blog/" aria-current="page">Blog</a><a href="/masterclass/">₹49 Masterclass</a><a href="/board-boost/" class="boostlink">Board Boost · live batches</a></nav>
+  </div>
+</header>
+<main class="wrap">
+<p class="crumbs"><a href="/">QUAD Academy</a> › <a href="/blog/">Blog</a></p>
+<header class="posthead">
+  <div class="kicker"><span class="pill y">Maths</span><span class="pill t">Chapter 6</span><span class="pill">CBSE Class 10</span></div>
+  <h1 style="font-size:clamp(1.8rem,4.6vw,3rem);line-height:1.08">Triangles Class 10: 8 Must-Do Board Questions, Solved (CBSE Maths Chapter 6, BPT and Similarity)</h1>
+  <div class="postmeta"><span>By Team QUAD</span><time datetime="2026-11-27">27 Nov 2026</time><span>8 min read</span></div>
+</header>
+<div class="postgrid">
+  <div>
+    <div class="vframe"><iframe src="https://www.youtube-nocookie.com/embed/IKxXfup-GYI" loading="lazy" title="Triangles Class 10 Important Questions + MCQ Tricks | CBSE 2026-27" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div><p class="vcap">▶ Triangles Class 10 Important Questions + MCQ Tricks | CBSE 2026-27 · <a href="https://www.youtube.com/watch?v=IKxXfup-GYI" target="_blank" rel="noopener">open on YouTube</a></p>
+    <article class="post">
+<p>Chapter 6 of CBSE Class 10 Maths, <em>Triangles</em>, is all about <strong>similar triangles</strong>: two triangles with the same shape, where one is a scaled copy of the other. In the rationalised NCERT book the chapter has three ideas: similar figures, the <strong>Basic Proportionality Theorem (BPT)</strong> and its converse, and the <strong>criteria for similarity</strong> (AA, SSS and SAS). The theorems on areas of similar triangles and Pythagoras are no longer in this chapter, so do not waste revision time on them.</p>
+<p>Board papers test the chapter in a fixed pattern: <strong>1-mark MCQs on side ratios</strong>, a <strong>2-mark similarity question</strong>, a <strong>5-mark BPT proof with an application</strong>, and often a <strong>case study</strong>. The video above works through these must-do questions from real CBSE papers and the 2026-27 Sample Paper. Below, each of the eight question types has a model answer, the trap students fall into, and a quick question to try yourself.</p>
+<p>Join our WhatsApp Channel for daily updates: <a href="https://whatsapp.com/channel/0029Vb9DNhtADTOEAMwyH723" target="_blank" rel="noopener">QUAD on WhatsApp</a></p>
+<h2>The three facts you must know</h2>
+<p>| Idea | What it says | |---|---| | Similar triangles | Corresponding angles are equal and corresponding sides are in the same ratio. Perimeters are in that ratio too. | | BPT (Thales theorem) | A line parallel to one side of a triangle divides the other two sides in the same ratio. | | Converse of BPT | If a line divides two sides of a triangle in the same ratio, it is parallel to the third side. |</p>
+<p>To prove two triangles similar, you need just one of: <strong>AA</strong> (two pairs of equal angles), <strong>SSS</strong> (all three sides in the same ratio) or <strong>SAS</strong> (one equal angle with the sides around it in the same ratio).</p>
+<h2>Type 1: Perimeters of similar triangles (1 mark, CBSE SQP 2026-27)</h2>
+<blockquote><p>The perimeters of two similar triangles are 56 cm and 70 cm. If one side of the first triangle is 14 cm, find the corresponding side of the second.</p></blockquote>
+<ul><li>Similar triangles are scaled copies, so every side and the perimeter use the same scale factor.</li><li>14/x = 56/70 = 4/5.</li><li><strong>Answer: x = 70/4 = 17.5 cm, option (d).</strong></li></ul>
+<p><strong>Trap:</strong> writing 14/x = 70/56 and getting 11.2 cm. Keep "first triangle over second triangle" on <em>both</em> sides. <strong>Try it:</strong> perimeters 30 cm and 20 cm, one side of the first is 12 cm. <em>Corresponding side = 8 cm.</em></p>
+<h2>Type 2: A line parallel to one side, find x (1 mark, CBSE SQP 2023-24)</h2>
+<blockquote><p>In ΔABC, DE ∥ AB. If AB = a, DE = x, BE = b and EC = c, express x in terms of a, b and c.</p></blockquote>
+<ul><li>DE ∥ AB cuts off a small triangle CED.</li><li>∠C is common, and ∠CED = ∠CBA (corresponding angles), so <strong>ΔCED ~ ΔCBA (AA)</strong>.</li><li>DE/AB = CE/CB, and CB = b + c, so x/a = c/(b + c).</li><li><strong>Answer: x = ac/(b + c), option (b).</strong></li></ul>
+<p><strong>Trap:</strong> using CE/EB = c/b. For DE/AB you need the <em>whole</em> side CB, not the piece EB. <strong>Try it:</strong> in ΔABC, DE ∥ BC with AD = 2 cm, DB = 3 cm and BC = 10 cm. Find DE. <em>AD/AB = 2/5, so DE = 4 cm.</em></p>
+<h2>Type 3: The converse of BPT (1 mark, CBSE 2025 Delhi)</h2>
+<blockquote><p>E and F are points on AB and AC of ΔABC such that AE/EB = AF/FC = 1/2. Which is true: EF = 2BC, BC = 2EF, EF = 3BC or BC = 3EF?</p></blockquote>
+<ul><li>The two sides are divided in the same ratio, so by the <strong>converse of BPT, EF ∥ BC</strong>.</li><li>Then ΔAEF ~ ΔABC (AA), with AE = 1 part and AB = 1 + 2 = 3 parts.</li><li>EF/BC = AE/AB = 1/3.</li><li><strong>Answer: BC = 3EF, option (d).</strong></li></ul>
+<p><strong>Trap:</strong> taking EF/BC = 1/2. The side ratio is AE/AB (part over whole), not AE/EB. <strong>Try it:</strong> AE/EB = AF/FC = 2/3. Find EF/BC. <em>2/5.</em></p>
+<h2>Type 4: Read the letter order (1 mark, CBSE 2026)</h2>
+<blockquote><p>ΔABC ~ ΔDEF with 2AB = DE and BC = 8 cm. Find EF.</p></blockquote>
+<ul><li>The order of the letters tells you the matching: <strong>AB ↔ DE, BC ↔ EF, CA ↔ FD</strong>.</li><li>2AB = DE means AB/DE = 1/2, so BC/EF = 1/2 as well.</li><li><strong>Answer: EF = 16 cm, option (a).</strong></li></ul>
+<p><strong>Trap:</strong> reading 2AB = DE as AB = 2DE and picking 4 cm. <strong>Try it:</strong> ΔPQR ~ ΔXYZ, 3PQ = XY and QR = 5 cm. Find YZ. <em>15 cm.</em></p>
+<h2>Type 5: Two triangles sharing an angle, find a side (2 marks, CBSE SQP 2026-27)</h2>
+<blockquote><p>In the figure, ∠PQR = ∠QSP, PQ = 6 cm and PS = 3 cm. Find PR.</p></blockquote>
+<ul><li>Look at the big ΔPQR and the small ΔPSQ.</li><li>∠PQR = ∠PSQ (given) and ∠P is common, so <strong>ΔPQR ~ ΔPSQ (AA)</strong>.</li><li>PQ/PS = PR/PQ, which gives <strong>PQ² = PS × PR</strong>.</li><li>36 = 3 × PR, so <strong>PR = 12 cm.</strong></li></ul>
+<p><strong>Trap:</strong> naming the triangles in the wrong order (ΔPQR ~ ΔPQS) and then pairing the wrong sides. Write the equal angles in matching positions first. <strong>Try it:</strong> D is on BC of ΔABC with ∠ADC = ∠BAC. If CA = 6 cm and CB = 9 cm, find CD. <em>CA² = CB × CD, so CD = 4 cm.</em></p>
+<h2>Type 6: A similarity proof in a parallelogram (2 to 3 marks, CBSE 2025 Delhi)</h2>
+<blockquote><p>In parallelogram ABCD, side AD is produced to E, and BE meets CD at F. Prove that ΔABE ~ ΔCFB.</p></blockquote>
+<ul><li>∠BAE = ∠FCB (opposite angles of a parallelogram are equal).</li><li>AE ∥ BC (AD is produced to E, and AD ∥ BC), and BE is a transversal, so ∠AEB = ∠CBF (alternate angles).</li><li><strong>Therefore ΔABE ~ ΔCFB (AA).</strong></li></ul>
+<p><strong>Trap:</strong> writing "similar by AA" with no reason for each angle. Each reason carries a mark. <strong>Try it:</strong> in the same figure, AB = 6 cm, BC = 4 cm and AE = 9 cm. Find CF. <em>AB/CF = AE/CB, so CF = 6 × 4/9 = 8/3 cm.</em></p>
+<h2>Type 7: The BPT proof plus an application (5 marks, CBSE SQP 2026-27)</h2>
+<blockquote><p>Prove that a line drawn parallel to one side of a triangle, meeting the other two sides in distinct points, divides those sides in the same ratio. Using it, show that in trapezium PQRS with PQ ∥ SR and XY ∥ PQ (X on PS, Y on QR), PX/XS = QY/YR.</p></blockquote>
+<p><strong>The proof.</strong></p>
+<ul><li><strong>Given:</strong> ΔABC with DE ∥ BC, D on AB and E on AC. <strong>To prove:</strong> AD/DB = AE/EC.</li><li><strong>Construction:</strong> join BE and CD; draw EN ⊥ AB and DM ⊥ AC.</li><li>ar(ADE)/ar(BDE) = (½ × AD × EN)/(½ × DB × EN) = AD/DB.</li><li>ar(ADE)/ar(DEC) = (½ × AE × DM)/(½ × EC × DM) = AE/EC.</li><li>ar(BDE) = ar(DEC), because they are on the same base DE and between the same parallels DE and BC.</li><li><strong>So AD/DB = AE/EC.</strong> Proved.</li></ul>
+<p><strong>The application.</strong></p>
+<ul><li>Join the diagonal PR; let it cut XY at M.</li><li>In ΔPSR, XM ∥ SR, so by BPT PX/XS = PM/MR.</li><li>In ΔRPQ, MY ∥ PQ, so by BPT PM/MR = QY/YR.</li><li><strong>Therefore PX/XS = QY/YR.</strong></li></ul>
+<p><strong>Trap:</strong> skipping the construction line or the reason "same base, between the same parallels". Both carry marks. <strong>Try it:</strong> ABCD is a trapezium with AB ∥ DC and diagonals meeting at O. Show that AO/BO = CO/DO. <em>Draw a line through O parallel to DC and use BPT in ΔADC and ΔABD.</em></p>
+<h2>Type 8: The case study (4 marks, CBSE SQP 2024-25)</h2>
+<blockquote><p>A cabinet's largest triangle is ΔABC and the smallest, with a shelf, is ΔDEF. The shelf PQ is parallel to EF. (i) Show that ΔDPQ ~ ΔDEF. (ii) If DP = 50 cm and PE = 70 cm, find PQ/EF. (iii) If 2AB = 5DE and ΔABC ~ ΔDEF, show that the ratio of their perimeters is constant.</p></blockquote>
+<ul><li><strong>(i)</strong> ∠D is common and ∠DPQ = ∠DEF (corresponding angles, PQ ∥ EF), so <strong>ΔDPQ ~ ΔDEF (AA)</strong>.</li><li><strong>(ii)</strong> The whole side DE = 50 + 70 = 120 cm, so PQ/EF = DP/DE = 50/120 = <strong>5/12</strong>.</li><li><strong>(iii)</strong> 2AB = 5DE gives AB/DE = 5/2, so all sides, and the perimeters, are in the ratio <strong>5 : 2, a constant</strong>.</li></ul>
+<p><strong>Trap:</strong> using DP/PE = 50/70 in part (ii). Always compare with the whole side. <strong>Try it:</strong> if DP = 30 cm and PE = 45 cm, find PQ/EF. <em>30/75 = 2/5.</em></p>
+<h2>One-minute revision</h2>
+<ul><li>Write similar triangles in matching order: the letters tell you which sides pair up.</li><li>Side ratios use <strong>part over whole</strong> (AD/AB) when you compare a small triangle with the big one, and <strong>part over part</strong> (AD/DB) only in BPT itself.</li><li>AA is enough for similarity. Give a reason for every angle: common, given, corresponding, alternate or vertically opposite.</li><li>Two triangles sharing an angle often give a "square" result such as PQ² = PS × PR.</li><li>Learn the BPT proof by heart, with its construction. It is a regular 3- or 5-mark question.</li></ul>
+<h2>FAQ</h2>
+<p><strong>Is the Pythagoras theorem still in Class 10 Triangles?</strong> No. In the rationalised NCERT Class 10 book, Chapter 6 covers similar figures, BPT and its converse, and the similarity criteria. The area theorem for similar triangles and the Pythagoras theorem proofs were removed, so check your own school's syllabus if your teacher has said otherwise.</p>
+<p><strong>Which theorem proof should I learn?</strong> The Basic Proportionality Theorem (Thales theorem). It is the one proof that appears again and again in CBSE papers, usually with a short application like the trapezium above.</p>
+<h2>Free notes and next steps</h2>
+<ul><li>Free Chapter 6 guide and revision notes: <a href="https://quadacademy.org/free/?utm_source=site&amp;utm_medium=post&amp;utm_campaign=quad-20261127-m06-triangles">quadacademy.org/free/</a></li><li>Practise these questions as a game: <a href="https://quadacademy.org/quest.html?c=m6&amp;utm_source=site&amp;utm_medium=post&amp;utm_campaign=quad-20261127-m06-triangles">QUAD Quest</a></li><li>One board question a day for 90 days: <a href="https://quadacademy.org/countdown/?utm_source=site&amp;utm_medium=post&amp;utm_campaign=quad-20261127-m06-triangles">Board Countdown</a></li><li>The chapter before, solved the same way: <a href="/blog/arithmetic-progressions-board-questions/">Arithmetic Progressions, board questions solved</a></li><li>Two-hour live board revision class: <a href="/masterclass/">₹49 Masterclass</a></li><li>Board Boost batch for Class 10: <a href="/board-boost/">Board Boost</a></li></ul>
+<p><em>Sources: NCERT Class 10 Mathematics (rationalised), Chapter 6 Triangles, Exercises 6.1 to 6.3; questions from CBSE board papers 2025 and 2026 and the CBSE Sample Papers 2023-24, 2024-25 and 2026-27.</em></p>
+    </article>
+    <section style="border-top:0;padding-block:30px 0">
+      <div class="contact">
+        <h2>Stuck on a chapter?</h2>
+        <p>Tell us which chapter costs you the most marks, and we will cover it in a video. Send it on WhatsApp.</p>
+        <div class="cta" style="margin-top:4px"><a class="btn o" href="https://wa.me/918088443156?text=Hi%20QUAD%2C%20I%20read%20your%20blog.%20The%20chapter%20where%20I%20lose%20the%20most%20marks%20is%3A%20">Message on WhatsApp</a></div>
+      </div>
+    </section>
+    <section style="border-top:0;padding-block:30px 0"><h2>More from the <span class="t">blog</span></h2><ul><li><a href="/blog/arithmetic-progressions-board-questions/">Arithmetic Progressions Class 10: 8 Must-Do Board Questions, Solved (CBSE Maths Chapter 5, nth Term and Sum of n Terms)</a></li><li><a href="/blog/quadratic-equations-board-questions/">Quadratic Equations Class 10: 8 Must-Do Board Questions, Solved (CBSE Maths Chapter 4, Discriminant and Word Problems)</a></li><li><a href="/blog/pair-of-linear-equations-board-questions/">Pair of Linear Equations in Two Variables Class 10: 8 Must-Do Board Questions, Solved (CBSE Maths Chapter 3)</a></li><li><a href="/blog/real-numbers-board-questions/">Real Numbers Class 10: 8 Must-Do Board Questions, Solved (CBSE Maths Chapter 1, HCF, LCM and Irrational Proofs)</a></li></ul></section>
+  </div>
+  <aside class="side">
+  <div class="sbox y">
+    <h3>₹49 Board Masterclass</h3>
+    <p>2 hours live: the 20 questions that come almost every year, solved live, with a PDF to keep. Maths Sun 22 Nov, Science Sun 29 Nov, 10:30 am.</p>
+    <a class="btn o" href="/masterclass/">See the Masterclass</a>
+  </div>
+  <div class="sbox">
+    <h3>Board Boost · live batches</h3>
+    <p>6 weeks from Mon 7 Dec: 18 live classes, a scored mock every Sunday, weekly parent reports. From ₹1,499.</p>
+    <a class="btn" href="/board-boost/">Batches &amp; fees</a>
+  </div>
+  <div class="sbox">
+    <h3>Join our WhatsApp Channel for daily updates</h3>
+    <p>One board-exam trick a day, new revision videos and free PDFs: <a href="https://whatsapp.com/channel/0029Vb9DNhtADTOEAMwyH723" target="_blank" rel="noopener">follow QUAD Academy on WhatsApp</a></p>
+    <a class="btn" href="https://www.youtube.com/@QuadAcademyOSH?sub_confirmation=1" target="_blank" rel="noopener">Subscribe</a>
+    <a class="btn" href="https://whatsapp.com/channel/0029Vb9DNhtADTOEAMwyH723" target="_blank" rel="noopener">WhatsApp channel</a>
+  </div>
+</aside>
+</div>
+</main>
+<footer>
+  <div class="wrap">
+    <div class="family">
+      <div class="ent">
+        <span class="mark"><img src="/quad_logo.jpg" alt="QUAD Academy logo" loading="lazy"></span>
+        <b>QUAD Academy</b>
+        <span class="tl">Learn • Grow • Prepare • Build</span>
+        <p>Board-exam preparation for Class 10: free revision on YouTube, live batches and mock tests. <a href="https://www.youtube.com/@QuadAcademyOSH">@QuadAcademyOSH</a> · <a href="https://whatsapp.com/channel/0029Vb9DNhtADTOEAMwyH723">WhatsApp channel</a></p>
+      </div>
+      <span class="amp" aria-hidden="true">&amp;</span>
+      <div class="ent r">
+        <span class="mark"><img src="/osh_logo.png" alt="OurSchoolHouse logo" loading="lazy"></span>
+        <b>OurSchoolHouse</b>
+        <span class="tl">Achieve your goals</span>
+        <p>India's homeschooling support portal for Classes 1–12, since 2020. <a href="https://ourschoolhouse.in">ourschoolhouse.in</a></p>
+      </div>
+    </div>
+    <p class="fine">We collect only the parent's contact details and the student's name and school, and use them only for QUAD batches. CBSE question papers are © CBSE; solutions and materials © QUAD Academy. Free to use for personal study.</p>
+  </div>
+</footer>
+<script src="/hits.js" defer></script>
+</body>
+</html>
