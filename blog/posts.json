@@ -1,6 +1,12 @@
 {
  "posts": [
   {
+   "title": "Circles Class 10: 8 Must-Do Board Questions, Solved (CBSE Maths Chapter 10, Tangents)",
+   "url": "https://quadacademy.org/blog/circles-board-questions/",
+   "date": "2026-11-28",
+   "description": "CBSE Class 10 Maths Chapter 10 solved: tangents at 90°, the kite PQOR, the 120° angle rule, the assertion-reason on the radius, the inradius of a right triangle, the chord-and-tangent 3-marker, the rhombus proof and the garden case study."
+  },
+  {
    "title": "Triangles Class 10: 8 Must-Do Board Questions, Solved (CBSE Maths Chapter 6, BPT and Similarity)",
    "url": "https://quadacademy.org/blog/triangles-board-questions/",
    "date": "2026-11-27",
@@ -143,6 +149,12 @@
      "blogPost": [
       {
        "@type": "BlogPosting",
+       "headline": "Circles Class 10: 8 Must-Do Board Questions, Solved (CBSE Maths Chapter 10, Tangents)",
+       "url": "https://quadacademy.org/blog/circles-board-questions/",
+       "datePublished": "2026-11-28"
+      },
+      {
+       "@type": "BlogPosting",
        "headline": "Triangles Class 10: 8 Must-Do Board Questions, Solved (CBSE Maths Chapter 6, BPT and Similarity)",
        "url": "https://quadacademy.org/blog/triangles-board-questions/",
        "datePublished": "2026-11-27"
@@ -268,6 +280,47 @@
        "datePublished": "2026-11-06"
       }
      ]
+    }
+   ]
+  },
+  {
+   "path": "blog/circles-board-questions/index.html",
+   "priority": 0.6,
+   "jsonld": [
+    {
+     "@type": "BlogPosting",
+     "headline": "Circles Class 10: 8 Must-Do Board Questions, Solved (CBSE Maths Chapter 10, Tangents)",
+     "description": "CBSE Class 10 Maths Chapter 10 solved: tangents at 90°, the kite PQOR, the 120° angle rule, the assertion-reason on the radius, the inradius of a right triangle, the chord-and-tangent 3-marker, the rhombus proof and the garden case study.",
+     "url": "https://quadacademy.org/blog/circles-board-questions/",
+     "mainEntityOfPage": "https://quadacademy.org/blog/circles-board-questions/",
+     "datePublished": "2026-11-28",
+     "dateModified": "2026-11-28",
+     "inLanguage": "en-IN",
+     "wordCount": 1747,
+     "author": {
+      "@type": "Organization",
+      "name": "Team QUAD",
+      "@id": "https://quadacademy.org/#org"
+     },
+     "publisher": {
+      "@id": "https://quadacademy.org/#org"
+     },
+     "educationalLevel": "Class 10",
+     "keywords": "Maths, Chapter 10, Circles, tangent, tangent to a circle, tangents from an external point, radius perpendicular to tangent, inscribed circle, rhombus proof, case study, CBSE board questions",
+     "image": "https://i.ytimg.com/vi/c7JSK02pCyo/hqdefault.jpg",
+     "isPartOf": {
+      "@type": "Blog",
+      "url": "https://quadacademy.org/blog/"
+     },
+     "video": {
+      "@type": "VideoObject",
+      "name": "Circles Class 10 Important Questions: 8 Must-Do (Tangents) | CBSE 2026-27",
+      "description": "CBSE Class 10 Maths Chapter 10 solved: tangents at 90°, the kite PQOR, the 120° angle rule, the assertion-reason on the radius, the inradius of a right triangle, the chord-and-tangent 3-marker, the rhombus proof and the garden case study.",
+      "thumbnailUrl": "https://i.ytimg.com/vi/c7JSK02pCyo/hqdefault.jpg",
+      "uploadDate": "2026-11-28",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/c7JSK02pCyo",
+      "contentUrl": "https://www.youtube.com/watch?v=c7JSK02pCyo"
+     }
     }
    ]
   },
